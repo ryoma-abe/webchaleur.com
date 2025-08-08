@@ -76,12 +76,12 @@ export default function Blog() {
           }`}
         >
           <h2 
-            className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+            className="heading-section"
           >
             技術ブログ
           </h2>
           <span 
-            className="text-sm text-[var(--text-gray)] inline-block"
+            className="text-caption inline-block"
           >
             Technical Blog
           </span>
@@ -124,15 +124,12 @@ export default function Blog() {
                 </div>
 
                 {/* タイトル */}
-                <h3 
-                  className="text-lg font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-3 line-clamp-2"
-                  style={{ minHeight: '56px' }}
-                >
+                <h3 className="heading-card mb-3 line-clamp-2 min-h-[56px]">
                   {post.title}
                 </h3>
 
                 {/* 抜粋 */}
-                <p className="text-sm text-[var(--text-gray)] mb-4 line-clamp-3">
+                <p className="text-caption mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
 

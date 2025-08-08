@@ -79,12 +79,12 @@ export default function FAQ() {
           }`}
         >
           <h2 
-            className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+            className="heading-section"
           >
             よくある質問
           </h2>
           <span 
-            className="text-sm text-[var(--text-gray)] inline-block"
+            className="text-caption inline-block"
           >
             FAQ
           </span>
@@ -118,7 +118,7 @@ export default function FAQ() {
                     >
                       Q
                     </span>
-                    <span className="flex-1 text-[var(--text-dark)] font-medium pr-4">
+                    <span className="flex-1 text-primary font-medium pr-4">
                       {item.question}
                     </span>
                   </div>
@@ -164,13 +164,13 @@ export default function FAQ() {
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <p className="text-[var(--text-gray)] mb-4">
+          <p className="text-body mb-4">
             その他のご質問も
             <span className="text-[var(--main-blue)] font-medium mx-1">お気軽に</span>
             お問い合わせください
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-block bg-[var(--main-blue)] text-white px-8 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105"
             style={{ 
               borderRadius: '24px'

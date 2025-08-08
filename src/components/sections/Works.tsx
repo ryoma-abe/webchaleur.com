@@ -82,12 +82,12 @@ export default function Works() {
           }`}
         >
           <h2
-            className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+            className="heading-section"
           >
             制作実績
           </h2>
           <span
-            className="text-sm text-[var(--text-gray)] inline-block"
+            className="text-caption inline-block"
           >
             Works
           </span>
@@ -129,12 +129,12 @@ export default function Works() {
               {/* コンテンツ */}
               <div className="p-6">
                 <h3
-                  className="text-xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+                  className="heading-card mb-2"
                 >
                   {work.client}
                 </h3>
 
-                <p className="text-[var(--text-gray)] mb-4 text-sm">
+                <p className="text-body mb-4 text-sm">
                   {work.description}
                 </p>
 

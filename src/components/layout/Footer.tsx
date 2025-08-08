@@ -23,10 +23,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
           <div style={{ transform: 'rotate(-0.2deg)' }}>
-            <h3 className="text-xl font-[var(--font-handwritten)] font-semibold text-[var(--main-blue)] mb-4">
+            <h3 className="heading-card text-[var(--main-blue)] mb-4">
               WebChaleur
             </h3>
-            <p className="text-[var(--text-gray)] text-sm leading-relaxed">
+            <p className="text-body">
               十勝・帯広・音更エリアで<br />
               あたたかいウェブサイトを<br />
               つくっています
@@ -35,7 +35,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div style={{ transform: 'rotate(0.1deg)' }}>
-            <h4 className="text-lg font-[var(--font-handwritten)] font-semibold text-[var(--text-dark)] mb-4">
+            <h4 className="heading-card mb-4">
               リンク
             </h4>
             <ul className="space-y-2">
@@ -58,10 +58,10 @@ export default function Footer() {
 
           {/* Contact & Social */}
           <div style={{ transform: 'rotate(-0.15deg)' }}>
-            <h4 className="text-lg font-[var(--font-handwritten)] font-semibold text-[var(--text-dark)] mb-4">
+            <h4 className="heading-card mb-4">
               おといあわせ
             </h4>
-            <p className="text-[var(--text-gray)] text-sm mb-4">
+            <p className="text-body mb-4">
               📧 info@webchaleur.jp<br />
               📍 北海道十勝エリア
             </p>
@@ -94,8 +94,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center">
-          <p 
-            className="text-[var(--text-gray)] text-sm"
+          <p className="text-caption"
             style={{ transform: 'rotate(0.05deg)' }}
           >
             © {currentYear} WebChaleur. つくる人も、つかう人も、みんなしあわせに。

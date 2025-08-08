@@ -42,16 +42,37 @@ export default function Strengths() {
     {
       id: 2,
       number: '02',
+      title: 'AIを活用した最新のWeb制作',
+      description: 'ChatGPTやClaudeなどの\nAI導入支援もお任せください',
+      icon: '🤖',
+    },
+    {
+      id: 3,
+      number: '03',
+      title: 'SNS運用もトータルサポート',
+      description: 'Instagram・X(Twitter)の\n運用アドバイスも提供',
+      icon: '📱',
+    },
+    {
+      id: 4,
+      number: '04',
       title: '最新技術も、お任せください',
       description: 'Next.jsやShopifyなど\n新しい技術もしっかり対応',
       icon: '💻',
     },
     {
-      id: 3,
-      number: '03',
+      id: 5,
+      number: '05',
       title: '制作後も、継続的にサポート',
       description: '更新や修正のご相談も\nいつでもお気軽に',
       icon: '🤝',
+    },
+    {
+      id: 6,
+      number: '06',
+      title: 'データ分析で成果を可視化',
+      description: 'Google Analyticsの設定から\n改善提案まで対応',
+      icon: '📊',
     },
   ];
 
@@ -60,7 +81,7 @@ export default function Strengths() {
       id="strengths"
       className="section-padding bg-white"
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
         <div 
           className={`text-center mb-16 transition-all duration-800 ${
@@ -68,19 +89,25 @@ export default function Strengths() {
           }`}
         >
           <h2 
-            className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+            className="heading-section"
           >
             私たちの強み
           </h2>
           <span 
-            className="text-sm text-[var(--text-gray)] inline-block"
+            className="text-caption inline-block"
           >
             Our Strengths
           </span>
+          <p className="text-body mt-4 max-w-3xl mx-auto">
+            従来の制作会社にはない、
+            <span className="text-[var(--main-blue)] font-medium">AI活用</span>や
+            <span className="text-[var(--main-blue)] font-medium">SNS運用</span>まで、
+            最新のデジタルマーケティングを総合的にサポート
+          </p>
         </div>
 
-        {/* 強みカードグリッド */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* 強みカードグリッド - 6つに増やしたので3列2行に */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {strengths.map((strength, index) => (
             <div
               key={strength.id}
@@ -88,21 +115,34 @@ export default function Strengths() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{
-                transitionDelay: `${index * 150}ms`,
+                transitionDelay: `${index * 100}ms`,
               }}
             >
               <div 
-                className="bg-[var(--bg-light)] p-8 h-full hover:shadow-lg transition-all hover:translate-y-[-4px]"
+                className="bg-[var(--bg-light)] p-6 lg:p-8 h-full hover:shadow-lg transition-all hover:translate-y-[-4px] relative overflow-hidden"
                 style={{
                   borderRadius: '20px',
                 }}
               >
+                {/* 新しいものを示すバッジ（AI・SNS関連） */}
+                {(strength.id === 2 || strength.id === 3) && (
+                  <div 
+                    className="absolute top-4 right-4 bg-gradient-to-r from-[#ff6b6b] to-[#ff8787] text-white text-xs px-3 py-1 font-bold"
+                    style={{
+                      borderRadius: '12px',
+                      transform: 'rotate(-3deg)',
+                    }}
+                  >
+                    NEW!
+                  </div>
+                )}
+
                 {/* 番号バッジ */}
                 <div 
                   className="inline-block mb-4"
                   style={{
-                    width: '60px',
-                    height: '60px',
+                    width: '50px',
+                    height: '50px',
                     borderRadius: '50%',
                     background: 'white',
                     border: '3px solid var(--main-blue)',
@@ -112,34 +152,28 @@ export default function Strengths() {
                   }}
                 >
                   <span 
-                    className="text-[var(--main-blue)] font-bold text-xl font-[var(--font-handwritten)]"
+                    className="text-[var(--main-blue)] font-bold text-lg font-[var(--font-handwritten)]"
                   >
                     {strength.number}
                   </span>
                 </div>
 
                 {/* アイコン */}
-                <div className="text-4xl mb-4">{strength.icon}</div>
+                <div className="text-3xl mb-3">{strength.icon}</div>
 
                 {/* タイトル */}
-                <h3 
-                  className="text-xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-4"
-                  style={{ lineHeight: '1.6' }}
-                >
+                <h3 className="heading-card mb-3 text-lg">
                   {strength.title}
                 </h3>
 
                 {/* 説明文 */}
-                <p 
-                  className="text-[var(--text-gray)] whitespace-pre-line"
-                  style={{ lineHeight: '1.8' }}
-                >
+                <p className="text-body whitespace-pre-line text-sm">
                   {strength.description}
                 </p>
 
                 {/* 装飾的な下線 */}
                 <div 
-                  className="mt-6 h-1 bg-[var(--main-blue)] opacity-20"
+                  className="mt-4 h-0.5 bg-[var(--main-blue)] opacity-20"
                   style={{
                     borderRadius: '2px',
                     width: '60%',
@@ -150,17 +184,57 @@ export default function Strengths() {
           ))}
         </div>
 
+        {/* 特別なアピールセクション */}
+        <div 
+          className={`bg-gradient-to-r from-[var(--lighter-blue)] to-[var(--bg-light)] p-8 mt-12 text-center transition-all duration-800 delay-800 ${
+            isVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            borderRadius: '24px',
+            border: '2px dashed var(--light-blue)',
+          }}
+        >
+          <h3 className="heading-card mb-4 text-[var(--main-blue)]">
+            🚀 これからの時代に必要なWeb制作
+          </h3>
+          <p className="text-body max-w-3xl mx-auto mb-6">
+            ただホームページを作るだけではなく、
+            <span className="font-medium">AI技術の活用</span>で業務効率化を実現し、
+            <span className="font-medium">SNS運用</span>で集客力を高め、
+            <span className="font-medium">データ分析</span>で改善を続ける。
+            <br />
+            <br />
+            十勝の企業様が
+            <span className="text-[var(--main-blue)] font-bold">デジタル時代で勝ち残る</span>
+            ための、総合的なパートナーです。
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <span className="bg-white px-4 py-2 text-sm font-medium text-[var(--text-gray)]" style={{ borderRadius: '16px' }}>
+              #AI導入支援
+            </span>
+            <span className="bg-white px-4 py-2 text-sm font-medium text-[var(--text-gray)]" style={{ borderRadius: '16px' }}>
+              #SNSマーケティング
+            </span>
+            <span className="bg-white px-4 py-2 text-sm font-medium text-[var(--text-gray)]" style={{ borderRadius: '16px' }}>
+              #データドリブン
+            </span>
+            <span className="bg-white px-4 py-2 text-sm font-medium text-[var(--text-gray)]" style={{ borderRadius: '16px' }}>
+              #地域密着
+            </span>
+          </div>
+        </div>
+
         {/* 補足メッセージ */}
         <div 
-          className={`text-center mt-16 transition-all duration-800 delay-600 ${
+          className={`text-center mt-12 transition-all duration-800 delay-1000 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
           <p 
-            className="text-[var(--text-gray)] text-lg"
+            className="text-body text-lg"
           >
             十勝の企業様の「困った」を
-            <span className="text-[var(--main-blue)] font-medium mx-1">真心</span>
+            <span className="text-[var(--main-blue)] font-medium mx-1">最新技術と真心</span>
             で解決します
           </p>
         </div>

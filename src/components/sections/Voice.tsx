@@ -64,7 +64,7 @@ export default function Voice() {
           }`}
         >
           <h2 
-            className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+            className="heading-section"
           >
             お客様の声
           </h2>
@@ -93,13 +93,13 @@ export default function Voice() {
               <div className="text-3xl text-yellow-400 mb-2">
                 ★★★★★
               </div>
-              <div className="text-[var(--text-gray)] font-medium">
+              <div className="text-body font-medium">
                 152件のレビュー
               </div>
             </div>
             
             <div className="flex-1 max-w-md">
-              <p className="text-[var(--text-dark)] mb-4">
+              <p className="text-primary mb-4">
                 ココナラでも多くのお客様から高評価をいただいております
               </p>
               <a
@@ -138,10 +138,7 @@ export default function Voice() {
               </div>
 
               {/* レビュー内容 */}
-              <p 
-                className="text-[var(--text-gray)] text-sm mb-4 leading-relaxed"
-                style={{ minHeight: '80px' }}
-              >
+              <p className="text-body text-sm mb-4 leading-relaxed min-h-[80px]">
                 "{review.content}"
               </p>
 
@@ -162,15 +159,15 @@ export default function Voice() {
           <div className="inline-flex items-center gap-8 flex-wrap justify-center">
             <div className="text-center">
               <div className="text-3xl font-bold text-[var(--main-blue)]">152社</div>
-              <div className="text-sm text-[var(--text-gray)]">制作実績</div>
+              <div className="text-caption">制作実績</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-[var(--main-blue)]">98%</div>
-              <div className="text-sm text-[var(--text-gray)]">満足度</div>
+              <div className="text-caption">満足度</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-[var(--main-blue)]">7年</div>
-              <div className="text-sm text-[var(--text-gray)]">運営実績</div>
+              <div className="text-caption">運営実績</div>
             </div>
           </div>
         </div>
