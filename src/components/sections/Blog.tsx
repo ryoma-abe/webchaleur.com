@@ -67,7 +67,6 @@ export default function Blog() {
     <section 
       id="blog"
       className="section-padding bg-[var(--bg-light)]"
-      style={{ transform: 'rotate(0.01deg)' }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -78,13 +77,11 @@ export default function Blog() {
         >
           <h2 
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-            style={{ transform: 'rotate(-0.2deg)' }}
           >
             ぎじゅつブログ
           </h2>
           <span 
             className="text-sm text-[var(--text-gray)] inline-block"
-            style={{ transform: 'rotate(0.3deg)' }}
           >
             Technical Blog
           </span>
@@ -99,8 +96,7 @@ export default function Blog() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{
-                borderRadius: '16px 20px 18px 19px',
-                transform: `rotate(${index === 1 ? '0.3' : index === 2 ? '-0.4' : '-0.2'}deg)`,
+                borderRadius: '20px',
                 transitionDelay: `${index * 100}ms`,
               }}
             >
@@ -110,7 +106,6 @@ export default function Blog() {
                   <div className="flex flex-col">
                     <span 
                       className="text-2xl font-bold text-[var(--main-blue)] font-[var(--font-handwritten)]"
-                      style={{ transform: 'rotate(-1deg)' }}
                     >
                       {post.date.split('.')[2]}
                     </span>
@@ -155,9 +150,6 @@ export default function Blog() {
                     <span
                       key={tagIndex}
                       className="text-xs px-2 py-1 text-[var(--text-gray)]"
-                      style={{
-                        transform: `rotate(${tagIndex % 2 === 0 ? '-0.5' : '0.5'}deg)`,
-                      }}
                     >
                       #{tag}
                     </span>
@@ -168,10 +160,9 @@ export default function Blog() {
                 <a
                   href={`/blog/${post.id}`}
                   className="inline-flex items-center gap-2 text-[var(--main-blue)] font-medium hover:opacity-80 transition-opacity"
-                  style={{ transform: 'rotate(0.2deg)' }}
                 >
                   読んでみる
-                  <span style={{ transform: 'rotate(-10deg)' }}>→</span>
+                  <span>→</span>
                 </a>
               </div>
             </article>
@@ -188,8 +179,7 @@ export default function Blog() {
             href="/blog"
             className="inline-block border-2 border-[var(--main-blue)] text-[var(--main-blue)] px-8 py-4 font-medium hover:bg-[var(--lighter-blue)] transition-all hover:transform hover:scale-105"
             style={{ 
-              borderRadius: '24px 28px 26px 27px',
-              transform: 'rotate(-0.2deg)'
+              borderRadius: '24px'
             }}
           >
             すべての記事を読む

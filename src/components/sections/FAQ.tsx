@@ -70,7 +70,6 @@ export default function FAQ() {
     <section 
       id="faq"
       className="section-padding bg-white"
-      style={{ transform: 'rotate(-0.01deg)' }}
     >
       <div className="max-w-4xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -81,13 +80,11 @@ export default function FAQ() {
         >
           <h2 
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-            style={{ transform: 'rotate(0.2deg)' }}
           >
             よくある質問
           </h2>
           <span 
             className="text-sm text-[var(--text-gray)] inline-block"
-            style={{ transform: 'rotate(-0.3deg)' }}
           >
             FAQ
           </span>
@@ -103,7 +100,6 @@ export default function FAQ() {
               }`}
               style={{
                 borderRadius: '16px',
-                transform: `rotate(${index % 2 === 0 ? '-0.3' : '0.3'}deg)`,
                 transitionDelay: `${index * 100}ms`,
                 borderStyle: 'dashed',
               }}
@@ -117,8 +113,7 @@ export default function FAQ() {
                     <span 
                       className="inline-flex items-center justify-center w-8 h-8 bg-[var(--lighter-blue)] text-[var(--main-blue)] font-bold text-sm"
                       style={{
-                        borderRadius: '48% 52% 49% 51%',
-                        transform: 'rotate(-5deg)',
+                        borderRadius: '50%',
                       }}
                     >
                       Q
@@ -148,8 +143,7 @@ export default function FAQ() {
                     <span 
                       className="inline-flex items-center justify-center w-8 h-8 bg-white border-2 border-[var(--main-blue)] text-[var(--main-blue)] font-bold text-sm"
                       style={{
-                        borderRadius: '51% 49% 52% 48%',
-                        transform: 'rotate(5deg)',
+                        borderRadius: '50%',
                       }}
                     >
                       A
@@ -179,8 +173,7 @@ export default function FAQ() {
             href="#contact"
             className="inline-block bg-[var(--main-blue)] text-white px-8 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105"
             style={{ 
-              borderRadius: '24px 28px 26px 27px',
-              transform: 'rotate(-0.2deg)'
+              borderRadius: '24px'
             }}
           >
             お問い合わせはこちら

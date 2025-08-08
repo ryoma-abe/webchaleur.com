@@ -55,7 +55,6 @@ export default function Voice() {
     <section 
       id="voice"
       className="section-padding bg-white"
-      style={{ transform: 'rotate(0.02deg)' }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -66,13 +65,11 @@ export default function Voice() {
         >
           <h2 
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-            style={{ transform: 'rotate(0.3deg)' }}
           >
             お客様の声がたくさん！
           </h2>
           <p 
             className="text-lg text-[var(--text-gray)]"
-            style={{ transform: 'rotate(-0.2deg)' }}
           >
             ココナラでの評価は
             <span className="text-[var(--main-blue)] font-bold mx-1">★4.9</span>
@@ -87,7 +84,6 @@ export default function Voice() {
           }`}
           style={{
             borderRadius: '24px',
-            transform: 'rotate(-1deg)',
             border: '2px solid var(--light-blue)',
           }}
         >
@@ -112,12 +108,11 @@ export default function Voice() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#1bb774] text-white px-8 py-4 font-medium hover:bg-[#16a865] transition-all hover:transform hover:scale-105"
                 style={{ 
-                  borderRadius: '24px 28px 26px 27px',
-                  transform: 'rotate(0.2deg)'
+                  borderRadius: '24px'
                 }}
               >
                 <span>ココナラで詳しく見る</span>
-                <span style={{ transform: 'rotate(-10deg)' }}>→</span>
+                <span>→</span>
               </a>
             </div>
           </div>
@@ -132,8 +127,7 @@ export default function Voice() {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{
-                borderRadius: '18px 22px 20px 21px',
-                transform: `rotate(${index === 1 ? '0.3' : index === 2 ? '-0.4' : '-0.2'}deg)`,
+                borderRadius: '20px',
                 transitionDelay: `${300 + index * 100}ms`,
                 border: '1px solid rgba(91, 143, 185, 0.1)',
               }}

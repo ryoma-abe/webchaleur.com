@@ -73,7 +73,6 @@ export default function Works() {
     <section
       id="works"
       className="section-padding bg-[var(--bg-light)]"
-      style={{ transform: "rotate(-0.01deg)" }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -84,13 +83,11 @@ export default function Works() {
         >
           <h2
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-            style={{ transform: "rotate(-0.2deg)" }}
           >
             つくったもの
           </h2>
           <span
             className="text-sm text-[var(--text-gray)] inline-block"
-            style={{ transform: "rotate(0.3deg)" }}
           >
             Works
           </span>
@@ -107,8 +104,7 @@ export default function Works() {
                   : "opacity-0 translate-y-12"
               }`}
               style={{
-                borderRadius: "16px 20px 18px 19px",
-                transform: `rotate(${index % 2 === 0 ? "-0.3" : "0.2"}deg)`,
+                borderRadius: "20px",
                 transitionDelay: `${index * 100}ms`,
               }}
             >
@@ -134,7 +130,6 @@ export default function Works() {
               <div className="p-6">
                 <h3
                   className="text-xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-                  style={{ transform: "rotate(0.1deg)" }}
                 >
                   {work.client}
                 </h3>
@@ -150,10 +145,7 @@ export default function Works() {
                       key={tagIndex}
                       className="text-xs px-3 py-1 bg-[var(--accent-beige)] text-[var(--text-gray)]"
                       style={{
-                        borderRadius: "10px 12px 11px 13px",
-                        transform: `rotate(${
-                          tagIndex % 2 === 0 ? "-1" : "1"
-                        }deg)`,
+                        borderRadius: "8px",
                       }}
                     >
                       {tag}
@@ -165,10 +157,9 @@ export default function Works() {
                 <a
                   href={`/works/${work.id}`}
                   className="inline-flex items-center gap-2 text-[var(--main-blue)] font-medium hover:opacity-80 transition-opacity"
-                  style={{ transform: "rotate(-0.2deg)" }}
                 >
                   詳しく見る
-                  <span style={{ transform: "rotate(-10deg)" }}>→</span>
+                  <span>→</span>
                 </a>
               </div>
             </article>
@@ -185,8 +176,7 @@ export default function Works() {
             href="/works"
             className="inline-block bg-[var(--main-blue)] text-white px-8 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105"
             style={{
-              borderRadius: "26px 30px 28px 29px",
-              transform: "rotate(0.2deg)",
+              borderRadius: "24px",
             }}
           >
             すべての制作実績を見る

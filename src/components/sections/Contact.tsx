@@ -60,7 +60,6 @@ export default function Contact() {
     <section 
       id="contact"
       className="section-padding bg-[var(--bg-light)]"
-      style={{ transform: 'rotate(0.02deg)' }}
     >
       <div className="max-w-4xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -71,13 +70,11 @@ export default function Contact() {
         >
           <h2 
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-            style={{ transform: 'rotate(-0.3deg)' }}
           >
             お問い合わせ
           </h2>
           <span 
             className="text-sm text-[var(--text-gray)] inline-block mb-4"
-            style={{ transform: 'rotate(0.2deg)' }}
           >
             Contact
           </span>
@@ -96,7 +93,6 @@ export default function Contact() {
           }`}
           style={{
             borderRadius: '24px',
-            transform: 'rotate(-0.5deg)',
             boxShadow: '0 10px 40px rgba(91, 143, 185, 0.08)',
           }}
         >
@@ -106,10 +102,9 @@ export default function Contact() {
               <label 
                 htmlFor="name" 
                 className="block text-sm font-medium text-[var(--text-dark)] mb-2"
-                style={{ transform: 'rotate(0.1deg)' }}
               >
                 お名前
-                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded" style={{ borderRadius: '6px 8px 7px 9px' }}>
+                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
                   必須
                 </span>
               </label>
@@ -122,8 +117,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors"
                 style={{ 
-                  borderRadius: '8px 10px 9px 11px',
-                  transform: 'rotate(-0.05deg)'
+                  borderRadius: '8px'
                 }}
                 placeholder="山田 太郎"
               />
@@ -134,7 +128,6 @@ export default function Contact() {
               <label 
                 htmlFor="company" 
                 className="block text-sm font-medium text-[var(--text-dark)] mb-2"
-                style={{ transform: 'rotate(-0.1deg)' }}
               >
                 会社名
               </label>
@@ -146,8 +139,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors"
                 style={{ 
-                  borderRadius: '9px 11px 8px 10px',
-                  transform: 'rotate(0.05deg)'
+                  borderRadius: '8px'
                 }}
                 placeholder="株式会社○○"
               />
@@ -158,10 +150,9 @@ export default function Contact() {
               <label 
                 htmlFor="email" 
                 className="block text-sm font-medium text-[var(--text-dark)] mb-2"
-                style={{ transform: 'rotate(0.15deg)' }}
               >
                 メールアドレス
-                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded" style={{ borderRadius: '7px 9px 6px 8px' }}>
+                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
                   必須
                 </span>
               </label>
@@ -174,8 +165,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors"
                 style={{ 
-                  borderRadius: '10px 8px 11px 9px',
-                  transform: 'rotate(-0.08deg)'
+                  borderRadius: '8px'
                 }}
                 placeholder="info@example.com"
               />
@@ -186,7 +176,6 @@ export default function Contact() {
               <label 
                 htmlFor="phone" 
                 className="block text-sm font-medium text-[var(--text-dark)] mb-2"
-                style={{ transform: 'rotate(-0.05deg)' }}
               >
                 電話番号
               </label>
@@ -198,8 +187,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors"
                 style={{ 
-                  borderRadius: '8px 11px 9px 10px',
-                  transform: 'rotate(0.1deg)'
+                  borderRadius: '8px'
                 }}
                 placeholder="0155-00-0000"
               />
@@ -210,10 +198,9 @@ export default function Contact() {
               <label 
                 htmlFor="message" 
                 className="block text-sm font-medium text-[var(--text-dark)] mb-2"
-                style={{ transform: 'rotate(0.08deg)' }}
               >
                 お問い合わせ内容
-                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded" style={{ borderRadius: '8px 6px 9px 7px' }}>
+                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
                   必須
                 </span>
               </label>
@@ -226,8 +213,7 @@ export default function Contact() {
                 rows={6}
                 className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors resize-none"
                 style={{ 
-                  borderRadius: '11px 9px 10px 8px',
-                  transform: 'rotate(-0.06deg)'
+                  borderRadius: '8px'
                 }}
                 placeholder="ホームページを作りたいのですが..."
               />
@@ -240,8 +226,7 @@ export default function Contact() {
                 disabled={isSubmitting}
                 className="bg-[var(--main-blue)] text-white px-12 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ 
-                  borderRadius: '26px 30px 28px 29px',
-                  transform: 'rotate(-0.3deg)',
+                  borderRadius: '24px',
                   minWidth: '200px'
                 }}
               >
