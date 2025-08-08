@@ -86,8 +86,8 @@ export default function Voice() {
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
           style={{
-            borderRadius: '24px 28px 26px 27px',
-            transform: 'rotate(-0.3deg)',
+            borderRadius: '24px',
+            transform: 'rotate(-1deg)',
             border: '2px solid var(--light-blue)',
           }}
         >

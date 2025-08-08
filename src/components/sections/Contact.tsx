@@ -95,8 +95,8 @@ export default function Contact() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           style={{
-            borderRadius: '24px 28px 26px 27px',
-            transform: 'rotate(-0.1deg)',
+            borderRadius: '24px',
+            transform: 'rotate(-0.5deg)',
             boxShadow: '0 10px 40px rgba(91, 143, 185, 0.08)',
           }}
         >
