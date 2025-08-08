@@ -119,6 +119,84 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Hero背景アニメーション */
+@keyframes float1 {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% { 
+    transform: translate(100px, 50px) scale(1.1) rotate(45deg);
+  }
+  50% { 
+    transform: translate(150px, -30px) scale(0.95) rotate(90deg);
+  }
+  75% { 
+    transform: translate(50px, -80px) scale(1.05) rotate(180deg);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% { 
+    transform: translate(-80px, -60px) scale(0.9) rotate(-45deg);
+  }
+  50% { 
+    transform: translate(-120px, 40px) scale(1.1) rotate(-90deg);
+  }
+  75% { 
+    transform: translate(-40px, 80px) scale(0.95) rotate(-180deg);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  20% { 
+    transform: translate(calc(-50% + 60px), calc(-50% - 60px)) scale(1.15) rotate(72deg);
+  }
+  40% { 
+    transform: translate(calc(-50% + 80px), calc(-50% + 80px)) scale(0.9) rotate(144deg);
+  }
+  60% { 
+    transform: translate(calc(-50% - 70px), calc(-50% + 70px)) scale(1.1) rotate(216deg);
+  }
+  80% { 
+    transform: translate(calc(-50% - 90px), calc(-50% - 50px)) scale(0.95) rotate(288deg);
+  }
+}
+
+@keyframes float4 {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1);
+  }
+  33% { 
+    transform: translate(60px, 40px) scale(1.2);
+  }
+  66% { 
+    transform: translate(-40px, 60px) scale(0.8);
+  }
+}
+
+@keyframes gentleBounce {
+  0%, 100% { 
+    transform: rotate(3deg) translateY(0);
+  }
+  50% { 
+    transform: rotate(3deg) translateY(-5px);
+  }
+}
+
+/* Reduced Motion対応 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 /* セクション共通スタイル */
 .section-padding {
   padding: 80px 24px;

@@ -59,7 +59,6 @@ export default function Strengths() {
     <section 
       id="strengths"
       className="section-padding bg-white"
-      style={{ transform: 'rotate(0.01deg)' }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -70,13 +69,11 @@ export default function Strengths() {
         >
           <h2 
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-            style={{ transform: 'rotate(0.2deg)' }}
           >
             わたしたちの強み
           </h2>
           <span 
             className="text-sm text-[var(--text-gray)] inline-block"
-            style={{ transform: 'rotate(-0.3deg)' }}
           >
             Our Strengths
           </span>
@@ -98,8 +95,6 @@ export default function Strengths() {
                 className="bg-[var(--bg-light)] p-8 h-full hover:shadow-lg transition-all hover:translate-y-[-4px]"
                 style={{
                   borderRadius: '20px',
-                  transform: `rotate(${index === 1 ? '1' : index === 2 ? '-1.2' : '-0.8'}deg)`,
-                  marginTop: index === 1 ? '20px' : '0',
                 }}
               >
                 {/* 番号バッジ */}
@@ -108,18 +103,16 @@ export default function Strengths() {
                   style={{
                     width: '60px',
                     height: '60px',
-                    borderRadius: '48% 52% 49% 51%',
+                    borderRadius: '50%',
                     background: 'white',
                     border: '3px solid var(--main-blue)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    transform: 'rotate(-5deg)',
                   }}
                 >
                   <span 
                     className="text-[var(--main-blue)] font-bold text-xl font-[var(--font-handwritten)]"
-                    style={{ transform: 'rotate(5deg)' }}
                   >
                     {strength.number}
                   </span>
@@ -148,9 +141,8 @@ export default function Strengths() {
                 <div 
                   className="mt-6 h-1 bg-[var(--main-blue)] opacity-20"
                   style={{
-                    borderRadius: '1px 2px 1px 2px',
+                    borderRadius: '2px',
                     width: '60%',
-                    transform: 'rotate(-0.5deg)',
                   }}
                 />
               </div>
@@ -166,7 +158,6 @@ export default function Strengths() {
         >
           <p 
             className="text-[var(--text-gray)] text-lg"
-            style={{ transform: 'rotate(0.1deg)' }}
           >
             十勝の企業さまの「困った」を
             <span className="text-[var(--main-blue)] font-medium mx-1">まごころ</span>

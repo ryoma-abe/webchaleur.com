@@ -62,7 +62,6 @@ export default function Information() {
     <section 
       id="information"
       className="section-padding bg-[var(--bg-light)]"
-      style={{ transform: 'rotate(-0.02deg)' }}
     >
       <div className="max-w-5xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -73,13 +72,11 @@ export default function Information() {
         >
           <h2 
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-            style={{ transform: 'rotate(-0.3deg)' }}
           >
             おしらせ
           </h2>
           <span 
             className="text-sm text-[var(--text-gray)] inline-block"
-            style={{ transform: 'rotate(0.2deg)' }}
           >
             Information
           </span>
@@ -95,7 +92,6 @@ export default function Information() {
               }`}
               style={{
                 borderRadius: '16px',
-                transform: `rotate(${index % 2 === 0 ? '-0.5' : '0.5'}deg)`,
                 transitionDelay: `${index * 100}ms`,
                 border: '1px solid rgba(91, 143, 185, 0.08)',
               }}
@@ -126,10 +122,7 @@ export default function Information() {
                 </h3>
 
                 {/* 矢印 */}
-                <span 
-                  className="text-[var(--text-gray)] text-xl hidden md:block"
-                  style={{ transform: 'rotate(-5deg)' }}
-                >
+                <span className="text-[var(--text-gray)] text-xl hidden md:block">
                   →
                 </span>
               </div>
@@ -146,11 +139,10 @@ export default function Information() {
           <a
             href="/news"
             className="inline-block text-[var(--main-blue)] font-medium hover:opacity-80 transition-opacity"
-            style={{ transform: 'rotate(0.2deg)' }}
           >
             <span className="inline-flex items-center gap-2">
               すべてのお知らせを見る
-              <span style={{ transform: 'rotate(-10deg)' }}>→</span>
+              <span>→</span>
             </span>
           </a>
         </div>
