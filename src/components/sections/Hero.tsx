@@ -142,7 +142,6 @@ export default function Hero() {
                   <div 
                     key={index} 
                     className="flex items-start gap-3 text-[#5a524c] text-sm lg:text-base"
-                    className="flex items-start gap-3 text-[#5a524c] text-sm lg:text-base"
                   >
                     <span className="text-[#5b8fb9] mt-1 flex-shrink-0">✓</span>
                     <span>{item}</span>
