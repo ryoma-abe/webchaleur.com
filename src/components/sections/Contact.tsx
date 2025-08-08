@@ -81,7 +81,7 @@ export default function Contact() {
           <p className="text-[var(--text-gray)] max-w-2xl mx-auto">
             まずはお気軽にご相談ください。
             <br />
-            どんな小さなことでも、親身になってお答えします。
+            どんな小さなことでも、親身に対応いたします。
           </p>
         </div>
 

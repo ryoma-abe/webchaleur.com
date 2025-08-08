@@ -84,7 +84,7 @@ export default function Works() {
           <h2
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
           >
-            つくったもの
+            制作実績
           </h2>
           <span
             className="text-sm text-[var(--text-gray)] inline-block"

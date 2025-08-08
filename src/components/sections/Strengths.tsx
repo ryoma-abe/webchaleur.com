@@ -35,21 +35,21 @@ export default function Strengths() {
     {
       id: 1,
       number: '01',
-      title: '地元だから、すぐ会える',
+      title: '地元だから、すぐお会いできる',
       description: '帯広・音更なら30分以内に\nお伺いします',
       icon: '🚗',
     },
     {
       id: 2,
       number: '02',
-      title: '最新技術も、おまかせ',
+      title: '最新技術も、お任せください',
       description: 'Next.jsやShopifyなど\n新しい技術もしっかり対応',
       icon: '💻',
     },
     {
       id: 3,
       number: '03',
-      title: '作ったあとも、ずっと一緒',
+      title: '制作後も、継続的にサポート',
       description: '更新や修正のご相談も\nいつでもお気軽に',
       icon: '🤝',
     },
@@ -70,7 +70,7 @@ export default function Strengths() {
           <h2 
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
           >
-            わたしたちの強み
+            私たちの強み
           </h2>
           <span 
             className="text-sm text-[var(--text-gray)] inline-block"
@@ -159,8 +159,8 @@ export default function Strengths() {
           <p 
             className="text-[var(--text-gray)] text-lg"
           >
-            十勝の企業さまの「困った」を
-            <span className="text-[var(--main-blue)] font-medium mx-1">まごころ</span>
+            十勝の企業様の「困った」を
+            <span className="text-[var(--main-blue)] font-medium mx-1">真心</span>
             で解決します
           </p>
         </div>

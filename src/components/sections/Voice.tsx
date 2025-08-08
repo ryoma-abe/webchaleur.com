@@ -66,7 +66,7 @@ export default function Voice() {
           <h2 
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
           >
-            お客様の声がたくさん！
+            お客様の声
           </h2>
           <p 
             className="text-lg text-[var(--text-gray)]"
@@ -100,7 +100,7 @@ export default function Voice() {
             
             <div className="flex-1 max-w-md">
               <p className="text-[var(--text-dark)] mb-4">
-                ココナラでも多くのお客様から高評価をいただいています！
+                ココナラでも多くのお客様から高評価をいただいております
               </p>
               <a
                 href="https://coconala.com/users/webchaleur"
