@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Work {
   id: number;
@@ -26,7 +26,7 @@ export default function Works() {
       { threshold: 0.1 }
     );
 
-    const element = document.getElementById('works');
+    const element = document.getElementById("works");
     if (element) observer.observe(element);
 
     return () => {
@@ -37,60 +37,60 @@ export default function Works() {
   const works: Work[] = [
     {
       id: 1,
-      client: '○○農園様',
-      category: 'ECサイト',
-      description: '十勝産野菜の直販サイトをShopifyで構築',
-      thumbnail: '/works/sample1.jpg',
-      tags: ['Shopify', 'EC', 'レスポンシブ'],
+      client: "○○農園様",
+      category: "ECサイト",
+      description: "十勝産野菜の直販サイトをShopifyで構築",
+      thumbnail: "/works/sample1.jpg",
+      tags: ["Shopify", "EC", "レスポンシブ"],
     },
     {
       id: 2,
-      client: '△△建設様',
-      category: 'コーポレートサイト',
-      description: '地域密着の建設会社様の企業サイト',
-      thumbnail: '/works/sample2.jpg',
-      tags: ['Next.js', 'お問い合わせフォーム', 'SEO対策'],
+      client: "△△建設様",
+      category: "コーポレートサイト",
+      description: "地域密着の建設会社様の企業サイト",
+      thumbnail: "/works/sample2.jpg",
+      tags: ["Next.js", "お問い合わせフォーム", "SEO対策"],
     },
     {
       id: 3,
-      client: '□□カフェ様',
-      category: 'ブランドサイト',
-      description: '音更町の人気カフェのブランディングサイト',
-      thumbnail: '/works/sample3.jpg',
-      tags: ['WordPress', 'ブログ', '予約システム'],
+      client: "□□カフェ様",
+      category: "ブランドサイト",
+      description: "音更町の人気カフェのブランディングサイト",
+      thumbnail: "/works/sample3.jpg",
+      tags: ["WordPress", "ブログ", "予約システム"],
     },
     {
       id: 4,
-      client: '××牧場様',
-      category: 'ECサイト',
-      description: '自社ブランド乳製品のオンラインショップ',
-      thumbnail: '/works/sample4.jpg',
-      tags: ['Shopify', '定期購入', '会員機能'],
+      client: "××牧場様",
+      category: "ECサイト",
+      description: "自社ブランド乳製品のオンラインショップ",
+      thumbnail: "/works/sample4.jpg",
+      tags: ["Shopify", "定期購入", "会員機能"],
     },
   ];
 
   return (
-    <section 
+    <section
       id="works"
       className="section-padding bg-[var(--bg-light)]"
-      style={{ transform: 'rotate(-0.01deg)' }}
+      style={{ transform: "rotate(-0.01deg)" }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
-        <div 
+        <div
           className={`text-center mb-12 transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 
+          <h2
             className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-            style={{ transform: 'rotate(-0.2deg)' }}
+            style={{ transform: "rotate(-0.2deg)" }}
           >
             つくったもの
           </h2>
-          <span 
+          <span
             className="text-sm text-[var(--text-gray)] inline-block"
-            style={{ transform: 'rotate(0.3deg)' }}
+            style={{ transform: "rotate(0.3deg)" }}
           >
             Works
           </span>
@@ -102,28 +102,28 @@ export default function Works() {
             <article
               key={work.id}
               className={`bg-white overflow-hidden hover:shadow-xl transition-all duration-500 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-12"
               }`}
               style={{
-                borderRadius: '16px 20px 18px 19px',
-                transform: `rotate(${index % 2 === 0 ? '-0.3' : '0.2'}deg)`,
+                borderRadius: "16px 20px 18px 19px",
+                transform: `rotate(${index % 2 === 0 ? "-0.3" : "0.2"}deg)`,
                 transitionDelay: `${index * 100}ms`,
               }}
             >
               {/* サムネイル */}
-              <div 
-                className="relative h-48 bg-gradient-to-br from-[var(--lighter-blue)] to-[var(--light-blue)] overflow-hidden"
-              >
+              <div className="relative h-48 bg-gradient-to-br from-[var(--lighter-blue)] to-[var(--light-blue)] overflow-hidden">
                 {/* プレースホルダー画像の代わりにグラデーション */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-6xl opacity-30">🖼️</span>
                 </div>
-                
+
                 {/* カテゴリーバッジ */}
-                <div 
+                <div
                   className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-[var(--main-blue)]"
                   style={{
-                    borderRadius: '8px 10px 9px 11px',
+                    borderRadius: "8px 10px 9px 11px",
                   }}
                 >
                   {work.category}
@@ -132,13 +132,13 @@ export default function Works() {
 
               {/* コンテンツ */}
               <div className="p-6">
-                <h3 
+                <h3
                   className="text-xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
-                  style={{ transform: 'rotate(0.1deg)' }}
+                  style={{ transform: "rotate(0.1deg)" }}
                 >
                   {work.client}
                 </h3>
-                
+
                 <p className="text-[var(--text-gray)] mb-4 text-sm">
                   {work.description}
                 </p>
@@ -150,8 +150,10 @@ export default function Works() {
                       key={tagIndex}
                       className="text-xs px-3 py-1 bg-[var(--accent-beige)] text-[var(--text-gray)]"
                       style={{
-                        borderRadius: '10px 12px 11px 13px',
-                        transform: `rotate(${tagIndex % 2 === 0 ? '-1' : '1'}deg)`,
+                        borderRadius: "10px 12px 11px 13px",
+                        transform: `rotate(${
+                          tagIndex % 2 === 0 ? "-1" : "1"
+                        }deg)`,
                       }}
                     >
                       {tag}
@@ -163,10 +165,10 @@ export default function Works() {
                 <a
                   href={`/works/${work.id}`}
                   className="inline-flex items-center gap-2 text-[var(--main-blue)] font-medium hover:opacity-80 transition-opacity"
-                  style={{ transform: 'rotate(-0.2deg)' }}
+                  style={{ transform: "rotate(-0.2deg)" }}
                 >
                   詳しく見る
-                  <span style={{ transform: 'rotate(-10deg)' }}>→</span>
+                  <span style={{ transform: "rotate(-10deg)" }}>→</span>
                 </a>
               </div>
             </article>
@@ -174,17 +176,17 @@ export default function Works() {
         </div>
 
         {/* もっと見るボタン */}
-        <div 
+        <div
           className={`text-center mt-12 transition-all duration-800 delay-600 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           <a
             href="/works"
             className="inline-block bg-[var(--main-blue)] text-white px-8 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105"
-            style={{ 
-              borderRadius: '26px 30px 28px 29px',
-              transform: 'rotate(0.2deg)'
+            style={{
+              borderRadius: "26px 30px 28px 29px",
+              transform: "rotate(0.2deg)",
             }}
           >
             すべての制作実績を見る
