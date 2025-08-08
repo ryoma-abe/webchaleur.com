@@ -69,16 +69,16 @@ export default function Contact() {
           }`}
         >
           <h2 
-            className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+            className="heading-section"
           >
             お問い合わせ
           </h2>
           <span 
-            className="text-sm text-[var(--text-gray)] inline-block mb-4"
+            className="text-caption inline-block mb-4"
           >
             Contact
           </span>
-          <p className="text-[var(--text-gray)] max-w-2xl mx-auto">
+          <p className="text-body max-w-2xl mx-auto">
             まずはお気軽にご相談ください。
             <br />
             どんな小さなことでも、親身に対応いたします。
@@ -101,7 +101,7 @@ export default function Contact() {
             <div className="form-group">
               <label 
                 htmlFor="name" 
-                className="block text-sm font-medium text-[var(--text-dark)] mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 お名前
                 <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
@@ -127,7 +127,7 @@ export default function Contact() {
             <div className="form-group">
               <label 
                 htmlFor="company" 
-                className="block text-sm font-medium text-[var(--text-dark)] mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 会社名
               </label>
@@ -149,7 +149,7 @@ export default function Contact() {
             <div className="form-group">
               <label 
                 htmlFor="email" 
-                className="block text-sm font-medium text-[var(--text-dark)] mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 メールアドレス
                 <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
@@ -175,7 +175,7 @@ export default function Contact() {
             <div className="form-group">
               <label 
                 htmlFor="phone" 
-                className="block text-sm font-medium text-[var(--text-dark)] mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 電話番号
               </label>
@@ -197,7 +197,7 @@ export default function Contact() {
             <div className="form-group">
               <label 
                 htmlFor="message" 
-                className="block text-sm font-medium text-[var(--text-dark)] mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 お問い合わせ内容
                 <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
@@ -252,18 +252,18 @@ export default function Contact() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <span className="text-2xl mb-2 block">📧</span>
-              <h3 className="font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] mb-1">メール</h3>
-              <p className="text-sm text-[var(--text-gray)]">info@webchaleur.jp</p>
+              <h3 className="font-[var(--font-handwritten)] font-bold text-primary mb-1">メール</h3>
+              <p className="text-caption">info@webchaleur.jp</p>
             </div>
             <div>
               <span className="text-2xl mb-2 block">📞</span>
-              <h3 className="font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] mb-1">お電話</h3>
-              <p className="text-sm text-[var(--text-gray)]">平日 9:00-18:00</p>
+              <h3 className="font-[var(--font-handwritten)] font-bold text-primary mb-1">お電話</h3>
+              <p className="text-caption">平日 9:00-18:00</p>
             </div>
             <div>
               <span className="text-2xl mb-2 block">📍</span>
-              <h3 className="font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] mb-1">エリア</h3>
-              <p className="text-sm text-[var(--text-gray)]">北海道十勝エリア</p>
+              <h3 className="font-[var(--font-handwritten)] font-bold text-primary mb-1">エリア</h3>
+              <p className="text-caption">北海道十勝エリア</p>
             </div>
           </div>
         </div>

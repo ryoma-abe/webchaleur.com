@@ -71,12 +71,12 @@ export default function Information() {
           }`}
         >
           <h2 
-            className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+            className="heading-section"
           >
             お知らせ
           </h2>
           <span 
-            className="text-sm text-[var(--text-gray)] inline-block"
+            className="text-caption inline-block"
           >
             Information
           </span>
@@ -117,12 +117,12 @@ export default function Information() {
                 </span>
 
                 {/* タイトル */}
-                <h3 className="flex-1 text-[var(--text-dark)] font-medium hover:text-[var(--main-blue)] transition-colors cursor-pointer">
+                <h3 className="flex-1 text-primary font-medium hover:text-[var(--main-blue)] transition-colors cursor-pointer">
                   {item.title}
                 </h3>
 
                 {/* 矢印 */}
-                <span className="text-[var(--text-gray)] text-xl hidden md:block">
+                <span className="text-body text-xl hidden md:block">
                   →
                 </span>
               </div>

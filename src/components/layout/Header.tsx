@@ -10,7 +10,7 @@ export default function Header() {
     { href: '#about', label: 'わたしたちのこと' },
     { href: '#works', label: 'つくったもの' },
     { href: '#strengths', label: 'できること' },
-    { href: '#contact', label: '相談してみる', isButton: true },
+    { href: '/contact', label: '相談してみる', isButton: true },
   ];
 
   return (

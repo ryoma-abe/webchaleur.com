@@ -5,7 +5,6 @@ import Works from '@/components/sections/Works';
 import Voice from '@/components/sections/Voice';
 import Blog from '@/components/sections/Blog';
 import FAQ from '@/components/sections/FAQ';
-import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <Voice />
       <Blog />
       <FAQ />
-      <Contact />
     </>
   );
 }

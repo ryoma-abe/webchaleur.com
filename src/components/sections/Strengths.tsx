@@ -68,12 +68,12 @@ export default function Strengths() {
           }`}
         >
           <h2 
-            className="text-3xl md:text-4xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-2"
+            className="heading-section"
           >
             私たちの強み
           </h2>
           <span 
-            className="text-sm text-[var(--text-gray)] inline-block"
+            className="text-caption inline-block"
           >
             Our Strengths
           </span>
@@ -122,18 +122,12 @@ export default function Strengths() {
                 <div className="text-4xl mb-4">{strength.icon}</div>
 
                 {/* タイトル */}
-                <h3 
-                  className="text-xl font-[var(--font-handwritten)] font-bold text-[#2c2825] mb-4"
-                  style={{ lineHeight: '1.6' }}
-                >
+                <h3 className="heading-card mb-4">
                   {strength.title}
                 </h3>
 
                 {/* 説明文 */}
-                <p 
-                  className="text-[var(--text-gray)] whitespace-pre-line"
-                  style={{ lineHeight: '1.8' }}
-                >
+                <p className="text-body whitespace-pre-line">
                   {strength.description}
                 </p>
 
@@ -157,7 +151,7 @@ export default function Strengths() {
           }`}
         >
           <p 
-            className="text-[var(--text-gray)] text-lg"
+            className="text-body text-lg"
           >
             十勝の企業様の「困った」を
             <span className="text-[var(--main-blue)] font-medium mx-1">真心</span>
