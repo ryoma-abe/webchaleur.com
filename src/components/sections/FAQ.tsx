@@ -102,8 +102,8 @@ export default function FAQ() {
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
               }`}
               style={{
-                borderRadius: '14px 18px 16px 17px',
-                transform: `rotate(${index % 2 === 0 ? '-0.1' : '0.15'}deg)`,
+                borderRadius: '16px',
+                transform: `rotate(${index % 2 === 0 ? '-0.3' : '0.3'}deg)`,
                 transitionDelay: `${index * 100}ms`,
                 borderStyle: 'dashed',
               }}

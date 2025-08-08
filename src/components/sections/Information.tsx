@@ -94,8 +94,8 @@ export default function Information() {
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
               }`}
               style={{
-                borderRadius: '12px 14px 13px 15px',
-                transform: `rotate(${index % 2 === 0 ? '-0.1' : '0.15'}deg)`,
+                borderRadius: '16px',
+                transform: `rotate(${index % 2 === 0 ? '-0.5' : '0.5'}deg)`,
                 transitionDelay: `${index * 100}ms`,
                 border: '1px solid rgba(91, 143, 185, 0.08)',
               }}

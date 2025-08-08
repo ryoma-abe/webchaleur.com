@@ -97,8 +97,8 @@ export default function Strengths() {
               <div 
                 className="bg-[var(--bg-light)] p-8 h-full hover:shadow-lg transition-all hover:translate-y-[-4px]"
                 style={{
-                  borderRadius: '20px 24px 22px 23px',
-                  transform: `rotate(${index === 1 ? '0.3' : index === 2 ? '-0.4' : '-0.2'}deg)`,
+                  borderRadius: '20px',
+                  transform: `rotate(${index === 1 ? '1' : index === 2 ? '-1.2' : '-0.8'}deg)`,
                   marginTop: index === 1 ? '20px' : '0',
                 }}
               >
