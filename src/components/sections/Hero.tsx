@@ -65,7 +65,7 @@ export default function Hero() {
               }}
             >
               <span className="inline-block">
-                十勝の会社さんの
+                十勝の企業様の
               </span>
               <br />
               <span 
@@ -74,7 +74,7 @@ export default function Hero() {
                   fontSize: '1.15em'
                 }}
               >
-                ウェブのこと
+                Webサイトのこと
                 <span 
                   className="absolute -bottom-2 left-0 w-full h-1 bg-[#5b8fb9] opacity-20"
                   style={{
@@ -134,7 +134,7 @@ export default function Hero() {
             >
               <div className="hidden sm:block space-y-3">
                 {[
-                  '十勝の会社さま150社以上の制作実績',
+                  '十勝の企業様150社以上の制作実績',
                   '地元だからこその細やかなサポート',
                   'Next.js・Shopifyなど最新技術も対応',
                   '制作後の運用もしっかりフォロー'
@@ -200,7 +200,7 @@ export default function Hero() {
               {/* お気軽にどうぞ！テキスト */}
               <div className="text-right mr-4">
                 <span className="text-[#5a524c] text-sm">
-                  お気軽にどうぞ！
+                  お気軽にご相談ください
                 </span>
               </div>
             </div>
