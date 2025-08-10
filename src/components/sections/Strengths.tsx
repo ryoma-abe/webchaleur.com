@@ -35,9 +35,9 @@ export default function Strengths() {
     {
       id: 1,
       number: '01',
-      title: '地元だから、すぐお会いできる',
-      description: '帯広・音更なら30分以内に\nお伺いします',
-      icon: '🚗',
+      title: '十勝密着、全国対応',
+      description: '地元は直接訪問、\n遠方はオンラインで柔軟に対応',
+      icon: '🌐',
     },
     {
       id: 2,
@@ -99,10 +99,10 @@ export default function Strengths() {
             Our Strengths
           </span>
           <p className="text-body mt-4 max-w-3xl mx-auto">
-            従来の制作会社にはない、
+            十勝・帯広を拠点に、
             <span className="text-[var(--main-blue)] font-medium">AI活用</span>や
             <span className="text-[var(--main-blue)] font-medium">SNS運用</span>まで、
-            最新のデジタルマーケティングを総合的にサポート
+            最新のデジタルマーケティングを全国どこでもサポート
           </p>
         </div>
 
