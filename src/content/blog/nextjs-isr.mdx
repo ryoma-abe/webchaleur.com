@@ -1,36 +1,36 @@
 ---
-title: Next.js 14でISRを使った高速サイトの作り方
+title: Next.js 14 ISR Guide
 date: '2024-02-01'
-description: ISR（増分静的再生成）を活用して、高速かつ動的なWebサイトを構築する方法
-category: 技術
-tags: ['Next.js', 'ISR', 'パフォーマンス']
+category: Tech
+description: Learn how to use ISR in Next.js 14 for fast and dynamic websites.
+tags: ['Next.js', 'ISR', 'Performance']
 ---
 
-## ISRとは？
+# Next.js 14 ISR Guide
 
-ISR（Incremental Static Regeneration）は、Next.jsの強力な機能の一つです。
-静的生成の速度と、動的なコンテンツ更新を両立できます。
+ISR combines the best of static generation and server-side rendering.
 
-## 実装方法
+## Key Features
 
-```javascript
-export async function generateStaticParams() {
-  const posts = await getPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
+- Static generation at build time
+- Background regeneration at intervals
+- Cache utilization during regeneration
 
-export const revalidate = 60; // 60秒ごとに再生成
+## Implementation
+
+Use the revalidate option to enable ISR:
+
+```tsx
+export const revalidate = 60; // Regenerate every 60 seconds
 ```
 
-## メリット
+## Performance Comparison
 
-1. **高速な表示速度** - 静的ファイルとして配信
-2. **SEO対策** - 完全なHTMLが生成される
-3. **サーバー負荷軽減** - キャッシュを活用
+- SSG: Fastest TTFB, minimal server load
+- ISR: Fast TTFB, configurable updates
+- SSR: Slower TTFB, real-time updates
 
-## まとめ
+## Summary
 
-ISRを活用することで、ユーザー体験とSEOの両方を改善できます。
-十勝の企業様のサイトでも積極的に活用しています！
+ISR is perfect for content that updates moderately often, providing both speed and freshness.
+EOF < /dev/null

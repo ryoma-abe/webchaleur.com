@@ -5,7 +5,10 @@
       "Bash(npm run dev:*)",
       "Bash(sed:*)",
       "Bash(grep:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(touch:*)",
+      "Bash(find:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }
