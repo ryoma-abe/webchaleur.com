@@ -66,15 +66,16 @@ const nextConfig = {
   },
 
   // Webpack設定のカスタマイズ
-  webpack: (config, { isServer }) => {
-    // SVGをコンポーネントとして使用可能に
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack']
-    });
+  // Turbopackを使用する場合はコメントアウト
+  // webpack: (config, { isServer }) => {
+  //   // SVGをコンポーネントとして使用可能に
+  //   config.module.rules.push({
+  //     test: /\.svg$/,
+  //     use: ['@svgr/webpack']
+  //   });
 
-    return config;
-  },
+  //   return config;
+  // },
 };
 
 module.exports = nextConfig;
