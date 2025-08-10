@@ -79,7 +79,7 @@ export default function Hero() {
                 まずは気軽に相談
               </a>
               <a
-                href="#works"
+                href="/works"
                 className="inline-block border-2 border-[#5b8fb9] text-[#5b8fb9] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:bg-[#f0f7fc] transition-all hover:transform hover:scale-105 text-center"
                 style={{
                   borderRadius: "24px",

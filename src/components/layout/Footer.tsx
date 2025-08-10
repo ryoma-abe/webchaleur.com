@@ -25,7 +25,6 @@ export default function Footer() {
   return (
     <footer 
       className="bg-[var(--accent-beige)] border-t-2 border-dashed border-[var(--light-blue)]"
-      style={{ transform: 'rotate(-0.01deg)' }}
     >
       <div className="max-w-7xl mx-auto" style={{ padding: '48px 28px 52px 32px' }}>
         <div className="grid md:grid-cols-4 gap-8 mb-12">
@@ -108,14 +107,11 @@ export default function Footer() {
         {/* Divider */}
         <div 
           className="border-t border-dashed border-[var(--text-gray)] opacity-30 my-8"
-          style={{ transform: 'rotate(-0.1deg)' }}
         />
 
         {/* Copyright */}
         <div className="text-center">
-          <p className="text-caption"
-            style={{ transform: 'rotate(0.05deg)' }}
-          >
+          <p className="text-caption">
             © {currentYear} WebChaleur. つくる人も、つかう人も、みんなしあわせに。
           </p>
         </div>
