@@ -6,7 +6,7 @@ import HandDrawnButton from '@/components/ui/HandDrawnButton';
 
 export const metadata = {
   title: '制作実績 | WebChaleur',
-  description: '十勝・帯広エリアでのWeb制作実績をご紹介します。',
+  description: '十勝・帯広を中心に全国のWeb制作実績をご紹介します。',
 };
 
 export default async function WorksPage() {

@@ -81,9 +81,11 @@ export default function Contact() {
           <h2 className="heading-section">お問い合わせ</h2>
           <span className="text-caption inline-block">Contact</span>
           <p className="text-body mt-6 max-w-2xl mx-auto">
-            まずはお気軽にご相談ください。
+            十勝エリアはもちろん、全国どこからでもお気軽にご相談ください。
             <br />
-            お見積りは無料です。2営業日以内にご返信いたします。
+            お見積りは無料です。オンライン相談も対応しています。
+            <br />
+            2営業日以内にご返信いたします。
           </p>
         </div>
 
@@ -299,7 +301,7 @@ export default function Contact() {
             <p className="text-caption">
               北海道河東郡音更町
               <br />
-              十勝エリア対応
+              全国対応可能
             </p>
           </div>
         </div>

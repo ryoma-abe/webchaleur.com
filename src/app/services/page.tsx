@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'サービス | WebChaleur',
-  description: 'WebChaleurが提供するWeb制作・ECサイト構築・コンサルティングサービスの詳細',
+  description: '十勝を拠点に全国対応。Web制作・ECサイト構築・コンサルティングサービスの詳細',
 };
 
 export default function ServicesPage() {
@@ -31,7 +31,7 @@ export default function ServicesPage() {
       id: 'ec',
       title: 'ECサイト構築',
       subtitle: 'E-commerce Site',
-      description: 'Shopifyを活用して、地域の特産品を全国に届けるオンラインショップを構築します。',
+      description: 'Shopifyを活用して、地域の特産品やサービスを全国に届けるオンラインショップを構築します。',
       features: [
         'Shopify構築',
         '決済システム導入',
@@ -99,9 +99,9 @@ export default function ServicesPage() {
             サービス
           </WobblyHeading>
           <p className="text-xl text-text-gray mt-6 max-w-3xl mx-auto">
-            十勝の企業様のデジタル化を、最新技術と地域への理解で支援します。
+            十勝を拠点に、全国の企業様のデジタル化を支援します。
             <br />
-            お客様のビジネスに最適なソリューションをご提案いたします。
+            地元でも遠方でも、お客様のビジネスに最適なソリューションをご提案いたします。
           </p>
         </div>
       </section>
@@ -225,7 +225,7 @@ export default function ServicesPage() {
 
           <div className="space-y-8">
             {[
-              { step: '01', title: 'ヒアリング', description: 'まずはお客様のご要望やお悩みをじっくりお聞きします。', duration: '無料' },
+              { step: '01', title: 'ヒアリング', description: 'まずはお客様のご要望やお悩みをじっくりお聞きします。（オンライン対応可）', duration: '無料' },
               { step: '02', title: 'ご提案・お見積り', description: '最適なプランとお見積りをご提案します。', duration: '1週間' },
               { step: '03', title: 'デザイン制作', description: 'お客様のイメージを形にしていきます。', duration: '2週間' },
               { step: '04', title: '開発・実装', description: '機能を実装し、テストを行います。', duration: '2-4週間' },
@@ -262,9 +262,9 @@ export default function ServicesPage() {
             まずは気軽にご相談ください
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            十勝の企業様のデジタル化を全力でサポートします。
+            十勝から全国へ、企業様のデジタル化を全力でサポートします。
             <br />
-            お見積りは無料です。お気軽にお問い合わせください。
+            お見積りは無料です。全国どこからでもお気軽にお問い合わせください。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">

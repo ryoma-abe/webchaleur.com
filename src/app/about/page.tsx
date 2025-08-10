@@ -7,7 +7,7 @@ import FadeIn from "@/components/animations/FadeIn";
 export const metadata = {
   title: "私たちについて | WebChaleur",
   description:
-    "WebChaleurは十勝・帯広エリアを拠点に、地域企業様のデジタル化を支援するWeb制作会社です。",
+    "WebChaleurは十勝・帯広エリアを拠点に、全国の企業様のデジタル化を支援するWeb制作会社です。",
 };
 
 export default function AboutPage() {
@@ -26,7 +26,7 @@ export default function AboutPage() {
                 ミッション
               </h2>
               <p className="text-lg text-text-gray font-zenmaru leading-relaxed">
-                十勝エリア（帯広・音更）の地域企業に寄り添い、
+                十勝エリア（帯広・音更）を拠点に全国の企業様に寄り添い、
                 <br />
                 最新技術と温かみのあるデザインで、
                 <br />
@@ -50,10 +50,11 @@ export default function AboutPage() {
                   </p>
                   <p className="text-text-gray font-zenmaru mb-4 leading-relaxed">
                     十勝で生まれ育った私は、この地域の温かさと可能性を感じながら育ちました。
-                    東京でWeb制作の経験を積んだ後、地元十勝に戻り、地域企業様のデジタル化をお手伝いしています。
+                    東京でWeb制作の経験を積んだ後、地元十勝に戻り、地域企業様はもちろん、
+                    全国の企業様のデジタル化をお手伝いしています。
                   </p>
                   <p className="text-text-gray font-zenmaru mb-4 leading-relaxed">
-                    地元だからこそできる、顔の見える関係性を大切にしながら、
+                    地元十勝では顔の見える関係性を、遠方のお客様とはオンラインでの密なコミュニケーションを大切にしながら、
                     最新の技術を活用したWeb制作で、皆様のビジネスの成長を支援いたします。
                   </p>
                   <p className="text-text-gray font-zenmaru leading-relaxed">
@@ -77,11 +78,11 @@ export default function AboutPage() {
                 <div className="text-center">
                   <div className="text-4xl mb-4">🏠</div>
                   <h3 className="text-lg font-klee font-bold text-text-dark mb-3">
-                    地元密着
+                    柔軟な対応
                   </h3>
                   <p className="text-sm text-text-gray font-zenmaru">
-                    帯広・音更なら30分以内にお伺いします。
-                    対面でのお打ち合わせを大切にしています。
+                    十勝エリアは直接お伺い、
+                    遠方はオンラインで柔軟に対応します。
                   </p>
                 </div>
               </SketchyCard>
@@ -160,7 +161,7 @@ export default function AboutPage() {
                     対応エリア
                   </dt>
                   <dd className="text-text-gray font-zenmaru sm:w-2/3">
-                    十勝全域（帯広市・音更町・芽室町・幕別町・池田町・士幌町・上士幌町・鹿追町・新得町・清水町など）
+                    十勝全域（直接訪問可）・北海道全域・全国（オンライン対応）
                   </dd>
                 </div>
               </dl>
@@ -172,7 +173,7 @@ export default function AboutPage() {
         <FadeIn delay={0.8}>
           <div className="text-center">
             <p className="text-text-gray font-zenmaru mb-6">
-              私たちと一緒に、十勝からデジタルの可能性を広げていきませんか？
+              十勝から全国へ、デジタルの可能性を一緒に広げていきませんか？
             </p>
             <HandDrawnButton href="/contact" variant="primary" size="large">
               お問い合わせはこちら

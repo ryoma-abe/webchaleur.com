@@ -52,13 +52,17 @@ export default function Hero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              帯広・音更・十勝エリアで
+              帯広・音更・十勝を中心に
               <br className="sm:hidden" />
               ホームページやネットショップを作っています。
               <br />
               <span className="hidden sm:inline">最新の技術を使いながら、</span>
               <span className="hidden sm:inline">
-                地元の会社さんに寄り添ったものづくりを。
+                お客様に寄り添ったものづくりを。
+              </span>
+              <br />
+              <span className="text-sm text-gray-600">
+                ※オンラインでの打ち合わせも対応しています
               </span>
             </p>
 

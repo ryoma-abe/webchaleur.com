@@ -34,9 +34,10 @@ export default function Footer() {
               WebChaleur
             </h3>
             <p className="text-body">
-              十勝・帯広・音更エリアで<br />
+              十勝・帯広・音更を拠点に<br />
+              全国のお客様へ<br />
               あたたかいウェブサイトを<br />
-              つくっています
+              お届けしています
             </p>
           </div>
 
@@ -85,7 +86,7 @@ export default function Footer() {
             </h4>
             <p className="text-body mb-4">
               📧 info@webchaleur.jp<br />
-              📍 北海道十勝エリア
+              📍 北海道十勝エリア（全国対応）
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
