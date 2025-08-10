@@ -1,135 +1,135 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import HandDrawnButton from '@/components/ui/HandDrawnButton';
+
+interface FormData {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  service: string;
+  budget: string;
+  message: string;
+}
 
 export default function Contact() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
-    company: '',
     email: '',
+    company: '',
     phone: '',
+    service: '',
+    budget: '',
     message: '',
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('contact');
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
-  }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // 仮の送信処理
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    alert('お問い合わせありがとうございます！\n内容を確認次第、ご連絡させていただきます。');
-    setFormData({
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
-    setIsSubmitting(false);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          budget: '',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Submit error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section 
-      id="contact"
-      className="section-padding bg-[var(--bg-light)]"
-    >
+    <section id="contact" className="section-padding bg-white">
       <div className="max-w-4xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
-        <div 
-          className={`text-center mb-12 transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h2 
-            className="heading-section"
-          >
-            お問い合わせ
-          </h2>
-          <span 
-            className="text-caption inline-block mb-4"
-          >
-            Contact
-          </span>
-          <p className="text-body max-w-2xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="heading-section">お問い合わせ</h2>
+          <span className="text-caption inline-block">Contact</span>
+          <p className="text-body mt-6 max-w-2xl mx-auto">
             まずはお気軽にご相談ください。
             <br />
-            どんな小さなことでも、親身に対応いたします。
+            お見積りは無料です。2営業日以内にご返信いたします。
           </p>
         </div>
 
-        {/* フォーム */}
-        <form 
-          onSubmit={handleSubmit}
-          className={`bg-white p-8 md:p-10 transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-          style={{
-            borderRadius: '24px',
-            boxShadow: '0 10px 40px rgba(91, 143, 185, 0.08)',
-          }}
-        >
-          <div className="space-y-6">
-            {/* お名前 */}
-            <div className="form-group">
-              <label 
-                htmlFor="name" 
-                className="block text-sm font-medium text-primary mb-2"
-              >
+        {/* Contact Form */}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Name */}
+            <div>
+              <label htmlFor="name" className="form-label">
                 お名前
-                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
-                  必須
-                </span>
+                <span className="text-red-500 ml-1">*</span>
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors"
-                style={{ 
-                  borderRadius: '8px'
-                }}
+                required
+                className="form-input"
                 placeholder="山田 太郎"
               />
             </div>
 
-            {/* 会社名 */}
-            <div className="form-group">
-              <label 
-                htmlFor="company" 
-                className="block text-sm font-medium text-primary mb-2"
-              >
-                会社名
+            {/* Email */}
+            <div>
+              <label htmlFor="email" className="form-label">
+                メールアドレス
+                <span className="text-red-500 ml-1">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="form-input"
+                placeholder="info@example.com"
+              />
+            </div>
+
+            {/* Company */}
+            <div>
+              <label htmlFor="company" className="form-label">
+                会社名・団体名
               </label>
               <input
                 type="text"
@@ -137,46 +137,14 @@ export default function Contact() {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors"
-                style={{ 
-                  borderRadius: '8px'
-                }}
-                placeholder="株式会社○○"
+                className="form-input"
+                placeholder="株式会社〇〇"
               />
             </div>
 
-            {/* メールアドレス */}
-            <div className="form-group">
-              <label 
-                htmlFor="email" 
-                className="block text-sm font-medium text-primary mb-2"
-              >
-                メールアドレス
-                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
-                  必須
-                </span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors"
-                style={{ 
-                  borderRadius: '8px'
-                }}
-                placeholder="info@example.com"
-              />
-            </div>
-
-            {/* 電話番号 */}
-            <div className="form-group">
-              <label 
-                htmlFor="phone" 
-                className="block text-sm font-medium text-primary mb-2"
-              >
+            {/* Phone */}
+            <div>
+              <label htmlFor="phone" className="form-label">
                 電話番号
               </label>
               <input
@@ -185,86 +153,154 @@ export default function Contact() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors"
-                style={{ 
-                  borderRadius: '8px'
-                }}
+                className="form-input"
                 placeholder="0155-00-0000"
               />
             </div>
 
-            {/* お問い合わせ内容 */}
-            <div className="form-group">
-              <label 
-                htmlFor="message" 
-                className="block text-sm font-medium text-primary mb-2"
-              >
-                お問い合わせ内容
-                <span className="ml-2 text-xs px-2 py-1 bg-[var(--main-blue)] text-white rounded-md">
-                  必須
-                </span>
+            {/* Service */}
+            <div>
+              <label htmlFor="service" className="form-label">
+                ご希望のサービス
+                <span className="text-red-500 ml-1">*</span>
               </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                value={formData.message}
+              <select
+                id="service"
+                name="service"
+                value={formData.service}
                 onChange={handleChange}
-                rows={6}
-                className="w-full px-4 py-3 border-2 border-[var(--accent-beige)] focus:border-[var(--main-blue)] focus:outline-none transition-colors resize-none"
-                style={{ 
-                  borderRadius: '8px'
-                }}
-                placeholder="ホームページを作りたいのですが..."
-              />
+                required
+                className="form-input"
+              >
+                <option value="">選択してください</option>
+                <option value="web">Web制作</option>
+                <option value="ec">ECサイト構築</option>
+                <option value="consulting">コンサルティング</option>
+                <option value="maintenance">保守・運用</option>
+                <option value="other">その他</option>
+              </select>
             </div>
 
-            {/* 送信ボタン */}
-            <div className="text-center pt-4">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-[var(--main-blue)] text-white px-12 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{ 
-                  borderRadius: '24px',
-                  minWidth: '200px'
-                }}
+            {/* Budget */}
+            <div>
+              <label htmlFor="budget" className="form-label">
+                ご予算
+              </label>
+              <select
+                id="budget"
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
+                className="form-input"
               >
-                {isSubmitting ? (
-                  <span className="inline-flex items-center gap-2">
-                    送信中
-                    <span className="animate-pulse">...</span>
-                  </span>
-                ) : (
-                  '送信する'
-                )}
-              </button>
+                <option value="">選択してください</option>
+                <option value="under-30">〜30万円</option>
+                <option value="30-50">30万円〜50万円</option>
+                <option value="50-100">50万円〜100万円</option>
+                <option value="100-200">100万円〜200万円</option>
+                <option value="over-200">200万円以上</option>
+                <option value="undecided">未定</option>
+              </select>
             </div>
           </div>
+
+          {/* Message */}
+          <div>
+            <label htmlFor="message" className="form-label">
+              ご相談内容
+              <span className="text-red-500 ml-1">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={6}
+              className="form-input resize-none"
+              placeholder="ご相談内容をお聞かせください。&#10;例：ホームページをリニューアルしたい、ECサイトを作りたい、など"
+            />
+          </div>
+
+          {/* Privacy Policy Agreement */}
+          <div className="flex items-start gap-3">
+            <input
+              type="checkbox"
+              id="privacy"
+              required
+              className="mt-1 w-4 h-4 text-main-blue border-gray-300 rounded focus:ring-main-blue"
+            />
+            <label htmlFor="privacy" className="text-sm text-text-gray">
+              <a href="/privacy" target="_blank" className="text-main-blue hover:underline">
+                プライバシーポリシー
+              </a>
+              に同意する
+            </label>
+          </div>
+
+          {/* Submit Button */}
+          <div className="text-center">
+            <HandDrawnButton
+              type="submit"
+              variant="primary"
+              size="large"
+              disabled={isSubmitting}
+              className="min-w-[200px]"
+            >
+              {isSubmitting ? '送信中...' : '送信する'}
+            </HandDrawnButton>
+          </div>
+
+          {/* Status Messages */}
+          {submitStatus === 'success' && (
+            <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-2xl text-center">
+              <p className="text-green-700">
+                お問い合わせありがとうございます。
+                <br />
+                2営業日以内にご返信いたします。
+              </p>
+            </div>
+          )}
+
+          {submitStatus === 'error' && (
+            <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-2xl text-center">
+              <p className="text-red-700">
+                送信に失敗しました。
+                <br />
+                お手数ですが、もう一度お試しください。
+              </p>
+            </div>
+          )}
         </form>
 
-        {/* 追加情報 */}
-        <div 
-          className={`text-center mt-12 transition-all duration-800 delay-400 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <span className="text-2xl mb-2 block">📧</span>
-              <h3 className="font-[var(--font-handwritten)] font-bold text-primary mb-1">メール</h3>
-              <p className="text-caption">info@webchaleur.jp</p>
-            </div>
-            <div>
-              <span className="text-2xl mb-2 block">📞</span>
-              <h3 className="font-[var(--font-handwritten)] font-bold text-primary mb-1">お電話</h3>
-              <p className="text-caption">平日 9:00-18:00</p>
-            </div>
-            <div>
-              <span className="text-2xl mb-2 block">📍</span>
-              <h3 className="font-[var(--font-handwritten)] font-bold text-primary mb-1">エリア</h3>
-              <p className="text-caption">北海道十勝エリア</p>
-            </div>
+        {/* Additional Contact Info */}
+        <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div className="text-3xl mb-3">📧</div>
+            <h3 className="font-klee font-bold text-lg mb-2">メール</h3>
+            <p className="text-caption">
+              info@webchaleur.jp
+              <br />
+              24時間受付
+            </p>
+          </div>
+          <div>
+            <div className="text-3xl mb-3">📱</div>
+            <h3 className="font-klee font-bold text-lg mb-2">LINE</h3>
+            <p className="text-caption">
+              @webchaleur
+              <br />
+              お気軽にメッセージを
+            </p>
+          </div>
+          <div>
+            <div className="text-3xl mb-3">📍</div>
+            <h3 className="font-klee font-bold text-lg mb-2">所在地</h3>
+            <p className="text-caption">
+              北海道河東郡音更町
+              <br />
+              十勝エリア対応
+            </p>
           </div>
         </div>
       </div>
