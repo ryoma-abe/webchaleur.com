@@ -111,7 +111,7 @@ export default function FAQ() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-start gap-4">
                     <span 
-                      className="inline-flex items-center justify-center w-8 h-8 bg-[var(--lighter-blue)] text-[var(--main-blue)] font-bold text-sm"
+                      className="inline-flex items-center justify-center w-8 h-8 bg-primary-lighter text-primary-blue font-bold text-sm"
                       style={{
                         borderRadius: '50%',
                       }}
@@ -123,7 +123,7 @@ export default function FAQ() {
                     </span>
                   </div>
                   <span 
-                    className={`text-2xl text-[var(--main-blue)] transition-transform ${
+                    className={`text-2xl text-primary-blue transition-transform ${
                       openItems.includes(item.id) ? 'rotate-45' : ''
                     }`}
                     style={{ minWidth: '24px' }}
@@ -141,7 +141,7 @@ export default function FAQ() {
                 <div className="px-6 pb-6">
                   <div className="flex items-start gap-4">
                     <span 
-                      className="inline-flex items-center justify-center w-8 h-8 bg-white border-2 border-[var(--main-blue)] text-[var(--main-blue)] font-bold text-sm"
+                      className="inline-flex items-center justify-center w-8 h-8 bg-white border-2 border-primary text-primary-blue font-bold text-sm"
                       style={{
                         borderRadius: '50%',
                       }}
@@ -166,15 +166,12 @@ export default function FAQ() {
         >
           <p className="text-body mb-4">
             その他のご質問も
-            <span className="text-[var(--main-blue)] font-medium mx-1">お気軽に</span>
+            <span className="text-primary-blue font-medium mx-1">お気軽に</span>
             お問い合わせください
           </p>
           <a
             href="/contact"
-            className="inline-block bg-[var(--main-blue)] text-white px-8 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105"
-            style={{ 
-              borderRadius: '24px'
-            }}
+            className="btn-primary"
           >
             お問い合わせはこちら
           </a>

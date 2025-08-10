@@ -90,7 +90,7 @@ export default function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="text-2xl md:text-3xl font-[var(--font-handwritten)] font-semibold text-[#5b8fb9] hover:opacity-80 transition-opacity"
+              className="text-2xl md:text-3xl font-[var(--font-handwritten)] font-semibold text-primary-blue hover:opacity-80 transition-opacity"
             >
               Web<span className="text-[#2c2825]">Chaleur</span>
             </Link>
@@ -103,7 +103,7 @@ export default function Header() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-[#5a524c] hover:text-[#5b8fb9] transition-colors text-sm font-medium"
+                      className="text-[#5a524c] hover:text-primary-blue transition-colors text-sm font-medium"
                     >
                       {item.displayName}
                     </Link>
@@ -112,7 +112,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/contact"
-                  className="bg-[#5b8fb9] text-white px-6 py-2.5 font-medium hover:bg-[#4a7da6] transition-all rounded-2xl"
+                  className="bg-primary text-white px-6 py-2.5 font-medium hover:bg-[#4a7da6] transition-all rounded-full"
                 >
                   お問い合わせ
                 </Link>
@@ -154,7 +154,7 @@ export default function Header() {
           <Link
             href="/"
             onClick={() => setIsMenuOpen(false)}
-            className="text-xl font-[var(--font-handwritten)] font-semibold text-[#5b8fb9]"
+            className="text-xl font-[var(--font-handwritten)] font-semibold text-primary-blue"
           >
             Web<span className="text-[#2c2825]">Chaleur</span>
           </Link>
@@ -200,7 +200,7 @@ export default function Header() {
                             <Link
                               href={subItem.href}
                               onClick={() => setIsMenuOpen(false)}
-                              className="block px-8 py-2 text-sm text-[#5a524c] hover:text-[#5b8fb9] hover:bg-white transition-colors"
+                              className="block px-8 py-2 text-sm text-[#5a524c] hover:text-primary-blue hover:bg-white transition-colors"
                             >
                               {subItem.label}
                             </Link>
@@ -228,7 +228,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full bg-[#5b8fb9] text-white text-center px-6 py-3 font-medium hover:bg-[#4a7da6] transition-all rounded-2xl"
+                className="block w-full bg-primary text-white text-center px-6 py-3 font-medium hover:bg-[#4a7da6] transition-all rounded-full"
               >
                 お問い合わせ
               </Link>

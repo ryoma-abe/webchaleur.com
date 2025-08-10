@@ -100,8 +100,8 @@ export default function Strengths() {
           </span>
           <p className="text-body mt-4 max-w-3xl mx-auto">
             十勝・帯広を拠点に、
-            <span className="text-[var(--main-blue)] font-medium">AI活用</span>や
-            <span className="text-[var(--main-blue)] font-medium">SNS運用</span>まで、
+            <span className="text-primary-blue font-medium">AI活用</span>や
+            <span className="text-primary-blue font-medium">SNS運用</span>まで、
             最新のデジタルマーケティングを全国どこでもサポート
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function Strengths() {
               }}
             >
               <div 
-                className="bg-[var(--bg-light)] p-6 lg:p-8 h-full hover:shadow-lg transition-all hover:translate-y-[-4px] relative overflow-hidden"
+                className="bg-light p-6 lg:p-8 h-full hover:shadow-lg transition-all hover:translate-y-[-4px] relative overflow-hidden"
                 style={{
                   borderRadius: '20px',
                 }}
@@ -127,7 +127,7 @@ export default function Strengths() {
                 {/* 新しいものを示すバッジ（AI・SNS関連） */}
                 {(strength.id === 2 || strength.id === 3) && (
                   <div 
-                    className="absolute top-4 right-4 bg-gradient-to-r from-[#ff6b6b] to-[#ff8787] text-white text-xs px-3 py-1 font-bold"
+                    className="absolute top-4 right-4 bg-gradient-to-r from-red-400 to-red-300 text-white text-xs px-3 py-1 font-bold"
                     style={{
                       borderRadius: '12px',
                       transform: 'rotate(-3deg)',
@@ -145,14 +145,14 @@ export default function Strengths() {
                     height: '50px',
                     borderRadius: '50%',
                     background: 'white',
-                    border: '3px solid var(--main-blue)',
+                    border: '3px solid #5b8fb9',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
                 >
                   <span 
-                    className="text-[var(--main-blue)] font-bold text-lg font-[var(--font-handwritten)]"
+                    className="text-primary-blue font-bold text-lg font-[var(--font-handwritten)]"
                   >
                     {strength.number}
                   </span>
@@ -173,7 +173,7 @@ export default function Strengths() {
 
                 {/* 装飾的な下線 */}
                 <div 
-                  className="mt-4 h-0.5 bg-[var(--main-blue)] opacity-20"
+                  className="mt-4 h-0.5 bg-primary opacity-20"
                   style={{
                     borderRadius: '2px',
                     width: '60%',
@@ -186,15 +186,15 @@ export default function Strengths() {
 
         {/* 特別なアピールセクション */}
         <div 
-          className={`bg-gradient-to-r from-[var(--lighter-blue)] to-[var(--bg-light)] p-8 mt-12 text-center transition-all duration-800 delay-800 ${
+          className={`bg-gradient-to-r from-lighter-blue to-light p-8 mt-12 text-center transition-all duration-800 delay-800 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
             borderRadius: '24px',
-            border: '2px dashed var(--light-blue)',
+            border: '2px dashed #8fb5d1',
           }}
         >
-          <h3 className="heading-card mb-4 text-[var(--main-blue)]">
+          <h3 className="heading-card mb-4 text-primary-blue">
             🚀 これからの時代に必要なWeb制作
           </h3>
           <p className="text-body max-w-3xl mx-auto mb-6">
@@ -205,20 +205,20 @@ export default function Strengths() {
             <br />
             <br />
             十勝の企業様が
-            <span className="text-[var(--main-blue)] font-bold">デジタル時代で勝ち残る</span>
+            <span className="text-primary-blue font-bold">デジタル時代で勝ち残る</span>
             ための、総合的なパートナーです。
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <span className="bg-white px-4 py-2 text-sm font-medium text-[var(--text-gray)]" style={{ borderRadius: '16px' }}>
+            <span className="bg-white px-4 py-2 text-sm font-medium text-gray" style={{ borderRadius: '16px' }}>
               #AI導入支援
             </span>
-            <span className="bg-white px-4 py-2 text-sm font-medium text-[var(--text-gray)]" style={{ borderRadius: '16px' }}>
+            <span className="bg-white px-4 py-2 text-sm font-medium text-gray" style={{ borderRadius: '16px' }}>
               #SNSマーケティング
             </span>
-            <span className="bg-white px-4 py-2 text-sm font-medium text-[var(--text-gray)]" style={{ borderRadius: '16px' }}>
+            <span className="bg-white px-4 py-2 text-sm font-medium text-gray" style={{ borderRadius: '16px' }}>
               #データドリブン
             </span>
-            <span className="bg-white px-4 py-2 text-sm font-medium text-[var(--text-gray)]" style={{ borderRadius: '16px' }}>
+            <span className="bg-white px-4 py-2 text-sm font-medium text-gray" style={{ borderRadius: '16px' }}>
               #地域密着
             </span>
           </div>
@@ -234,7 +234,7 @@ export default function Strengths() {
             className="text-body text-lg"
           >
             十勝の企業様の「困った」を
-            <span className="text-[var(--main-blue)] font-medium mx-1">最新技術と真心</span>
+            <span className="text-primary-blue font-medium mx-1">最新技術と真心</span>
             で解決します
           </p>
         </div>

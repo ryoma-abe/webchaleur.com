@@ -10,7 +10,8 @@
       "Bash(find:*)",
       "Bash(rm:*)",
       "Bash(npx shadcn@latest init:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(curl:*)"
     ],
     "deny": []
   }

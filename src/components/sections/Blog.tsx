@@ -66,7 +66,7 @@ export default function Blog() {
   return (
     <section 
       id="blog"
-      className="section-padding bg-[var(--bg-light)]"
+      className="section-padding bg-light"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -105,16 +105,16 @@ export default function Blog() {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex flex-col">
                     <span 
-                      className="text-2xl font-bold text-[var(--main-blue)] font-[var(--font-handwritten)]"
+                      className="text-2xl font-bold text-primary-blue font-[var(--font-handwritten)]"
                     >
                       {post.date.split('.')[2]}
                     </span>
-                    <span className="text-xs text-[var(--text-gray)]">
+                    <span className="text-xs text-gray">
                       {post.date.split('.')[1]}月
                     </span>
                   </div>
                   <span 
-                    className="px-3 py-1 text-xs font-medium bg-[var(--lighter-blue)] text-[var(--main-blue)]"
+                    className="px-3 py-1 text-xs font-medium bg-lighter-blue text-primary-blue"
                     style={{
                       borderRadius: '8px 10px 9px 11px',
                     }}
@@ -135,7 +135,7 @@ export default function Blog() {
 
                 {/* メタ情報 */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs text-[var(--text-gray)] flex items-center gap-1">
+                  <span className="text-xs text-gray flex items-center gap-1">
                     <span>📖</span>
                     {post.readTime}
                   </span>
@@ -146,7 +146,7 @@ export default function Blog() {
                   {post.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="text-xs px-2 py-1 text-[var(--text-gray)]"
+                      className="text-xs px-2 py-1 text-gray"
                     >
                       #{tag}
                     </span>
@@ -156,7 +156,7 @@ export default function Blog() {
                 {/* 読むリンク */}
                 <a
                   href={`/blog/${post.id}`}
-                  className="inline-flex items-center gap-2 text-[var(--main-blue)] font-medium hover:opacity-80 transition-opacity"
+                  className="inline-flex items-center gap-2 text-primary-blue font-medium hover:opacity-80 transition-opacity"
                 >
                   読んでみる
                   <span>→</span>
@@ -174,10 +174,7 @@ export default function Blog() {
         >
           <a
             href="/blog"
-            className="inline-block border-2 border-[var(--main-blue)] text-[var(--main-blue)] px-8 py-4 font-medium hover:bg-[var(--lighter-blue)] transition-all hover:transform hover:scale-105"
-            style={{ 
-              borderRadius: '24px'
-            }}
+            className="btn-secondary"
           >
             すべての記事を読む
           </a>

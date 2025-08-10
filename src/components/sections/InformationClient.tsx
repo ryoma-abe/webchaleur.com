@@ -50,20 +50,20 @@ export default function InformationClient({ items }: InformationClientProps) {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'キャンペーン':
-        return 'bg-[#e5a323]';
+        return 'bg-yellow-500';
       case 'ブログ':
-        return 'bg-[#8fb5d1]';
+        return 'bg-primary-light';
       case '制作実績':
-        return 'bg-[#5b8fb9]';
+        return 'bg-primary';
       default:
-        return 'bg-[var(--light-blue)]';
+        return 'bg-primary-light';
     }
   };
 
   return (
     <section 
       id="information"
-      className="section-padding bg-[var(--bg-light)]"
+      className="section-padding bg-light"
     >
       <div className="max-w-5xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
@@ -98,7 +98,7 @@ export default function InformationClient({ items }: InformationClientProps) {
                 <Link href={item.link} className="flex flex-col md:flex-row md:items-center gap-4 group">
                   {/* 日付 */}
                   <time 
-                    className="text-[var(--main-blue)] font-[var(--font-handwritten)] font-semibold text-lg"
+                    className="text-primary-blue font-[var(--font-handwritten)] font-semibold text-lg"
                     style={{ minWidth: '120px' }}
                   >
                     {formatDate(item.date)}
@@ -116,7 +116,7 @@ export default function InformationClient({ items }: InformationClientProps) {
                   </span>
 
                   {/* タイトル */}
-                  <h3 className="flex-1 text-primary font-medium group-hover:text-[var(--main-blue)] transition-colors">
+                  <h3 className="flex-1 text-primary font-medium group-hover:text-primary-blue transition-colors">
                     {item.title}
                   </h3>
 
@@ -128,7 +128,7 @@ export default function InformationClient({ items }: InformationClientProps) {
               </article>
             ))
           ) : (
-            <div className="text-center py-12 text-[var(--text-gray)]">
+            <div className="text-center py-12 text-gray">
               <p>現在お知らせはありません</p>
             </div>
           )}
@@ -143,7 +143,7 @@ export default function InformationClient({ items }: InformationClientProps) {
           >
             <Link
               href="/news"
-              className="inline-block text-[var(--main-blue)] font-medium hover:opacity-80 transition-opacity"
+              className="inline-block text-primary-blue font-medium hover:opacity-80 transition-opacity"
             >
               <span className="inline-flex items-center gap-2">
                 すべてのお知らせを見る

@@ -18,7 +18,7 @@ export default function NotFound() {
         {/* 404イラスト */}
         <div className="mb-8">
           <h1 
-            className="text-8xl md:text-9xl font-[var(--font-handwritten)] font-bold text-[var(--main-blue)] mb-4"
+            className="text-8xl md:text-9xl font-[var(--font-handwritten)] font-bold text-primary-blue mb-4"
             style={{ transform: 'rotate(-2deg)' }}
           >
             404
@@ -41,7 +41,7 @@ export default function NotFound() {
           className="bg-[var(--bg-light)] p-6 mb-8"
           style={{ 
             borderRadius: '20px',
-            border: '2px dashed var(--light-blue)'
+            border: '2px dashed #8fb5d1'
           }}
         >
           <p className="text-body">
@@ -56,39 +56,33 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-block bg-[var(--main-blue)] text-white px-8 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105"
-            style={{ 
-              borderRadius: '24px'
-            }}
+            className="btn-primary"
           >
             トップページへ戻る
           </Link>
           <Link
             href="/contact"
-            className="inline-block border-2 border-[var(--main-blue)] text-[var(--main-blue)] px-8 py-4 font-medium hover:bg-[var(--lighter-blue)] transition-all hover:transform hover:scale-105"
-            style={{ 
-              borderRadius: '24px'
-            }}
+            className="btn-secondary"
           >
             お問い合わせ
           </Link>
         </div>
 
         {/* 追加情報 */}
-        <div className="mt-12 pt-8 border-t border-dashed border-[var(--light-blue)]">
+        <div className="mt-12 pt-8 border-t border-dashed border-primary-light">
           <p className="text-caption">
             よくアクセスされるページ
           </p>
           <div className="flex flex-wrap gap-4 justify-center mt-4">
-            <Link href="/#works" className="text-[var(--main-blue)] hover:underline">
+            <Link href="/#works" className="text-primary-blue hover:underline">
               制作実績
             </Link>
             <span className="text-[var(--text-gray)]">・</span>
-            <Link href="/#strengths" className="text-[var(--main-blue)] hover:underline">
+            <Link href="/#strengths" className="text-primary-blue hover:underline">
               できること
             </Link>
             <span className="text-[var(--text-gray)]">・</span>
-            <Link href="/#faq" className="text-[var(--main-blue)] hover:underline">
+            <Link href="/#faq" className="text-primary-blue hover:underline">
               よくある質問
             </Link>
           </div>

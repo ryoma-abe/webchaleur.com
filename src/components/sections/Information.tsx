@@ -95,7 +95,7 @@ export default function Information() {
               <div className="flex flex-col md:flex-row md:items-center gap-4">
                 {/* 日付 */}
                 <time
-                  className="text-[var(--main-blue)] font-[var(--font-handwritten)] font-semibold text-lg"
+                  className="text-primary-blue font-[var(--font-handwritten)] font-semibold text-lg"
                   style={{ minWidth: "120px" }}
                 >
                   {item.date}
@@ -103,7 +103,7 @@ export default function Information() {
 
                 {/* カテゴリー */}
                 <span
-                  className="inline-block px-3 py-1 text-xs font-medium text-white bg-[var(--light-blue)]"
+                  className="inline-block px-3 py-1 text-xs font-medium text-white bg-primary-light rounded-full"
                   style={{
                     borderRadius: "10px 12px 11px 13px",
                     width: "fit-content",
@@ -116,7 +116,7 @@ export default function Information() {
                 {item.link ? (
                   <Link
                     href={item.link}
-                    className="flex-1 text-primary font-medium hover:text-[var(--main-blue)] transition-colors"
+                    className="flex-1 text-primary font-medium hover:text-primary-blue transition-colors"
                   >
                     {item.title}
                   </Link>
@@ -141,7 +141,7 @@ export default function Information() {
         >
           <Link
             href="/news"
-            className="inline-block text-[var(--main-blue)] font-medium hover:opacity-80 transition-opacity"
+            className="inline-block text-primary-blue font-medium hover:opacity-80 transition-opacity"
           >
             <span className="inline-flex items-center gap-2">
               すべてのお知らせを見る
