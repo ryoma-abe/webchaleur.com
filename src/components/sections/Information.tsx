@@ -34,27 +34,31 @@ export default function Information() {
   const newsItems: NewsItem[] = [
     {
       id: 1,
-      date: '2024.12.20',
-      category: 'お知らせ',
-      title: '年末年始の営業についてのご案内',
+      date: '2024.03.01',
+      category: 'キャンペーン',
+      title: '春の新規制作キャンペーンのお知らせ',
+      link: '/news/2024-03-campaign',
     },
     {
       id: 2,
-      date: '2024.12.15',
-      category: '制作実績',
-      title: '帯広市の○○農園様のECサイトをリニューアルしました',
+      date: '2024.02.15',
+      category: 'お知らせ',
+      title: 'WebChaleurサイトをリニューアルしました',
+      link: '/news/2024-02-launch',
     },
     {
       id: 3,
-      date: '2024.11.28',
+      date: '2024.02.01',
       category: 'ブログ',
-      title: 'Shopifyで作る地域産品のオンラインショップ構築術',
+      title: 'Next.js 14でISRを使った高速サイトの作り方',
+      link: '/blog/nextjs-isr',
     },
     {
       id: 4,
-      date: '2024.11.10',
-      category: 'お知らせ',
-      title: 'ココナラでの評価が150件を突破しました！',
+      date: '2024.01.15',
+      category: '制作実績',
+      title: '地元野菜のECサイト構築',
+      link: '/works/sample-ecommerce',
     },
   ];
 
@@ -117,9 +121,18 @@ export default function Information() {
                 </span>
 
                 {/* タイトル */}
-                <h3 className="flex-1 text-primary font-medium hover:text-[var(--main-blue)] transition-colors cursor-pointer">
-                  {item.title}
-                </h3>
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    className="flex-1 text-primary font-medium hover:text-[var(--main-blue)] transition-colors"
+                  >
+                    {item.title}
+                  </a>
+                ) : (
+                  <h3 className="flex-1 text-primary font-medium">
+                    {item.title}
+                  </h3>
+                )}
 
                 {/* 矢印 */}
                 <span className="text-body text-xl hidden md:block">

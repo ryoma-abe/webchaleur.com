@@ -4,9 +4,17 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
+    { href: '/about', label: '私たちについて' },
+    { href: '/works', label: '制作実績' },
+    { href: '/blog', label: 'ブログ' },
+    { href: '/news', label: 'お知らせ' },
+    { href: '/contact', label: 'お問い合わせ' },
+  ];
+
+  const legalLinks = [
     { href: '/privacy', label: 'プライバシーポリシー' },
-    { href: '/terms', label: 'ご利用規約' },
-    { href: '/company', label: '会社概要' },
+    { href: '/terms', label: '利用規約' },
+    { href: '/legal', label: '特定商取引法に基づく表記' },
   ];
 
   const socialLinks = [
@@ -20,9 +28,9 @@ export default function Footer() {
       style={{ transform: 'rotate(-0.01deg)' }}
     >
       <div className="max-w-7xl mx-auto" style={{ padding: '48px 28px 52px 32px' }}>
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
-          <div style={{ transform: 'rotate(-0.2deg)' }}>
+          <div>
             <h3 className="heading-card text-[var(--main-blue)] mb-4">
               WebChaleur
             </h3>
@@ -34,20 +42,35 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div style={{ transform: 'rotate(0.1deg)' }}>
+          <div>
             <h4 className="heading-card mb-4">
-              リンク
+              サイトマップ
             </h4>
             <ul className="space-y-2">
-              {footerLinks.map((link, index) => (
+              {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-[var(--text-gray)] hover:text-[var(--main-blue)] transition-colors text-sm"
-                    style={{ 
-                      display: 'inline-block',
-                      transform: `rotate(${index % 2 === 0 ? '-0.1' : '0.2'}deg)` 
-                    }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="heading-card mb-4">
+              法的事項
+            </h4>
+            <ul className="space-y-2">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-[var(--text-gray)] hover:text-[var(--main-blue)] transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -57,16 +80,16 @@ export default function Footer() {
           </div>
 
           {/* Contact & Social */}
-          <div style={{ transform: 'rotate(-0.15deg)' }}>
+          <div>
             <h4 className="heading-card mb-4">
-              おといあわせ
+              お問い合わせ
             </h4>
             <p className="text-body mb-4">
               📧 info@webchaleur.jp<br />
               📍 北海道十勝エリア
             </p>
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
+              {socialLinks.map((social) => (
                 <a
                   key={social.href}
                   href={social.href}
@@ -74,10 +97,6 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-[var(--text-gray)] hover:text-[var(--main-blue)] transition-colors text-lg"
                   aria-label={social.label}
-                  style={{ 
-                    transform: `rotate(${index % 2 === 0 ? '-0.3' : '0.4'}deg)`,
-                    display: 'inline-block'
-                  }}
                 >
                   {social.icon}
                 </a>

@@ -26,7 +26,6 @@ Vercel デプロイ設定
 ☐ Voice セクション（お客様の声・ココナラ誘導）の実装
 ☐ Blog セクション（技術ブログ）の実装
 ☐ FAQ セクション（よくある質問）の実装
-☐ Contact セクション（お問い合わせフォーム）の実装
 ☐ UI コンポーネント作成（HandDrawnButton、SketchyCard、WobblyHeading）
 ☐ MDX セットアップとコンテンツ管理
 ☐ 実績詳細ページの実装
