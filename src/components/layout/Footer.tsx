@@ -24,13 +24,13 @@ export default function Footer() {
 
   return (
     <footer 
-      className="bg-[var(--accent-beige)] border-t-2 border-dashed border-[var(--light-blue)]"
+      className="bg-accent-beige border-t-2 border-dashed border-primary-light"
     >
       <div className="max-w-7xl mx-auto" style={{ padding: '48px 28px 52px 32px' }}>
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="heading-card text-[var(--main-blue)] mb-4">
+            <h3 className="heading-card text-primary-blue mb-4">
               WebChaleur
             </h3>
             <p className="text-body">
@@ -51,7 +51,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[var(--text-gray)] hover:text-[var(--main-blue)] transition-colors text-sm"
+                    className="text-gray hover:text-primary-blue transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -70,7 +70,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[var(--text-gray)] hover:text-[var(--main-blue)] transition-colors text-sm"
+                    className="text-gray hover:text-primary-blue transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -95,7 +95,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--text-gray)] hover:text-[var(--main-blue)] transition-colors text-lg"
+                  className="text-gray hover:text-primary-blue transition-colors text-lg"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -107,7 +107,7 @@ export default function Footer() {
 
         {/* Divider */}
         <div 
-          className="border-t border-dashed border-[var(--text-gray)] opacity-30 my-8"
+          className="border-t border-dashed border-gray opacity-30 my-8"
         />
 
         {/* Copyright */}

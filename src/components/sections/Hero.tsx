@@ -27,7 +27,7 @@ export default function Hero() {
               <span className="inline-block">十勝の企業様の</span>
               <br />
               <span
-                className="text-[#5b8fb9] inline-block relative"
+                className="text-primary-blue inline-block relative"
                 style={{
                   fontSize: "1.15em",
                 }}
@@ -76,19 +76,13 @@ export default function Hero() {
             >
               <a
                 href="/contact"
-                className="inline-block bg-[#5b8fb9] text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105 hover:shadow-lg text-center"
-                style={{
-                  borderRadius: "24px",
-                }}
+                className="btn-primary text-center"
               >
                 まずは気軽に相談
               </a>
               <a
                 href="/works"
-                className="inline-block border-2 border-[#5b8fb9] text-[#5b8fb9] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium hover:bg-[#f0f7fc] transition-all hover:transform hover:scale-105 text-center"
-                style={{
-                  borderRadius: "24px",
-                }}
+                className="btn-secondary text-center"
               >
                 制作事例を見る
               </a>
@@ -108,16 +102,16 @@ export default function Hero() {
                   "制作後の運用もしっかりフォロー",
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3 text-body">
-                    <span className="text-[#5b8fb9] mt-1 flex-shrink-0">✓</span>
+                    <span className="text-primary-blue mt-1 flex-shrink-0">✓</span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
               {/* モバイル用簡略版 */}
               <div className="sm:hidden flex flex-wrap gap-3 text-xs">
-                <span className="text-[#5b8fb9]">✓ 152社の実績</span>
-                <span className="text-[#5b8fb9]">✓ 地元密着</span>
-                <span className="text-[#5b8fb9]">✓ 最新技術対応</span>
+                <span className="text-primary-blue">✓ 152社の実績</span>
+                <span className="text-primary-blue">✓ 地元密着</span>
+                <span className="text-primary-blue">✓ 最新技術対応</span>
               </div>
             </div>
           </div>

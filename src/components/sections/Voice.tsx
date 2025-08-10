@@ -72,7 +72,7 @@ export default function Voice() {
             className="text-lg text-[var(--text-gray)]"
           >
             ココナラでの評価は
-            <span className="text-[var(--main-blue)] font-bold mx-1">★4.9</span>
+            <span className="text-primary-blue font-bold mx-1">★4.9</span>
             です
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function Voice() {
           }`}
           style={{
             borderRadius: '24px',
-            border: '2px solid var(--light-blue)',
+            border: '2px solid #8fb5d1',
           }}
         >
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
@@ -106,10 +106,7 @@ export default function Voice() {
                 href="https://coconala.com/users/webchaleur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#1bb774] text-white px-8 py-4 font-medium hover:bg-[#16a865] transition-all hover:transform hover:scale-105"
-                style={{ 
-                  borderRadius: '24px'
-                }}
+                className="inline-flex items-center gap-3 bg-[#1bb774] text-white px-8 py-4 font-medium rounded-full hover:bg-[#16a865] transition-all hover:scale-105"
               >
                 <span>ココナラで詳しく見る</span>
                 <span>→</span>
@@ -158,15 +155,15 @@ export default function Voice() {
         >
           <div className="inline-flex items-center gap-8 flex-wrap justify-center">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[var(--main-blue)]">152社</div>
+              <div className="text-3xl font-bold text-primary-blue">152社</div>
               <div className="text-caption">制作実績</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[var(--main-blue)]">98%</div>
+              <div className="text-3xl font-bold text-primary-blue">98%</div>
               <div className="text-caption">満足度</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[var(--main-blue)]">7年</div>
+              <div className="text-3xl font-bold text-primary-blue">7年</div>
               <div className="text-caption">運営実績</div>
             </div>
           </div>
