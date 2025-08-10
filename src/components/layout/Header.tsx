@@ -86,7 +86,6 @@ export default function Header() {
           <Link 
             href="/" 
             className="text-2xl md:text-3xl font-[var(--font-handwritten)] font-semibold text-[#5b8fb9] hover:opacity-80 transition-opacity"
-            style={{ transform: 'rotate(0.3deg)' }}
           >
             Web<span className="text-[#2c2825]">Chaleur</span>
           </Link>
