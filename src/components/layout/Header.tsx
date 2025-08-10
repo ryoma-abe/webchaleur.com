@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,221 +11,238 @@ export default function Header() {
   // メニューを開いた時にスクロールを無効化
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
   const toggleExpanded = (label: string) => {
-    setExpandedItems(prev => 
-      prev.includes(label) 
-        ? prev.filter(item => item !== label)
+    setExpandedItems((prev) =>
+      prev.includes(label)
+        ? prev.filter((item) => item !== label)
         : [...prev, label]
     );
   };
 
   const menuItems = [
-    { 
-      href: '/about', 
-      label: 'About Us',
+    {
+      href: "/about",
+      label: "About Us",
+      displayName: "私たちについて",
       subItems: [
-        { href: '/about', label: '私たちについて' },
-        { href: '/about#mission', label: 'ミッション' },
-        { href: '/about#team', label: 'チーム' },
-      ]
+        { href: "/about", label: "私たちについて" },
+        { href: "/about#mission", label: "ミッション" },
+        { href: "/about#team", label: "チーム" },
+      ],
     },
-    { 
-      href: '/services', 
-      label: 'Service',
+    {
+      href: "/services",
+      label: "Service",
+      displayName: "サービス",
       subItems: [
-        { href: '/services#web', label: 'Web制作' },
-        { href: '/services#ec', label: 'ECサイト構築' },
-        { href: '/services#consulting', label: 'コンサルティング' },
-      ]
+        { href: "/services#web", label: "Web制作" },
+        { href: "/services#ec", label: "ECサイト構築" },
+        { href: "/services#consulting", label: "コンサルティング" },
+      ],
     },
-    { 
-      href: '/works', 
-      label: 'Works',
+    {
+      href: "/works",
+      label: "Works",
+      displayName: "制作実績",
       subItems: [
-        { href: '/works', label: '全ての実績' },
-        { href: '/works?category=corporate', label: 'コーポレートサイト' },
-        { href: '/works?category=ec', label: 'ECサイト' },
-      ]
+        { href: "/works", label: "全ての実績" },
+        { href: "/works?category=corporate", label: "コーポレートサイト" },
+        { href: "/works?category=ec", label: "ECサイト" },
+      ],
     },
-    { 
-      href: '/about#company', 
-      label: 'Company',
+    {
+      href: "/about#company",
+      label: "Company",
+      displayName: "会社概要",
       subItems: [
-        { href: '/about#company', label: '会社概要' },
-        { href: '/about#access', label: 'アクセス' },
-      ]
+        { href: "/about#company", label: "会社概要" },
+        { href: "/about#access", label: "アクセス" },
+      ],
     },
-    { 
-      href: '/blog', 
-      label: 'Blog'
+    {
+      href: "/blog",
+      label: "Blog",
+      displayName: "ブログ",
     },
-    { 
-      href: '/contact', 
-      label: 'Contact'
+    {
+      href: "/contact",
+      label: "Contact",
+      displayName: "お問い合わせ",
     },
   ];
 
   return (
-    <header 
-      className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm"
-      style={{ 
-        boxShadow: '0 1px 0 0 rgba(0, 0, 0, 0.05)'
-      }}
-    >
-      <nav className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="flex items-center justify-between" style={{ padding: '20px 0' }}>
-          {/* Logo */}
-          <Link 
-            href="/" 
-            className="text-2xl md:text-3xl font-[var(--font-handwritten)] font-semibold text-[#5b8fb9] hover:opacity-80 transition-opacity"
-          >
-            Web<span className="text-[#2c2825]">Chaleur</span>
-          </Link>
+    <>
+      <header
+        className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100"
+      >
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="text-2xl md:text-3xl font-[var(--font-handwritten)] font-semibold text-[#5b8fb9] hover:opacity-80 transition-opacity"
+            >
+              Web<span className="text-[#2c2825]">Chaleur</span>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-6 lg:gap-8">
-            {menuItems.filter(item => !['Company', 'Blog'].includes(item.label)).map((item) => (
-              <li key={item.href}>
+            {/* Desktop Navigation */}
+            <ul className="hidden md:flex items-center gap-6 lg:gap-8">
+              {menuItems
+                .filter((item) => !["Company", "Blog"].includes(item.label))
+                .map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-[#5a524c] hover:text-[#5b8fb9] transition-colors text-sm font-medium"
+                    >
+                      {item.displayName}
+                    </Link>
+                  </li>
+                ))}
+              <li>
                 <Link
-                  href={item.href}
-                  className="text-[#5a524c] hover:text-[#5b8fb9] transition-colors text-sm font-medium"
+                  href="/contact"
+                  className="bg-[#5b8fb9] text-white px-6 py-2.5 font-medium hover:bg-[#4a7da6] transition-all rounded-2xl"
                 >
-                  {item.label === 'Contact' ? 'お問い合わせ' : 
-                   item.label === 'About Us' ? '私たちについて' :
-                   item.label === 'Service' ? 'サービス' :
-                   item.label === 'Works' ? '制作実績' : item.label}
+                  お問い合わせ
                 </Link>
               </li>
-            ))}
-            <li>
-              <Link
-                href="/contact"
-                className="bg-[#5b8fb9] text-white px-6 py-3 font-medium hover:bg-[#4a7da6] transition-all rounded-2xl"
-              >
-                お問い合わせ
-              </Link>
-            </li>
-          </ul>
+            </ul>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2"
-            aria-label="メニュー"
-          >
-            <div className="w-6 h-6 flex items-center justify-center">
-              <div className="grid grid-cols-3 gap-1">
-                {[...Array(9)].map((_, i) => (
-                  <span
-                    key={i}
-                    className="w-1 h-1 bg-[#5a524c] rounded-full"
-                  />
-                ))}
-              </div>
-            </div>
-          </button>
-        </div>
-
-      </nav>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-[#5a524c]" />
+              ) : (
+                <Menu className="w-6 h-6 text-[#5a524c]" />
+              )}
+            </button>
+          </div>
+        </nav>
+      </header>
 
       {/* Mobile Navigation Overlay */}
-      {isMenuOpen && (
-        <div 
-          className="md:hidden fixed inset-0 bg-black/50"
-          style={{ zIndex: 9998 }}
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
+      <div
+        className={`md:hidden fixed inset-0 bg-black/50 z-[100] transition-opacity duration-300 ${
+          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      />
 
       {/* Mobile Navigation Menu */}
-      <div 
-        className={`md:hidden fixed top-0 right-0 h-full w-full max-w-sm bg-white transform transition-transform duration-300 ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      <div
+        className={`md:hidden fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-[101] transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ zIndex: 9999 }}
       >
         {/* Menu Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-100">
-          <Link 
-            href="/" 
+        <div className="flex items-center justify-between p-4 border-b border-gray-100">
+          <Link
+            href="/"
             onClick={() => setIsMenuOpen(false)}
-            className="text-2xl font-[var(--font-handwritten)] font-semibold text-[#5b8fb9]"
+            className="text-xl font-[var(--font-handwritten)] font-semibold text-[#5b8fb9]"
           >
             Web<span className="text-[#2c2825]">Chaleur</span>
           </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="p-2"
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="閉じる"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X className="w-5 h-5 text-[#5a524c]" />
           </button>
         </div>
 
         {/* Menu Items */}
-        <nav className="overflow-y-auto h-[calc(100vh-80px)]">
-          <ul className="py-4">
+        <nav className="overflow-y-auto h-[calc(100vh-73px)]">
+          <ul className="py-2">
             {menuItems.map((item) => (
               <li key={item.href} className="border-b border-gray-100">
                 {item.subItems ? (
                   <>
                     <button
                       onClick={() => toggleExpanded(item.label)}
-                      className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-gray-50 transition-colors"
+                      className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 transition-colors"
                     >
-                      <span className="text-lg font-medium text-[#2c2825]">{item.label}</span>
-                      <svg
-                        className={`w-5 h-5 text-gray-400 transition-transform ${
-                          expandedItems.includes(item.label) ? 'rotate-180' : ''
+                      <span className="text-base font-medium text-[#2c2825]">
+                        {item.displayName}
+                      </span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
+                          expandedItems.includes(item.label) ? "rotate-180" : ""
                         }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      />
                     </button>
-                    {expandedItems.includes(item.label) && (
-                      <ul className="bg-gray-50">
+                    <div
+                      className={`bg-gray-50 overflow-hidden transition-all duration-200 ${
+                        expandedItems.includes(item.label)
+                          ? "max-h-64"
+                          : "max-h-0"
+                      }`}
+                    >
+                      <ul className="py-2">
                         {item.subItems.map((subItem) => (
                           <li key={subItem.href}>
                             <Link
                               href={subItem.href}
                               onClick={() => setIsMenuOpen(false)}
-                              className="block px-12 py-3 text-[#5a524c] hover:text-[#5b8fb9] hover:bg-gray-100 transition-colors"
+                              className="block px-8 py-2 text-sm text-[#5a524c] hover:text-[#5b8fb9] hover:bg-white transition-colors"
                             >
                               {subItem.label}
                             </Link>
                           </li>
                         ))}
                       </ul>
-                    )}
+                    </div>
                   </>
                 ) : (
                   <Link
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors"
+                    className="flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors"
                   >
-                    <span className="text-lg font-medium text-[#2c2825]">{item.label}</span>
+                    <span className="text-base font-medium text-[#2c2825]">
+                      {item.displayName}
+                    </span>
                   </Link>
                 )}
               </li>
             ))}
+            
+            {/* Mobile CTA Button */}
+            <li className="p-4">
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full bg-[#5b8fb9] text-white text-center px-6 py-3 font-medium hover:bg-[#4a7da6] transition-all rounded-2xl"
+              >
+                お問い合わせ
+              </Link>
+            </li>
           </ul>
+
+          {/* Footer Info */}
+          <div className="border-t border-gray-100 p-4 mt-auto">
+            <p className="text-xs text-gray-500 text-center">
+              © 2024 WebChaleur
+            </p>
+          </div>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
