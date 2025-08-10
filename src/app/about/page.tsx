@@ -1,12 +1,13 @@
-import Image from 'next/image';
-import WobblyHeading from '@/components/ui/WobblyHeading';
-import SketchyCard from '@/components/ui/SketchyCard';
-import HandDrawnButton from '@/components/ui/HandDrawnButton';
-import FadeIn from '@/components/animations/FadeIn';
+import Image from "next/image";
+import WobblyHeading from "@/components/ui/WobblyHeading";
+import SketchyCard from "@/components/ui/SketchyCard";
+import HandDrawnButton from "@/components/ui/HandDrawnButton";
+import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata = {
-  title: '私たちについて | WebChaleur',
-  description: 'WebChaleurは十勝・帯広エリアを拠点に、地域企業様のデジタル化を支援するWeb制作会社です。',
+  title: "私たちについて | WebChaleur",
+  description:
+    "WebChaleurは十勝・帯広エリアを拠点に、地域企業様のデジタル化を支援するWeb制作会社です。",
 };
 
 export default function AboutPage() {
@@ -25,8 +26,10 @@ export default function AboutPage() {
                 ミッション
               </h2>
               <p className="text-lg text-text-gray font-zenmaru leading-relaxed">
-                十勝エリア（帯広・音更）の地域企業に寄り添い、<br />
-                最新技術と温かみのあるデザインで、<br />
+                十勝エリア（帯広・音更）の地域企業に寄り添い、
+                <br />
+                最新技術と温かみのあるデザインで、
+                <br />
                 親しみやすく信頼できるWeb制作サービスを提供する。
               </p>
             </SketchyCard>

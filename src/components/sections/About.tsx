@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import HandDrawnButton from '@/components/ui/HandDrawnButton';
-import SketchyCard from '@/components/ui/SketchyCard';
+import { useEffect, useState } from "react";
+import HandDrawnButton from "@/components/ui/HandDrawnButton";
+import SketchyCard from "@/components/ui/SketchyCard";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +17,7 @@ export default function About() {
       { threshold: 0.1 }
     );
 
-    const element = document.getElementById('about');
+    const element = document.getElementById("about");
     if (element) observer.observe(element);
 
     return () => {
@@ -27,46 +27,42 @@ export default function About() {
 
   const values = [
     {
-      icon: '🏠',
-      title: '地元密着',
-      description: '帯広・音更なら30分以内にお伺い。対面でのお打ち合わせを大切にしています。',
+      icon: "🏠",
+      title: "地元密着",
+      description:
+        "帯広・音更なら30分以内にお伺い。対面でのお打ち合わせを大切にしています。",
     },
     {
-      icon: '💡',
-      title: '最新技術',
-      description: 'Next.jsやShopifyなど、最新の技術で高速・安全なサイトを構築します。',
+      icon: "💡",
+      title: "最新技術",
+      description:
+        "Next.jsやShopifyなど、最新の技術で高速・安全なサイトを構築します。",
     },
     {
-      icon: '🤝',
-      title: '継続サポート',
-      description: '作った後も安心。更新や修正のご相談もいつでもお気軽にどうぞ。',
+      icon: "🤝",
+      title: "継続サポート",
+      description:
+        "作った後も安心。更新や修正のご相談もいつでもお気軽にどうぞ。",
     },
   ];
 
   return (
-    <section 
-      id="about"
-      className="section-padding bg-white"
-    >
+    <section id="about" className="section-padding bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
-        <div 
+        <div
           className={`text-center mb-12 transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="heading-section">
-            私たちについて
-          </h2>
-          <span className="text-caption inline-block">
-            About Us
-          </span>
+          <h2 className="heading-section">私たちについて</h2>
+          <span className="text-caption inline-block">About Us</span>
         </div>
 
         {/* メインメッセージ */}
-        <div 
+        <div
           className={`max-w-3xl mx-auto mb-16 transition-all duration-800 delay-200 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           <SketchyCard variant="elevated">
@@ -90,7 +86,9 @@ export default function About() {
             <div
               key={index}
               className={`transition-all duration-800 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${400 + index * 100}ms` }}
             >
@@ -110,9 +108,9 @@ export default function About() {
         </div>
 
         {/* 代表メッセージ */}
-        <div 
+        <div
           className={`max-w-4xl mx-auto mb-12 transition-all duration-800 delay-700 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           <h3 className="text-xl font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] mb-6 text-center">
@@ -136,16 +134,12 @@ export default function About() {
         </div>
 
         {/* CTAボタン */}
-        <div 
+        <div
           className={`text-center transition-all duration-800 delay-900 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <HandDrawnButton
-            href="/about"
-            variant="primary"
-            size="medium"
-          >
+          <HandDrawnButton href="/about" variant="primary" size="medium">
             詳しく見る →
           </HandDrawnButton>
         </div>
