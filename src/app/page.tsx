@@ -1,5 +1,4 @@
-import Hero from '@/components/sections/Hero';
-import Information from '@/components/sections/InformationNew';
+import HeroServer from '@/components/sections/HeroServer';
 import About from '@/components/sections/About';
 import Strengths from '@/components/sections/Strengths';
 import Works from '@/components/sections/WorksServer';
@@ -10,8 +9,7 @@ import FAQ from '@/components/sections/FAQ';
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Information />
+      <HeroServer />
       <About />
       <Strengths />
       <Works />
