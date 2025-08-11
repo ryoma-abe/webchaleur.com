@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import SketchyCard from "@/components/ui/SketchyCard";
+import { FaHome, FaLightbulb, FaHandshake } from "react-icons/fa";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,19 +28,19 @@ export default function About() {
 
   const values = [
     {
-      icon: "🏠",
+      icon: FaHome,
       title: "地元密着",
       description:
         "帯広・音更なら30分以内にお伺い。対面でのお打ち合わせを大切にしています。",
     },
     {
-      icon: "💡",
+      icon: FaLightbulb,
       title: "最新技術",
       description:
         "Next.jsやShopifyなど、最新の技術で高速・安全なサイトを構築します。",
     },
     {
-      icon: "🤝",
+      icon: FaHandshake,
       title: "継続サポート",
       description:
         "作った後も安心。更新や修正のご相談もいつでもお気軽にどうぞ。",
@@ -94,7 +95,9 @@ export default function About() {
             >
               <SketchyCard className="h-full">
                 <div className="text-center">
-                  <div className="text-4xl mb-4">{value.icon}</div>
+                  <div className="text-4xl mb-4 text-primary-blue">
+                    <value.icon className="mx-auto" />
+                  </div>
                   <h3 className="text-lg font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] mb-3">
                     {value.title}
                   </h3>

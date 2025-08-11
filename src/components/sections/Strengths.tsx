@@ -1,13 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { IconType } from "react-icons";
+import { 
+  FaGlobe, 
+  FaRobot, 
+  FaMobileAlt, 
+  FaLaptopCode, 
+  FaHandshake, 
+  FaChartLine,
+  FaRocket 
+} from "react-icons/fa";
 
 interface Strength {
   id: number;
   number: string;
   title: string;
   description: string;
-  icon: string;
+  icon: IconType;
 }
 
 export default function Strengths() {
@@ -37,42 +47,42 @@ export default function Strengths() {
       number: "01",
       title: "十勝から全国へ展開",
       description: "地域密着を目指しつつ、\n全国どこでもオンライン対応",
-      icon: "🌐",
+      icon: FaGlobe,
     },
     {
       id: 2,
       number: "02",
       title: "AIを活用した最新のWeb制作",
       description: "ChatGPTやClaudeなどの\nAI導入支援もお任せください",
-      icon: "🤖",
+      icon: FaRobot,
     },
     {
       id: 3,
       number: "03",
       title: "SNS運用もトータルサポート",
       description: "Instagram・X(Twitter)の\n運用アドバイスも提供",
-      icon: "📱",
+      icon: FaMobileAlt,
     },
     {
       id: 4,
       number: "04",
       title: "最新技術も、お任せください",
       description: "Next.jsやShopifyなど\n新しい技術もしっかり対応",
-      icon: "💻",
+      icon: FaLaptopCode,
     },
     {
       id: 5,
       number: "05",
       title: "制作後も、継続的にサポート",
       description: "更新や修正のご相談も\nいつでもお気軽に",
-      icon: "🤝",
+      icon: FaHandshake,
     },
     {
       id: 6,
       number: "06",
       title: "データ分析で成果を可視化",
       description: "Google Analyticsの設定から\n改善提案まで対応",
-      icon: "📊",
+      icon: FaChartLine,
     },
   ];
 
@@ -136,7 +146,9 @@ export default function Strengths() {
                 </div>
 
                 {/* アイコン */}
-                <div className="text-3xl mb-3">{strength.icon}</div>
+                <div className="text-3xl mb-3 text-primary-blue">
+                  <strength.icon />
+                </div>
 
                 {/* タイトル */}
                 <h3 className="heading-card mb-3 text-lg">{strength.title}</h3>
@@ -169,8 +181,9 @@ export default function Strengths() {
             border: "2px dashed #8fb5d1",
           }}
         >
-          <h3 className="heading-card mb-4 text-primary-blue">
-            🚀 これからの時代に必要なWeb制作
+          <h3 className="heading-card mb-4 text-primary-blue flex items-center justify-center gap-2">
+            <FaRocket className="inline-block" />
+            <span>これからの時代に必要なWeb制作</span>
           </h3>
           <p className="text-body max-w-3xl mx-auto mb-6">
             ただホームページを作るだけではなく、

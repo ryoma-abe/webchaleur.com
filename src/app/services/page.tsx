@@ -3,6 +3,7 @@ import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
 import Link from 'next/link';
 import { generatePageMetadata } from '@/lib/seo';
+import { FaDesktop, FaShoppingCart, FaChartLine, FaTools, FaCamera, FaPalette, FaRobot, FaCheck } from 'react-icons/fa';
 
 export const metadata = generatePageMetadata({ path: '/services' });
 
@@ -23,7 +24,7 @@ export default function ServicesPage() {
       ],
       price: '30万円〜',
       duration: '1〜2ヶ月',
-      icon: '🖥️',
+      icon: FaDesktop,
     },
     {
       id: 'ec',
@@ -40,7 +41,7 @@ export default function ServicesPage() {
       ],
       price: '50万円〜',
       duration: '2〜3ヶ月',
-      icon: '🛒',
+      icon: FaShoppingCart,
     },
     {
       id: 'consulting',
@@ -57,7 +58,7 @@ export default function ServicesPage() {
       ],
       price: '月額5万円〜',
       duration: '継続支援',
-      icon: '📊',
+      icon: FaChartLine,
     },
   ];
 
@@ -66,25 +67,25 @@ export default function ServicesPage() {
       title: '保守・運用サポート',
       description: 'サイト公開後の更新作業や緊急対応をサポート',
       price: '月額1万円〜',
-      icon: '🔧',
+      icon: FaTools,
     },
     {
       title: '写真撮影・動画制作',
       description: 'プロカメラマンによる商品撮影や企業紹介動画の制作',
       price: '5万円〜',
-      icon: '📸',
+      icon: FaCamera,
     },
     {
       title: 'ロゴ・名刺デザイン',
       description: 'ブランドアイデンティティを表現するロゴや名刺のデザイン',
       price: '3万円〜',
-      icon: '🎨',
+      icon: FaPalette,
     },
     {
       title: 'AI活用支援',
       description: 'ChatGPTなどのAIツールを業務に活用する方法をサポート',
       price: 'ご相談',
-      icon: '🤖',
+      icon: FaRobot,
     },
   ];
 
@@ -115,8 +116,8 @@ export default function ServicesPage() {
                 style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
               >
                 <SketchyCard className="h-full hover:shadow-xl transition-shadow">
-                  <div className="text-center mb-6">
-                    <span className="text-6xl">{service.icon}</span>
+                  <div className="text-center mb-6 text-6xl text-primary-blue">
+                    <service.icon className="mx-auto" />
                   </div>
                   
                   <h3 className="heading-card text-main-blue mb-2">
@@ -137,7 +138,7 @@ export default function ServicesPage() {
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm text-text-gray">
-                          <span className="text-main-blue mt-1">✓</span>
+                          <FaCheck className="text-main-blue mt-1 text-xs flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
