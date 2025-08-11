@@ -66,7 +66,7 @@ export default async function Information() {
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
                   {/* 日付 */}
                   <time
-                    className="text-primary-blue font-[var(--font-handwritten)] font-semibold text-base md:text-lg"
+                    className="text-primary-blue font-semibold text-base md:text-lg"
                     style={{ minWidth: "120px" }}
                   >
                     {new Date(item.date).toLocaleDateString('ja-JP', {
