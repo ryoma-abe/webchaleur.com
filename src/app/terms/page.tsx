@@ -1,10 +1,8 @@
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: '利用規約 | WebChaleur',
-  description: 'WebChaleurのサービス利用規約について',
-};
+export const metadata = generatePageMetadata({ path: '/terms' });
 
 export default function TermsPage() {
   return (

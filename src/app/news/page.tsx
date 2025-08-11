@@ -2,11 +2,9 @@ import { getAllContent } from '@/lib/mdx';
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'お知らせ | WebChaleur',
-  description: 'WebChaleurからのお知らせ、キャンペーン情報などをご案内しています。',
-};
+export const metadata = generatePageMetadata({ path: '/news' });
 
 export default async function NewsPage() {
   const news = await getAllContent('news');

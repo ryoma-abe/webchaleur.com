@@ -3,12 +3,9 @@ import WobblyHeading from "@/components/ui/WobblyHeading";
 import SketchyCard from "@/components/ui/SketchyCard";
 import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import FadeIn from "@/components/animations/FadeIn";
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: "私たちについて | WebChaleur",
-  description:
-    "WebChaleurは十勝・帯広エリアを拠点に、全国の企業様のデジタル化を支援するWeb制作会社です。",
-};
+export const metadata = generatePageMetadata({ path: '/about' });
 
 export default function AboutPage() {
   return (

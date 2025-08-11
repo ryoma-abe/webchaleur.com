@@ -11,7 +11,8 @@
       "Bash(rm:*)",
       "Bash(npx shadcn@latest init:*)",
       "Bash(node:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": []
   }

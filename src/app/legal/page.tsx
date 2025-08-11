@@ -1,10 +1,8 @@
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: '特定商取引法に基づく表記 | WebChaleur',
-  description: 'WebChaleurの特定商取引法に基づく表記',
-};
+export const metadata = generatePageMetadata({ path: '/legal' });
 
 export default function LegalPage() {
   return (

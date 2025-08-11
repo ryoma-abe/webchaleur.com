@@ -1,0 +1,139 @@
+{
+  "global": {
+    "siteName": "WebChaleur",
+    "siteUrl": "https://webchaleur.jp",
+    "defaultTitle": "WebChaleur ｜ 十勝のウェブ制作パートナー",
+    "titleTemplate": "%s | WebChaleur",
+    "defaultDescription": "帯広・音更・十勝エリアのホームページ制作。地元企業様に寄り添い、最新技術で温かみのあるサイトを作ります。",
+    "defaultKeywords": [
+      "帯広 ホームページ制作",
+      "音更 Web制作",
+      "十勝 ECサイト",
+      "Shopify 北海道",
+      "ウェブ制作 十勝",
+      "ホームページ作成 帯広"
+    ],
+    "defaultImage": "/og-image.jpg",
+    "locale": "ja_JP",
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@webchaleur"
+    },
+    "organization": {
+      "name": "WebChaleur",
+      "description": "帯広・音更・十勝エリアのホームページ制作会社",
+      "telephone": "+81-155-00-0000",
+      "email": "info@webchaleur.jp",
+      "address": {
+        "streetAddress": "",
+        "addressLocality": "音更町",
+        "addressRegion": "北海道",
+        "postalCode": "080-0000",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "latitude": 42.9929,
+        "longitude": 143.2001
+      },
+      "openingHours": {
+        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "priceRange": "¥¥"
+    }
+  },
+  "pages": {
+    "/": {
+      "title": "WebChaleur ｜ 十勝のウェブ制作パートナー",
+      "description": "帯広・音更・十勝エリアのホームページ制作。地元企業様に寄り添い、最新技術で温かみのあるサイトを作ります。",
+      "keywords": [
+        "帯広 ホームページ制作",
+        "音更 Web制作",
+        "十勝 ECサイト",
+        "Shopify 北海道",
+        "ウェブ制作 十勝",
+        "ホームページ作成 帯広",
+        "Web制作会社 北海道",
+        "ランディングページ制作 帯広",
+        "ECサイト構築 十勝"
+      ]
+    },
+    "/about": {
+      "title": "私たちについて",
+      "description": "WebChaleurは十勝・帯広・音更エリアで活動するWeb制作会社です。地域に根ざし、最新技術と温かみのあるデザインでお客様のビジネスをサポートします。",
+      "keywords": [
+        "Web制作会社 十勝",
+        "ホームページ制作会社 帯広",
+        "Webデザイン 音更",
+        "地域密着 Web制作"
+      ]
+    },
+    "/services": {
+      "title": "サービス一覧",
+      "description": "ホームページ制作、ECサイト構築、Shopify導入支援、WordPress構築など、幅広いWeb制作サービスを提供しています。",
+      "keywords": [
+        "ホームページ制作サービス",
+        "ECサイト構築",
+        "Shopify導入支援",
+        "WordPress制作",
+        "Webシステム開発"
+      ]
+    },
+    "/works": {
+      "title": "制作実績一覧",
+      "description": "WebChaleurの制作実績をご紹介。十勝・帯広エリアの企業様のWebサイト、ECサイト、ランディングページなど多数の実績があります。",
+      "keywords": [
+        "Web制作実績",
+        "ホームページ制作事例",
+        "ECサイト実績",
+        "制作ポートフォリオ"
+      ]
+    },
+    "/blog": {
+      "title": "技術ブログ",
+      "description": "Web制作に関する技術情報、最新のトレンド、制作のコツなどを発信しています。",
+      "keywords": [
+        "Web制作ブログ",
+        "技術ブログ",
+        "Webデザイン情報",
+        "フロントエンド開発"
+      ]
+    },
+    "/news": {
+      "title": "お知らせ",
+      "description": "WebChaleurからの最新情報、サービスのアップデート、キャンペーン情報などをお伝えします。",
+      "keywords": [
+        "お知らせ",
+        "最新情報",
+        "キャンペーン情報",
+        "サービス更新"
+      ]
+    },
+    "/contact": {
+      "title": "お問い合わせ",
+      "description": "Web制作のご相談、お見積もりのご依頼はこちらから。十勝・帯広・音更エリアは対面でのご相談も承ります。",
+      "keywords": [
+        "お問い合わせ",
+        "無料相談",
+        "見積もり依頼",
+        "Web制作相談"
+      ]
+    },
+    "/privacy": {
+      "title": "プライバシーポリシー",
+      "description": "WebChaleurのプライバシーポリシーについてご説明します。",
+      "noindex": true
+    },
+    "/terms": {
+      "title": "利用規約",
+      "description": "WebChaleurのサービス利用規約についてご説明します。",
+      "noindex": true
+    },
+    "/legal": {
+      "title": "特定商取引法に基づく表記",
+      "description": "特定商取引法に基づく表記についてご説明します。",
+      "noindex": true
+    }
+  }
+}

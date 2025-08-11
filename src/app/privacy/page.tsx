@@ -1,10 +1,8 @@
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'プライバシーポリシー | WebChaleur',
-  description: 'WebChaleurのプライバシーポリシーについて',
-};
+export const metadata = generatePageMetadata({ path: '/privacy' });
 
 export default function PrivacyPage() {
   return (

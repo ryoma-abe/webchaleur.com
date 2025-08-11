@@ -15,7 +15,7 @@ export default function WobblyHeading({
   underline = false,
   english,
 }: WobblyHeadingProps) {
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+  const Tag = `h${level}` as keyof React.JSX.IntrinsicElements;
 
   const sizeClasses = {
     1: 'text-4xl md:text-5xl',
