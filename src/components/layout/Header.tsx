@@ -32,9 +32,9 @@ export default function Header() {
     {
       href: "/about",
       label: "About Us",
-      displayName: "私たちについて",
+      displayName: "WebChaleurについて",
       subItems: [
-        { href: "/about", label: "私たちについて" },
+        { href: "/about", label: "WebChaleurについて" },
         { href: "/about#mission", label: "ミッション" },
         { href: "/about#team", label: "チーム" },
       ],

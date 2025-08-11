@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { href: '/about', label: '私たちについて' },
+    { href: '/about', label: 'WebChaleurについて' },
     { href: '/works', label: '制作実績' },
     { href: '/blog', label: 'ブログ' },
     { href: '/news', label: 'お知らせ' },

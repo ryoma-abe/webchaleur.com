@@ -135,7 +135,7 @@ export default function Hero() {
               >
                 <h3 className="heading-card mb-4 flex items-center gap-2">
                   <span className="text-xl xl:text-2xl">🚀</span>
-                  私たちについて
+                  WebChaleurについて
                 </h3>
                 <div className="grid grid-cols-2 gap-3 xl:gap-4 text-sm">
                   <div>

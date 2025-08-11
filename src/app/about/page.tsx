@@ -12,7 +12,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-bg-cream py-20">
       <div className="container mx-auto px-4">
         <WobblyHeading level={1} underline english="About Us">
-          私たちについて
+          WebChaleurについて
         </WobblyHeading>
 
         {/* ミッション */}
@@ -68,7 +68,7 @@ export default function AboutPage() {
         <FadeIn delay={0.4}>
           <div className="max-w-5xl mx-auto mb-16">
             <h2 className="text-2xl font-klee font-bold text-text-dark mb-8 text-center">
-              私たちの強み
+              私の強み
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <SketchyCard>

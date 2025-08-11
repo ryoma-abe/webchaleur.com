@@ -91,7 +91,7 @@ export default function Strengths() {
           <h2 
             className="heading-section"
           >
-            私たちの強み
+            私の強み
           </h2>
           <span 
             className="text-caption inline-block"
@@ -124,18 +124,6 @@ export default function Strengths() {
                   borderRadius: '20px',
                 }}
               >
-                {/* 新しいものを示すバッジ（AI・SNS関連） */}
-                {(strength.id === 2 || strength.id === 3) && (
-                  <div 
-                    className="absolute top-4 right-4 bg-gradient-to-r from-red-400 to-red-300 text-white text-xs px-3 py-1 font-bold"
-                    style={{
-                      borderRadius: '12px',
-                      transform: 'rotate(-3deg)',
-                    }}
-                  >
-                    NEW!
-                  </div>
-                )}
 
                 {/* 番号バッジ */}
                 <div 
