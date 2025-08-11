@@ -173,10 +173,7 @@ export default function BlogClient({ items }: BlogClientProps) {
           >
             <Link
               href="/blog"
-              className="inline-block border-2 border-[var(--main-blue)] text-[var(--main-blue)] px-8 py-4 font-medium hover:bg-[var(--lighter-blue)] transition-all hover:transform hover:scale-105"
-              style={{ 
-                borderRadius: '24px'
-              }}
+              className="btn-secondary"
             >
               すべての記事を読む
             </Link>

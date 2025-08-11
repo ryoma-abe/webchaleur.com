@@ -156,10 +156,7 @@ export default function WorksClient({ items }: WorksClientProps) {
           >
             <Link
               href="/works"
-              className="inline-block bg-[var(--main-blue)] text-white px-8 py-4 font-medium hover:bg-[#4a7da6] transition-all hover:transform hover:scale-105"
-              style={{
-                borderRadius: "24px",
-              }}
+              className="btn-primary"
             >
               すべての制作実績を見る
             </Link>

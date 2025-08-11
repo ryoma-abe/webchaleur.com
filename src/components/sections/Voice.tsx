@@ -106,7 +106,7 @@ export default function Voice() {
                 href="https://coconala.com/users/webchaleur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#1bb774] text-white px-8 py-4 font-medium rounded-full hover:bg-[#16a865] transition-all hover:scale-105"
+                className="btn-coconala inline-flex items-center gap-3"
               >
                 <span>ココナラで詳しく見る</span>
                 <span>→</span>
