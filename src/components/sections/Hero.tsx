@@ -96,8 +96,8 @@ export default function Hero() {
             >
               <div className="hidden sm:block space-y-3">
                 {[
-                  "十勝の企業様150社以上の制作実績",
-                  "地元だからこその細やかなサポート",
+                  "100件以上の制作実績で培った技術力",
+                  "十勝・帯広の企業様へ寄り添うサポート",
                   "Next.js・Shopifyなど最新技術も対応",
                   "制作後の運用もしっかりフォロー",
                 ].map((item, index) => (
@@ -109,8 +109,8 @@ export default function Hero() {
               </div>
               {/* モバイル用簡略版 */}
               <div className="sm:hidden flex flex-wrap gap-3 text-xs">
-                <span className="text-primary-blue">✓ 152社の実績</span>
-                <span className="text-primary-blue">✓ 地元密着</span>
+                <span className="text-primary-blue">✓ 100件以上の実績</span>
+                <span className="text-primary-blue">✓ 地域密着を目指す</span>
                 <span className="text-primary-blue">✓ 最新技術対応</span>
               </div>
             </div>
@@ -134,21 +134,21 @@ export default function Hero() {
                 }}
               >
                 <h3 className="heading-card mb-4 flex items-center gap-2">
-                  <span className="text-xl xl:text-2xl">📍</span>
-                  地域のこと
+                  <span className="text-xl xl:text-2xl">🚀</span>
+                  私たちについて
                 </h3>
                 <div className="grid grid-cols-2 gap-3 xl:gap-4 text-sm">
                   <div>
-                    <span className="text-caption block mb-1">活動エリア</span>
-                    <span className="font-medium">帯広・音更・十勝</span>
+                    <span className="text-caption block mb-1">対応エリア</span>
+                    <span className="font-medium">全国対応可</span>
                   </div>
                   <div>
                     <span className="text-caption block mb-1">制作実績</span>
-                    <span className="font-medium">152社</span>
+                    <span className="font-medium">100件以上</span>
                   </div>
                   <div>
-                    <span className="text-caption block mb-1">創業</span>
-                    <span className="font-medium">2018年</span>
+                    <span className="text-caption block mb-1">拠点</span>
+                    <span className="font-medium">十勝・帯広</span>
                   </div>
                   <div>
                     <span className="text-caption block mb-1">得意分野</span>

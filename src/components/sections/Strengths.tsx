@@ -35,8 +35,8 @@ export default function Strengths() {
     {
       id: 1,
       number: '01',
-      title: '十勝密着、全国対応',
-      description: '地元は直接訪問、\n遠方はオンラインで柔軟に対応',
+      title: '十勝から全国へ展開',
+      description: '地域密着を目指しつつ、\n全国どこでもオンライン対応',
       icon: '🌐',
     },
     {
@@ -99,10 +99,10 @@ export default function Strengths() {
             Our Strengths
           </span>
           <p className="text-body mt-4 max-w-3xl mx-auto">
-            十勝・帯広を拠点に、
+            100件以上の制作実績を活かし、十勝・帯広から全国へ。
             <span className="text-primary-blue font-medium">AI活用</span>や
             <span className="text-primary-blue font-medium">SNS運用</span>まで、
-            最新のデジタルマーケティングを全国どこでもサポート
+            最新のデジタルマーケティングをサポート
           </p>
         </div>
 
@@ -204,9 +204,9 @@ export default function Strengths() {
             <span className="font-medium">データ分析</span>で改善を続ける。
             <br />
             <br />
-            十勝の企業様が
-            <span className="text-primary-blue font-bold">デジタル時代で勝ち残る</span>
-            ための、総合的なパートナーです。
+            これから十勝の企業様が
+            <span className="text-primary-blue font-bold">デジタル時代で成長する</span>
+            ための、総合的なパートナーを目指します。
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <span className="bg-white px-4 py-2 text-sm font-medium text-gray" style={{ borderRadius: '16px' }}>
