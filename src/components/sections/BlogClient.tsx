@@ -99,7 +99,7 @@ export default function BlogClient({ items }: BlogClientProps) {
                     {/* 日付とカテゴリー */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex flex-col">
-                        <span className="text-2xl font-bold text-[var(--main-blue)] font-[var(--font-handwritten)]">
+                        <span className="text-2xl font-bold text-[var(--main-blue)]">
                           {dateInfo.day}
                         </span>
                         <span className="text-xs text-[var(--text-gray)]">

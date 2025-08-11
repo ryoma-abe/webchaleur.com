@@ -88,7 +88,7 @@ export default function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="text-2xl md:text-3xl font-[var(--font-handwritten)] font-semibold text-primary-blue hover:opacity-80 transition-opacity"
+              className="text-2xl md:text-3xl font-semibold text-primary-blue hover:opacity-80 transition-opacity"
             >
               Web<span className="text-[#2c2825]">Chaleur</span>
             </Link>
@@ -149,7 +149,7 @@ export default function Header() {
           <Link
             href="/"
             onClick={() => setIsMenuOpen(false)}
-            className="text-xl font-[var(--font-handwritten)] font-semibold text-primary-blue"
+            className="text-xl font-semibold text-primary-blue"
           >
             Web<span className="text-[#2c2825]">Chaleur</span>
           </Link>

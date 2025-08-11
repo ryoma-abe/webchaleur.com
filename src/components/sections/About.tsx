@@ -71,7 +71,7 @@ export default function About() {
               <p className="text-lg text-[var(--text-gray)] font-[var(--font-main)] leading-relaxed mb-4">
                 WebChaleurは、十勝・帯広エリアを拠点に
               </p>
-              <p className="text-xl font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] mb-4">
+              <p className="text-xl font-bold text-[var(--text-dark)] mb-4">
                 「地域企業様のデジタル化を支援する」
               </p>
               <p className="text-lg text-[var(--text-gray)] font-[var(--font-main)] leading-relaxed">
@@ -98,7 +98,7 @@ export default function About() {
                   <div className="text-4xl mb-4 text-primary-blue">
                     <value.icon className="mx-auto" />
                   </div>
-                  <h3 className="text-lg font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] mb-3">
+                  <h3 className="text-lg font-bold text-[var(--text-dark)] mb-3">
                     {value.title}
                   </h3>
                   <p className="text-sm text-[var(--text-gray)] font-[var(--font-main)]">
@@ -116,7 +116,7 @@ export default function About() {
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <h3 className="text-xl font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] mb-6 text-center">
+          <h3 className="text-xl font-bold text-[var(--text-dark)] mb-6 text-center">
             代表メッセージ
           </h3>
           <SketchyCard>

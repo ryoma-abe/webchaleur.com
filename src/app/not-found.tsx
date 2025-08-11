@@ -19,7 +19,7 @@ export default function NotFound() {
         {/* 404イラスト */}
         <div className="mb-8">
           <h1 
-            className="text-8xl md:text-9xl font-[var(--font-handwritten)] font-bold text-primary-blue mb-4"
+            className="text-8xl md:text-9xl font-bold text-primary-blue mb-4"
             style={{ transform: 'rotate(-2deg)' }}
           >
             404

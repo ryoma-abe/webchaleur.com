@@ -140,7 +140,7 @@ export default function Strengths() {
                     justifyContent: "center",
                   }}
                 >
-                  <span className="text-primary-blue font-bold text-lg font-[var(--font-handwritten)]">
+                  <span className="text-primary-blue font-bold text-lg">
                     {strength.number}
                   </span>
                 </div>

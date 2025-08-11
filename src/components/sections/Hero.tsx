@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { FaCheck, FaRocket } from "react-icons/fa";
 import Link from "next/link";
 
@@ -28,13 +27,9 @@ export default function Hero() {
             >
               <span className="inline-block">十勝の企業様の</span>
               <br />
-              <span
-                className="text-primary-blue inline-block relative text-[1.15em]"
-              >
+              <span className="text-primary-blue inline-block relative text-[1.15em]">
                 Webサイトのこと
-                <span
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-[#5b8fb9] opacity-20 rounded-sm"
-                />
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#5b8fb9] opacity-20 rounded-sm" />
               </span>
               <br />
               <span className="inline-block">お手伝いします。</span>
@@ -125,9 +120,7 @@ export default function Hero() {
               }`}
             >
               {/* 情報カード */}
-              <div
-                className="bg-white/90 backdrop-blur-sm rounded-[20px] shadow-[0_20px_60px_rgba(91,143,185,0.15)] p-6 xl:p-8 mb-6"
-              >
+              <div className="bg-white/90 backdrop-blur-sm rounded-[20px] shadow-[0_20px_60px_rgba(91,143,185,0.15)] p-6 xl:p-8 mb-6">
                 <h3 className="heading-card mb-4 flex items-center gap-2">
                   <FaRocket className="text-xl xl:text-2xl text-primary-blue" />
                   <span>WebChaleurについて</span>
