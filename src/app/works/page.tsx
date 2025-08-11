@@ -1,5 +1,6 @@
 import { getAllContent } from '@/lib/mdx';
 import Image from 'next/image';
+import Link from 'next/link';
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
@@ -19,11 +20,11 @@ export default async function WorksPage() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
           {works.map((work, index) => (
-            <SketchyCard
-              key={work.slug}
-              className="hover:shadow-[6px_6px_0_rgba(91,143,185,0.2)] overflow-hidden"
-            >
-              <article>
+            <Link href={`/works/${work.slug}`} key={work.slug} className="block group">
+              <SketchyCard
+                className="hover:shadow-[6px_6px_0_rgba(91,143,185,0.2)] overflow-hidden transition-all group-hover:transform group-hover:-translate-y-1"
+              >
+                <article>
                 {work.frontMatter.thumbnail && (
                   <div className="relative w-full h-48 -m-6 mb-4">
                     <Image
@@ -40,18 +41,18 @@ export default async function WorksPage() {
                   </span>
                 )}
                 
-                <h2 className="text-xl font-klee font-bold text-text-dark mb-2">
+                <h2 className="text-base md:text-lg font-klee font-bold text-text-dark mb-2 group-hover:text-main-blue transition-colors">
                   {work.frontMatter.title}
                 </h2>
                 
                 {work.frontMatter.client && (
-                  <p className="text-sm text-text-gray font-zenmaru mb-3">
+                  <p className="text-xs md:text-sm text-text-gray font-zenmaru mb-3">
                     {work.frontMatter.client}
                   </p>
                 )}
                 
                 {work.frontMatter.description && (
-                  <p className="text-text-gray font-zenmaru mb-4 line-clamp-3">
+                  <p className="text-xs md:text-sm text-text-gray font-zenmaru mb-4 line-clamp-3">
                     {work.frontMatter.description}
                   </p>
                 )}
@@ -67,16 +68,14 @@ export default async function WorksPage() {
                   ))}
                 </div>
                 
-                <HandDrawnButton
-                  href={`/works/${work.slug}`}
-                  size="small"
-                  variant="primary"
-                  className="w-full text-center"
-                >
-                  詳しく見る →
-                </HandDrawnButton>
+                <div className="text-right">
+                  <span className="text-main-blue font-zenmaru text-sm group-hover:underline">
+                    詳しく見る →
+                  </span>
+                </div>
               </article>
             </SketchyCard>
+            </Link>
           ))}
         </div>
 

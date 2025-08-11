@@ -1,4 +1,5 @@
 import { getAllContent } from '@/lib/mdx';
+import Link from 'next/link';
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
@@ -29,12 +30,12 @@ export default async function BlogPage() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog, index) => (
-            <SketchyCard
-              key={blog.slug}
-              className="hover:shadow-[6px_6px_0_rgba(91,143,185,0.2)]"
-              rotate={index % 4 !== 0}
-            >
-              <article>
+            <Link href={`/blog/${blog.slug}`} key={blog.slug} className="block group">
+              <SketchyCard
+                className="hover:shadow-[6px_6px_0_rgba(91,143,185,0.2)] transition-all group-hover:transform group-hover:-translate-y-1"
+                rotate={index % 4 !== 0}
+              >
+                <article>
                 {blog.frontMatter.date && (
                   <div className="mb-4">
                     <div className="inline-block bg-main-blue/10 rounded-[10px_12px_11px_13px] px-4 py-2">
@@ -58,12 +59,12 @@ export default async function BlogPage() {
                   </span>
                 )}
                 
-                <h2 className="text-lg font-klee font-bold text-text-dark mb-3 line-clamp-2">
+                <h2 className="text-base md:text-lg font-klee font-bold text-text-dark mb-3 line-clamp-2 group-hover:text-main-blue transition-colors">
                   {blog.frontMatter.title}
                 </h2>
                 
                 {blog.frontMatter.description && (
-                  <p className="text-text-gray font-zenmaru text-sm mb-4 line-clamp-3">
+                  <p className="text-text-gray font-zenmaru text-xs md:text-sm mb-4 line-clamp-3">
                     {blog.frontMatter.description}
                   </p>
                 )}
@@ -84,16 +85,14 @@ export default async function BlogPage() {
                   </div>
                 </div>
                 
-                <HandDrawnButton
-                  href={`/blog/${blog.slug}`}
-                  size="small"
-                  variant="primary"
-                  className="w-full text-center"
-                >
-                  記事を読む →
-                </HandDrawnButton>
+                <div className="text-right">
+                  <span className="text-main-blue font-zenmaru text-sm group-hover:underline">
+                    記事を読む →
+                  </span>
+                </div>
               </article>
             </SketchyCard>
+            </Link>
           ))}
         </div>
 

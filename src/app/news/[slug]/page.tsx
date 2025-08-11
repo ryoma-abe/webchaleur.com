@@ -44,7 +44,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
           <h1 className="article-title">{news.frontMatter.title}</h1>
           
           {/* メタ情報 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-gray">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-base text-gray">
             {news.frontMatter.date && (
               <time dateTime={news.frontMatter.date} className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
             {news.frontMatter.category && (
               <>
                 <span className="text-gray-300">•</span>
-                <span className="px-3 py-1 bg-primary-lighter text-primary-blue rounded-full text-xs font-medium">
+                <span className="px-3 py-1 bg-primary-lighter text-primary-blue rounded-full text-sm font-medium">
                   {news.frontMatter.category}
                 </span>
               </>
