@@ -411,54 +411,114 @@ p {
   --tw-gradient-to: #8fb5d1;
 }
 
-/* ボタンスタイル */
-.btn-primary {
-  background-color: #5b8fb9;
-  color: white;
+/* ボタンスタイル - 統一デザイン */
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-text,
+.btn-coconala {
   padding: 1rem 2rem;
   font-weight: 500;
   border-radius: 9999px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  font-family: var(--font-body);
+}
+
+/* サイズバリエーション */
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-large {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+}
+
+/* プライマリボタン（メインアクション） */
+.btn-primary {
+  background-color: #5b8fb9;
+  color: white;
 }
 
 .btn-primary:hover {
   background-color: #4a7da6;
-  transform: scale(1.05);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(91, 143, 185, 0.3);
 }
 
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* セカンダリボタン（サブアクション） */
 .btn-secondary {
   background-color: white;
   color: #5b8fb9;
   border: 2px solid #5b8fb9;
-  padding: 1rem 2rem;
-  font-weight: 500;
-  border-radius: 9999px;
-  transition: all 0.3s;
-  display: inline-block;
 }
 
 .btn-secondary:hover {
   background-color: #e8f3fa;
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(91, 143, 185, 0.2);
 }
 
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* アウトラインボタン */
 .btn-outline {
   background-color: transparent;
   color: #5b8fb9;
   border: 2px solid #5b8fb9;
-  padding: 1rem 2rem;
-  font-weight: 500;
-  border-radius: 9999px;
-  transition: all 0.3s;
-  display: inline-block;
 }
 
 .btn-outline:hover {
   background-color: #5b8fb9;
   color: white;
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(91, 143, 185, 0.3);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* テキストリンクボタン */
+.btn-text {
+  background-color: transparent;
+  color: #5b8fb9;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+}
+
+.btn-text:hover {
+  border-bottom-color: #5b8fb9;
+  transform: none;
+}
+
+/* ココナラボタン（特別） */
+.btn-coconala {
+  background-color: #1bb774;
+  color: white;
+}
+
+.btn-coconala:hover {
+  background-color: #16a865;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(27, 183, 116, 0.3);
+}
+
+.btn-coconala:active {
+  transform: translateY(0);
 }
 
 /* カードスタイル */

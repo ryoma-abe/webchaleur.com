@@ -112,7 +112,7 @@ export default function Header() {
               <li>
                 <Link
                   href="/contact"
-                  className="bg-primary text-white px-6 py-2.5 font-medium hover:bg-[#4a7da6] transition-all rounded-full"
+                  className="btn-primary btn-small"
                 >
                   お問い合わせ
                 </Link>
@@ -228,7 +228,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full bg-primary text-white text-center px-6 py-3 font-medium hover:bg-[#4a7da6] transition-all rounded-full"
+                className="btn-primary w-full"
               >
                 お問い合わせ
               </Link>

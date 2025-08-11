@@ -141,12 +141,10 @@ export default function Information() {
         >
           <Link
             href="/news"
-            className="inline-block text-primary-blue font-medium hover:opacity-80 transition-opacity"
+            className="btn-text inline-flex items-center gap-2"
           >
-            <span className="inline-flex items-center gap-2">
-              すべてのお知らせを見る
-              <span>→</span>
-            </span>
+            すべてのお知らせを見る
+            <span>→</span>
           </Link>
         </div>
       </div>
