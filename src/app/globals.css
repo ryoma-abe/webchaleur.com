@@ -566,8 +566,12 @@ article .article-title {
   }
 }
 
-/* 記事本文のスタイル - より高い特異性で上書き */
-main article .article-content h2 {
+/* 記事本文のスタイル */
+.article-content h1 {
+  display: none; /* MDX内のh1は非表示（タイトルは別途表示） */
+}
+
+.article-content h2 {
   font-size: 1.125rem;
   font-family: var(--font-handwritten);
   font-weight: bold;
@@ -580,7 +584,7 @@ main article .article-content h2 {
   position: relative;
 }
 
-main article .article-content h2::before {
+.article-content h2::before {
   content: '';
   position: absolute;
   left: 0;
@@ -591,7 +595,7 @@ main article .article-content h2::before {
   border-radius: 2px;
 }
 
-main article .article-content h3 {
+.article-content h3 {
   font-size: 1rem;
   font-family: var(--font-handwritten);
   font-weight: bold;
@@ -603,33 +607,42 @@ main article .article-content h3 {
   position: relative;
 }
 
-main article .article-content h3::before {
+.article-content h3::before {
   content: '▸';
   color: #5b8fb9;
   margin-right: 0.5rem;
   font-weight: normal;
 }
 
-main article .article-content p {
+.article-content p {
   color: var(--text-gray);
   line-height: 2;
   margin-bottom: 2rem;
   font-size: 1rem;
 }
 
-main article .article-content ul,
-main article .article-content ol {
+.article-content ul,
+.article-content ol {
   margin: 2rem 0;
   padding-left: 1.5rem;
+  list-style-position: outside;
 }
 
-main article .article-content li {
+.article-content ul {
+  list-style-type: disc;
+}
+
+.article-content ol {
+  list-style-type: decimal;
+}
+
+.article-content li {
   color: var(--text-gray);
   line-height: 1.8;
   margin-bottom: 0.75rem;
 }
 
-main article .article-content blockquote {
+.article-content blockquote {
   border-left: 4px solid #8fb5d1;
   background-color: rgba(232, 243, 250, 0.3);
   padding: 1.5rem;
@@ -637,27 +650,30 @@ main article .article-content blockquote {
   font-style: italic;
 }
 
-main article .article-content a {
+.article-content a {
   color: #5b8fb9;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-main article .article-content a:hover {
+.article-content a:hover {
   opacity: 0.8;
 }
 
-main article .article-content img {
+.article-content img {
   border-radius: 0.75rem;
   margin: 2.5rem 0;
+  max-width: 100%;
+  height: auto;
 }
 
-main article .article-content hr {
-  border-color: #e5e5e5;
+.article-content hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
   margin: 4rem 0;
 }
 
-main article .article-content code {
+.article-content code {
   background-color: #f5f5f3;
   padding: 0.125rem 0.5rem;
   border-radius: 0.25rem;
@@ -665,7 +681,7 @@ main article .article-content code {
   font-family: monospace;
 }
 
-main article .article-content pre {
+.article-content pre {
   background-color: var(--text-dark);
   color: white;
   border-radius: 0.75rem;
@@ -674,7 +690,34 @@ main article .article-content pre {
   overflow-x: auto;
 }
 
-main article .article-content strong {
+.article-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.article-content strong {
   color: var(--text-dark);
+  font-weight: bold;
+}
+
+.article-content em {
+  font-style: italic;
+}
+
+.article-content table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+
+.article-content th,
+.article-content td {
+  padding: 0.75rem;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.article-content th {
+  background-color: #f5f5f3;
   font-weight: bold;
 }
