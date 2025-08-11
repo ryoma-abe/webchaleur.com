@@ -54,7 +54,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           <h1 className="article-title">{blog.frontMatter.title}</h1>
           
           {/* メタ情報 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-gray">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-base text-gray">
             {blog.frontMatter.date && (
               <time dateTime={blog.frontMatter.date} className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,14 +80,14 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         {/* カテゴリー・タグ */}
         <div className="mb-12 text-center">
           {blog.frontMatter.category && (
-            <span className="inline-block px-4 py-2 bg-primary-lighter text-primary-blue rounded-full text-sm font-medium mr-3 mb-2">
+            <span className="inline-block px-4 py-2 bg-primary-lighter text-primary-blue rounded-full text-base font-medium mr-3 mb-2">
               {blog.frontMatter.category}
             </span>
           )}
           {blog.frontMatter.tags?.map((tag) => (
             <span
               key={tag}
-              className="inline-block px-3 py-1 bg-light text-gray rounded-full text-xs mr-2 mb-2"
+              className="inline-block px-3 py-1 bg-light text-gray rounded-full text-sm mr-2 mb-2"
             >
               #{tag}
             </span>

@@ -1,4 +1,5 @@
 import { getAllContent } from '@/lib/mdx';
+import Link from 'next/link';
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
@@ -23,12 +24,12 @@ export default async function NewsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6">
             {news.map((item, index) => (
-              <SketchyCard
-                key={item.slug}
-                className="hover:shadow-[4px_4px_0_rgba(91,143,185,0.15)] transition-shadow"
-                rotate={false}
-              >
-                <article className="flex flex-col md:flex-row md:items-center gap-4">
+              <Link href={`/news/${item.slug}`} key={item.slug} className="block group">
+                <SketchyCard
+                  className="hover:shadow-[4px_4px_0_rgba(91,143,185,0.15)] transition-all group-hover:transform group-hover:-translate-y-0.5"
+                  rotate={false}
+                >
+                  <article className="flex flex-col md:flex-row md:items-center gap-4">
                   <div className="flex-shrink-0">
                     {item.frontMatter.date && (
                       <time
@@ -60,33 +61,25 @@ export default async function NewsPage() {
                       )}
                     </div>
 
-                    <h2 className="text-lg font-klee font-bold text-text-dark mb-2">
-                      <a 
-                        href={`/news/${item.slug}`}
-                        className="hover:text-main-blue transition-colors"
-                      >
-                        {item.frontMatter.title}
-                      </a>
+                    <h2 className="text-base md:text-lg font-klee font-bold text-text-dark mb-2 group-hover:text-main-blue transition-colors">
+                      {item.frontMatter.title}
                     </h2>
 
                     {item.frontMatter.description && (
-                      <p className="text-text-gray font-zenmaru text-sm mb-3">
+                      <p className="text-text-gray font-zenmaru text-xs md:text-sm mb-3">
                         {item.frontMatter.description}
                       </p>
                     )}
                   </div>
 
                   <div className="flex-shrink-0">
-                    <HandDrawnButton
-                      href={`/news/${item.slug}`}
-                      size="small"
-                      variant="outline"
-                    >
+                    <span className="text-main-blue font-zenmaru text-sm group-hover:underline">
                       詳しく見る →
-                    </HandDrawnButton>
+                    </span>
                   </div>
                 </article>
               </SketchyCard>
+              </Link>
             ))}
           </div>
 
