@@ -3,11 +3,9 @@ import Image from 'next/image';
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: '制作実績 | WebChaleur',
-  description: '十勝・帯広を中心に全国のWeb制作実績をご紹介します。',
-};
+export const metadata = generatePageMetadata({ path: '/works' });
 
 export default async function WorksPage() {
   const works = await getAllContent('works');

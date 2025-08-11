@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getContentBySlug, getAllContent, markdownToHtml } from '@/lib/mdx';
+import { generatePageMetadata } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const news = await getAllContent('news');
@@ -16,10 +17,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {};
   }
 
-  return {
-    title: `${news.frontMatter.title} | WebChaleur`,
+  return generatePageMetadata({
+    title: news.frontMatter.title,
     description: news.frontMatter.description,
-  };
+    article: {
+      publishedTime: news.frontMatter.date,
+    },
+  });
 }
 
 export default async function NewsDetailPage({ params }: { params: Promise<{ slug: string }> }) {

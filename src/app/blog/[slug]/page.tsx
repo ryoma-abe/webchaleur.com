@@ -3,6 +3,7 @@ import { getContentBySlug, getAllContent, markdownToHtml } from '@/lib/mdx';
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
+import { generatePageMetadata } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const blogs = await getAllContent('blog');
@@ -19,10 +20,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {};
   }
 
-  return {
-    title: `${blog.frontMatter.title} | WebChaleur Blog`,
+  return generatePageMetadata({
+    title: blog.frontMatter.title,
     description: blog.frontMatter.description,
-  };
+    keywords: blog.frontMatter.tags,
+    image: blog.frontMatter.thumbnail,
+    article: {
+      publishedTime: blog.frontMatter.date,
+      tags: blog.frontMatter.tags,
+    },
+  });
 }
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {

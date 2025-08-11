@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { getContentBySlug, getAllContent, markdownToHtml } from '@/lib/mdx';
+import { generatePageMetadata } from '@/lib/seo';
 
 export async function generateStaticParams() {
   const works = await getAllContent('works');
@@ -17,10 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {};
   }
 
-  return {
-    title: `${work.frontMatter.title} | WebChaleur`,
+  return generatePageMetadata({
+    title: work.frontMatter.title,
     description: work.frontMatter.description,
-  };
+    keywords: work.frontMatter.tags,
+    image: work.frontMatter.thumbnail,
+  });
 }
 
 export default async function WorkDetailPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -14,6 +14,8 @@ export interface FrontMatter {
   tags?: string[];
   thumbnail?: string;
   client?: string;
+  technologies?: string[];
+  url?: string;
 }
 
 export interface ContentData {

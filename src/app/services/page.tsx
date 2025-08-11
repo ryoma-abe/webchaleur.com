@@ -2,11 +2,9 @@ import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
 import Link from 'next/link';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'サービス | WebChaleur',
-  description: '十勝を拠点に全国対応。Web制作・ECサイト構築・コンサルティングサービスの詳細',
-};
+export const metadata = generatePageMetadata({ path: '/services' });
 
 export default function ServicesPage() {
   const services = [

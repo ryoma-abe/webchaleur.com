@@ -2,11 +2,9 @@ import { getAllContent } from '@/lib/mdx';
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
+import { generatePageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: '技術ブログ | WebChaleur',
-  description: 'Web制作の技術情報や、十勝でのビジネスに役立つ情報を発信しています。',
-};
+export const metadata = generatePageMetadata({ path: '/blog' });
 
 export default async function BlogPage() {
   const blogs = await getAllContent('blog');
