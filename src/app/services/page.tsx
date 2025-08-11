@@ -197,7 +197,9 @@ export default function ServicesPage() {
                   animationDelay: `${index * 50}ms`,
                 }}
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
+                <div className="text-4xl mb-4 text-primary-blue">
+                  <service.icon className="mx-auto" />
+                </div>
                 <h3 className="font-klee font-bold text-lg text-text-dark mb-2">
                   {service.title}
                 </h3>
