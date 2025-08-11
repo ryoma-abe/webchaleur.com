@@ -82,9 +82,7 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100"
-      >
+      <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -110,10 +108,7 @@ export default function Header() {
                   </li>
                 ))}
               <li>
-                <Link
-                  href="/contact"
-                  className="btn-primary btn-small"
-                >
+                <Link href="/contact" className="btn-primary btn-small">
                   お問い合わせ
                 </Link>
               </li>
@@ -222,7 +217,7 @@ export default function Header() {
                 )}
               </li>
             ))}
-            
+
             {/* Mobile CTA Button */}
             <li className="p-4">
               <Link
