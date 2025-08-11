@@ -12,7 +12,8 @@
       "Bash(npx shadcn@latest init:*)",
       "Bash(node:*)",
       "Bash(curl:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   }

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { FaCheck, FaRocket } from "react-icons/fa";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -102,16 +103,24 @@ export default function Hero() {
                   "制作後の運用もしっかりフォロー",
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3 text-body">
-                    <span className="text-primary-blue mt-1 flex-shrink-0">✓</span>
+                    <span className="text-primary-blue mt-1 flex-shrink-0">
+                      <FaCheck className="text-sm" />
+                    </span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
               {/* モバイル用簡略版 */}
               <div className="sm:hidden flex flex-wrap gap-3 text-xs">
-                <span className="text-primary-blue">✓ 100件以上の実績</span>
-                <span className="text-primary-blue">✓ 地域密着を目指す</span>
-                <span className="text-primary-blue">✓ 最新技術対応</span>
+                <span className="text-primary-blue flex items-center gap-1">
+                  <FaCheck className="text-xs" /> 100件以上の実績
+                </span>
+                <span className="text-primary-blue flex items-center gap-1">
+                  <FaCheck className="text-xs" /> 地域密着を目指す
+                </span>
+                <span className="text-primary-blue flex items-center gap-1">
+                  <FaCheck className="text-xs" /> 最新技術対応
+                </span>
               </div>
             </div>
           </div>
@@ -134,8 +143,8 @@ export default function Hero() {
                 }}
               >
                 <h3 className="heading-card mb-4 flex items-center gap-2">
-                  <span className="text-xl xl:text-2xl">🚀</span>
-                  私たちについて
+                  <FaRocket className="text-xl xl:text-2xl text-primary-blue" />
+                  <span>WebChaleurについて</span>
                 </h3>
                 <div className="grid grid-cols-2 gap-3 xl:gap-4 text-sm">
                   <div>

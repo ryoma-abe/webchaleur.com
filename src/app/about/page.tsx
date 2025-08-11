@@ -4,6 +4,7 @@ import SketchyCard from "@/components/ui/SketchyCard";
 import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import FadeIn from "@/components/animations/FadeIn";
 import { generatePageMetadata } from '@/lib/seo';
+import { FaHome, FaLaptopCode, FaHandshake } from "react-icons/fa";
 
 export const metadata = generatePageMetadata({ path: '/about' });
 
@@ -12,7 +13,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-bg-cream py-20">
       <div className="container mx-auto px-4">
         <WobblyHeading level={1} underline english="About Us">
-          私たちについて
+          WebChaleurについて
         </WobblyHeading>
 
         {/* ミッション */}
@@ -68,12 +69,14 @@ export default function AboutPage() {
         <FadeIn delay={0.4}>
           <div className="max-w-5xl mx-auto mb-16">
             <h2 className="text-2xl font-klee font-bold text-text-dark mb-8 text-center">
-              私たちの強み
+              私の強み
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <SketchyCard>
                 <div className="text-center">
-                  <div className="text-4xl mb-4">🏠</div>
+                  <div className="text-4xl mb-4 text-primary-blue flex justify-center">
+                    <FaHome />
+                  </div>
                   <h3 className="text-lg font-klee font-bold text-text-dark mb-3">
                     柔軟な対応
                   </h3>
@@ -86,7 +89,9 @@ export default function AboutPage() {
 
               <SketchyCard>
                 <div className="text-center">
-                  <div className="text-4xl mb-4">💻</div>
+                  <div className="text-4xl mb-4 text-primary-blue flex justify-center">
+                    <FaLaptopCode />
+                  </div>
                   <h3 className="text-lg font-klee font-bold text-text-dark mb-3">
                     最新技術
                   </h3>
@@ -99,7 +104,9 @@ export default function AboutPage() {
 
               <SketchyCard>
                 <div className="text-center">
-                  <div className="text-4xl mb-4">🤝</div>
+                  <div className="text-4xl mb-4 text-primary-blue flex justify-center">
+                    <FaHandshake />
+                  </div>
                   <h3 className="text-lg font-klee font-bold text-text-dark mb-3">
                     継続サポート
                   </h3>

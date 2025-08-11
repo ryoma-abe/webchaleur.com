@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { FaEnvelope, FaMapMarkerAlt, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { href: '/about', label: '私たちについて' },
+    { href: '/about', label: 'WebChaleurについて' },
     { href: '/works', label: '制作実績' },
     { href: '/blog', label: 'ブログ' },
     { href: '/news', label: 'お知らせ' },
@@ -18,8 +19,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { href: 'https://twitter.com/webchaleur', label: 'X (Twitter)', icon: '𝕏' },
-    { href: 'https://www.instagram.com/webchaleur', label: 'Instagram', icon: '📷' },
+    { href: 'https://twitter.com/webchaleur', label: 'X (Twitter)', icon: FaTwitter },
+    { href: 'https://www.instagram.com/webchaleur', label: 'Instagram', icon: FaInstagram },
   ];
 
   return (
@@ -85,8 +86,14 @@ export default function Footer() {
               お問い合わせ
             </h4>
             <p className="text-body mb-4">
-              📧 info@webchaleur.jp<br />
-              📍 北海道十勝エリア（全国対応）
+              <span className="flex items-center gap-2 mb-1">
+                <FaEnvelope className="text-primary-blue" />
+                info@webchaleur.jp
+              </span>
+              <span className="flex items-center gap-2">
+                <FaMapMarkerAlt className="text-primary-blue" />
+                北海道十勝エリア（全国対応）
+              </span>
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -98,7 +105,7 @@ export default function Footer() {
                   className="text-gray hover:text-primary-blue transition-colors text-lg"
                   aria-label={social.label}
                 >
-                  {social.icon}
+                  <social.icon />
                 </a>
               ))}
             </div>

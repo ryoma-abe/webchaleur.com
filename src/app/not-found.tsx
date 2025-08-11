@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { FaSearch, FaCommentDots } from 'react-icons/fa';
 
 export default function NotFound() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +24,9 @@ export default function NotFound() {
           >
             404
           </h1>
-          <div className="text-6xl mb-6">🔍</div>
+          <div className="text-6xl mb-6 text-primary-blue flex justify-center">
+            <FaSearch />
+          </div>
         </div>
 
         {/* メッセージ */}
@@ -45,7 +48,7 @@ export default function NotFound() {
           }}
         >
           <p className="text-body">
-            <span className="text-2xl mb-2 block">💭</span>
+            <FaCommentDots className="text-2xl mb-2 mx-auto text-primary-blue" />
             ページが迷子になってしまったようです...
             <br />
             でも大丈夫！以下のボタンから戻れます。

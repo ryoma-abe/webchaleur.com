@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
+import { FaEnvelope, FaMobileAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 interface FormData {
   name: string;
@@ -278,7 +279,9 @@ export default function Contact() {
         {/* Additional Contact Info */}
         <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
           <div>
-            <div className="text-3xl mb-3">📧</div>
+            <div className="text-3xl mb-3 text-primary-blue flex justify-center">
+              <FaEnvelope />
+            </div>
             <h3 className="font-klee font-bold text-lg mb-2">メール</h3>
             <p className="text-caption">
               info@webchaleur.jp
@@ -287,7 +290,9 @@ export default function Contact() {
             </p>
           </div>
           <div>
-            <div className="text-3xl mb-3">📱</div>
+            <div className="text-3xl mb-3 text-primary-blue flex justify-center">
+              <FaMobileAlt />
+            </div>
             <h3 className="font-klee font-bold text-lg mb-2">LINE</h3>
             <p className="text-caption">
               @webchaleur
@@ -296,7 +301,9 @@ export default function Contact() {
             </p>
           </div>
           <div>
-            <div className="text-3xl mb-3">📍</div>
+            <div className="text-3xl mb-3 text-primary-blue flex justify-center">
+              <FaMapMarkerAlt />
+            </div>
             <h3 className="font-klee font-bold text-lg mb-2">所在地</h3>
             <p className="text-caption">
               北海道河東郡音更町
