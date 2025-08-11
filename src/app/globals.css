@@ -36,6 +36,12 @@
 
 /* ダークモード無効化 - 常に明るいテーマ */
 
+/* タイピングアニメーション用カーソル */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 body {
   background: var(--bg-cream);
   color: var(--text-dark);
