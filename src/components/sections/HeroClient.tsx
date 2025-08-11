@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaCheck, FaRocket } from "react-icons/fa";
 import Link from "next/link";
 import TypingAnimationWithDelete from "../animations/TypingAnimationWithDelete";
 
