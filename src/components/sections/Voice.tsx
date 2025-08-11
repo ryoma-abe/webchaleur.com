@@ -155,16 +155,12 @@ export default function Voice() {
         >
           <div className="inline-flex items-center gap-8 flex-wrap justify-center">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-blue">152社</div>
+              <div className="text-3xl font-bold text-primary-blue">100件+</div>
               <div className="text-caption">制作実績</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary-blue">98%</div>
               <div className="text-caption">満足度</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary-blue">7年</div>
-              <div className="text-caption">運営実績</div>
             </div>
           </div>
         </div>
