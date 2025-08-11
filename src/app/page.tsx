@@ -1,5 +1,5 @@
 import Hero from '@/components/sections/Hero';
-import Information from '@/components/sections/InformationServer';
+import Information from '@/components/sections/InformationNew';
 import About from '@/components/sections/About';
 import Strengths from '@/components/sections/Strengths';
 import Works from '@/components/sections/WorksServer';
