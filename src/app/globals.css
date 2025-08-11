@@ -543,3 +543,138 @@ p {
 .form-label {
   @apply block text-sm font-medium text-gray-700 mb-2;
 }
+
+/* 記事詳細ページ用スタイル */
+article .article-title {
+  font-size: 1.25rem;
+  font-family: var(--font-handwritten);
+  font-weight: bold;
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  article .article-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  article .article-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* 記事本文のスタイル - より高い特異性で上書き */
+main article .article-content h2 {
+  font-size: 1.125rem;
+  font-family: var(--font-handwritten);
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  border-bottom: 2px solid #8fb5d1;
+  position: relative;
+}
+
+main article .article-content h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #5b8fb9;
+  border-radius: 2px;
+}
+
+main article .article-content h3 {
+  font-size: 1rem;
+  font-family: var(--font-handwritten);
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 4px solid #e8f3fa;
+  position: relative;
+}
+
+main article .article-content h3::before {
+  content: '▸';
+  color: #5b8fb9;
+  margin-right: 0.5rem;
+  font-weight: normal;
+}
+
+main article .article-content p {
+  color: var(--text-gray);
+  line-height: 2;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+main article .article-content ul,
+main article .article-content ol {
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+}
+
+main article .article-content li {
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+main article .article-content blockquote {
+  border-left: 4px solid #8fb5d1;
+  background-color: rgba(232, 243, 250, 0.3);
+  padding: 1.5rem;
+  margin: 2.5rem 0;
+  font-style: italic;
+}
+
+main article .article-content a {
+  color: #5b8fb9;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+main article .article-content a:hover {
+  opacity: 0.8;
+}
+
+main article .article-content img {
+  border-radius: 0.75rem;
+  margin: 2.5rem 0;
+}
+
+main article .article-content hr {
+  border-color: #e5e5e5;
+  margin: 4rem 0;
+}
+
+main article .article-content code {
+  background-color: #f5f5f3;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: monospace;
+}
+
+main article .article-content pre {
+  background-color: var(--text-dark);
+  color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 2.5rem 0;
+  overflow-x: auto;
+}
+
+main article .article-content strong {
+  color: var(--text-dark);
+  font-weight: bold;
+}

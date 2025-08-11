@@ -38,9 +38,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
       <article className="container mx-auto px-4 max-w-5xl">
         {/* ヘッダー部分 */}
         <header className="mb-16 text-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-[var(--font-handwritten)] font-bold text-[var(--text-dark)] leading-relaxed mb-8">
-            {work.frontMatter.title}
-          </h1>
+          <h1 className="article-title">{work.frontMatter.title}</h1>
           
           {/* メタ情報 */}
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray">
@@ -140,24 +138,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
 
           {/* メインコンテンツ */}
           <div className="lg:col-span-2">
-            <div
-              className="prose prose-lg max-w-none
-                prose-headings:font-[var(--font-handwritten)] prose-headings:text-[var(--text-dark)] prose-headings:font-bold
-                prose-h2:text-xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:pb-4 prose-h2:border-b prose-h2:border-gray-200
-                prose-h3:text-lg prose-h3:mt-12 prose-h3:mb-6
-                prose-p:text-[var(--text-gray)] prose-p:leading-[2.0] prose-p:mb-8 prose-p:text-base
-                prose-a:text-primary-blue prose-a:underline prose-a:underline-offset-2 hover:prose-a:opacity-80
-                prose-blockquote:border-l-4 prose-blockquote:border-primary-light prose-blockquote:bg-primary-lighter/30
-                prose-blockquote:pl-6 prose-blockquote:py-6 prose-blockquote:my-10 prose-blockquote:italic
-                prose-code:bg-accent-beige prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono
-                prose-pre:bg-[var(--text-dark)] prose-pre:text-white prose-pre:rounded-xl prose-pre:p-6 prose-pre:my-10
-                prose-ul:list-disc prose-ul:pl-6 prose-ul:my-8 prose-ul:space-y-3
-                prose-ol:list-decimal prose-ol:pl-6 prose-ol:my-8 prose-ol:space-y-3
-                prose-li:text-[var(--text-gray)] prose-li:leading-relaxed
-                prose-img:rounded-xl prose-img:my-10
-                prose-hr:border-gray-200 prose-hr:my-16"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
+            <div className="article-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
           </div>
         </div>
 
