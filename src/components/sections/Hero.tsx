@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaCheck, FaRocket } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,17 +29,11 @@ export default function Hero() {
               <span className="inline-block">十勝の企業様の</span>
               <br />
               <span
-                className="text-primary-blue inline-block relative"
-                style={{
-                  fontSize: "1.15em",
-                }}
+                className="text-primary-blue inline-block relative text-[1.15em]"
               >
                 Webサイトのこと
                 <span
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-[#5b8fb9] opacity-20"
-                  style={{
-                    borderRadius: "2px",
-                  }}
+                  className="absolute -bottom-2 left-0 w-full h-1 bg-[#5b8fb9] opacity-20 rounded-sm"
                 />
               </span>
               <br />
@@ -75,18 +70,13 @@ export default function Hero() {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              <a
-                href="/contact"
-                className="btn-primary text-center"
-              >
+              <Link href="/contact" className="btn-primary text-center">
                 まずは気軽に相談
-              </a>
-              <a
-                href="/works"
-                className="btn-secondary text-center"
-              >
+              </Link>
+
+              <Link href="/works" className="btn-secondary text-center">
                 制作事例を見る
-              </a>
+              </Link>
             </div>
 
             {/* チェックリスト - モバイルでは簡略化 */}
@@ -136,11 +126,7 @@ export default function Hero() {
             >
               {/* 情報カード */}
               <div
-                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 xl:p-8 mb-6"
-                style={{
-                  borderRadius: "20px",
-                  boxShadow: "0 20px 60px rgba(91, 143, 185, 0.15)",
-                }}
+                className="bg-white/90 backdrop-blur-sm rounded-[20px] shadow-[0_20px_60px_rgba(91,143,185,0.15)] p-6 xl:p-8 mb-6"
               >
                 <h3 className="heading-card mb-4 flex items-center gap-2">
                   <FaRocket className="text-xl xl:text-2xl text-primary-blue" />
