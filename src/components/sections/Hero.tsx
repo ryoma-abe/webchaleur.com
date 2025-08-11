@@ -12,7 +12,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen max-h-[100dvh] flex items-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white py-12 lg:py-0">
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* 左側：テキストコンテンツ */}
@@ -146,8 +146,63 @@ export default function Hero() {
               </div>
 
               {/* お気軽にどうぞ！テキスト */}
-              <div className="text-right mr-4">
+              <div className="text-right mr-4 mb-6">
                 <span className="text-body">お気軽にご相談ください</span>
+              </div>
+
+              {/* ニュースセクション - NEW */}
+              <div
+                className={`bg-white/95 backdrop-blur-sm rounded-[20px] shadow-[0_15px_40px_rgba(91,143,185,0.1)] p-5 xl:p-6 transition-all duration-1000 delay-500 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
+              >
+                <h4 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-primary-blue rounded-full animate-pulse"></span>
+                  最新のお知らせ
+                </h4>
+                <div className="space-y-2">
+                  <a href="/news" className="block group hover:bg-gray-50 rounded-lg p-2 -m-2 transition-colors duration-200">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xs text-gray-500 mt-0.5 whitespace-nowrap">2025.01.08</span>
+                      <div className="flex-1">
+                        <span className="text-sm text-gray-800 group-hover:text-primary-blue transition-colors duration-200 line-clamp-1">
+                          新春キャンペーン！初期費用20%OFF実施中
+                        </span>
+                        <span className="inline-block ml-2 px-2 py-0.5 bg-red-100 text-red-600 text-xs rounded-full font-medium">
+                          NEW
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="/news" className="block group hover:bg-gray-50 rounded-lg p-2 -m-2 transition-colors duration-200">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xs text-gray-500 mt-0.5 whitespace-nowrap">2024.12.25</span>
+                      <div className="flex-1">
+                        <span className="text-sm text-gray-800 group-hover:text-primary-blue transition-colors duration-200 line-clamp-1">
+                          年末年始の営業についてのお知らせ
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="/news" className="block group hover:bg-gray-50 rounded-lg p-2 -m-2 transition-colors duration-200">
+                    <div className="flex items-start gap-3">
+                      <span className="text-xs text-gray-500 mt-0.5 whitespace-nowrap">2024.12.18</span>
+                      <div className="flex-1">
+                        <span className="text-sm text-gray-800 group-hover:text-primary-blue transition-colors duration-200 line-clamp-1">
+                          Shopify構築サービスを強化しました
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div className="mt-3 pt-3 border-t border-gray-100">
+                  <a href="/news" className="text-xs text-primary-blue hover:text-primary-blue/80 transition-colors duration-200 flex items-center gap-1">
+                    すべてのお知らせを見る
+                    <span className="text-[10px]">→</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
