@@ -34,19 +34,19 @@ export default function Voice() {
     {
       id: 1,
       content: 'とても親切で、要望以上のサイトを作っていただきました。オンラインでのやり取りもスムーズでした。',
-      author: '東京都 IT企業D社様',
+      author: 'IT企業様',
       rating: 5,
     },
     {
       id: 2,
-      content: '地元十勝の企業ですが、全国レベルの技術力で最新のECサイトを構築していただきました。',
-      author: '音更町 小売業B社様',
+      content: '最新の技術を使って、理想通りのECサイトを構築していただきました。サポートも充実しています。',
+      author: 'ECサイト運営者様',
       rating: 5,
     },
     {
       id: 3,
-      content: '遠方からの依頼でしたが、Zoomでの打ち合わせも丁寧で、理想のホームページができました。',
-      author: '大阪府 サービス業E社様',
+      content: '細かい要望にも丁寧に対応していただき、満足のいくホームページが完成しました。',
+      author: 'サービス業様',
       rating: 5,
     },
   ];
@@ -94,7 +94,7 @@ export default function Voice() {
                 ★★★★★
               </div>
               <div className="text-body font-medium">
-                152件のレビュー
+                100件以上の制作実績
               </div>
             </div>
             
