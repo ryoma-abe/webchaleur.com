@@ -123,10 +123,12 @@ export default function About() {
               </p>
               <p className="text-[var(--text-gray)] font-[var(--font-main)] leading-relaxed">
                 今、その経験を活かして十勝・帯広の地域企業様のデジタル化を本格的に支援していきます。
+                <br />
                 最新技術と温かみのあるデザインで、地域のビジネスの成長をお手伝いします。
               </p>
               <p className="text-[var(--text-gray)] font-[var(--font-main)] leading-relaxed">
                 「作って終わり」ではなく、作った後も一緒に成長していける。
+                <br />
                 地域に根ざしたパートナーとして、末永くお付き合いいただければ幸いです。
               </p>
             </div>
