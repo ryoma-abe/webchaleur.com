@@ -1,5 +1,5 @@
 import { getAllContent } from '@/lib/mdx';
-import BlogClient from './BlogClient';
+import BlogSection from './blog/BlogSection';
 
 export default async function Blog() {
   // MDXからブログ記事を取得
@@ -18,5 +18,5 @@ export default async function Blog() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3); // 最新3件を表示
 
-  return <BlogClient items={formattedItems} />;
+  return <BlogSection items={formattedItems} />;
 }
