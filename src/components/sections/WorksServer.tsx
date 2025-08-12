@@ -1,5 +1,5 @@
 import { getAllContent } from '@/lib/mdx';
-import WorksClient from './WorksClient';
+import WorksSection from './works/WorksSection';
 
 export default async function Works() {
   // MDXから制作実績を取得
@@ -20,5 +20,5 @@ export default async function Works() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 6); // 最新6件を表示
 
-  return <WorksClient items={formattedItems} />;
+  return <WorksSection items={formattedItems} />;
 }

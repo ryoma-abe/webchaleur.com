@@ -1,21 +1,21 @@
 import HeroServer from '@/components/sections/HeroServer';
-import About from '@/components/sections/About';
-import Strengths from '@/components/sections/Strengths';
+import AboutSection from '@/components/sections/about/AboutSection';
+import StrengthsSection from '@/components/sections/strengths/StrengthsSection';
 import Works from '@/components/sections/WorksServer';
-import Voice from '@/components/sections/Voice';
+import VoiceSection from '@/components/sections/voice/VoiceSection';
 import Blog from '@/components/sections/BlogServer';
-import FAQ from '@/components/sections/FAQ';
+import FAQSection from '@/components/sections/faq/FAQSection';
 
 export default function Home() {
   return (
     <>
       <HeroServer />
-      <About />
-      <Strengths />
+      <AboutSection />
+      <StrengthsSection />
       <Works />
-      <Voice />
+      <VoiceSection />
       <Blog />
-      <FAQ />
+      <FAQSection />
     </>
   );
 }

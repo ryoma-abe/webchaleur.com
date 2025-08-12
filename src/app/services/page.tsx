@@ -115,7 +115,7 @@ export default function ServicesPage() {
                 className="opacity-0 animate-fadeInUp"
                 style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
               >
-                <SketchyCard className="h-full hover:shadow-xl transition-shadow">
+                <SketchyCard className="h-full" variant="elevated">
                   <div className="text-center mb-6 text-6xl text-primary-blue">
                     <service.icon className="mx-auto" />
                   </div>
@@ -192,7 +192,7 @@ export default function ServicesPage() {
             {additionalServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-2xl hover:shadow-md transition-all"
+                className="bg-white p-6 rounded-2xl hover:translate-y-[-2px] transition-all group shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.08)]"
                 style={{
                   animationDelay: `${index * 50}ms`,
                 }}
