@@ -1,4 +1,4 @@
-import HeroClient from './HeroClient';
+import HeroSection from './hero/HeroSection';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -45,5 +45,5 @@ async function getLatestNews(): Promise<NewsItem[]> {
 export default async function HeroServer() {
   const latestNews = await getLatestNews();
   
-  return <HeroClient latestNews={latestNews} />;
+  return <HeroSection latestNews={latestNews} />;
 }
