@@ -3,7 +3,8 @@
 export function reportWebVitals(metric: any) {
   // Core Web Vitalsの測定
   if (metric.label === 'web-vital') {
-    console.log(metric); // 開発環境でのデバッグ用
+    // 開発環境でのデバッグ用（必要に応じてコメント解除）
+    // console.log(metric);
     
     // 本番環境では分析サービスに送信
     if (process.env.NODE_ENV === 'production') {
