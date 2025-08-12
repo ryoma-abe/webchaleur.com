@@ -19,13 +19,12 @@ export default function FAQItem({
 }: FAQItemProps) {
   return (
     <div
-      className={`border border-[var(--accent-beige)] overflow-hidden transition-all duration-800 ${
+      className={`bg-white overflow-hidden transition-all duration-800 shadow-[0_1px_4px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
       }`}
       style={{
         borderRadius: '16px',
         transitionDelay: `${delay}ms`,
-        borderStyle: 'dashed',
       }}
     >
       <button

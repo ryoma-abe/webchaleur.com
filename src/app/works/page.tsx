@@ -22,7 +22,8 @@ export default async function WorksPage() {
           {works.map((work, index) => (
             <Link href={`/works/${work.slug}`} key={work.slug} className="block group">
               <SketchyCard
-                className="hover:shadow-[6px_6px_0_rgba(91,143,185,0.2)] overflow-hidden transition-all group-hover:transform group-hover:-translate-y-1"
+                className="overflow-hidden transition-all group-hover:transform group-hover:-translate-y-1"
+                variant="default"
               >
                 <article>
                 {work.frontMatter.thumbnail && (

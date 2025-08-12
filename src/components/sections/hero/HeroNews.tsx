@@ -25,7 +25,7 @@ export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
 
   return (
     <div
-      className={`w-full bg-white rounded-[20px] border border-gray-100 shadow-[0_10px_40px_rgba(91,143,185,0.08)] p-8 lg:p-10 transition-all duration-1000 delay-700 ${
+      className={`w-full bg-white rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] p-8 lg:p-10 transition-all duration-1000 delay-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >

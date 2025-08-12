@@ -29,26 +29,25 @@ export default function StrengthCard({
       }}
     >
       <div
-        className="bg-light p-6 lg:p-8 h-full hover:shadow-lg transition-all hover:translate-y-[-4px] relative overflow-hidden"
+        className="bg-white p-6 lg:p-8 h-full transition-all hover:translate-y-[-3px] relative overflow-hidden group shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_28px_rgba(91,143,185,0.12)]"
         style={{
           borderRadius: "20px",
         }}
       >
         {/* 番号バッジ */}
         <div
-          className="inline-block mb-4"
+          className="inline-block mb-4 group-hover:scale-105 transition-transform duration-300 shadow-sm"
           style={{
             width: "50px",
             height: "50px",
             borderRadius: "50%",
-            background: "white",
-            border: "3px solid #5b8fb9",
+            background: "linear-gradient(135deg, #5b8fb9 0%, #8fb5d1 100%)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <span className="text-primary-blue font-bold text-lg">
+          <span className="text-white font-bold text-lg">
             {number}
           </span>
         </div>
