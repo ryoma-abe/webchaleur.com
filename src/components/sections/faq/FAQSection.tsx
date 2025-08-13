@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import FAQItem from "./FAQItem";
 import faqData from "@/data/faq.json";
 import SectionHeader from "../common/SectionHeader";
+import useInView from "@/hooks/useInView";
 
 interface FAQItemData {
   id: number;
@@ -12,26 +13,13 @@ interface FAQItemData {
 }
 
 export default function FAQSection() {
-  const [isVisible, setIsVisible] = useState(false);
   const [openItems, setOpenItems] = useState<number[]>([]);
 
+  const { ref, inView } = useInView();
+  const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById("faq");
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
-  }, []);
+    if (inView) setIsVisible(true);
+  }, [inView]);
 
   const toggleItem = (id: number) => {
     setOpenItems((prev) =>
@@ -42,7 +30,7 @@ export default function FAQSection() {
   const faqItems: FAQItemData[] = faqData.items;
 
   return (
-    <section id="faq" className="section-padding bg-white">
+    <section id="faq" className="section-padding bg-white" ref={ref}>
       <div className="max-w-4xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
         <SectionHeader
