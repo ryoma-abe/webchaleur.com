@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import BlogGrid from './BlogGrid';
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import BlogGrid from "./BlogGrid";
+import SectionHeader from "../common/SectionHeader";
 
 interface BlogItem {
   slug: string;
@@ -31,7 +32,7 @@ export default function BlogSection({ items }: BlogSectionProps) {
       { threshold: 0.1 }
     );
 
-    const element = document.getElementById('blog');
+    const element = document.getElementById("blog");
     if (element) observer.observe(element);
 
     return () => {
@@ -40,39 +41,22 @@ export default function BlogSection({ items }: BlogSectionProps) {
   }, []);
 
   return (
-    <section 
-      id="blog"
-      className="section-padding bg-[var(--bg-light)]"
-    >
+    <section id="blog" className="section-padding bg-[var(--bg-light)]">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
-        <div 
-          className={`text-center mb-12 transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h2 className="heading-section">
-            技術ブログ
-          </h2>
-          <span className="text-caption inline-block">
-            Technical Blog
-          </span>
-        </div>
+        <SectionHeader isVisible={isVisible} title="ブログ" subTitle="Blog" />
 
         {/* ブログカードグリッド */}
         <BlogGrid items={items} isVisible={isVisible} />
 
         {/* もっと見るボタン */}
         {items.length > 0 && (
-          <div 
+          <div
             className={`text-center mt-12 transition-all duration-800 delay-600 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
+              isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Link
-              href="/blog"
-              className="btn-primary"
-            >
+            <Link href="/blog" className="btn-primary">
               すべての記事を見る
             </Link>
           </div>
