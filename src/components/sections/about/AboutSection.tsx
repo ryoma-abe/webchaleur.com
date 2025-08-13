@@ -1,7 +1,6 @@
 "use client";
 import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import AboutMessage from "./AboutMessage";
-import AboutValues from "./AboutValues";
 import AboutRepMessage from "./AboutRepMessage";
 import { useEffect, useState } from "react";
 import SectionHeader from "../common/SectionHeader";
@@ -28,11 +27,8 @@ export default function AboutSection() {
           subTitle="AboutUs"
         />
 
-        {/* メインメッセージ */}
+        {/* メインメッセージと屋号の意味 */}
         <AboutMessage isVisible={isVisible} />
-
-        {/* 3つの価値 */}
-        <AboutValues isVisible={isVisible} />
 
         {/* 代表メッセージ */}
         <AboutRepMessage isVisible={isVisible} />
