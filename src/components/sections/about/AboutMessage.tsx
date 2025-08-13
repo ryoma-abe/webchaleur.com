@@ -16,9 +16,7 @@ export default function AboutMessage({ isVisible }: AboutMessageProps) {
             十勝・帯広から全国へ
           </p>
           <h3 className="text-3xl md:text-4xl leading-relaxed">
-            <span className="text-primary">温かみのある</span>
-            <span className="text-primary-blue">Web制作</span>
-            <span className="text-primary">で</span>
+            <span className="text-primary">Webの力で</span>
             <br />
             <span className="text-primary">ビジネスの成長をサポート</span>
           </h3>
@@ -27,12 +25,9 @@ export default function AboutMessage({ isVisible }: AboutMessageProps) {
         {/* 屋号の説明 - シンプルに */}
         <div className="max-w-2xl mx-auto">
           <p className="text-base text-gray leading-relaxed">
-            <span className="font-medium text-primary-blue">WebChaleur</span>
-            （ウェブシャルール）は、
-            <br className="md:hidden" />
-            「Web」と「Chaleur（仏：ぬくもり）」を組み合わせた名前。
+            十勝を拠点に、地元の方も遠方の方も
             <br />
-            最新技術と温かな対応で、お客様のビジネスに寄り添います。
+            Webのことなら何でも気軽に相談できます。
           </p>
         </div>
 

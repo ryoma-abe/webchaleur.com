@@ -20,7 +20,7 @@ export default function LegalPage() {
                   販売業者
                 </dt>
                 <dd className="text-gray">
-                  WebChaleur（ウェブシャルール）
+                  WebChaleur（ウェブシャル）
                 </dd>
               </div>
 
