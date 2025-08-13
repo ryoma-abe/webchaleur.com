@@ -26,15 +26,15 @@ export default function StrengthsGrid({ isVisible }: StrengthsGridProps) {
     {
       id: 1,
       number: "01",
-      title: "最新技術でスピード開発",
-      description: "Next.js、TypeScriptで\n効率的かつ高品質な開発を実現",
+      title: "地元も全国もお任せください",
+      description: "帯広・音更は直接お伺い\n全国オンラインでも対応",
       icon: FaGlobe,
     },
     {
       id: 2,
       number: "02",
-      title: "AIツールで業務効率化",
-      description: "最新のAIツールを活用し\n開発スピードとクオリティを両立",
+      title: "最新技術でスピード開発",
+      description: "AIツールやNext.jsなど\n最新技術で効率的に開発",
       icon: FaRobot,
     },
     {
@@ -54,8 +54,8 @@ export default function StrengthsGrid({ isVisible }: StrengthsGridProps) {
     {
       id: 5,
       number: "05",
-      title: "継続的な改善・進化",
-      description: "定期的なアップデートで\n常に最新・最適な状態を維持",
+      title: "作ったあとも、ずっと一緒",
+      description: "更新や修正のご相談も\nいつでもお気軽に",
       icon: FaHandshake,
     },
     {
