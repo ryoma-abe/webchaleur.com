@@ -29,13 +29,12 @@ export default function WorkCard({
 }: WorkCardProps) {
   return (
     <article
-      className={`bg-white overflow-hidden transition-all duration-500 group shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:translate-y-[-4px] ${
+      className={`bg-white rounded-[20px] overflow-hidden transition-all duration-500 group shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:translate-y-[-4px] ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-12"
       }`}
       style={{
-        borderRadius: "20px",
         transitionDelay: `${delay}ms`,
       }}
     >
@@ -57,10 +56,7 @@ export default function WorkCard({
 
           {/* カテゴリーバッジ */}
           <div
-            className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue"
-            style={{
-              borderRadius: "8px 10px 9px 11px",
-            }}
+            className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]"
           >
             {category}
           </div>
@@ -82,10 +78,7 @@ export default function WorkCard({
               {tags.slice(0, 4).map((tag, tagIndex) => (
                 <span
                   key={tagIndex}
-                  className="text-xs px-3 py-1 bg-accent-beige text-gray"
-                  style={{
-                    borderRadius: "8px",
-                  }}
+                  className="text-xs px-3 py-1 bg-accent-beige text-gray rounded-lg"
                 >
                   {tag}
                 </span>

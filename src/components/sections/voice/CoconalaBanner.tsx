@@ -5,13 +5,9 @@ interface CoconalaBannerProps {
 export default function CoconalaBanner({ isVisible }: CoconalaBannerProps) {
   return (
     <div
-      className={`bg-gradient-to-r from-lighter-blue to-light p-8 mb-12 text-center transition-all duration-800 delay-200 ${
+      className={`bg-gradient-to-r from-lighter-blue to-light p-8 mb-12 text-center rounded-3xl border-2 border-primary-light transition-all duration-800 delay-200 ${
         isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
       }`}
-      style={{
-        borderRadius: "24px",
-        border: "2px solid #8fb5d1",
-      }}
     >
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
         <div>

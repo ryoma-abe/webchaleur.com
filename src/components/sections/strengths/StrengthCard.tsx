@@ -29,23 +29,11 @@ export default function StrengthCard({
       }}
     >
       <div
-        className="bg-white p-6 lg:p-8 h-full transition-all hover:translate-y-[-3px] relative overflow-hidden group shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_28px_rgba(91,143,185,0.12)]"
-        style={{
-          borderRadius: "20px",
-        }}
+        className="bg-white rounded-[20px] p-6 lg:p-8 h-full transition-all hover:translate-y-[-3px] relative overflow-hidden group shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_28px_rgba(91,143,185,0.12)]"
       >
         {/* 番号バッジ */}
         <div
-          className="inline-block mb-4 group-hover:scale-105 transition-transform duration-300 shadow-sm"
-          style={{
-            width: "50px",
-            height: "50px",
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #5b8fb9 0%, #8fb5d1 100%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="inline-flex items-center justify-center w-[50px] h-[50px] rounded-full bg-gradient-to-br from-primary-blue to-primary-light mb-4 group-hover:scale-105 transition-transform duration-300 shadow-sm"
         >
           <span className="text-white text-lg">
             {number}
@@ -67,11 +55,7 @@ export default function StrengthCard({
 
         {/* 装飾的な下線 */}
         <div
-          className="mt-4 h-0.5 bg-primary opacity-20"
-          style={{
-            borderRadius: "2px",
-            width: "60%",
-          }}
+          className="mt-4 h-0.5 bg-primary opacity-20 rounded-sm w-[60%]"
         />
       </div>
     </div>

@@ -62,10 +62,7 @@ export default function TypingAnimationWithDelete({
       {displayText}
       {showCursor && (
         <span
-          className={`inline-block w-0.5 h-[1.2em] bg-current ml-1`}
-          style={{
-            animation: "blink 1s infinite",
-          }}
+          className={`inline-block w-0.5 h-[1.2em] bg-current ml-1 animate-pulse`}
         />
       )}
     </span>

@@ -27,7 +27,7 @@ export default function Footer() {
     <footer 
       className="bg-accent-beige border-t-2 border-dashed border-primary-light"
     >
-      <div className="max-w-7xl mx-auto" style={{ padding: '48px 28px 52px 32px' }}>
+      <div className="max-w-7xl mx-auto pt-12 pr-7 pb-[52px] pl-8">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
