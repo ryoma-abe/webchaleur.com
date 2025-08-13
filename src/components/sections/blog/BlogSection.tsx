@@ -41,7 +41,7 @@ export default function BlogSection({ items }: BlogSectionProps) {
   }, []);
 
   return (
-    <section id="blog" className="section-padding bg-[var(--bg-light)]">
+    <section id="blog" className="section-padding bg-light">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
         <SectionHeader isVisible={isVisible} title="ブログ" subTitle="Blog" />

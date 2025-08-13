@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import WorksGrid from "./WorksGrid";
 import SectionHeader from "../common/SectionHeader";
+import useInView from "@/hooks/useInView";
 
 interface WorkItem {
   slug: string;
@@ -22,28 +23,18 @@ interface WorksSectionProps {
 }
 
 export default function WorksSection({ items }: WorksSectionProps) {
+  const { ref, inView } = useInView();
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById("works");
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
-  }, []);
+    if (inView) setIsVisible(true);
+  }, [inView]);
 
   return (
-    <section id="works" className="section-padding bg-[var(--bg-light)]">
+    <section
+      id="works"
+      className="section-padding bg-light"
+      ref={ref}
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
         <SectionHeader
