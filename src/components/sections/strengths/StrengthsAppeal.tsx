@@ -15,42 +15,35 @@ export default function StrengthsAppeal({ isVisible }: StrengthsAppealProps) {
       >
         <h3 className="heading-card mb-4 text-primary-blue flex items-center justify-center gap-2">
           <FaRocket className="inline-block" />
-          <span>これからの時代に必要なWeb制作</span>
+          <span>新しい時代のWeb制作パートナー</span>
         </h3>
-        <p className="text-body max-w-3xl mx-auto mb-6">
-          ただホームページを作るだけではなく、
-          <span>AI技術の活用</span>
-          で業務効率化を実現し、
-          <span>SNS運用</span>で集客力を高め、
-          <span>データ分析</span>で改善を続ける。
-          <br />
-          <br />
-          これから十勝の企業様が
-          <span className="text-primary-blue">
-            デジタル時代で成長する
+        <p className="text-body mb-6">
+          <span className="text-primary-blue font-semibold">
+            常に最新技術をキャッチアップ
           </span>
-          ための、総合的なパートナーを目指します。
+          し、 お客様に最適なソリューションをご提案。
+          <br />
+          Next.js、TypeScript、AIツールなど、
+          <span className="text-primary-blue">モダンな技術スタック</span>で
+          高速かつ保守性の高いサイトを構築します。
+          <br />
+          <br />
+          「作った後も進化し続ける」サイトで、
+          <span className="text-primary-blue">ビジネスの成長を加速</span>
+          させます。
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <span
-            className="bg-white px-4 py-2 text-sm text-gray rounded-2xl"
-          >
-            #AI導入支援
+          <span className="bg-white px-4 py-2 text-sm text-gray rounded-2xl">
+            #最新技術導入
           </span>
-          <span
-            className="bg-white px-4 py-2 text-sm text-gray rounded-2xl"
-          >
-            #SNSマーケティング
+          <span className="bg-white px-4 py-2 text-sm text-gray rounded-2xl">
+            #高速パフォーマンス
           </span>
-          <span
-            className="bg-white px-4 py-2 text-sm text-gray rounded-2xl"
-          >
-            #データドリブン
+          <span className="bg-white px-4 py-2 text-sm text-gray rounded-2xl">
+            #継続的改善
           </span>
-          <span
-            className="bg-white px-4 py-2 text-sm text-gray rounded-2xl"
-          >
-            #地域密着
+          <span className="bg-white px-4 py-2 text-sm text-gray rounded-2xl">
+            #アジャイル開発
           </span>
         </div>
       </div>
@@ -62,11 +55,9 @@ export default function StrengthsAppeal({ isVisible }: StrengthsAppealProps) {
         }`}
       >
         <p className="text-body text-lg">
-          十勝の企業様の「困った」を
-          <span className="text-primary-blue mx-1">
-            最新技術と真心
-          </span>
-          で解決します
+          十勝の企業様と共に
+          <span className="text-primary-blue mx-1">未来を創る</span>
+          パートナーとして
         </p>
       </div>
     </>
