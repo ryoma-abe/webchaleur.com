@@ -5,6 +5,7 @@ import CoconalaBanner from "./CoconalaBanner";
 import ReviewCard from "./ReviewCard";
 import TrustIndicators from "./TrustIndicators";
 import SectionHeader from "../common/SectionHeader";
+import useInView from "@/hooks/useInView";
 
 interface Review {
   id: number;
@@ -14,26 +15,11 @@ interface Review {
 }
 
 export default function VoiceSection() {
+  const { ref, inView } = useInView();
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById("voice");
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
-  }, []);
-
+    if (inView) setIsVisible(true);
+  }, [inView]);
   const reviews: Review[] = [
     {
       id: 1,
@@ -59,7 +45,7 @@ export default function VoiceSection() {
   ];
 
   return (
-    <section id="voice" className="section-padding bg-white">
+    <section id="voice" className="section-padding bg-white" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
         <SectionHeader

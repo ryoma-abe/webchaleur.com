@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import BlogGrid from "./BlogGrid";
 import SectionHeader from "../common/SectionHeader";
+import useInView from "@/hooks/useInView";
 
 interface BlogItem {
   slug: string;
@@ -20,28 +21,14 @@ interface BlogSectionProps {
 }
 
 export default function BlogSection({ items }: BlogSectionProps) {
+  const { ref, inView } = useInView();
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById("blog");
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
-  }, []);
+    if (inView) setIsVisible(true);
+  }, [inView]);
 
   return (
-    <section id="blog" className="section-padding bg-light">
+    <section id="blog" className="section-padding bg-light" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
         <SectionHeader isVisible={isVisible} title="ブログ" subTitle="Blog" />
