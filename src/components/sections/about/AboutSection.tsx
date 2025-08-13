@@ -22,7 +22,11 @@ export default function AboutSection() {
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
-        <SectionHeader isVisible={isVisible} />     
+        <SectionHeader
+          isVisible={isVisible}
+          title="WebChaleurについて"
+          subTitle="AboutUs"
+        />
 
         {/* メインメッセージ */}
         <AboutMessage isVisible={isVisible} />
