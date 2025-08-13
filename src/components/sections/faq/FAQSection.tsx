@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import FAQItem from './FAQItem';
-import faqData from '@/data/faq.json';
+import { useEffect, useState } from "react";
+import FAQItem from "./FAQItem";
+import faqData from "@/data/faq.json";
+import SectionHeader from "../common/SectionHeader";
 
 interface FAQItemData {
   id: number;
@@ -24,7 +25,7 @@ export default function FAQSection() {
       { threshold: 0.1 }
     );
 
-    const element = document.getElementById('faq');
+    const element = document.getElementById("faq");
     if (element) observer.observe(element);
 
     return () => {
@@ -33,34 +34,22 @@ export default function FAQSection() {
   }, []);
 
   const toggleItem = (id: number) => {
-    setOpenItems(prev =>
-      prev.includes(id)
-        ? prev.filter(item => item !== id)
-        : [...prev, id]
+    setOpenItems((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
 
   const faqItems: FAQItemData[] = faqData.items;
 
   return (
-    <section 
-      id="faq"
-      className="section-padding bg-white"
-    >
+    <section id="faq" className="section-padding bg-white">
       <div className="max-w-4xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
-        <div 
-          className={`text-center mb-12 transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h2 className="heading-section">
-            よくある質問
-          </h2>
-          <span className="text-caption inline-block">
-            FAQ
-          </span>
-        </div>
+        <SectionHeader
+          isVisible={isVisible}
+          title="よくある質問"
+          subTitle="Q&A"
+        />
 
         {/* FAQ リスト */}
         <div className="space-y-4">

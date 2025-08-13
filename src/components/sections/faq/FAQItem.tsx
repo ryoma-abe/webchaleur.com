@@ -19,11 +19,10 @@ export default function FAQItem({
 }: FAQItemProps) {
   return (
     <div
-      className={`bg-white overflow-hidden transition-all duration-800 shadow-[0_1px_4px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] ${
+      className={`bg-white rounded-2xl overflow-hidden transition-all duration-800 shadow-[0_1px_4px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
       }`}
       style={{
-        borderRadius: '16px',
         transitionDelay: `${delay}ms`,
       }}
     >
@@ -34,10 +33,7 @@ export default function FAQItem({
         <div className="flex items-center justify-between">
           <div className="flex items-start gap-4">
             <span 
-              className="inline-flex items-center justify-center w-8 h-8 bg-primary-lighter text-primary-blue text-sm"
-              style={{
-                borderRadius: '50%',
-              }}
+              className="inline-flex items-center justify-center w-8 h-8 bg-primary-lighter text-primary-blue text-sm rounded-full"
             >
               Q
             </span>
@@ -64,10 +60,7 @@ export default function FAQItem({
         <div className="px-6 pb-6">
           <div className="flex items-start gap-4">
             <span 
-              className="inline-flex items-center justify-center w-8 h-8 bg-accent-beige text-gray text-sm"
-              style={{
-                borderRadius: '50%',
-              }}
+              className="inline-flex items-center justify-center w-8 h-8 bg-accent-beige text-gray text-sm rounded-full"
             >
               A
             </span>

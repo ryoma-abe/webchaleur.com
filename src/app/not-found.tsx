@@ -19,8 +19,7 @@ export default function NotFound() {
         {/* 404イラスト */}
         <div className="mb-8">
           <h1 
-            className="text-8xl md:text-9xl text-primary-blue mb-4"
-            style={{ transform: 'rotate(-2deg)' }}
+            className="text-8xl md:text-9xl text-primary-blue mb-4 -rotate-2"
           >
             404
           </h1>
@@ -41,11 +40,7 @@ export default function NotFound() {
 
         {/* 人間味のあるメッセージ */}
         <div 
-          className="bg-light p-6 mb-8"
-          style={{ 
-            borderRadius: '20px',
-            border: '2px dashed #8fb5d1'
-          }}
+          className="bg-light p-6 mb-8 rounded-[20px] border-2 border-dashed border-primary-light"
         >
           <p className="text-body">
             <FaCommentDots className="text-2xl mb-2 mx-auto text-primary-blue" />
