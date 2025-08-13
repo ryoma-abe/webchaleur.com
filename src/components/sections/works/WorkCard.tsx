@@ -30,9 +30,7 @@ export default function WorkCard({
   return (
     <article
       className={`bg-white rounded-[20px] overflow-hidden transition-all duration-500 group shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:translate-y-[-4px] ${
-        isVisible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-12"
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
       }`}
       style={{
         transitionDelay: `${delay}ms`,
@@ -41,13 +39,8 @@ export default function WorkCard({
       <Link href={link} className="block">
         {/* サムネイル */}
         <div className="relative h-48 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
-          {thumbnail && thumbnail !== '/images/works/default.jpg' ? (
-            <Image
-              src={thumbnail}
-              alt={title}
-              fill
-              className="object-cover"
-            />
+          {thumbnail && thumbnail !== "/images/works/default.jpg" ? (
+            <Image src={thumbnail} alt={title} fill className="object-cover" />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-6xl opacity-30">🖼️</span>
@@ -55,22 +48,16 @@ export default function WorkCard({
           )}
 
           {/* カテゴリーバッジ */}
-          <div
-            className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]"
-          >
+          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]">
             {category}
           </div>
         </div>
 
         {/* コンテンツ */}
         <div className="p-6">
-          <h3 className="heading-card mb-2">
-            {client || title}
-          </h3>
+          <h3 className="heading-card mb-2">{client || title}</h3>
 
-          <p className="text-body mb-4 text-sm">
-            {description}
-          </p>
+          <p className="text-body mb-4 text-sm">{description}</p>
 
           {/* タグ */}
           {tags.length > 0 && (
