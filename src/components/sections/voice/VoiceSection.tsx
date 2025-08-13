@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import CoconalaBanner from './CoconalaBanner';
-import ReviewCard from './ReviewCard';
-import TrustIndicators from './TrustIndicators';
+import { useEffect, useState } from "react";
+import CoconalaBanner from "./CoconalaBanner";
+import ReviewCard from "./ReviewCard";
+import TrustIndicators from "./TrustIndicators";
+import SectionHeader from "../common/SectionHeader";
 
 interface Review {
   id: number;
@@ -25,7 +26,7 @@ export default function VoiceSection() {
       { threshold: 0.1 }
     );
 
-    const element = document.getElementById('voice');
+    const element = document.getElementById("voice");
     if (element) observer.observe(element);
 
     return () => {
@@ -36,45 +37,36 @@ export default function VoiceSection() {
   const reviews: Review[] = [
     {
       id: 1,
-      content: 'とても親切で、要望以上のサイトを作っていただきました。オンラインでのやり取りもスムーズでした。',
-      author: 'IT企業様',
+      content:
+        "とても親切で、要望以上のサイトを作っていただきました。オンラインでのやり取りもスムーズでした。",
+      author: "IT企業様",
       rating: 5,
     },
     {
       id: 2,
-      content: '最新の技術を使って、理想通りのECサイトを構築していただきました。サポートも充実しています。',
-      author: 'ECサイト運営者様',
+      content:
+        "最新の技術を使って、理想通りのECサイトを構築していただきました。サポートも充実しています。",
+      author: "ECサイト運営者様",
       rating: 5,
     },
     {
       id: 3,
-      content: '細かい要望にも丁寧に対応していただき、満足のいくホームページが完成しました。',
-      author: 'サービス業様',
+      content:
+        "細かい要望にも丁寧に対応していただき、満足のいくホームページが完成しました。",
+      author: "サービス業様",
       rating: 5,
     },
   ];
 
   return (
-    <section 
-      id="voice"
-      className="section-padding bg-white"
-    >
+    <section id="voice" className="section-padding bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         {/* セクションヘッダー */}
-        <div 
-          className={`text-center mb-12 transition-all duration-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h2 className="heading-section">
-            お客様の声
-          </h2>
-          <p className="text-lg text-gray">
-            ココナラでの評価は
-            <span className="text-primary-blue mx-1">★4.9</span>
-            です
-          </p>
-        </div>
+        <SectionHeader
+          isVisible={isVisible}
+          title="お客様の声"
+          subTitle="Voice"
+        />
 
         {/* ココナラバナー */}
         <CoconalaBanner isVisible={isVisible} />
