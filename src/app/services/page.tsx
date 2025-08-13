@@ -90,14 +90,14 @@ export default function ServicesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-bg-cream">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-20 px-6 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <WobblyHeading level={1} underline english="Our Services">
             サービス
           </WobblyHeading>
-          <p className="text-xl text-text-gray mt-6 max-w-3xl mx-auto">
+          <p className="text-xl text-gray mt-6 max-w-3xl mx-auto">
             十勝を拠点に、全国の企業様のデジタル化を支援します。
             <br />
             地元でも遠方でも、お客様のビジネスに最適なソリューションをご提案いたします。
@@ -120,10 +120,10 @@ export default function ServicesPage() {
                     <service.icon className="mx-auto" />
                   </div>
                   
-                  <h3 className="heading-card text-main-blue mb-2">
+                  <h3 className="heading-card text-primary-blue mb-2">
                     {service.title}
                   </h3>
-                  <span className="text-caption text-text-gray">
+                  <span className="text-caption text-gray">
                     {service.subtitle}
                   </span>
                   
@@ -132,13 +132,13 @@ export default function ServicesPage() {
                   </p>
 
                   <div className="mb-6">
-                    <h4 className="font-klee font-bold text-text-dark mb-3">
+                    <h4 className="text-primary mb-3">
                       主な機能・サービス
                     </h4>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-text-gray">
-                          <FaCheck className="text-main-blue mt-1 text-xs flex-shrink-0" />
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray">
+                          <FaCheck className="text-primary-blue mt-1 text-xs flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -149,13 +149,13 @@ export default function ServicesPage() {
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div>
                         <span className="text-caption block mb-1">料金目安</span>
-                        <span className="font-klee font-bold text-main-blue">
+                        <span className="text-primary-blue">
                           {service.price}
                         </span>
                       </div>
                       <div>
                         <span className="text-caption block mb-1">制作期間</span>
-                        <span className="font-klee font-bold text-text-dark">
+                        <span className="text-primary">
                           {service.duration}
                         </span>
                       </div>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-16 px-6 md:px-8 bg-bg-light">
+      <section className="py-16 px-6 md:px-8 bg-light">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <WobblyHeading level={2} underline>
@@ -200,13 +200,13 @@ export default function ServicesPage() {
                 <div className="text-4xl mb-4 text-primary-blue">
                   <service.icon className="mx-auto" />
                 </div>
-                <h3 className="font-klee font-bold text-lg text-text-dark mb-2">
+                <h3 className="text-lg text-primary mb-2">
                   {service.title}
                 </h3>
                 <p className="text-caption mb-4">
                   {service.description}
                 </p>
-                <span className="text-sm font-bold text-main-blue">
+                <span className="text-sm text-primary-blue">
                   {service.price}
                 </span>
               </div>
@@ -235,18 +235,18 @@ export default function ServicesPage() {
             ].map((item, index) => (
               <div key={index} className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-main-blue text-white rounded-full flex items-center justify-center font-klee font-bold">
+                  <div className="w-12 h-12 bg-primary-blue text-white rounded-full flex items-center justify-center">
                     {item.step}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-klee font-bold text-xl text-text-dark mb-2">
+                  <h3 className="text-xl text-primary mb-2">
                     {item.title}
                   </h3>
                   <p className="text-body mb-2">
                     {item.description}
                   </p>
-                  <span className="text-caption text-main-blue">
+                  <span className="text-caption text-primary-blue">
                     期間: {item.duration}
                   </span>
                 </div>
@@ -257,7 +257,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 md:px-8 bg-gradient-to-br from-lighter-blue to-light-blue">
+      <section className="py-20 px-6 md:px-8 bg-gradient-to-br from-lighter-blue to-primary-light">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="heading-section text-white mb-6">
             まずは気軽にご相談ください

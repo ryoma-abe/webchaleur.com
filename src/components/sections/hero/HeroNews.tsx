@@ -30,10 +30,10 @@ export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
       }`}
     >
       <div className="text-center mb-8">
-        <h3 className="text-lg lg:text-xl font-bold text-gray-800">
+        <h3 className="text-lg lg:text-xl">
           最新のお知らせ
         </h3>
-        <span className="text-sm text-gray-500 mt-1 block">Latest News</span>
+        <span className="text-caption mt-1 block">Latest News</span>
       </div>
 
       <div className="max-w-4xl mx-auto">
@@ -46,11 +46,11 @@ export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
             <div className="flex items-center gap-4 md:gap-6">
               {/* 日付部分 */}
               <div className="flex-shrink-0">
-                <span className="block text-xs text-gray-400 font-medium uppercase tracking-wider">
+                <span className="block text-xs text-gray uppercase tracking-wider">
                   {formatDate(news.date).split(".")[1]}.
                   {formatDate(news.date).split(".")[2]}
                 </span>
-                <span className="block text-xs text-gray-400">
+                <span className="block text-xs text-gray">
                   {formatDate(news.date).split(".")[0]}
                 </span>
               </div>
@@ -60,7 +60,7 @@ export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
 
               {/* タイトル部分 */}
               <div className="flex-1 min-w-0">
-                <span className="text-base text-gray-700 group-hover:text-primary-blue transition-colors duration-200 font-medium line-clamp-1">
+                <span className="text-base text-primary group-hover:text-primary-blue transition-colors duration-200 line-clamp-1">
                   {news.title}
                 </span>
               </div>
@@ -73,7 +73,7 @@ export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
               )}
 
               {/* 矢印 */}
-              <span className="flex-shrink-0 text-gray-400 group-hover:text-primary-blue group-hover:translate-x-1 transition-all duration-200">
+              <span className="flex-shrink-0 text-gray group-hover:text-primary-blue group-hover:translate-x-1 transition-all duration-200">
                 →
               </span>
             </div>
@@ -85,7 +85,7 @@ export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
       <div className="mt-8 pt-6">
         <Link
           href="/news"
-          className="group flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-primary-blue font-medium transition-all duration-200"
+          className="group flex items-center justify-center gap-2 text-sm text-gray hover:text-primary-blue transition-all duration-200"
         >
           <span>すべてのお知らせを見る</span>
           <span className="group-hover:translate-x-1 transition-transform duration-200">

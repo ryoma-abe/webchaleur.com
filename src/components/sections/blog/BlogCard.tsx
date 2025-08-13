@@ -61,16 +61,16 @@ export default function BlogCard({
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="text-center">
-              <div className="text-2xl font-bold text-[var(--main-blue)]">
+              <div className="text-2xl font-bold text-primary-blue">
                 {dateInfo.day}
               </div>
-              <div className="text-xs text-[var(--text-gray)]">
+              <div className="text-xs text-gray">
                 {dateInfo.month}
               </div>
             </div>
           </div>
           <span 
-            className="px-3 py-1 bg-[var(--lighter-blue)] text-[var(--main-blue)] text-xs font-medium"
+            className="px-3 py-1 bg-lighter-blue text-primary-blue text-xs"
             style={{
               borderRadius: '12px',
             }}
@@ -85,16 +85,16 @@ export default function BlogCard({
         </h3>
 
         {/* 説明文 */}
-        <p className="text-body text-sm mb-4 line-clamp-3">
+        <p className="text-body mb-4 line-clamp-3">
           {description}
         </p>
 
         {/* メタ情報 */}
         <div className="flex items-center justify-between">
-          <span className="text-xs text-[var(--text-gray)]">
+          <span className="text-xs text-gray">
             {getReadTime(description)}
           </span>
-          <span className="text-[var(--main-blue)] text-sm font-medium">
+          <span className="text-primary-blue text-sm">
             読む →
           </span>
         </div>

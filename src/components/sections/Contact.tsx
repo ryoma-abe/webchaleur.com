@@ -231,10 +231,10 @@ export default function Contact() {
               type="checkbox"
               id="privacy"
               required
-              className="mt-1 w-4 h-4 text-main-blue border-gray-300 rounded focus:ring-main-blue"
+              className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
             />
-            <label htmlFor="privacy" className="text-sm text-text-gray">
-              <a href="/privacy" target="_blank" className="text-main-blue hover:underline">
+            <label htmlFor="privacy" className="text-sm text-gray">
+              <a href="/privacy" target="_blank" className="text-primary-blue hover:underline">
                 プライバシーポリシー
               </a>
               に同意する
@@ -282,7 +282,7 @@ export default function Contact() {
             <div className="text-3xl mb-3 text-primary-blue flex justify-center">
               <FaEnvelope />
             </div>
-            <h3 className="font-klee font-bold text-lg mb-2">メール</h3>
+            <h3 className="text-lg mb-2">メール</h3>
             <p className="text-caption">
               info@webchaleur.jp
               <br />
@@ -293,7 +293,7 @@ export default function Contact() {
             <div className="text-3xl mb-3 text-primary-blue flex justify-center">
               <FaMobileAlt />
             </div>
-            <h3 className="font-klee font-bold text-lg mb-2">LINE</h3>
+            <h3 className="text-lg mb-2">LINE</h3>
             <p className="text-caption">
               @webchaleur
               <br />
@@ -304,7 +304,7 @@ export default function Contact() {
             <div className="text-3xl mb-3 text-primary-blue flex justify-center">
               <FaMapMarkerAlt />
             </div>
-            <h3 className="font-klee font-bold text-lg mb-2">所在地</h3>
+            <h3 className="text-lg mb-2">所在地</h3>
             <p className="text-caption">
               北海道河東郡音更町
               <br />

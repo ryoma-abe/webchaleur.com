@@ -47,7 +47,7 @@ export default function StrengthCard({
             justifyContent: "center",
           }}
         >
-          <span className="text-white font-bold text-lg">
+          <span className="text-white text-lg">
             {number}
           </span>
         </div>

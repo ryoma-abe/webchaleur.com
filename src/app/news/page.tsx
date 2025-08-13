@@ -11,13 +11,13 @@ export default async function NewsPage() {
   const news = await getAllContent('news');
 
   return (
-    <main className="min-h-screen bg-bg-cream py-20">
+    <main className="min-h-screen bg-white py-20">
       <div className="container mx-auto px-4">
         <WobblyHeading level={1} underline english="Information">
           お知らせ
         </WobblyHeading>
 
-        <p className="text-center text-text-gray font-zenmaru mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-gray mb-12 max-w-2xl mx-auto">
           WebChaleurからのお知らせ、キャンペーン情報などをご案内しています。
         </p>
 
@@ -34,12 +34,12 @@ export default async function NewsPage() {
                     {item.frontMatter.date && (
                       <time
                         dateTime={item.frontMatter.date}
-                        className="block text-center bg-light-blue/10 rounded-[10px_12px_11px_13px] px-4 py-3"
+                        className="block text-center bg-primary-lighter rounded-[10px_12px_11px_13px] px-4 py-3"
                       >
-                        <span className="block text-2xl font-klee font-bold text-main-blue">
+                        <span className="block text-2xl text-primary-blue">
                           {new Date(item.frontMatter.date).getDate()}
                         </span>
-                        <span className="block text-xs font-zenmaru text-main-blue">
+                        <span className="block text-xs text-primary-blue">
                           {new Date(item.frontMatter.date).toLocaleDateString('ja-JP', {
                             year: 'numeric',
                             month: 'short',
@@ -53,7 +53,7 @@ export default async function NewsPage() {
                     <div className="flex flex-wrap items-center gap-3 mb-2">
                       {item.frontMatter.category && (
                         <span 
-                          className="inline-block px-3 py-1 bg-accent-beige text-text-gray rounded-[8px_10px_9px_11px] font-zenmaru text-xs"
+                          className="inline-block px-3 py-1 bg-accent-beige text-gray rounded-[8px_10px_9px_11px] text-xs"
                           style={{ transform: `rotate(${index % 2 ? 0.2 : -0.2}deg)` }}
                         >
                           {item.frontMatter.category}
@@ -61,19 +61,19 @@ export default async function NewsPage() {
                       )}
                     </div>
 
-                    <h2 className="text-base md:text-lg font-klee font-bold text-text-dark mb-2 group-hover:text-main-blue transition-colors">
+                    <h2 className="text-base md:text-lg text-primary mb-2 group-hover:text-primary-blue transition-colors">
                       {item.frontMatter.title}
                     </h2>
 
                     {item.frontMatter.description && (
-                      <p className="text-text-gray font-zenmaru text-xs md:text-sm mb-3">
+                      <p className="text-gray text-xs md:text-sm mb-3">
                         {item.frontMatter.description}
                       </p>
                     )}
                   </div>
 
                   <div className="flex-shrink-0">
-                    <span className="text-main-blue font-zenmaru text-sm group-hover:underline">
+                    <span className="text-primary-blue text-sm group-hover:underline">
                       詳しく見る →
                     </span>
                   </div>
@@ -85,7 +85,7 @@ export default async function NewsPage() {
 
           {news.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-text-gray font-zenmaru">
+              <p className="text-gray">
                 お知らせはまだありません
               </p>
             </div>

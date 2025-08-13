@@ -34,7 +34,7 @@ export default function ReviewCard({
       </p>
 
       {/* 投稿者 */}
-      <p className="text-xs text-[var(--text-gray)] font-medium">
+      <p className="text-xs text-gray">
         — {author}
       </p>
     </div>

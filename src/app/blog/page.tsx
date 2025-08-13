@@ -17,13 +17,13 @@ export default async function BlogPage() {
   };
 
   return (
-    <main className="min-h-screen bg-bg-cream py-20">
+    <main className="min-h-screen bg-white py-20">
       <div className="container mx-auto px-4">
         <WobblyHeading level={1} underline english="Blog">
           技術ブログ
         </WobblyHeading>
 
-        <p className="text-center text-text-gray font-zenmaru mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-gray mb-12 max-w-2xl mx-auto">
           Web制作の技術情報や、十勝でのビジネスに役立つ情報を発信しています。
           地元企業様のデジタル化を応援します！
         </p>
@@ -38,10 +38,10 @@ export default async function BlogPage() {
                 <article>
                 {blog.frontMatter.date && (
                   <div className="mb-4">
-                    <div className="inline-block bg-main-blue/10 rounded-[10px_12px_11px_13px] px-4 py-2">
+                    <div className="inline-block bg-primary-lighter rounded-[10px_12px_11px_13px] px-4 py-2">
                       <time 
                         dateTime={blog.frontMatter.date}
-                        className="font-klee text-main-blue font-bold"
+                        className="text-primary-blue"
                       >
                         {new Date(blog.frontMatter.date).toLocaleDateString('ja-JP', {
                           year: 'numeric',
@@ -54,30 +54,30 @@ export default async function BlogPage() {
                 )}
 
                 {blog.frontMatter.category && (
-                  <span className="inline-block px-3 py-1 bg-light-blue/20 text-main-blue rounded-[8px_10px_9px_11px] font-zenmaru text-xs mb-3">
+                  <span className="inline-block px-3 py-1 bg-primary-lighter text-primary-blue rounded-[8px_10px_9px_11px] text-xs mb-3">
                     {blog.frontMatter.category}
                   </span>
                 )}
                 
-                <h2 className="text-base md:text-lg font-klee font-bold text-text-dark mb-3 line-clamp-2 group-hover:text-main-blue transition-colors">
+                <h2 className="text-base md:text-lg text-primary mb-3 line-clamp-2 group-hover:text-primary-blue transition-colors">
                   {blog.frontMatter.title}
                 </h2>
                 
                 {blog.frontMatter.description && (
-                  <p className="text-text-gray font-zenmaru text-xs md:text-sm mb-4 line-clamp-3">
+                  <p className="text-gray text-xs md:text-sm mb-4 line-clamp-3">
                     {blog.frontMatter.description}
                   </p>
                 )}
 
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs text-text-gray font-zenmaru">
+                  <span className="text-xs text-gray">
                     {calculateReadingTime(blog.content)}分で読める
                   </span>
                   <div className="flex flex-wrap gap-1">
                     {blog.frontMatter.tags?.slice(0, 2).map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-2 py-1 text-text-gray font-zenmaru"
+                        className="text-xs px-2 py-1 text-gray"
                       >
                         #{tag}
                       </span>
@@ -86,7 +86,7 @@ export default async function BlogPage() {
                 </div>
                 
                 <div className="text-right">
-                  <span className="text-main-blue font-zenmaru text-sm group-hover:underline">
+                  <span className="text-primary-blue text-sm group-hover:underline">
                     記事を読む →
                   </span>
                 </div>
@@ -98,7 +98,7 @@ export default async function BlogPage() {
 
         {blogs.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-text-gray font-zenmaru">
+            <p className="text-gray">
               ブログ記事を準備中です
             </p>
           </div>

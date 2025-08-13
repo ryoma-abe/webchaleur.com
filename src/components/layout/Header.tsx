@@ -88,7 +88,7 @@ export default function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="text-2xl md:text-3xl font-semibold text-primary-blue hover:opacity-80 transition-opacity"
+              className="text-2xl md:text-3xl text-primary-blue hover:opacity-80 transition-opacity"
             >
               Web<span className="text-[#2c2825]">Chaleur</span>
             </Link>
@@ -101,7 +101,7 @@ export default function Header() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-[#5a524c] hover:text-primary-blue transition-colors text-sm font-medium"
+                      className="text-gray hover:text-primary-blue transition-colors text-sm"
                     >
                       {item.displayName}
                     </Link>
@@ -149,7 +149,7 @@ export default function Header() {
           <Link
             href="/"
             onClick={() => setIsMenuOpen(false)}
-            className="text-xl font-semibold text-primary-blue"
+            className="text-xl text-primary-blue"
           >
             Web<span className="text-[#2c2825]">Chaleur</span>
           </Link>
@@ -173,7 +173,7 @@ export default function Header() {
                       onClick={() => toggleExpanded(item.label)}
                       className="w-full flex items-center justify-between px-4 py-3 text-left hover:bg-gray-50 transition-colors"
                     >
-                      <span className="text-base font-medium text-[#2c2825]">
+                      <span className="text-base text-primary">
                         {item.displayName}
                       </span>
                       <ChevronDown

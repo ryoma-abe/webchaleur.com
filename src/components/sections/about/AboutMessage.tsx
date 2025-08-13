@@ -13,13 +13,13 @@ export default function AboutMessage({ isVisible }: AboutMessageProps) {
     >
       <SketchyCard variant="elevated">
         <div className="text-center p-4">
-          <p className="text-lg text-[var(--text-gray)] font-[var(--font-main)] leading-relaxed mb-4">
+          <p className="text-lg text-gray leading-relaxed mb-4">
             WebChaleurは、十勝・帯広エリアを拠点に
           </p>
-          <p className="text-xl font-bold text-[var(--text-dark)] mb-4">
+          <p className="text-xl text-primary mb-4">
             「地域企業様のデジタル化を支援する」
           </p>
-          <p className="text-lg text-[var(--text-gray)] font-[var(--font-main)] leading-relaxed">
+          <p className="text-lg text-gray leading-relaxed">
             Web制作パートナーです。
           </p>
         </div>

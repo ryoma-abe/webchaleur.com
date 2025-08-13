@@ -18,7 +18,7 @@ interface BlogGridProps {
 export default function BlogGrid({ items, isVisible }: BlogGridProps) {
   if (items.length === 0) {
     return (
-      <div className="col-span-3 text-center py-12 text-[var(--text-gray)]">
+      <div className="col-span-3 text-center py-12 text-gray">
         <p>現在準備中です</p>
       </div>
     );
