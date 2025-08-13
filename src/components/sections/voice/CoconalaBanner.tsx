@@ -5,7 +5,7 @@ interface CoconalaBannerProps {
 export default function CoconalaBanner({ isVisible }: CoconalaBannerProps) {
   return (
     <div 
-      className={`bg-gradient-to-r from-[var(--lighter-blue)] to-[var(--bg-light)] p-8 mb-12 text-center transition-all duration-800 delay-200 ${
+      className={`bg-gradient-to-r from-lighter-blue to-light p-8 mb-12 text-center transition-all duration-800 delay-200 ${
         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
       }`}
       style={{

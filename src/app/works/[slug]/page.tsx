@@ -84,7 +84,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
         {/* カテゴリー・タグ */}
         <div className="mb-12 text-center">
           {work.frontMatter.category && (
-            <span className="inline-block px-4 py-2 bg-primary-lighter text-primary-blue rounded-full text-base font-medium mr-3 mb-2">
+            <span className="inline-block px-4 py-2 bg-primary-lighter text-primary-blue rounded-full text-base mr-3 mb-2">
               {work.frontMatter.category}
             </span>
           )}
@@ -104,7 +104,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
           <div className="lg:col-span-1">
             <div className="bg-light rounded-xl p-6 space-y-6 sticky top-24">
               <div>
-                <h3 className="text-base font-bold text-[var(--text-dark)] mb-3">プロジェクト概要</h3>
+                <h3 className="text-base text-primary mb-3">プロジェクト概要</h3>
                 <p className="text-base text-gray leading-relaxed">
                   {work.frontMatter.description || 'プロジェクトの詳細情報'}
                 </p>
@@ -112,7 +112,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
               
               {work.frontMatter.technologies && (
                 <div>
-                  <h3 className="text-sm font-bold text-[var(--text-dark)] mb-3">使用技術</h3>
+                  <h3 className="text-sm text-primary mb-3">使用技術</h3>
                   <div className="flex flex-wrap gap-2">
                     {work.frontMatter.technologies.map((tech: string) => (
                       <span key={tech} className="text-xs px-2 py-1 bg-white rounded-full text-gray">
@@ -125,7 +125,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
 
               {work.frontMatter.url && (
                 <div>
-                  <h3 className="text-base font-bold text-[var(--text-dark)] mb-3">サイトURL</h3>
+                  <h3 className="text-base text-primary mb-3">サイトURL</h3>
                   <a 
                     href={work.frontMatter.url} 
                     target="_blank" 

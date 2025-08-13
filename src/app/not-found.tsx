@@ -19,7 +19,7 @@ export default function NotFound() {
         {/* 404イラスト */}
         <div className="mb-8">
           <h1 
-            className="text-8xl md:text-9xl font-bold text-primary-blue mb-4"
+            className="text-8xl md:text-9xl text-primary-blue mb-4"
             style={{ transform: 'rotate(-2deg)' }}
           >
             404
@@ -41,7 +41,7 @@ export default function NotFound() {
 
         {/* 人間味のあるメッセージ */}
         <div 
-          className="bg-[var(--bg-light)] p-6 mb-8"
+          className="bg-light p-6 mb-8"
           style={{ 
             borderRadius: '20px',
             border: '2px dashed #8fb5d1'
@@ -80,11 +80,11 @@ export default function NotFound() {
             <Link href="/#works" className="text-primary-blue hover:underline">
               制作実績
             </Link>
-            <span className="text-[var(--text-gray)]">・</span>
+            <span className="text-gray">・</span>
             <Link href="/#strengths" className="text-primary-blue hover:underline">
               できること
             </Link>
-            <span className="text-[var(--text-gray)]">・</span>
+            <span className="text-gray">・</span>
             <Link href="/#faq" className="text-primary-blue hover:underline">
               よくある質問
             </Link>

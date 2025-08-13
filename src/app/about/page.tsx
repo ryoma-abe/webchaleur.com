@@ -10,7 +10,7 @@ export const metadata = generatePageMetadata({ path: '/about' });
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-bg-cream py-20">
+    <main className="min-h-screen bg-white py-20">
       <div className="container mx-auto px-4">
         <WobblyHeading level={1} underline english="About Us">
           WebChaleurについて
@@ -20,10 +20,10 @@ export default function AboutPage() {
         <FadeIn>
           <div className="max-w-4xl mx-auto mb-16">
             <SketchyCard variant="elevated" className="text-center">
-              <h2 className="text-2xl font-klee font-bold text-text-dark mb-4">
+              <h2 className="text-2xl text-primary mb-4">
                 ミッション
               </h2>
-              <p className="text-lg text-text-gray font-zenmaru leading-relaxed">
+              <p className="text-lg text-gray leading-relaxed">
                 十勝エリア（帯広・音更）を拠点に全国の企業様に寄り添い、
                 <br />
                 最新技術と温かみのあるデザインで、
@@ -37,25 +37,25 @@ export default function AboutPage() {
         {/* 代表メッセージ */}
         <FadeIn delay={0.2}>
           <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-2xl font-klee font-bold text-text-dark mb-8 text-center">
+            <h2 className="text-2xl text-primary mb-8 text-center">
               代表メッセージ
             </h2>
             <SketchyCard>
               <div className="md:flex md:gap-8 items-start">
                 <div className="md:flex-1">
-                  <p className="text-text-gray font-zenmaru mb-4 leading-relaxed">
+                  <p className="text-gray mb-4 leading-relaxed">
                     はじめまして、WebChaleur代表の山田太郎です。
                   </p>
-                  <p className="text-text-gray font-zenmaru mb-4 leading-relaxed">
+                  <p className="text-gray mb-4 leading-relaxed">
                     十勝で生まれ育った私は、この地域の温かさと可能性を感じながら育ちました。
                     東京でWeb制作の経験を積んだ後、地元十勝に戻り、地域企業様はもちろん、
                     全国の企業様のデジタル化をお手伝いしています。
                   </p>
-                  <p className="text-text-gray font-zenmaru mb-4 leading-relaxed">
+                  <p className="text-gray mb-4 leading-relaxed">
                     地元十勝では顔の見える関係性を、遠方のお客様とはオンラインでの密なコミュニケーションを大切にしながら、
                     最新の技術を活用したWeb制作で、皆様のビジネスの成長を支援いたします。
                   </p>
-                  <p className="text-text-gray font-zenmaru leading-relaxed">
+                  <p className="text-gray leading-relaxed">
                     「作って終わり」ではなく、作った後も一緒に成長していける。
                     そんなパートナーとして、末永くお付き合いいただければ幸いです。
                   </p>
@@ -68,7 +68,7 @@ export default function AboutPage() {
         {/* 私たちの強み */}
         <FadeIn delay={0.4}>
           <div className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-2xl font-klee font-bold text-text-dark mb-8 text-center">
+            <h2 className="text-2xl text-primary mb-8 text-center">
               私の強み
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -77,10 +77,10 @@ export default function AboutPage() {
                   <div className="text-4xl mb-4 text-primary-blue flex justify-center">
                     <FaHome />
                   </div>
-                  <h3 className="text-lg font-klee font-bold text-text-dark mb-3">
+                  <h3 className="text-lg text-primary mb-3">
                     柔軟な対応
                   </h3>
-                  <p className="text-sm text-text-gray font-zenmaru">
+                  <p className="text-sm text-gray">
                     十勝エリアは直接お伺い、
                     遠方はオンラインで柔軟に対応します。
                   </p>
@@ -92,10 +92,10 @@ export default function AboutPage() {
                   <div className="text-4xl mb-4 text-primary-blue flex justify-center">
                     <FaLaptopCode />
                   </div>
-                  <h3 className="text-lg font-klee font-bold text-text-dark mb-3">
+                  <h3 className="text-lg text-primary mb-3">
                     最新技術
                   </h3>
-                  <p className="text-sm text-text-gray font-zenmaru">
+                  <p className="text-sm text-gray">
                     Next.js、Shopifyなど最新の技術を活用。
                     高速で安全なWebサイトを構築します。
                   </p>
@@ -107,10 +107,10 @@ export default function AboutPage() {
                   <div className="text-4xl mb-4 text-primary-blue flex justify-center">
                     <FaHandshake />
                   </div>
-                  <h3 className="text-lg font-klee font-bold text-text-dark mb-3">
+                  <h3 className="text-lg text-primary mb-3">
                     継続サポート
                   </h3>
-                  <p className="text-sm text-text-gray font-zenmaru">
+                  <p className="text-sm text-gray">
                     作った後も安心。更新や修正のご相談も
                     いつでもお気軽にどうぞ。
                   </p>
@@ -123,48 +123,48 @@ export default function AboutPage() {
         {/* 会社概要 */}
         <FadeIn delay={0.6}>
           <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-2xl font-klee font-bold text-text-dark mb-8 text-center">
+            <h2 className="text-2xl text-primary mb-8 text-center">
               会社概要
             </h2>
             <SketchyCard>
               <dl className="space-y-4">
                 <div className="flex flex-col sm:flex-row">
-                  <dt className="font-klee font-bold text-text-dark sm:w-1/3 mb-1 sm:mb-0">
+                  <dt className="text-primary sm:w-1/3 mb-1 sm:mb-0">
                     会社名
                   </dt>
-                  <dd className="text-text-gray font-zenmaru sm:w-2/3">
+                  <dd className="text-gray sm:w-2/3">
                     WebChaleur（ウェブシャルール）
                   </dd>
                 </div>
                 <div className="flex flex-col sm:flex-row">
-                  <dt className="font-klee font-bold text-text-dark sm:w-1/3 mb-1 sm:mb-0">
+                  <dt className="text-primary sm:w-1/3 mb-1 sm:mb-0">
                     所在地
                   </dt>
-                  <dd className="text-text-gray font-zenmaru sm:w-2/3">
+                  <dd className="text-gray sm:w-2/3">
                     北海道河東郡音更町
                   </dd>
                 </div>
                 <div className="flex flex-col sm:flex-row">
-                  <dt className="font-klee font-bold text-text-dark sm:w-1/3 mb-1 sm:mb-0">
+                  <dt className="text-primary sm:w-1/3 mb-1 sm:mb-0">
                     設立
                   </dt>
-                  <dd className="text-text-gray font-zenmaru sm:w-2/3">
+                  <dd className="text-gray sm:w-2/3">
                     2023年4月
                   </dd>
                 </div>
                 <div className="flex flex-col sm:flex-row">
-                  <dt className="font-klee font-bold text-text-dark sm:w-1/3 mb-1 sm:mb-0">
+                  <dt className="text-primary sm:w-1/3 mb-1 sm:mb-0">
                     事業内容
                   </dt>
-                  <dd className="text-text-gray font-zenmaru sm:w-2/3">
+                  <dd className="text-gray sm:w-2/3">
                     Web制作・ECサイト構築・Webコンサルティング・デジタルマーケティング支援
                   </dd>
                 </div>
                 <div className="flex flex-col sm:flex-row">
-                  <dt className="font-klee font-bold text-text-dark sm:w-1/3 mb-1 sm:mb-0">
+                  <dt className="text-primary sm:w-1/3 mb-1 sm:mb-0">
                     対応エリア
                   </dt>
-                  <dd className="text-text-gray font-zenmaru sm:w-2/3">
+                  <dd className="text-gray sm:w-2/3">
                     十勝全域（直接訪問可）・北海道全域・全国（オンライン対応）
                   </dd>
                 </div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
         {/* CTA */}
         <FadeIn delay={0.8}>
           <div className="text-center">
-            <p className="text-text-gray font-zenmaru mb-6">
+            <p className="text-gray mb-6">
               十勝から全国へ、デジタルの可能性を一緒に広げていきませんか？
             </p>
             <HandDrawnButton href="/contact" variant="primary" size="large">

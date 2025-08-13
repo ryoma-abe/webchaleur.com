@@ -41,7 +41,7 @@ export default function WorkCard({
     >
       <Link href={link} className="block">
         {/* サムネイル */}
-        <div className="relative h-48 bg-gradient-to-br from-[var(--lighter-blue)] to-[var(--light-blue)] overflow-hidden">
+        <div className="relative h-48 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
           {thumbnail && thumbnail !== '/images/works/default.jpg' ? (
             <Image
               src={thumbnail}
@@ -57,7 +57,7 @@ export default function WorkCard({
 
           {/* カテゴリーバッジ */}
           <div
-            className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-[var(--main-blue)]"
+            className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue"
             style={{
               borderRadius: "8px 10px 9px 11px",
             }}
@@ -82,7 +82,7 @@ export default function WorkCard({
               {tags.slice(0, 4).map((tag, tagIndex) => (
                 <span
                   key={tagIndex}
-                  className="text-xs px-3 py-1 bg-[var(--accent-beige)] text-[var(--text-gray)]"
+                  className="text-xs px-3 py-1 bg-accent-beige text-gray"
                   style={{
                     borderRadius: "8px",
                   }}
@@ -94,7 +94,7 @@ export default function WorkCard({
           )}
 
           {/* 詳細を見るリンク */}
-          <span className="inline-flex items-center gap-2 text-[var(--main-blue)] font-medium hover:opacity-80 transition-opacity">
+          <span className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity">
             詳しく見る
             <span>→</span>
           </span>

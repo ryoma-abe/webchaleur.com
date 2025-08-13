@@ -80,7 +80,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         {/* カテゴリー・タグ */}
         <div className="mb-12 text-center">
           {blog.frontMatter.category && (
-            <span className="inline-block px-4 py-2 bg-primary-lighter text-primary-blue rounded-full text-base font-medium mr-3 mb-2">
+            <span className="inline-block px-4 py-2 bg-primary-lighter text-primary-blue rounded-full text-base mr-3 mb-2">
               {blog.frontMatter.category}
             </span>
           )}

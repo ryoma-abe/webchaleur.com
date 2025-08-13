@@ -27,7 +27,6 @@ export default function WobblyHeading({
   };
 
   const baseClass = `
-    font-klee font-semibold text-text-dark
     relative inline-block
   `;
 

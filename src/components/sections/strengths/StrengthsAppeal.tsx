@@ -23,39 +23,39 @@ export default function StrengthsAppeal({ isVisible }: StrengthsAppealProps) {
         </h3>
         <p className="text-body max-w-3xl mx-auto mb-6">
           ただホームページを作るだけではなく、
-          <span className="font-medium">AI技術の活用</span>
+          <span>AI技術の活用</span>
           で業務効率化を実現し、
-          <span className="font-medium">SNS運用</span>で集客力を高め、
-          <span className="font-medium">データ分析</span>で改善を続ける。
+          <span>SNS運用</span>で集客力を高め、
+          <span>データ分析</span>で改善を続ける。
           <br />
           <br />
           これから十勝の企業様が
-          <span className="text-primary-blue font-bold">
+          <span className="text-primary-blue">
             デジタル時代で成長する
           </span>
           ための、総合的なパートナーを目指します。
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <span
-            className="bg-white px-4 py-2 text-sm font-medium text-gray"
+            className="bg-white px-4 py-2 text-sm text-gray"
             style={{ borderRadius: "16px" }}
           >
             #AI導入支援
           </span>
           <span
-            className="bg-white px-4 py-2 text-sm font-medium text-gray"
+            className="bg-white px-4 py-2 text-sm text-gray"
             style={{ borderRadius: "16px" }}
           >
             #SNSマーケティング
           </span>
           <span
-            className="bg-white px-4 py-2 text-sm font-medium text-gray"
+            className="bg-white px-4 py-2 text-sm text-gray"
             style={{ borderRadius: "16px" }}
           >
             #データドリブン
           </span>
           <span
-            className="bg-white px-4 py-2 text-sm font-medium text-gray"
+            className="bg-white px-4 py-2 text-sm text-gray"
             style={{ borderRadius: "16px" }}
           >
             #地域密着
@@ -71,7 +71,7 @@ export default function StrengthsAppeal({ isVisible }: StrengthsAppealProps) {
       >
         <p className="text-body text-lg">
           十勝の企業様の「困った」を
-          <span className="text-primary-blue font-medium mx-1">
+          <span className="text-primary-blue mx-1">
             最新技術と真心
           </span>
           で解決します

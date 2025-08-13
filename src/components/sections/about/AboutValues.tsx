@@ -18,7 +18,7 @@ export default function AboutValues({ isVisible }: AboutValuesProps) {
       icon: FaHome,
       title: "地元密着",
       description:
-        "帯広・音更なら30分以内にお伺い。対面でのお打ち合わせを大切にしています。",
+        "帯広・音更なら30分以内にお伺い。\n対面でのお打ち合わせを大切にしています。",
     },
     {
       icon: FaLightbulb,
@@ -40,9 +40,7 @@ export default function AboutValues({ isVisible }: AboutValuesProps) {
         <div
           key={index}
           className={`transition-all duration-800 ${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{ transitionDelay: `${400 + index * 100}ms` }}
         >
@@ -51,10 +49,10 @@ export default function AboutValues({ isVisible }: AboutValuesProps) {
               <div className="text-4xl mb-4 text-primary-blue">
                 <value.icon className="mx-auto" />
               </div>
-              <h3 className="text-lg font-bold text-[var(--text-dark)] mb-3">
+              <h3 className="text-lg mb-3">
                 {value.title}
               </h3>
-              <p className="text-sm text-[var(--text-gray)] font-[var(--font-main)]">
+              <p className="text-sm text-gray">
                 {value.description}
               </p>
             </div>

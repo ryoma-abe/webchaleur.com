@@ -60,7 +60,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
             {news.frontMatter.category && (
               <>
                 <span className="text-gray-300">•</span>
-                <span className="px-3 py-1 bg-primary-lighter text-primary-blue rounded-full text-sm font-medium">
+                <span className="px-3 py-1 bg-primary-lighter text-primary-blue rounded-full text-sm">
                   {news.frontMatter.category}
                 </span>
               </>

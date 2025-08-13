@@ -69,9 +69,9 @@ export default function VoiceSection() {
           <h2 className="heading-section">
             お客様の声
           </h2>
-          <p className="text-lg text-[var(--text-gray)]">
+          <p className="text-lg text-gray">
             ココナラでの評価は
-            <span className="text-primary-blue font-bold mx-1">★4.9</span>
+            <span className="text-primary-blue mx-1">★4.9</span>
             です
           </p>
         </div>

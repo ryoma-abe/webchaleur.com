@@ -1,14 +1,24 @@
 "use client";
 
-export default function SectionHeader({ isVisible }: { isVisible: boolean }) {
+type SectionHeaderProps = {
+  isVisible: boolean;
+  title: string;
+  subTitle: string;
+};
+
+export default function SectionHeader({
+  isVisible,
+  title,
+  subTitle,
+}: SectionHeaderProps) {
   return (
     <div
       className={`text-center mb-12 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
-      <h2 className="heading-section">私について</h2>
-      <span className="text-caption inline-block">About Us</span>
+      <h2 className="heading-section">{title}</h2>
+      <span className="text-caption inline-block">{subTitle}</span>
     </div>
   );
 }

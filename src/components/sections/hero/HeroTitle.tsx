@@ -85,7 +85,7 @@ export default function HeroTitle({ isVisible }: HeroTitleProps) {
 
   return (
     <h1
-      className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px] transition-all duration-1000 ${
+      className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px] transition-all duration-1000 ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-8"

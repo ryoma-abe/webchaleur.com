@@ -12,7 +12,7 @@ export default async function WorksPage() {
   const works = await getAllContent('works');
 
   return (
-    <main className="min-h-screen bg-bg-cream py-20">
+    <main className="min-h-screen bg-white py-20">
       <div className="container mx-auto px-4">
         <WobblyHeading level={1} underline english="Works">
           制作実績
@@ -37,23 +37,23 @@ export default async function WorksPage() {
                   </div>
                 )}
                 {work.frontMatter.category && (
-                  <span className="inline-block px-3 py-1 bg-light-blue/20 text-main-blue rounded-[10px_12px_11px_13px] font-zenmaru text-sm mb-3">
+                  <span className="inline-block px-3 py-1 bg-primary-lighter text-primary-blue rounded-[10px_12px_11px_13px] text-sm mb-3">
                     {work.frontMatter.category}
                   </span>
                 )}
                 
-                <h2 className="text-base md:text-lg font-klee font-bold text-text-dark mb-2 group-hover:text-main-blue transition-colors">
+                <h2 className="text-base md:text-lg text-primary mb-2 group-hover:text-primary-blue transition-colors">
                   {work.frontMatter.title}
                 </h2>
                 
                 {work.frontMatter.client && (
-                  <p className="text-xs md:text-sm text-text-gray font-zenmaru mb-3">
+                  <p className="text-xs md:text-sm text-gray mb-3">
                     {work.frontMatter.client}
                   </p>
                 )}
                 
                 {work.frontMatter.description && (
-                  <p className="text-xs md:text-sm text-text-gray font-zenmaru mb-4 line-clamp-3">
+                  <p className="text-xs md:text-sm text-gray mb-4 line-clamp-3">
                     {work.frontMatter.description}
                   </p>
                 )}
@@ -62,7 +62,7 @@ export default async function WorksPage() {
                   {work.frontMatter.tags?.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2 py-1 bg-accent-beige text-text-gray rounded-[8px_10px_9px_11px] font-zenmaru"
+                      className="text-xs px-2 py-1 bg-accent-beige text-gray rounded-[8px_10px_9px_11px]"
                     >
                       {tag}
                     </span>
@@ -70,7 +70,7 @@ export default async function WorksPage() {
                 </div>
                 
                 <div className="text-right">
-                  <span className="text-main-blue font-zenmaru text-sm group-hover:underline">
+                  <span className="text-primary-blue text-sm group-hover:underline">
                     詳しく見る →
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export default async function WorksPage() {
 
         {works.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-text-gray font-zenmaru">
+            <p className="text-gray">
               実績コンテンツを準備中です
             </p>
           </div>

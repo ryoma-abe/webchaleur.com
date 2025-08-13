@@ -29,19 +29,19 @@ export default function FAQItem({
     >
       <button
         onClick={() => onToggle(id)}
-        className="w-full p-6 text-left hover:bg-[var(--bg-light)] transition-colors"
+        className="w-full p-6 text-left hover:bg-light transition-colors"
       >
         <div className="flex items-center justify-between">
           <div className="flex items-start gap-4">
             <span 
-              className="inline-flex items-center justify-center w-8 h-8 bg-primary-lighter text-primary-blue font-bold text-sm"
+              className="inline-flex items-center justify-center w-8 h-8 bg-primary-lighter text-primary-blue text-sm"
               style={{
                 borderRadius: '50%',
               }}
             >
               Q
             </span>
-            <span className="flex-1 text-primary font-medium pr-4">
+            <span className="flex-1 text-primary pr-4">
               {question}
             </span>
           </div>
@@ -64,7 +64,7 @@ export default function FAQItem({
         <div className="px-6 pb-6">
           <div className="flex items-start gap-4">
             <span 
-              className="inline-flex items-center justify-center w-8 h-8 bg-[var(--accent-beige)] text-[var(--text-gray)] font-bold text-sm"
+              className="inline-flex items-center justify-center w-8 h-8 bg-accent-beige text-gray text-sm"
               style={{
                 borderRadius: '50%',
               }}
