@@ -133,7 +133,7 @@ export default function AboutPage() {
                     会社名
                   </dt>
                   <dd className="text-gray sm:w-2/3">
-                    WebChaleur（ウェブシャルール）
+                    WebChaleur（ウェブシャル）
                   </dd>
                 </div>
                 <div className="flex flex-col sm:flex-row">
