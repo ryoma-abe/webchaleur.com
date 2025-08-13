@@ -24,7 +24,7 @@ export default function AboutValues({ isVisible }: AboutValuesProps) {
       icon: FaLightbulb,
       title: "最新技術",
       description:
-        "Next.jsやShopifyなど、最新の技術で高速・安全なサイトを構築します。",
+        "Next.jsやAIなど、最新の技術で高速・安全なサイトを構築します。",
     },
     {
       icon: FaHandshake,
