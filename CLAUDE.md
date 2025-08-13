@@ -100,6 +100,21 @@ $accent-beige: #e5e3e1; // ベージュグレー
 - **親しみやすさ**: 「地元企業様」「お手伝い」
 - **絵文字の適度な使用**: アクセント程度に
 
+### 6. スタイリングルール
+
+- **グローバルスタイルの活用**: `globals.css`で定義済みのスタイルを優先使用
+- **重複スタイルの回避**:
+  - h1〜h6タグには`font-bold`、`font-semibold`、`font-klee`を追加しない（既に定義済み）
+  - pタグには基本的にフォント指定不要（デフォルトで`Zen Maru Gothic`）
+- **カラークラスの統一**:
+  - `text-[var(--text-gray)]` → `text-gray`を使用
+  - `text-[var(--text-dark)]` → `text-primary`を使用
+  - `bg-[var(--xxx)]` → 定義済みのユーティリティクラスを使用
+- **存在しない変数の使用禁止**:
+  - `font-[var(--font-main)]`のような未定義の変数は使用しない
+- **ユーティリティクラスの活用**:
+  - `.text-primary`、`.text-gray`、`.text-body`、`.text-caption`などの定義済みクラスを使用
+
 ---
 
 ## 📐 技術スタック
