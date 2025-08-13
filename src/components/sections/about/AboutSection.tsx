@@ -1,7 +1,6 @@
 "use client";
 import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import AboutMessage from "./AboutMessage";
-import AboutRepMessage from "./AboutRepMessage";
 import { useEffect, useState } from "react";
 import SectionHeader from "../common/SectionHeader";
 import useInView from "@/hooks/useInView";
@@ -27,11 +26,8 @@ export default function AboutSection() {
           subTitle="AboutUs"
         />
 
-        {/* メインメッセージと屋号の意味 */}
+        {/* メインメッセージ（サービス内容） */}
         <AboutMessage isVisible={isVisible} />
-
-        {/* 代表メッセージ */}
-        <AboutRepMessage isVisible={isVisible} />
 
         {/* CTAボタン */}
         <div

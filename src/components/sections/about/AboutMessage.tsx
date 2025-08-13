@@ -5,37 +5,31 @@ interface AboutMessageProps {
 export default function AboutMessage({ isVisible }: AboutMessageProps) {
   return (
     <div
-      className={`max-w-4xl mx-auto mb-20 transition-all duration-1000 ${
+      className={`max-w-5xl mx-auto mb-20 transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
       <div className="text-center space-y-8">
-        {/* メインメッセージ */}
-        <div className="space-y-4">
-          <p className="text-lg text-gray">
-            十勝・帯広から全国へ
-          </p>
-          <h3 className="text-3xl md:text-4xl leading-relaxed">
-            <span className="text-primary">Webの力で</span>
-            <br />
-            <span className="text-primary">ビジネスの成長をサポート</span>
-          </h3>
-        </div>
-
-        {/* 屋号の説明 - シンプルに */}
-        <div className="max-w-2xl mx-auto">
+        {/* 大きなサービス内容 */}
+        <h3 className="text-3xl md:text-4xl lg:text-5xl text-primary leading-tight">
+          Webサイト制作・ECサイト構築
+          <br />
+          システム開発・保守運用
+        </h3>
+        
+        {/* 説明文 */}
+        <div className="max-w-3xl mx-auto">
           <p className="text-base text-gray leading-relaxed">
-            十勝を拠点に、地元の方も遠方の方も
+            WebChaleurは、十勝・帯広を拠点に全国のお客様をサポートしています。
             <br />
-            Webのことなら何でも気軽に相談できます。
+            企業サイトやECサイトの新規制作はもちろん、既存サイトのリニューアル、
+            <br />
+            業務効率化のためのシステム開発、サイトの保守運用まで幅広く対応。
+            <br />
+            地元企業様は直接お伺いし、遠方のお客様はオンラインで密に連携しながら、
+            <br />
+            それぞれのビジネスに最適なWeb戦略をご提案します。
           </p>
-        </div>
-
-        {/* シンプルな区切り線 */}
-        <div className="flex items-center justify-center space-x-2 opacity-30">
-          <div className="h-px w-12 bg-primary-blue"></div>
-          <div className="w-1.5 h-1.5 rounded-full bg-primary-blue"></div>
-          <div className="h-px w-12 bg-primary-blue"></div>
         </div>
       </div>
     </div>
