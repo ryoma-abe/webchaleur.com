@@ -36,7 +36,7 @@ export default function LegalPage() {
                   運営責任者
                 </dt>
                 <dd className="text-gray">
-                  山田 太郎
+                  安部 僚真
                 </dd>
               </div>
 

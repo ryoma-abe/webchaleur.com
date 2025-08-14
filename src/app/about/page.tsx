@@ -25,28 +25,25 @@ export default function AboutPage() {
               <h2 className="text-3xl text-primary mb-10 text-center font-klee">
                 <span className="text-primary-blue">WebChaleur</span>とは
               </h2>
-              <div className="relative">
-                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-blue to-primary-blue/20 rounded-full"></div>
-                <div className="pl-8">
-                  <p className="text-lg text-gray leading-relaxed mb-6">
-                    <span className="text-primary-blue font-medium">
-                      WebChaleur（ウェブシャル）
-                    </span>
-                    は、
-                    「Web」と「Chaleur（仏語：ぬくもり）」を組み合わせた屋号です。
-                  </p>
-                  <p className="text-base text-gray leading-relaxed mb-4">
-                    最新の技術を使いながらも、温かみのあるサービスを提供したい。
-                    そんな想いから生まれました。
-                  </p>
-                  <p className="text-base text-gray leading-relaxed">
-                    十勝・帯広を拠点に、地元の方も遠方の方も、
-                    <span className="text-primary font-medium">
-                      「Webのことなら何でも気軽に相談できる」
-                    </span>
-                    存在でありたいと考えています。
-                  </p>
-                </div>
+              <div className="text-center">
+                <p className="text-lg text-gray leading-relaxed mb-6">
+                  <span className="text-primary-blue font-medium">
+                    WebChaleur（ウェブシャル）
+                  </span>
+                  は、
+                  「Web」と「Chaleur（仏語：ぬくもり）」を組み合わせた屋号です。
+                </p>
+                <p className="text-base text-gray leading-relaxed mb-4">
+                  最新の技術を使いながらも、温かみのあるサービスを提供したい。
+                  そんな想いから生まれました。
+                </p>
+                <p className="text-base text-gray leading-relaxed">
+                  十勝・帯広を拠点に、地元の方も遠方の方も、
+                  <span className="text-primary font-medium">
+                    「Webのことなら何でも気軽に相談できる」
+                  </span>
+                  存在でありたいと考えています。
+                </p>
               </div>
             </div>
           </section>
