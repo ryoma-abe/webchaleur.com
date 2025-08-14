@@ -1,8 +1,7 @@
 import { getAllContent } from '@/lib/mdx';
 import Link from 'next/link';
 import WobblyHeading from '@/components/ui/WobblyHeading';
-import SketchyCard from '@/components/ui/SketchyCard';
-import HandDrawnButton from '@/components/ui/HandDrawnButton';
+import FadeIn from '@/components/animations/FadeIn';
 import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({ path: '/news' });
@@ -11,32 +10,35 @@ export default async function NewsPage() {
   const news = await getAllContent('news');
 
   return (
-    <main className="min-h-screen bg-white py-20">
-      <div className="container mx-auto px-4">
-        <WobblyHeading level={1} underline english="Information">
-          お知らせ
-        </WobblyHeading>
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
+      {/* ヒーローセクション */}
+      <section className="py-20 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <WobblyHeading level={1} underline english="Information">
+            お知らせ
+          </WobblyHeading>
+          <p className="text-center text-gray mt-6 max-w-2xl mx-auto">
+            WebChaleurからのお知らせ、キャンペーン情報などをご案内しています。
+          </p>
+        </div>
+      </section>
 
-        <p className="text-center text-gray mb-12 max-w-2xl mx-auto">
-          WebChaleurからのお知らせ、キャンペーン情報などをご案内しています。
-        </p>
+      <div className="container mx-auto px-4 py-12">
 
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-6">
-            {news.map((item, index) => (
-              <Link href={`/news/${item.slug}`} key={item.slug} className="block group">
-                <SketchyCard
-                  className="hover:shadow-[4px_4px_0_rgba(91,143,185,0.15)] transition-all group-hover:transform group-hover:-translate-y-0.5"
-                  rotate={false}
-                >
-                  <article className="flex flex-col md:flex-row md:items-center gap-4">
+        <FadeIn>
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4">
+              {news.map((item, index) => (
+                <Link href={`/news/${item.slug}`} key={item.slug} className="block group">
+                  <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all group-hover:transform group-hover:-translate-y-0.5 p-6">
+                    <article className="flex flex-col md:flex-row md:items-center gap-4">
                   <div className="flex-shrink-0">
                     {item.frontMatter.date && (
                       <time
                         dateTime={item.frontMatter.date}
-                        className="block text-center bg-primary-lighter rounded-[10px_12px_11px_13px] px-4 py-3"
+                        className="block text-center bg-primary-blue/5 rounded-xl px-4 py-3"
                       >
-                        <span className="block text-2xl text-primary-blue">
+                        <span className="block text-2xl text-primary-blue font-bold">
                           {new Date(item.frontMatter.date).getDate()}
                         </span>
                         <span className="block text-xs text-primary-blue">
@@ -52,10 +54,7 @@ export default async function NewsPage() {
                   <div className="flex-grow">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
                       {item.frontMatter.category && (
-                        <span 
-                          className="inline-block px-3 py-1 bg-accent-beige text-gray rounded-[8px_10px_9px_11px] text-xs"
-                          style={{ transform: `rotate(${index % 2 ? 0.2 : -0.2}deg)` }}
-                        >
+                        <span className="inline-block px-3 py-1 bg-primary-blue/10 text-primary-blue rounded-lg text-xs font-medium">
                           {item.frontMatter.category}
                         </span>
                       )}
@@ -77,20 +76,21 @@ export default async function NewsPage() {
                       詳しく見る →
                     </span>
                   </div>
-                </article>
-              </SketchyCard>
-              </Link>
-            ))}
-          </div>
-
-          {news.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-gray">
-                お知らせはまだありません
-              </p>
+                    </article>
+                  </div>
+                </Link>
+              ))}
             </div>
-          )}
-        </div>
+
+            {news.length === 0 && (
+              <div className="text-center py-20 bg-white rounded-2xl">
+                <p className="text-gray">
+                  お知らせはまだありません
+                </p>
+              </div>
+            )}
+          </div>
+        </FadeIn>
       </div>
     </main>
   );
