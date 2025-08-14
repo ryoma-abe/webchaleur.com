@@ -17,7 +17,7 @@ export default async function BlogPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white py-20">
+    <div className="min-h-screen bg-white py-20">
       <div className="container mx-auto px-4">
         <WobblyHeading level={1} underline english="Blog">
           技術ブログ
@@ -104,6 +104,6 @@ export default async function BlogPage() {
           </div>
         )}
       </div>
-    </main>
+    </div>
   );
 }
