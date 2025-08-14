@@ -102,8 +102,8 @@ export default function AboutPage() {
                   { label: "屋号", value: "WebChaleur（ウェブシャル）" },
                   { label: "代表", value: "安部 僚真" },
                   { label: "所在地", value: "北海道河東郡音更町" },
-                  { label: "設立", value: "2023年4月" },
-                  { label: "連絡先", value: "info@webchaleur.jp" },
+                  { label: "設立", value: "2022年9月" },
+                  { label: "連絡先", value: "webchaleur@gmail.com" },
                 ]}
               />
             </div>
