@@ -1,6 +1,7 @@
 import WobblyHeading from "@/components/ui/WobblyHeading";
 import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import FadeIn from "@/components/animations/FadeIn";
+import CompanyInfoList from "@/components/ui/CompanyInfoList";
 import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata = generatePageMetadata({ path: "/about" });
@@ -127,73 +128,20 @@ export default function AboutPage() {
 
         {/* 会社概要 */}
         <FadeIn delay={0.6}>
-          <div className="max-w-5xl mx-auto mb-20">
+          <div className="max-w-4xl mx-auto mb-20">
             <h2 className="text-3xl text-primary mb-10 text-center font-klee">
               会社概要
             </h2>
-            <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-              <table className="w-full">
-                <tbody>
-                  <tr className="hover:bg-gray-50/50 transition-colors">
-                    <th className="text-left text-primary px-6 py-5 w-1/3 md:w-1/4 font-medium">
-                      屋号
-                    </th>
-                    <td className="text-gray px-6 py-5">
-                      WebChaleur（ウェブシャル）
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50/50 transition-colors">
-                    <th className="text-left text-primary px-6 py-5 font-medium">
-                      代表者
-                    </th>
-                    <td className="text-gray px-6 py-5">安部 僚真</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50/50 transition-colors">
-                    <th className="text-left text-primary px-6 py-5 font-medium">
-                      所在地
-                    </th>
-                    <td className="text-gray px-6 py-5">北海道河東郡音更町</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50/50 transition-colors">
-                    <th className="text-left text-primary px-6 py-5 font-medium">
-                      設立
-                    </th>
-                    <td className="text-gray px-6 py-5">2023年4月</td>
-                  </tr>
-                  <tr className="hover:bg-gray-50/50 transition-colors">
-                    <th className="text-left text-primary px-6 py-5 align-top font-medium">
-                      事業内容
-                    </th>
-                    <td className="text-gray px-6 py-5">
-                      <ul className="space-y-1">
-                        <li>• Webサイト制作（企業サイト、LP、採用サイト等）</li>
-                        <li>• ECサイト構築（Shopify、EC-CUBE等）</li>
-                        <li>• システム開発（業務効率化ツール、Webアプリ等）</li>
-                        <li>• 保守運用・サポート</li>
-                        <li>• Webコンサルティング</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50/50 transition-colors">
-                    <th className="text-left text-primary px-6 py-5 align-top font-medium">
-                      対応エリア
-                    </th>
-                    <td className="text-gray px-6 py-5">
-                      <ul className="space-y-1">
-                        <li>• 十勝全域（直接訪問可能）</li>
-                        <li>• 北海道全域</li>
-                        <li>• 全国（オンライン対応）</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50/50 transition-colors">
-                    <th className="text-left text-primary px-6 py-5 font-medium">
-                      連絡先
-                    </th>
-                    <td className="text-gray px-6 py-5">info@webchaleur.jp</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
+              <CompanyInfoList
+                items={[
+                  { label: "屋号", value: "WebChaleur（ウェブシャル）" },
+                  { label: "代表", value: "安部 僚真" },
+                  { label: "所在地", value: "北海道河東郡音更町" },
+                  { label: "設立", value: "2023年4月" },
+                  { label: "連絡先", value: "info@webchaleur.jp" },
+                ]}
+              />
             </div>
           </div>
         </FadeIn>
