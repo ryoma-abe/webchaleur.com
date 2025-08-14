@@ -32,7 +32,9 @@ export default async function WorksPage() {
                 <Link href={`/works/${work.slug}`} className="block">
                   {/* サムネイル */}
                   <div className="relative h-48 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
-                    {work.frontMatter.thumbnail && work.frontMatter.thumbnail !== "/images/works/default.jpg" ? (
+                    {work.frontMatter.thumbnail &&
+                    work.frontMatter.thumbnail !==
+                      "/images/works/default.jpg" ? (
                       <Image
                         src={work.frontMatter.thumbnail}
                         alt={work.frontMatter.title}
@@ -62,18 +64,21 @@ export default async function WorksPage() {
                     </p>
 
                     {/* タグ */}
-                    {work.frontMatter.tags && work.frontMatter.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {work.frontMatter.tags.slice(0, 4).map((tag: string, tagIndex: number) => (
-                          <span
-                            key={tagIndex}
-                            className="text-xs px-3 py-1 bg-accent-beige text-gray rounded-lg"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                    {work.frontMatter.tags &&
+                      work.frontMatter.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {work.frontMatter.tags
+                            .slice(0, 4)
+                            .map((tag: string, tagIndex: number) => (
+                              <span
+                                key={tagIndex}
+                                className="text-xs px-3 py-1 bg-accent-beige text-gray rounded-lg"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                        </div>
+                      )}
 
                     {/* 詳細を見るリンク */}
                     <span className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity">
