@@ -2,6 +2,7 @@ import WobblyHeading from "@/components/ui/WobblyHeading";
 import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import FadeIn from "@/components/animations/FadeIn";
 import CompanyInfoList from "@/components/ui/CompanyInfoList";
+import SectionTitle from "@/components/ui/SectionTitle";
 import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata = generatePageMetadata({ path: "/about" });
@@ -23,9 +24,9 @@ export default function AboutPage() {
         <FadeIn>
           <section className="mb-20">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl text-primary mb-10 text-center font-klee">
+              <SectionTitle>
                 <span className="text-primary-blue">WebChaleur</span>とは
-              </h2>
+              </SectionTitle>
               <div className="text-center">
                 <p className="text-lg text-gray leading-relaxed mb-6">
                   <span className="text-primary-blue font-medium">
@@ -52,49 +53,11 @@ export default function AboutPage() {
           </section>
         </FadeIn>
 
-        {/* サービス内容 */}
-        <FadeIn delay={0.1}>
-          <section className="mb-20">
-            <div className="max-w-5xl mx-auto">
-              <div className="bg-gradient-to-br from-primary-blue/5 to-transparent rounded-3xl p-8 md:p-12">
-                <div className="text-center">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl text-primary font-klee leading-tight mb-16">
-                    <span className="text-primary-blue">Webサイト制作</span>・
-                    <span className="text-primary-blue">ECサイト構築</span>
-                    <br />
-                    <span className="text-2xl md:text-3xl lg:text-4xl">
-                      システム開発・保守運用
-                    </span>
-                  </h2>
-
-                  <div className="max-w-3xl mx-auto">
-                    <p className="text-base md:text-lg text-gray leading-relaxed">
-                      WebChaleurは、十勝・帯広を拠点に全国のお客様をサポートしています。
-                    </p>
-                    <p className="text-base md:text-lg text-gray leading-relaxed mt-4">
-                      企業サイトやECサイトの新規制作はもちろん、既存サイトのリニューアル、
-                      <br />
-                      業務効率化のためのシステム開発、サイトの保守運用まで幅広く対応。
-                    </p>
-                    <p className="text-base md:text-lg text-gray leading-relaxed mt-4">
-                      地元企業様は直接お伺いし、遠方のお客様はオンラインで密に連携しながら、
-                      <br />
-                      それぞれのビジネスに最適なWeb戦略をご提案します。
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </FadeIn>
-
         {/* 代表メッセージ */}
         <FadeIn delay={0.2}>
           <section className="mb-20">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl text-primary mb-10 text-center font-klee">
-                代表メッセージ
-              </h2>
+              <SectionTitle>代表メッセージ</SectionTitle>
               <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
                 <div className="space-y-6">
                   <p className="text-gray leading-relaxed">
@@ -132,9 +95,7 @@ export default function AboutPage() {
         {/* 会社概要 */}
         <FadeIn delay={0.6}>
           <div className="max-w-4xl mx-auto mb-20">
-            <h2 className="text-3xl text-primary mb-10 text-center font-klee">
-              会社概要
-            </h2>
+            <SectionTitle>会社概要</SectionTitle>
             <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
               <CompanyInfoList
                 items={[

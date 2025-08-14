@@ -1,5 +1,6 @@
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import FadeIn from '@/components/animations/FadeIn';
+import SubHeading from '@/components/ui/SubHeading';
 import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({ path: '/privacy' });
@@ -26,17 +27,13 @@ export default function PrivacyPage() {
               以下のプライバシーポリシーに基づき、個人情報の保護に努めます。
             </p>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              1. 個人情報の定義
-            </h2>
+            <SubHeading>1. 個人情報の定義</SubHeading>
             <p className="text-gray mb-6">
               個人情報とは、個人に関する情報であり、氏名、生年月日、住所、電話番号、
               メールアドレスなど、特定の個人を識別できる情報を指します。
             </p>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              2. 個人情報の収集
-            </h2>
+            <SubHeading>2. 個人情報の収集</SubHeading>
             <p className="text-gray mb-6">
               当社は、以下の場合に個人情報を収集することがあります：
             </p>
@@ -47,9 +44,7 @@ export default function PrivacyPage() {
               <li>その他、お客様から直接提供いただく場合</li>
             </ul>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              3. 個人情報の利用目的
-            </h2>
+            <SubHeading>3. 個人情報の利用目的</SubHeading>
             <p className="text-gray mb-6">
               収集した個人情報は、以下の目的で利用いたします：
             </p>
@@ -61,9 +56,7 @@ export default function PrivacyPage() {
               <li>統計データの作成（個人を特定できない形式）</li>
             </ul>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              4. 個人情報の第三者提供
-            </h2>
+            <SubHeading>4. 個人情報の第三者提供</SubHeading>
             <p className="text-gray mb-6">
               当社は、以下の場合を除き、お客様の個人情報を第三者に提供することはありません：
             </p>
@@ -74,49 +67,37 @@ export default function PrivacyPage() {
               <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要な場合</li>
             </ul>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              5. 個人情報の安全管理
-            </h2>
+            <SubHeading>5. 個人情報の安全管理</SubHeading>
             <p className="text-gray mb-6">
               当社は、個人情報の漏洩、滅失、毀損の防止その他の個人情報の安全管理のために、
               必要かつ適切な措置を講じます。
             </p>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              6. Cookie（クッキー）について
-            </h2>
+            <SubHeading>6. Cookie（クッキー）について</SubHeading>
             <p className="text-gray mb-6">
               当サイトでは、アクセス解析やサービス向上のためにCookieを使用することがあります。
               Cookieは個人を特定する情報を含みません。
             </p>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              7. アクセス解析ツール
-            </h2>
+            <SubHeading>7. アクセス解析ツール</SubHeading>
             <p className="text-gray mb-6">
               当サイトでは、Googleアナリティクスを使用してアクセス情報を収集しています。
               収集されたデータは匿名で処理され、個人を特定することはできません。
             </p>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              8. 個人情報の開示・訂正・削除
-            </h2>
+            <SubHeading>8. 個人情報の開示・訂正・削除</SubHeading>
             <p className="text-gray mb-6">
               お客様から個人情報の開示、訂正、削除のご請求があった場合は、
               ご本人確認の上、速やかに対応いたします。
             </p>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              9. プライバシーポリシーの変更
-            </h2>
+            <SubHeading>9. プライバシーポリシーの変更</SubHeading>
             <p className="text-gray mb-6">
               当社は、必要に応じて本プライバシーポリシーを変更することがあります。
               変更後のプライバシーポリシーは、当サイトに掲載した時点から効力を生じるものとします。
             </p>
 
-            <h2 className="text-xl text-primary mt-8 mb-4">
-              10. お問い合わせ
-            </h2>
+            <SubHeading>10. お問い合わせ</SubHeading>
             <p className="text-gray mb-6">
               個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください：
             </p>
