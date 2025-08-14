@@ -36,6 +36,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-base text-gray leading-relaxed mb-4">
                   最新の技術を使いながらも、温かみのあるサービスを提供したい。
+                  <br />
                   そんな想いから生まれました。
                 </p>
                 <p className="text-base text-gray leading-relaxed">
@@ -72,10 +73,12 @@ export default function AboutPage() {
                     </p>
                     <p className="text-base md:text-lg text-gray leading-relaxed mt-4">
                       企業サイトやECサイトの新規制作はもちろん、既存サイトのリニューアル、
+                      <br />
                       業務効率化のためのシステム開発、サイトの保守運用まで幅広く対応。
                     </p>
                     <p className="text-base md:text-lg text-gray leading-relaxed mt-4">
                       地元企業様は直接お伺いし、遠方のお客様はオンラインで密に連携しながら、
+                      <br />
                       それぞれのビジネスに最適なWeb戦略をご提案します。
                     </p>
                   </div>
