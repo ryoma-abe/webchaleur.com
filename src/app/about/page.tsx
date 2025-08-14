@@ -39,6 +39,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-base text-gray leading-relaxed">
                   十勝・帯広を拠点に、地元の方も遠方の方も、
+                  <br />
                   <span className="text-primary font-medium">
                     「Webのことなら何でも気軽に相談できる」
                   </span>
