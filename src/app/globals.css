@@ -153,6 +153,14 @@ p {
   line-height: 1.6;
 }
 
+.heading-list {
+  @apply text-base md:text-lg;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
 /* 手書き風の下線 */
 .hand-drawn-underline {
   position: relative;

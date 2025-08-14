@@ -60,7 +60,7 @@ export default async function NewsPage() {
                       )}
                     </div>
 
-                    <h2 className="text-base md:text-lg text-primary mb-2 group-hover:text-primary-blue transition-colors">
+                    <h2 className="heading-list mb-2 group-hover:text-primary-blue transition-colors">
                       {item.frontMatter.title}
                     </h2>
 
