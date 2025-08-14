@@ -104,7 +104,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <>
       {/* Hero Section */}
       <section className="relative py-20 px-6 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
@@ -317,6 +317,6 @@ export default function ServicesPage() {
           </FadeIn>
         </div>
       </div>
-    </main>
+    </>
   );
 }

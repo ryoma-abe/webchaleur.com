@@ -11,7 +11,7 @@ export default async function WorksPage() {
   const works = await getAllContent('works');
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
       {/* ヒーローセクション */}
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
@@ -94,6 +94,6 @@ export default async function WorksPage() {
           )}
         </FadeIn>
       </div>
-    </main>
+    </div>
   );
 }

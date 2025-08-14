@@ -47,7 +47,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   const readingTime = Math.ceil(wordCount / wordsPerMinute);
 
   return (
-    <main className="min-h-screen bg-white pt-32 pb-20">
+    <div className="min-h-screen bg-white pt-32 pb-20">
       <article className="container mx-auto px-4 max-w-3xl">
         {/* ヘッダー部分 */}
         <header className="mb-16 text-center">
@@ -119,6 +119,6 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </a>
         </div>
       </article>
-    </main>
+    </div>
   );
 }
