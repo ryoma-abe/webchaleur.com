@@ -1,21 +1,28 @@
 import WobblyHeading from '@/components/ui/WobblyHeading';
-import SketchyCard from '@/components/ui/SketchyCard';
+import FadeIn from '@/components/animations/FadeIn';
 import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({ path: '/legal' });
 
 export default function LegalPage() {
   return (
-    <main className="min-h-screen bg-white py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <WobblyHeading level={1} underline english="Legal Notice">
-          特定商取引法に基づく表記
-        </WobblyHeading>
+    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
+      {/* ヒーローセクション */}
+      <section className="py-20 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <WobblyHeading level={1} underline english="Legal Notice">
+            特定商取引法に基づく表記
+          </WobblyHeading>
+        </div>
+      </section>
 
-        <SketchyCard className="mb-8">
-          <div className="prose prose-lg max-w-none">
+      <div className="container mx-auto px-4 py-12">
+        <FadeIn>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
+              <div className="prose prose-lg max-w-none">
             <dl className="space-y-6">
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   販売業者
                 </dt>
@@ -24,16 +31,16 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   運営責任者
                 </dt>
                 <dd className="text-gray">
-                  山田 太郎
+                  安部 僚真
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   所在地
                 </dt>
@@ -43,7 +50,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   電話番号
                 </dt>
@@ -52,7 +59,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   メールアドレス
                 </dt>
@@ -61,7 +68,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   URL
                 </dt>
@@ -70,7 +77,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   販売価格
                 </dt>
@@ -80,7 +87,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   商品代金以外の必要料金
                 </dt>
@@ -89,7 +96,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   支払方法
                 </dt>
@@ -99,7 +106,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   支払時期
                 </dt>
@@ -112,7 +119,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   商品の引渡し時期
                 </dt>
@@ -122,7 +129,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   返品・交換について
                 </dt>
@@ -132,7 +139,7 @@ export default function LegalPage() {
                 </dd>
               </div>
 
-              <div className="border-b border-accent-beige pb-4">
+              <div className="border-b border-gray-100 pb-4">
                 <dt className="text-lg text-primary mb-2">
                   キャンセルについて
                 </dt>
@@ -153,11 +160,13 @@ export default function LegalPage() {
               </div>
             </dl>
 
-            <p className="text-gray mt-8 text-sm">
-              最終更新日: 2024年3月1日
-            </p>
+                <p className="text-gray mt-8 text-sm">
+                  最終更新日: 2024年3月1日
+                </p>
+              </div>
+            </div>
           </div>
-        </SketchyCard>
+        </FadeIn>
       </div>
     </main>
   );
