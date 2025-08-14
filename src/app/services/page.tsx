@@ -1,6 +1,8 @@
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import SketchyCard from '@/components/ui/SketchyCard';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
+import CTASection from '@/components/ui/CTASection';
+import FadeIn from '@/components/animations/FadeIn';
 import Link from 'next/link';
 import { generatePageMetadata } from '@/lib/seo';
 import { FaDesktop, FaShoppingCart, FaChartLine, FaTools, FaCamera, FaPalette, FaRobot, FaCheck } from 'react-icons/fa';
@@ -257,30 +259,13 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 md:px-8 bg-gradient-to-br from-lighter-blue to-primary-light">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="heading-section text-white mb-6">
-            まずは気軽にご相談ください
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            十勝から全国へ、企業様のデジタル化を全力でサポートします。
-            <br />
-            お見積りは無料です。全国どこからでもお気軽にお問い合わせください。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <HandDrawnButton variant="primary" size="large">
-                無料相談を申し込む
-              </HandDrawnButton>
-            </Link>
-            <Link href="/works">
-              <HandDrawnButton variant="secondary" size="large">
-                制作実績を見る
-              </HandDrawnButton>
-            </Link>
-          </div>
+      <div className="px-6 md:px-8 py-16">
+        <div className="max-w-7xl mx-auto">
+          <FadeIn>
+            <CTASection />
+          </FadeIn>
         </div>
-      </section>
+      </div>
     </main>
   );
 }
