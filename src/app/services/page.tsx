@@ -5,7 +5,7 @@ import CTASection from '@/components/ui/CTASection';
 import FadeIn from '@/components/animations/FadeIn';
 import Link from 'next/link';
 import { generatePageMetadata } from '@/lib/seo';
-import { FaDesktop, FaShoppingCart, FaChartLine, FaTools, FaCamera, FaPalette, FaRobot, FaCheck } from 'react-icons/fa';
+import { FaDesktop, FaShoppingCart, FaChartLine, FaTools, FaCamera, FaPalette, FaRobot, FaCheck, FaInstagram, FaSearch, FaRocket } from 'react-icons/fa';
 
 export const metadata = generatePageMetadata({ path: '/services' });
 
@@ -72,10 +72,22 @@ export default function ServicesPage() {
       icon: FaTools,
     },
     {
-      title: 'Webコンサルティング',
-      description: '現状分析から改善提案まで、Web戦略を総合的にサポート',
+      title: 'SNS運用代行',
+      description: 'Instagram・X(Twitter)・Facebookの投稿作成と運用',
       price: '月額3万円〜',
-      icon: FaChartLine,
+      icon: FaInstagram,
+    },
+    {
+      title: 'LP制作',
+      description: '商品やキャンペーン専用のランディングページ制作',
+      price: '15万円〜',
+      icon: FaRocket,
+    },
+    {
+      title: 'SEO対策',
+      description: '検索順位向上のための内部対策とコンテンツ改善',
+      price: '月額2万円〜',
+      icon: FaSearch,
     },
   ];
 
@@ -206,39 +218,39 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Flow */}
-      <section className="py-16 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-16 px-6 md:px-8 bg-light">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <WobblyHeading level={2} underline>
               制作の流れ
             </WobblyHeading>
           </div>
 
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { step: '01', title: 'ヒアリング', description: 'まずはお客様のご要望やお悩みをじっくりお聞きします。（オンライン対応可）', duration: '無料' },
-              { step: '02', title: 'ご提案・お見積り', description: '最適なプランとお見積りをご提案します。', duration: '1週間' },
-              { step: '03', title: 'デザイン制作', description: 'お客様のイメージを形にしていきます。', duration: '2週間' },
-              { step: '04', title: '開発・実装', description: '機能を実装し、テストを行います。', duration: '2-4週間' },
-              { step: '05', title: '公開・納品', description: 'サイトを公開し、運用方法をご説明します。', duration: '1週間' },
-              { step: '06', title: 'アフターサポート', description: '公開後も継続的にサポートいたします。', duration: '継続' },
+              { step: '01', title: 'ヒアリング', description: 'まずはお客様のご要望やお悩みをじっくりお聞きします。（オンライン対応可）', duration: '即日対応' },
+              { step: '02', title: 'ご提案・お見積り', description: '最適なプランとお見積りをご提案します。', duration: '3〜5日' },
+              { step: '03', title: 'デザイン制作', description: 'お客様のイメージを形にしていきます。', duration: '1〜2週間' },
+              { step: '04', title: '開発・実装', description: '機能を実装し、テストを行います。', duration: '2〜4週間' },
+              { step: '05', title: '公開・納品', description: 'サイトを公開し、運用方法をご説明します。', duration: '3〜5日' },
+              { step: '06', title: 'アフターサポート', description: '公開後も継続的にサポートいたします。', duration: '永続対応' },
             ].map((item, index) => (
-              <div key={index} className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-primary-blue text-white rounded-full flex items-center justify-center">
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+                <div className="text-center mb-4">
+                  <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto">
                     {item.step}
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl text-primary mb-2">
+                <div className="text-center">
+                  <h3 className="text-lg font-bold text-primary mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-body mb-2">
+                  <p className="text-sm text-gray mb-4">
                     {item.description}
                   </p>
-                  <span className="text-caption text-primary-blue">
-                    期間: {item.duration}
-                  </span>
+                  <div className="text-sm text-primary-blue font-medium">
+                    {item.duration}
+                  </div>
                 </div>
               </div>
             ))}
