@@ -18,7 +18,6 @@ export default function AboutPage() {
       </section>
 
       <div className="container mx-auto px-4 py-12">
-
         {/* WebChaleurとは */}
         <FadeIn>
           <section className="mb-20">
@@ -30,7 +29,10 @@ export default function AboutPage() {
                 <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-blue to-primary-blue/20 rounded-full"></div>
                 <div className="pl-8">
                   <p className="text-lg text-gray leading-relaxed mb-6">
-                    <span className="text-primary-blue font-medium">WebChaleur（ウェブシャル）</span>は、
+                    <span className="text-primary-blue font-medium">
+                      WebChaleur（ウェブシャル）
+                    </span>
+                    は、
                     「Web」と「Chaleur（仏語：ぬくもり）」を組み合わせた屋号です。
                   </p>
                   <p className="text-base text-gray leading-relaxed mb-4">
@@ -39,7 +41,9 @@ export default function AboutPage() {
                   </p>
                   <p className="text-base text-gray leading-relaxed">
                     十勝・帯広を拠点に、地元の方も遠方の方も、
-                    <span className="text-primary font-medium">「Webのことなら何でも気軽に相談できる」</span>
+                    <span className="text-primary font-medium">
+                      「Webのことなら何でも気軽に相談できる」
+                    </span>
                     存在でありたいと考えています。
                   </p>
                 </div>
@@ -53,15 +57,16 @@ export default function AboutPage() {
           <section className="mb-20">
             <div className="max-w-5xl mx-auto">
               <div className="bg-gradient-to-br from-primary-blue/5 to-transparent rounded-3xl p-8 md:p-12">
-                <div className="text-center space-y-8">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl text-primary font-klee leading-tight">
-                    <span className="text-primary-blue">Webサイト制作</span>・<span className="text-primary-blue">ECサイト構築</span>
+                <div className="text-center">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl text-primary font-klee leading-tight mb-16">
+                    <span className="text-primary-blue">Webサイト制作</span>・
+                    <span className="text-primary-blue">ECサイト構築</span>
                     <br />
                     <span className="text-2xl md:text-3xl lg:text-4xl">
                       システム開発・保守運用
                     </span>
                   </h2>
-                  
+
                   <div className="max-w-3xl mx-auto">
                     <p className="text-base md:text-lg text-gray leading-relaxed">
                       WebChaleurは、十勝・帯広を拠点に全国のお客様をサポートしています。
@@ -94,8 +99,9 @@ export default function AboutPage() {
                     はじめまして、WebChaleur代表の安部僚真です。
                   </p>
                   <p className="text-gray leading-relaxed">
-                    十勝で生まれ育った私は、この地域の温かさと可能性を感じながら育ちました。
-                    東京でWeb制作の経験を積んだ後、地元十勝に戻り、地域企業様はもちろん、
+                    18歳で十勝に移住し、この地域の温かさと可能性に魅了されました。
+                    <br />
+                    埼玉と東京の制作会社でWeb制作の経験を積んだ後、十勝に戻り、地域企業様はもちろん、
                     全国の企業様のデジタル化をお手伝いしています。
                   </p>
                   <p className="text-gray leading-relaxed">
@@ -142,25 +148,19 @@ export default function AboutPage() {
                     <th className="text-left text-primary px-6 py-5 font-medium">
                       代表者
                     </th>
-                    <td className="text-gray px-6 py-5">
-                      安部 僚真
-                    </td>
+                    <td className="text-gray px-6 py-5">安部 僚真</td>
                   </tr>
                   <tr className="hover:bg-gray-50/50 transition-colors">
                     <th className="text-left text-primary px-6 py-5 font-medium">
                       所在地
                     </th>
-                    <td className="text-gray px-6 py-5">
-                      北海道河東郡音更町
-                    </td>
+                    <td className="text-gray px-6 py-5">北海道河東郡音更町</td>
                   </tr>
                   <tr className="hover:bg-gray-50/50 transition-colors">
                     <th className="text-left text-primary px-6 py-5 font-medium">
                       設立
                     </th>
-                    <td className="text-gray px-6 py-5">
-                      2023年4月
-                    </td>
+                    <td className="text-gray px-6 py-5">2023年4月</td>
                   </tr>
                   <tr className="hover:bg-gray-50/50 transition-colors">
                     <th className="text-left text-primary px-6 py-5 align-top font-medium">
@@ -192,9 +192,7 @@ export default function AboutPage() {
                     <th className="text-left text-primary px-6 py-5 font-medium">
                       連絡先
                     </th>
-                    <td className="text-gray px-6 py-5">
-                      info@webchaleur.jp
-                    </td>
+                    <td className="text-gray px-6 py-5">info@webchaleur.jp</td>
                   </tr>
                 </tbody>
               </table>
