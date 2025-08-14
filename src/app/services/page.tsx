@@ -46,21 +46,21 @@ export default function ServicesPage() {
       icon: FaShoppingCart,
     },
     {
-      id: 'consulting',
-      title: 'コンサルティング',
-      subtitle: 'Digital Consulting',
-      description: 'デジタルマーケティングやSNS運用など、Web戦略全般をサポートします。',
+      id: 'ai',
+      title: 'AI導入支援',
+      subtitle: 'AI Integration',
+      description: 'ChatGPTやClaudeなどのAIツールを業務に活用し、効率化を実現します。',
       features: [
-        'Web戦略立案',
-        'SNS運用支援',
-        'SEO/SEM対策',
-        'アクセス解析',
-        '改善提案',
-        '社内研修'
+        'AI活用相談',
+        '業務自動化',
+        'カスタムGPT作成',
+        'プロンプト設計',
+        '社内研修',
+        '継続サポート'
       ],
-      price: '月額5万円〜',
-      duration: '継続支援',
-      icon: FaChartLine,
+      price: '10万円〜',
+      duration: '1〜2週間',
+      icon: FaRobot,
     },
   ];
 
@@ -72,22 +72,10 @@ export default function ServicesPage() {
       icon: FaTools,
     },
     {
-      title: '写真撮影・動画制作',
-      description: 'プロカメラマンによる商品撮影や企業紹介動画の制作',
-      price: '5万円〜',
-      icon: FaCamera,
-    },
-    {
-      title: 'ロゴ・名刺デザイン',
-      description: 'ブランドアイデンティティを表現するロゴや名刺のデザイン',
-      price: '3万円〜',
-      icon: FaPalette,
-    },
-    {
-      title: 'AI活用支援',
-      description: 'ChatGPTなどのAIツールを業務に活用する方法をサポート',
-      price: 'ご相談',
-      icon: FaRobot,
+      title: 'Webコンサルティング',
+      description: '現状分析から改善提案まで、Web戦略を総合的にサポート',
+      price: '月額3万円〜',
+      icon: FaChartLine,
     },
   ];
 
@@ -100,9 +88,9 @@ export default function ServicesPage() {
             サービス
           </WobblyHeading>
           <p className="text-xl text-gray mt-6 max-w-3xl mx-auto">
-            十勝を拠点に、全国の企業様のデジタル化を支援します。
+            十勝からWebの力で、あなたのビジネスをもっと楽しく。
             <br />
-            地元でも遠方でも、お客様のビジネスに最適なソリューションをご提案いたします。
+            地元の方も遠方の方も、まずは気軽にご相談ください。
           </p>
         </div>
       </section>
@@ -117,7 +105,7 @@ export default function ServicesPage() {
                 className="opacity-0 animate-fadeInUp"
                 style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
               >
-                <SketchyCard className="h-full" variant="elevated">
+                <SketchyCard className="h-full flex flex-col" variant="elevated">
                   <div className="text-center mb-6 text-6xl text-primary-blue">
                     <service.icon className="mx-auto" />
                   </div>
@@ -133,7 +121,7 @@ export default function ServicesPage() {
                     {service.description}
                   </p>
 
-                  <div className="mb-6">
+                  <div className="flex-grow">
                     <h4 className="text-primary mb-3">
                       主な機能・サービス
                     </h4>
@@ -147,7 +135,7 @@ export default function ServicesPage() {
                     </ul>
                   </div>
 
-                  <div className="border-t border-accent-beige pt-4">
+                  <div className="border-t border-accent-beige pt-4 mt-6">
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div>
                         <span className="text-caption block mb-1">料金目安</span>
