@@ -59,7 +59,7 @@ export default async function BlogPage() {
                   </span>
                 )}
                 
-                <h2 className="text-base md:text-lg text-primary mb-3 line-clamp-2 group-hover:text-primary-blue transition-colors">
+                <h2 className="heading-list mb-3 line-clamp-2 group-hover:text-primary-blue transition-colors">
                   {blog.frontMatter.title}
                 </h2>
                 
