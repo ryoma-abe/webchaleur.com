@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { FaEnvelope, FaMapMarkerAlt, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,8 +20,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { href: 'https://twitter.com/webchaleur', label: 'X (Twitter)', icon: FaTwitter },
-    { href: 'https://www.instagram.com/webchaleur', label: 'Instagram', icon: FaInstagram },
+    { href: 'https://x.com/ryoo_black', label: 'X', icon: FaXTwitter },
+    { href: 'https://www.instagram.com/ryo___book/', label: 'Instagram', icon: FaInstagram },
   ];
 
   return (
@@ -88,7 +89,7 @@ export default function Footer() {
             <p className="text-body mb-4">
               <span className="flex items-center gap-2 mb-1">
                 <FaEnvelope className="text-primary-blue" />
-                info@webchaleur.jp
+                webchaleur@gmail.com
               </span>
               <span className="flex items-center gap-2">
                 <FaMapMarkerAlt className="text-primary-blue" />

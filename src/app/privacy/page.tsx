@@ -1,5 +1,4 @@
-import WobblyHeading from '@/components/ui/WobblyHeading';
-import FadeIn from '@/components/animations/FadeIn';
+import LegalPageLayout from '@/components/layouts/LegalPageLayout';
 import SubHeading from '@/components/ui/SubHeading';
 import { generatePageMetadata } from '@/lib/seo';
 
@@ -7,21 +6,10 @@ export const metadata = generatePageMetadata({ path: '/privacy' });
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      {/* ヒーローセクション */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <WobblyHeading level={1} underline english="Privacy Policy">
-            プライバシーポリシー
-          </WobblyHeading>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4 py-12">
-        <FadeIn>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
-              <div className="prose prose-lg max-w-none">
+    <LegalPageLayout
+      title="プライバシーポリシー"
+      englishTitle="Privacy Policy"
+    >
             <p className="text-gray mb-6">
               WebChaleur（以下「当社」といいます）は、お客様の個人情報の重要性を認識し、
               以下のプライバシーポリシーに基づき、個人情報の保護に努めます。
@@ -104,7 +92,7 @@ export default function PrivacyPage() {
             <div className="bg-accent-beige/30 p-4 rounded-2xl">
               <p className="text-gray">
                 WebChaleur<br />
-                メール: info@webchaleur.jp<br />
+                メール: webchaleur@gmail.com<br />
                 お問い合わせフォーム: <a href="/contact" className="text-primary-blue hover:underline">こちら</a>
               </p>
             </div>
@@ -113,11 +101,6 @@ export default function PrivacyPage() {
                   制定日: 2023年4月1日<br />
                   最終更新日: 2024年3月1日
                 </p>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-      </div>
-    </div>
+    </LegalPageLayout>
   );
 }

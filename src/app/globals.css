@@ -57,6 +57,8 @@ body {
 }
 
 /* ベースのタイポグラフィ */
+/* グローバルな見出しスタイルは削除 - 各コンポーネントで個別に定義 */
+
 h1 {
   @apply text-3xl md:text-4xl lg:text-5xl;
   font-family: var(--font-handwritten);
@@ -113,6 +115,15 @@ p {
   color: var(--text-gray);
   line-height: 1.8;
   letter-spacing: 0.02em;
+}
+
+/* フォントユーティリティクラス */
+.font-klee {
+  font-family: var(--font-handwritten);
+}
+
+.font-zen {
+  font-family: var(--font-body);
 }
 
 /* テキストユーティリティクラス */
