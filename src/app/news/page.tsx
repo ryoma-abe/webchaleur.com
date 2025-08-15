@@ -2,12 +2,32 @@ import { getAllContent } from '@/lib/mdx';
 import WobblyHeading from '@/components/ui/WobblyHeading';
 import FadeIn from '@/components/animations/FadeIn';
 import ListItemCard from '@/components/ui/ListItemCard';
+import Pagination from '@/components/ui/Pagination';
 import { generatePageMetadata } from '@/lib/seo';
+import { paginate, ITEMS_PER_PAGE } from '@/lib/pagination';
 
 export const metadata = generatePageMetadata({ path: '/news' });
 
-export default async function NewsPage() {
-  const news = await getAllContent('news');
+export default async function NewsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const params = await searchParams;
+  const currentPage = Number(params.page) || 1;
+  const allNews = await getAllContent('news');
+  
+  // 日付でソート（新しい順）
+  const sortedNews = allNews.sort(
+    (a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
+  );
+  
+  // ページネーション処理
+  const { paginatedItems: news, totalPages } = paginate(
+    sortedNews,
+    currentPage,
+    ITEMS_PER_PAGE.news
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
@@ -48,6 +68,13 @@ export default async function NewsPage() {
               </div>
             )}
           </div>
+          
+          {/* ページネーション */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            basePath="/news"
+          />
         </FadeIn>
       </div>
     </div>

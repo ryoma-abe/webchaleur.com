@@ -15,7 +15,10 @@
       "Bash(npx tsc:*)",
       "Bash(npm install:*)",
       "Bash(git restore:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(for file in /Users/aberyouma/Desktop/PJ/Web制作/webchaleur/src/content/works/*.mdx)",
+      "Bash(do sed -i '' 's|thumbnail: /images/work-|thumbnail: /images/works/work-|g' \"$file\")",
+      "Bash(done)"
     ],
     "deny": []
   }

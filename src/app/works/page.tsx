@@ -3,12 +3,32 @@ import Image from "next/image";
 import Link from "next/link";
 import WobblyHeading from "@/components/ui/WobblyHeading";
 import FadeIn from "@/components/animations/FadeIn";
+import Pagination from "@/components/ui/Pagination";
 import { generatePageMetadata } from "@/lib/seo";
+import { paginate, ITEMS_PER_PAGE } from "@/lib/pagination";
 
 export const metadata = generatePageMetadata({ path: "/works" });
 
-export default async function WorksPage() {
-  const works = await getAllContent("works");
+export default async function WorksPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const params = await searchParams;
+  const currentPage = Number(params.page) || 1;
+  const allWorks = await getAllContent("works");
+  
+  // 日付でソート（新しい順）
+  const sortedWorks = allWorks.sort(
+    (a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
+  );
+  
+  // ページネーション処理
+  const { paginatedItems: works, totalPages } = paginate(
+    sortedWorks,
+    currentPage,
+    ITEMS_PER_PAGE.works
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
@@ -31,7 +51,7 @@ export default async function WorksPage() {
               >
                 <Link href={`/works/${work.slug}`} className="block">
                   {/* サムネイル */}
-                  <div className="relative h-48 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
+                  <div className="relative h-64 md:h-72 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
                     {work.frontMatter.thumbnail &&
                     work.frontMatter.thumbnail !==
                       "/images/works/default.jpg" ? (
@@ -39,7 +59,7 @@ export default async function WorksPage() {
                         src={work.frontMatter.thumbnail}
                         alt={work.frontMatter.title}
                         fill
-                        className="object-cover"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -48,7 +68,7 @@ export default async function WorksPage() {
                     )}
 
                     {/* カテゴリーバッジ */}
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]">
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]">
                       {work.frontMatter.category || "Web制作"}
                     </div>
                   </div>
@@ -96,6 +116,13 @@ export default async function WorksPage() {
               <p className="text-gray">実績コンテンツを準備中です</p>
             </div>
           )}
+          
+          {/* ページネーション */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            basePath="/works"
+          />
         </FadeIn>
       </div>
     </div>

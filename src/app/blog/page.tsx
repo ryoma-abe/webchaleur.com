@@ -2,12 +2,32 @@ import { getAllContent } from "@/lib/mdx";
 import WobblyHeading from "@/components/ui/WobblyHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import ListItemCard from "@/components/ui/ListItemCard";
+import Pagination from "@/components/ui/Pagination";
 import { generatePageMetadata } from "@/lib/seo";
+import { paginate, ITEMS_PER_PAGE } from "@/lib/pagination";
 
 export const metadata = generatePageMetadata({ path: "/blog" });
 
-export default async function BlogPage() {
-  const blogs = await getAllContent("blog");
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const params = await searchParams;
+  const currentPage = Number(params.page) || 1;
+  const allBlogs = await getAllContent("blog");
+  
+  // 日付でソート（新しい順）
+  const sortedBlogs = allBlogs.sort(
+    (a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
+  );
+  
+  // ページネーション処理
+  const { paginatedItems: blogs, totalPages } = paginate(
+    sortedBlogs,
+    currentPage,
+    ITEMS_PER_PAGE.blog
+  );
 
   const calculateReadingTime = (content: string) => {
     const wordsPerMinute = 400;
@@ -59,6 +79,13 @@ export default async function BlogPage() {
               </div>
             )}
           </div>
+          
+          {/* ページネーション */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            basePath="/blog"
+          />
         </FadeIn>
       </div>
     </div>

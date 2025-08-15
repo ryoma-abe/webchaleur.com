@@ -38,9 +38,15 @@ export default function WorkCard({
     >
       <Link href={link} className="block">
         {/* サムネイル */}
-        <div className="relative h-48 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
+        <div className="relative h-64 md:h-72 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
           {thumbnail && thumbnail !== "/images/works/default.jpg" ? (
-            <Image src={thumbnail} alt={title} fill className="object-cover" />
+            <Image 
+              src={thumbnail} 
+              alt={title} 
+              fill 
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-500" 
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-6xl opacity-30">🖼️</span>
@@ -48,7 +54,7 @@ export default function WorkCard({
           )}
 
           {/* カテゴリーバッジ */}
-          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]">
+          <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]">
             {category}
           </div>
         </div>
