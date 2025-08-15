@@ -31,7 +31,9 @@ export default function RootLayout({
     <html lang="ja" className={`${kleeOne.variable} ${zenMaruGothic.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <Script id="schema-org" type="application/ld+json">
           {JSON.stringify(generateOrganizationSchema())}
         </Script>
