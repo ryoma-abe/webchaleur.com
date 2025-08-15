@@ -1,5 +1,4 @@
-import WobblyHeading from '@/components/ui/WobblyHeading';
-import FadeIn from '@/components/animations/FadeIn';
+import LegalPageLayout from '@/components/layouts/LegalPageLayout';
 import SubHeading from '@/components/ui/SubHeading';
 import { generatePageMetadata } from '@/lib/seo';
 
@@ -7,21 +6,10 @@ export const metadata = generatePageMetadata({ path: '/terms' });
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      {/* ヒーローセクション */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <WobblyHeading level={1} underline english="Terms of Service">
-            利用規約
-          </WobblyHeading>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4 py-12">
-        <FadeIn>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
-              <div className="prose prose-lg max-w-none">
+    <LegalPageLayout
+      title="利用規約"
+      englishTitle="Terms of Service"
+    >
             <p className="text-gray mb-6">
               この利用規約（以下「本規約」といいます）は、WebChaleur（以下「当社」といいます）が
               提供するサービス（以下「本サービス」といいます）の利用条件を定めるものです。
@@ -115,11 +103,6 @@ export default function TermsPage() {
               制定日: 2023年4月1日<br />
               最終更新日: 2024年3月1日
             </p>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-      </div>
-    </div>
+    </LegalPageLayout>
   );
 }
