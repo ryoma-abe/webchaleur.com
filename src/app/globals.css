@@ -639,9 +639,9 @@ article .article-title {
 
 .article-content p {
   color: var(--text-gray);
-  line-height: 2;
-  margin-bottom: 2rem;
-  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 0.9375rem;
 }
 
 .article-content ul,
@@ -661,9 +661,9 @@ article .article-title {
 
 .article-content li {
   color: var(--text-gray);
-  line-height: 1.9;
-  margin-bottom: 0.75rem;
-  font-size: 1.0625rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
 }
 
 .article-content blockquote {
@@ -758,11 +758,11 @@ article .article-title {
   }
 
   .article-content p {
-    font-size: 1.1875rem;
+    font-size: 0.875rem;
   }
 
   .article-content li {
-    font-size: 1.125rem;
+    font-size: 0.875rem;
   }
 
   .article-content blockquote {
@@ -781,13 +781,13 @@ article .article-title {
   }
 
   .article-content p {
-    font-size: 1.25rem;
-    line-height: 2.1;
+    font-size: 0.9375rem;
+    line-height: 1.8;
   }
 
   .article-content li {
-    font-size: 1.1875rem;
-    line-height: 2;
+    font-size: 0.9375rem;
+    line-height: 1.8;
   }
 
   .article-content blockquote {

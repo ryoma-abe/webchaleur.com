@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { getContentBySlug, getAllContent, markdownToHtml } from '@/lib/mdx';
+import ArticleLayout from '@/components/layouts/ArticleLayout';
+import ArticleMeta from '@/components/ui/ArticleMeta';
 import { generatePageMetadata } from '@/lib/seo';
 
 export async function generateStaticParams() {
@@ -37,121 +39,79 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
   const htmlContent = await markdownToHtml(work.content);
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20">
-      <article className="container mx-auto px-4 max-w-5xl">
-        {/* ヘッダー部分 */}
-        <header className="mb-16 text-center">
+    <ArticleLayout
+      header={
+        <>
           <h1 className="article-title">{work.frontMatter.title}</h1>
-          
-          {/* メタ情報 */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-base text-gray">
-            {work.frontMatter.client && (
-              <span className="flex items-center gap-1">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-                クライアント: {work.frontMatter.client}
-              </span>
-            )}
-            {work.frontMatter.date && (
-              <>
-                <span className="text-gray-300">•</span>
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  制作日: {new Date(work.frontMatter.date).toLocaleDateString('ja-JP')}
-                </span>
-              </>
-            )}
-          </div>
-        </header>
-
-        {/* メインビジュアル */}
-        {work.frontMatter.thumbnail && (
-          <div className="mb-12">
+          <ArticleMeta
+            date={work.frontMatter.date}
+            category={work.frontMatter.category}
+            tags={work.frontMatter.tags}
+            showTags={true}
+          />
+        </>
+      }
+      thumbnail={
+        work.frontMatter.thumbnail && (
+          <>
+            {/* メインビジュアル */}
             <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-gray-100">
               <Image
                 src={work.frontMatter.thumbnail}
                 alt={work.frontMatter.title}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
               />
             </div>
-          </div>
-        )}
-
-        {/* カテゴリー・タグ */}
-        <div className="mb-12 text-center">
-          {work.frontMatter.category && (
-            <span className="inline-block px-4 py-2 bg-primary-lighter text-primary-blue rounded-full text-base mr-3 mb-2">
-              {work.frontMatter.category}
-            </span>
-          )}
-          {work.frontMatter.tags?.map((tag) => (
-            <span
-              key={tag}
-              className="inline-block px-3 py-1 bg-light text-gray rounded-full text-sm mr-2 mb-2"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* プロジェクト詳細 */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {/* サイドバー情報 */}
-          <div className="lg:col-span-1">
-            <div className="bg-light rounded-xl p-6 space-y-6 sticky top-24">
-              <div>
-                <h3 className="text-base text-primary mb-3">プロジェクト概要</h3>
-                <p className="text-base text-gray leading-relaxed">
-                  {work.frontMatter.description || 'プロジェクトの詳細情報'}
-                </p>
-              </div>
+            
+            {/* プロジェクト概要 */}
+            <div className="mt-8 p-6 bg-light rounded-xl">
+              <h2 className="text-lg font-semibold text-primary mb-3">プロジェクト概要</h2>
+              <p className="text-gray leading-relaxed mb-4">
+                {work.frontMatter.description}
+              </p>
               
+              {/* 使用技術 */}
               {work.frontMatter.technologies && (
-                <div>
-                  <h3 className="text-sm text-primary mb-3">使用技術</h3>
+                <div className="mb-4">
+                  <h3 className="text-sm font-semibold text-primary mb-2">使用技術</h3>
                   <div className="flex flex-wrap gap-2">
                     {work.frontMatter.technologies.map((tech: string) => (
-                      <span key={tech} className="text-xs px-2 py-1 bg-white rounded-full text-gray">
+                      <span key={tech} className="text-xs px-3 py-1 bg-white rounded-full text-gray">
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
               )}
-
+              
+              {/* URL */}
               {work.frontMatter.url && (
                 <div>
-                  <h3 className="text-base text-primary mb-3">サイトURL</h3>
                   <a 
                     href={work.frontMatter.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-base text-primary-blue underline hover:opacity-80"
+                    className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity"
                   >
-                    サイトを見る →
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    サイトを見る
                   </a>
                 </div>
               )}
             </div>
-          </div>
-
-          {/* メインコンテンツ */}
-          <div className="lg:col-span-2">
-            <div className="article-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
-          </div>
-        </div>
-
-        {/* 戻るボタン */}
-        <div className="text-center mt-12">
-          <a href="/works" className="btn-secondary">
-            ← 実績一覧に戻る
-          </a>
-        </div>
-      </article>
-    </div>
+          </>
+        )
+      }
+      backLink={{
+        href: "/works",
+        text: "実績一覧に戻る",
+      }}
+    >
+      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    </ArticleLayout>
   );
 }
