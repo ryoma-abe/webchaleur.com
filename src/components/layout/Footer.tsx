@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
@@ -32,9 +33,18 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="heading-card text-primary-blue mb-4">
-              WebChaleur
-            </h3>
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src="/logo.png"
+                alt="WebChaleur"
+                width={20}
+                height={20}
+                className="w-5 h-5"
+              />
+              <h3 className="heading-card text-primary-blue">
+                WebChaleur
+              </h3>
+            </div>
             <p className="text-body">
               十勝・帯広・音更を拠点に<br />
               全国のお客様へ<br />

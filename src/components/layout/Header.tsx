@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -88,9 +89,19 @@ export default function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="text-2xl md:text-3xl text-primary-blue hover:opacity-80 transition-opacity"
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              Web<span className="text-[#2c2825]">Chaleur</span>
+              <Image
+                src="/logo.png"
+                alt="WebChaleur"
+                width={24}
+                height={24}
+                className="w-5 h-5 md:w-6 md:h-6"
+              />
+              <span className="text-2xl md:text-3xl">
+                <span className="text-primary-blue">Web</span>
+                <span className="text-[#2c2825]">Chaleur</span>
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -149,9 +160,19 @@ export default function Header() {
           <Link
             href="/"
             onClick={() => setIsMenuOpen(false)}
-            className="text-xl text-primary-blue"
+            className="flex items-center gap-2"
           >
-            Web<span className="text-[#2c2825]">Chaleur</span>
+            <Image
+              src="/logo.png"
+              alt="WebChaleur"
+              width={20}
+              height={20}
+              className="w-5 h-5"
+            />
+            <span className="text-xl">
+              <span className="text-primary-blue">Web</span>
+              <span className="text-[#2c2825]">Chaleur</span>
+            </span>
           </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
