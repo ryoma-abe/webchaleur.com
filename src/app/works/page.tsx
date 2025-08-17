@@ -1,4 +1,3 @@
-import { getAllContent } from "@/lib/mdx";
 import Image from "next/image";
 import Link from "next/link";
 import WobblyHeading from "@/components/ui/WobblyHeading";
@@ -6,6 +5,7 @@ import FadeIn from "@/components/animations/FadeIn";
 import Pagination from "@/components/ui/Pagination";
 import { generatePageMetadata } from "@/lib/seo";
 import { paginate, ITEMS_PER_PAGE } from "@/lib/pagination";
+import worksData from "@/data/works.json";
 
 export const metadata = generatePageMetadata({ path: "/works" });
 
@@ -16,11 +16,11 @@ export default async function WorksPage({
 }) {
   const params = await searchParams;
   const currentPage = Number(params.page) || 1;
-  const allWorks = await getAllContent("works");
+  const allWorks = worksData.works;
   
   // 日付でソート（新しい順）
   const sortedWorks = allWorks.sort(
-    (a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
   
   // ページネーション処理
@@ -46,18 +46,18 @@ export default async function WorksPage({
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
             {works.map((work, index) => (
               <article
-                key={work.slug}
+                key={work.id}
                 className="bg-white rounded-[20px] overflow-hidden transition-all duration-500 group shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:translate-y-[-4px]"
               >
-                <Link href={`/works/${work.slug}`} className="block">
+                <Link href={`/works/${work.id}`} className="block">
                   {/* サムネイル */}
                   <div className="relative h-64 md:h-72 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
-                    {work.frontMatter.thumbnail &&
-                    work.frontMatter.thumbnail !==
+                    {work.thumbnail &&
+                    work.thumbnail !==
                       "/images/works/default.jpg" ? (
                       <Image
-                        src={work.frontMatter.thumbnail}
-                        alt={work.frontMatter.title}
+                        src={work.thumbnail}
+                        alt={work.title}
                         fill
                         className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
@@ -69,25 +69,25 @@ export default async function WorksPage({
 
                     {/* カテゴリーバッジ */}
                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]">
-                      {work.frontMatter.category || "Web制作"}
+                      {work.category || "Web制作"}
                     </div>
                   </div>
 
                   {/* コンテンツ */}
                   <div className="p-6">
                     <h3 className="heading-card mb-2">
-                      {work.frontMatter.client || work.frontMatter.title}
+                      {work.title}
                     </h3>
 
                     <p className="text-body mb-4 text-sm">
-                      {work.frontMatter.description || ""}
+                      {work.description || ""}
                     </p>
 
                     {/* タグ */}
-                    {work.frontMatter.tags &&
-                      work.frontMatter.tags.length > 0 && (
+                    {work.tags &&
+                      work.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-4">
-                          {work.frontMatter.tags
+                          {work.tags
                             .slice(0, 4)
                             .map((tag: string, tagIndex: number) => (
                               <span

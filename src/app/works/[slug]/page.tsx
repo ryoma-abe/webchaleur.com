@@ -1,109 +1,64 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getContentBySlug, getAllContent, markdownToHtml } from '@/lib/mdx';
 import ArticleLayout from '@/components/layouts/ArticleLayout';
 import ArticleMeta from '@/components/ui/ArticleMeta';
 import { generatePageMetadata } from '@/lib/seo';
+import worksData from '@/data/works.json';
 
 export async function generateStaticParams() {
-  const works = await getAllContent('works');
-  return works.map((work) => ({
-    slug: work.slug,
+  return worksData.works.map((work) => ({
+    slug: work.id,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const work = await getContentBySlug('works', slug);
+  const work = worksData.works.find(w => w.id === slug);
   
   if (!work) {
     return {};
   }
 
   return generatePageMetadata({
-    title: work.frontMatter.title,
-    description: work.frontMatter.description,
-    keywords: work.frontMatter.tags,
-    image: work.frontMatter.thumbnail,
+    title: work.title,
+    description: work.description,
+    keywords: work.tags,
+    image: work.thumbnail,
   });
 }
 
 export default async function WorkDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const work = await getContentBySlug('works', slug);
+  const work = worksData.works.find(w => w.id === slug);
 
   if (!work) {
     notFound();
   }
 
-  const htmlContent = await markdownToHtml(work.content);
-
   return (
     <ArticleLayout
       header={
         <>
-          <h1 className="article-title">{work.frontMatter.title}</h1>
+          <h1 className="article-title">{work.title}</h1>
           <ArticleMeta
-            date={work.frontMatter.date}
-            category={work.frontMatter.category}
-            tags={work.frontMatter.tags}
+            date={work.date}
+            category={work.category}
+            tags={work.tags}
             showTags={true}
           />
         </>
       }
       thumbnail={
-        work.frontMatter.thumbnail && (
-          <>
-            {/* メインビジュアル */}
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-gray-100">
-              <Image
-                src={work.frontMatter.thumbnail}
-                alt={work.frontMatter.title}
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
-              />
-            </div>
-            
-            {/* プロジェクト概要 */}
-            <div className="mt-8 p-6 bg-light rounded-xl">
-              <h2 className="text-lg font-semibold text-primary mb-3">プロジェクト概要</h2>
-              <p className="text-gray leading-relaxed mb-4">
-                {work.frontMatter.description}
-              </p>
-              
-              {/* 使用技術 */}
-              {work.frontMatter.technologies && (
-                <div className="mb-4">
-                  <h3 className="text-sm font-semibold text-primary mb-2">使用技術</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {work.frontMatter.technologies.map((tech: string) => (
-                      <span key={tech} className="text-xs px-3 py-1 bg-white rounded-full text-gray">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              
-              {/* URL */}
-              {work.frontMatter.url && (
-                <div>
-                  <a 
-                    href={work.frontMatter.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    サイトを見る
-                  </a>
-                </div>
-              )}
-            </div>
-          </>
+        work.thumbnail && (
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-gray-100">
+            <Image
+              src={work.thumbnail}
+              alt={work.title}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+            />
+          </div>
         )
       }
       backLink={{
@@ -111,7 +66,50 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
         text: "実績一覧に戻る",
       }}
     >
-      <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      {/* プロジェクト概要 */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-6">プロジェクト概要</h2>
+        <p className="text-gray leading-relaxed mb-6">{work.overview}</p>
+      </section>
+
+      {/* 使用技術 */}
+      {work.tags && work.tags.length > 0 && (
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">使用技術</h2>
+          <div className="flex flex-wrap gap-2">
+            {work.tags.map((tech: string) => (
+              <span key={tech} className="px-3 py-1 bg-light rounded-full text-gray text-sm">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 主な機能 */}
+      {work.features && (
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-6">主な機能</h2>
+          <p className="text-gray leading-relaxed">{work.features}</p>
+        </section>
+      )}
+
+      {/* URL */}
+      {work.url && (
+        <section className="mb-12">
+          <a 
+            href={work.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity text-lg"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            サイトを見る
+          </a>
+        </section>
+      )}
     </ArticleLayout>
   );
 }
