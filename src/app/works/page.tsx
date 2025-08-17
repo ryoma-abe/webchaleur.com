@@ -18,14 +18,10 @@ export default async function WorksPage({
   const currentPage = Number(params.page) || 1;
   const allWorks = worksData.works;
   
-  // 日付でソート（新しい順）
-  const sortedWorks = allWorks.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-  
+  // JSONの順番を維持（ソートしない）
   // ページネーション処理
   const { paginatedItems: works, totalPages } = paginate(
-    sortedWorks,
+    allWorks,
     currentPage,
     ITEMS_PER_PAGE.works
   );

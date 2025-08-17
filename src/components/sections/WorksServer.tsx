@@ -17,8 +17,7 @@ export default async function Works() {
     thumbnail: item.thumbnail || '/images/works/default.jpg',
     link: `/works/${item.id}`,
   }))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 6); // 最新6件を表示
+    .slice(0, 6); // 最初の6件を表示（JSONの順番通り）
 
   return <WorksSection items={formattedItems} />;
 }
