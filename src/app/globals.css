@@ -116,7 +116,9 @@ p {
   line-height: 1.8;
   letter-spacing: 0.02em;
 }
-
+button {
+  @apply cursor-pointer;
+}
 /* フォントユーティリティクラス */
 .font-klee {
   font-family: var(--font-handwritten);

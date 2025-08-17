@@ -42,19 +42,21 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     notFound();
   }
 
-  // 見出しにIDを追加してHTMLコンテンツを生成
-  const processedContent = blog.content.replace(
-    /^(#{2,3})\s+(.+)$/gm,
-    (match, hashes, text) => {
+  // HTMLコンテンツを生成
+  let htmlContent = await markdownToHtml(blog.content);
+  
+  // 見出しにIDを追加
+  htmlContent = htmlContent.replace(
+    /<(h[23])>(.*?)<\/h[23]>/gi,
+    (match, tag, text) => {
       const id = text
         .toLowerCase()
+        .replace(/<[^>]*>/g, '') // HTMLタグを削除
         .replace(/[^\w\s\u3040-\u309f\u30a0-\u30ff\u4e00-\u9faf]/g, '')
         .replace(/\s+/g, '-');
-      return `${hashes} <span id="${id}">${text}</span>`;
+      return `<${tag} id="${id}">${text}</${tag}>`;
     }
   );
-
-  const htmlContent = await markdownToHtml(processedContent);
 
   const wordsPerMinute = 400;
   const wordCount = blog.content.split(/\s+/g).length;
