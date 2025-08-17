@@ -571,7 +571,7 @@ button {
 
 /* 記事詳細ページ用スタイル */
 article .article-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-family: var(--font-handwritten);
   font-weight: bold;
   color: var(--text-dark);
@@ -579,15 +579,9 @@ article .article-title {
   margin-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
-  article .article-title {
-    font-size: 2rem;
-  }
-}
-
 @media (min-width: 1024px) {
   article .article-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -640,10 +634,9 @@ article .article-title {
 }
 
 .article-content p {
-  color: var(--text-gray);
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  font-size: 0.9375rem;
+  font-size: 1rem;
 }
 
 .article-content ul,
@@ -759,10 +752,6 @@ article .article-title {
     font-size: 1.375rem;
   }
 
-  .article-content p {
-    font-size: 0.875rem;
-  }
-
   .article-content li {
     font-size: 0.875rem;
   }
@@ -780,11 +769,6 @@ article .article-title {
 
   .article-content h3 {
     font-size: 1.5rem;
-  }
-
-  .article-content p {
-    font-size: 0.9375rem;
-    line-height: 1.8;
   }
 
   .article-content li {
