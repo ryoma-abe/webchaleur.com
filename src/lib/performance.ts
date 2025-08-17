@@ -1,6 +1,13 @@
 // パフォーマンス監視ユーティリティ
 
-export function reportWebVitals(metric: any) {
+interface WebVitalsMetric {
+  label: string;
+  name: string;
+  value: number;
+  id: string;
+}
+
+export function reportWebVitals(metric: WebVitalsMetric) {
   // Core Web Vitalsの測定
   if (metric.label === 'web-vital') {
     // 開発環境でのデバッグ用（必要に応じてコメント解除）
@@ -9,8 +16,8 @@ export function reportWebVitals(metric: any) {
     // 本番環境では分析サービスに送信
     if (process.env.NODE_ENV === 'production') {
       // Google Analytics やその他の分析サービスに送信
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', metric.name, {
+      if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', metric.name, {
           value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
           event_label: metric.id,
           non_interaction: true,
@@ -21,7 +28,13 @@ export function reportWebVitals(metric: any) {
 }
 
 // 画像の遅延読み込み設定
-export const imageLoader = ({ src, width, quality }: any) => {
+interface ImageLoaderProps {
+  src: string;
+  width: number;
+  quality?: number;
+}
+
+export const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
   return `${src}?w=${width}&q=${quality || 75}`;
 };
 
@@ -48,7 +61,7 @@ export function preloadAssets() {
 }
 
 // デバウンス関数（スクロールイベントなどの最適化用）
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -66,7 +79,7 @@ export function debounce<T extends (...args: any[]) => any>(
 }
 
 // スロットル関数（頻繁なイベントの制限用）
-export function throttle<T extends (...args: any[]) => any>(
+export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {
@@ -74,7 +87,7 @@ export function throttle<T extends (...args: any[]) => any>(
   
   return function executedFunction(...args: Parameters<T>) {
     if (!inThrottle) {
-      func.apply(null, args);
+      func(...args);
       inThrottle = true;
       setTimeout(() => (inThrottle = false), limit);
     }
