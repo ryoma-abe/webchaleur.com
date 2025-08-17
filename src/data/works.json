@@ -2,42 +2,18 @@
   "works": [
     {
       "id": "1",
-      "title": "AI Creator Studio",
-      "date": "2024-03-10",
-      "category": "Webアプリケーション",
-      "description": "AI画像生成・編集ツールのSaaSアプリケーションを開発しました。クレジット制のサブスクリプションモデルで、画像生成、背景削除、画像圧縮などの機能を提供。",
-      "thumbnail": "/images/works/work-ai-creator-studio.png",
-      "url": "https://aisassapp-ryoma-abes-projects.vercel.app/",
-      "tags": ["Next.js 14", "TypeScript", "Tailwind CSS", "Clerk", "Stripe", "Prisma 5.22.0", "TiDB Cloud", "Stability AI", "Vercel"],
-      "overview": "動画作成、音楽制作、画像編集など、様々なクリエイティブツールを統合したAI支援プラットフォームを開発しました。複数のAI APIを統合し、シームレスな制作体験を提供しています。",
-      "features": "テキストから動画を自動生成する動画作成機能、AIによる楽曲生成とミキシングが可能な音楽制作機能、高度な画像処理と生成機能、チーム制作を支援するコラボレーション機能を実装しました。"
+      "title": "Honolulu Cookie Company",
+      "date": "2023-08-15",
+      "category": "ECサイト",
+      "description": "ハワイ発プレミアムクッキーブランドの日本向けECサイトを構築しました。特徴的なパイナップル型クッキーの魅力を伝えるデザインと、スムーズな購入体験を実現。1998年創業の歴史あるブランドのアロハスピリットを表現。",
+      "thumbnail": "/images/works/work-honolulu-cookie.png",
+      "url": "https://honolulucookie.co.jp/",
+      "tags": ["Shopify"],
+      "overview": "ハワイの人気クッキーブランド「Honolulu Cookie Company」の日本向けECサイトを構築しました。ハワイの雰囲気を感じられるデザインと、日本のギフト文化に対応した機能を実装しています。",
+      "features": "のし、メッセージカード、ラッピング選択が可能なギフトオプション機能、自動表示切り替えシステムによる季節限定商品の管理、実店舗の在庫をリアルタイム表示する店舗在庫確認機能、ポイント制度と先行販売案内を含む会員限定特典システムを実装しました。"
     },
     {
       "id": "2",
-      "title": "Site Launcher Chrome拡張機能",
-      "date": "2024-02-01",
-      "category": "Chrome拡張機能",
-      "description": "キーボードショートカットでお気に入りのサイトを素早く開くChrome拡張機能を開発しました。カスタマイズ可能なショートカットキーと1文字のクイックアクセスキーで効率的なWebブラウジングを実現。",
-      "thumbnail": "/images/works/work-site-launcher.png",
-      "url": "https://chromewebstore.google.com/detail/site-launcher/jahndejpknmaippmlngfodgkkmiodfai",
-      "tags": ["React", "TypeScript", "Vite", "Chrome Extension API", "Manifest V3"],
-      "overview": "キーボードショートカットでお気に入りのサイトを素早く開くChrome拡張機能を開発しました。開発者やパワーユーザー向けに、マウスを使わずに効率的なWebブラウジングを実現します。",
-      "features": "自由にキーバインドを設定できるカスタマイズ可能なショートカット機能、よく使うサイトには1文字のキーを割り当てられるクイックアクセス機能、設定のバックアップと共有が可能なインポート/エクスポート機能、目に優しいダークモード対応を実装しています。"
-    },
-    {
-      "id": "3",
-      "title": "ココナラツールキット",
-      "date": "2024-01-15",
-      "category": "Webアプリケーション",
-      "description": "ココナラ出品者の売上向上を支援する総合ツールキット。順位チェッカー、価格帯競争率分析、市場価格チェッカー、手数料計算機など、データに基づいた戦略的なアプローチで売上向上をサポート。",
-      "thumbnail": "/images/works/work-coconala-toolkit.png",
-      "url": "https://coconala-toolkit.com/",
-      "tags": ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "Playwright", "Server-Sent Events"],
-      "overview": "ココナラ出品者の売上向上を支援する総合ツールキットを開発しました。データドリブンなアプローチで、出品者が市場を分析し、競争優位性を確立できるようサポートしています。",
-      "features": "リアルタイムで自分のサービスの順位を追跡する順位チェッカー、各価格帯での競争状況を可視化する価格帯競争率分析機能、カテゴリー別の価格相場を分析する市場価格チェッカー、正確な収益シミュレーションができる手数料計算機を搭載しています。"
-    },
-    {
-      "id": "4",
       "title": "FUKU COFFEE ROASTERY",
       "date": "2024-01-10",
       "category": "ECサイト",
@@ -49,31 +25,31 @@
       "features": "毎月異なる豆をお届けする定期購入サービス、メッセージカードやのし対応のギフト機能、リアルタイムで在庫管理が可能な店舗在庫連動システム、好みに合った豆をレコメンドするコーヒー診断機能を実装しました。"
     },
     {
-      "id": "5",
-      "title": "StreamFlix",
-      "date": "2023-12-15",
-      "category": "Webアプリケーション",
-      "description": "映画ストリーミング Web アプリを構築しました。TMDB API 連携による映画データ取得、Google OAuth 認証、お気に入り管理などを実装し、Next.js + Prisma で高速かつ型安全な UX を実現。",
-      "thumbnail": "/images/works/work-streamflix.png",
-      "url": "https://streamflix-chi.vercel.app/",
-      "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "NextAuth.js"],
-      "overview": "映画やドラマのストリーミング配信サービスを開発しました。ユーザーエクスペリエンスを重視し、高品質な動画配信と直感的なインターフェースを実現しています。",
-      "features": "アダプティブビットレート配信による高品質ストリーミング、視聴履歴に基づく作品提案のレコメンデーション機能、スマホ・タブレット・TVに対応したマルチデバイス機能、ダウンロード機能搭載によるオフライン視聴を可能にしました。"
-    },
-    {
-      "id": "6",
-      "title": "個人技術ブログ",
-      "date": "2023-11-20",
+      "id": "3",
+      "title": "&ピラティス",
+      "date": "2024-02-15",
       "category": "Webサイト制作",
-      "description": "フロントエンド開発・Shopifyストア構築・生成AI活用術・フリーランスエンジニアの働き方について発信するテクニカルブログを構築しました。WordPressをHeadless CMSとして活用し、高速でSEO最適化されたブログを実現。",
-      "thumbnail": "/images/works/work-tech-blog.png",
-      "url": "https://www.ryoma.online/",
-      "tags": ["Astro", "TypeScript", "Tailwind CSS", "WordPress (Headless)", "コノハウイング"],
-      "overview": "フロントエンド開発、Shopifyストア構築、生成AI活用術、フリーランスエンジニアの働き方について発信する技術ブログを構築しました。最新のJamstackアーキテクチャを採用し、高速かつSEOに強いブログを実現しています。",
-      "features": "Astroによる静的サイト生成で高速な表示速度を実現、構造化データとメタタグの自動生成によるSEO最適化、WordPressをAPIとして活用したHeadless CMS構成、モバイルファーストのUI設計によるレスポンシブデザインを採用しています。"
+      "description": "&ピラティス様のコーディングと一部デザインを担当させていただきました。デザインカンプからのコーディング / WPのオリジナルテーマ化を実装しております。",
+      "thumbnail": "/images/works/work-and-pilates.png",
+      "url": "https://andpilates-fit.com/",
+      "tags": ["WordPress", "Sass", "ACF", "MW WP Form"],
+      "overview": "&ピラティス様のコーディングと一部デザインを担当させていただきました。デザインカンプからのコーディング / WPのオリジナルテーマ化を実装しております。Sassを用いてコーディングし、カスタムフィールド（ACF）・カスタム投稿・MW WP Form等を使用しています。",
+      "features": "Sassを用いたモジュール設計による保守性の高いコーディング、ACFを活用した柔軟なコンテンツ管理システム、カスタム投稿タイプによるレッスン・インストラクター情報の管理、MW WP Formによる予約・お問い合わせフォームの実装を行いました。"
     },
     {
-      "id": "7",
+      "id": "4",
+      "title": "Site Launcher Chrome拡張機能",
+      "date": "2024-02-01",
+      "category": "Chrome拡張機能",
+      "description": "キーボードショートカットでお気に入りのサイトを素早く開くChrome拡張機能を開発しました。カスタマイズ可能なショートカットキーと1文字のクイックアクセスキーで効率的なWebブラウジングを実現。",
+      "thumbnail": "/images/works/work-site-launcher.png",
+      "url": "https://chromewebstore.google.com/detail/site-launcher/jahndejpknmaippmlngfodgkkmiodfai",
+      "tags": ["React", "TypeScript", "Vite", "Chrome Extension API", "Manifest V3"],
+      "overview": "キーボードショートカットでお気に入りのサイトを素早く開くChrome拡張機能を開発しました。開発者やパワーユーザー向けに、マウスを使わずに効率的なWebブラウジングを実現します。",
+      "features": "自由にキーバインドを設定できるカスタマイズ可能なショートカット機能、よく使うサイトには1文字のキーを割り当てられるクイックアクセス機能、設定のバックアップと共有が可能なインポート/エクスポート機能、目に優しいダークモード対応を実装しています。"
+    },
+    {
+      "id": "5",
       "title": "mochimoji",
       "date": "2023-10-05",
       "category": "ECサイト",
@@ -85,7 +61,19 @@
       "features": "スキャナーやスマホで簡単に手書き文字をアップロードできる機能、高精度なAI文字認識による文字分離と認識、TTF/OTF形式でのフォント生成機能、リアルタイムで確認できるプレビュー機能を実装しました。"
     },
     {
-      "id": "8",
+      "id": "6",
+      "title": "オンラインサロンHal",
+      "date": "2023-09-01",
+      "category": "ECサイト",
+      "description": "オンラインサロンHal様のオンラインサロンを構築させていただきました。サブスクリプション機能とロック機能を使用し実装しています。",
+      "thumbnail": "/images/works/work-salon-hal.png",
+      "url": "https://salonhal.jp/",
+      "tags": ["Shopify", "Shopify Flow"],
+      "overview": "オンラインサロンHal様のオンラインサロンを構築させていただきました。サブスクリプション機能とロック機能を使用し実装しています。また、会員ランクはShopifyFlowでのタグ付けで会員ランクによってアクセスできるコンテンツを出し分けています。退会後の挙動もShopifyFlowで実装しています。ブログ機能で動画コンテンツの配信をしています。",
+      "features": "月額制のサブスクリプション機能による会員管理、Shopify Flowを活用した会員ランク別のコンテンツ出し分け、退会後の自動処理とアクセス制限機能、ブログ機能を活用した動画コンテンツ配信システムを実装しました。"
+    },
+    {
+      "id": "7",
       "title": "Rejuve.EC",
       "date": "2023-09-20",
       "category": "ECサイト",
@@ -97,16 +85,40 @@
       "features": "AIによる肌タイプ診断システム、カスタマイズ可能な配送サイクルの定期購入プログラム、専門スタッフによるサポートが受けられる美容相談チャット、ビフォーアフター写真対応のレビュー投稿システムを実装しました。"
     },
     {
+      "id": "8",
+      "title": "ココナラツールキット",
+      "date": "2024-01-15",
+      "category": "Webアプリケーション",
+      "description": "ココナラ出品者の売上向上を支援する総合ツールキット。順位チェッカー、価格帯競争率分析、市場価格チェッカー、手数料計算機など、データに基づいた戦略的なアプローチで売上向上をサポート。",
+      "thumbnail": "/images/works/work-coconala-toolkit.png",
+      "url": "https://coconala-toolkit.com/",
+      "tags": ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "Playwright", "Server-Sent Events"],
+      "overview": "ココナラ出品者の売上向上を支援する総合ツールキットを開発しました。データドリブンなアプローチで、出品者が市場を分析し、競争優位性を確立できるようサポートしています。",
+      "features": "リアルタイムで自分のサービスの順位を追跡する順位チェッカー、各価格帯での競争状況を可視化する価格帯競争率分析機能、カテゴリー別の価格相場を分析する市場価格チェッカー、正確な収益シミュレーションができる手数料計算機を搭載しています。"
+    },
+    {
       "id": "9",
-      "title": "Honolulu Cookie Company",
-      "date": "2023-08-15",
-      "category": "ECサイト",
-      "description": "ハワイ発プレミアムクッキーブランドの日本向けECサイトを構築しました。特徴的なパイナップル型クッキーの魅力を伝えるデザインと、スムーズな購入体験を実現。1998年創業の歴史あるブランドのアロハスピリットを表現。",
-      "thumbnail": "/images/works/work-honolulu-cookie.png",
-      "url": "https://honolulucookie.co.jp/",
-      "tags": ["Shopify"],
-      "overview": "ハワイの人気クッキーブランド「Honolulu Cookie Company」の日本向けECサイトを構築しました。ハワイの雰囲気を感じられるデザインと、日本のギフト文化に対応した機能を実装しています。",
-      "features": "のし、メッセージカード、ラッピング選択が可能なギフトオプション機能、自動表示切り替えシステムによる季節限定商品の管理、実店舗の在庫をリアルタイム表示する店舗在庫確認機能、ポイント制度と先行販売案内を含む会員限定特典システムを実装しました。"
+      "title": "AI Creator Studio",
+      "date": "2024-03-10",
+      "category": "Webアプリケーション",
+      "description": "AI画像生成・編集ツールのSaaSアプリケーションを開発しました。クレジット制のサブスクリプションモデルで、画像生成、背景削除、画像圧縮などの機能を提供。",
+      "thumbnail": "/images/works/work-ai-creator-studio.png",
+      "url": "https://aisassapp-ryoma-abes-projects.vercel.app/",
+      "tags": ["Next.js 14", "TypeScript", "Tailwind CSS", "Clerk", "Stripe", "Prisma 5.22.0", "TiDB Cloud", "Stability AI", "Vercel"],
+      "overview": "動画作成、音楽制作、画像編集など、様々なクリエイティブツールを統合したAI支援プラットフォームを開発しました。複数のAI APIを統合し、シームレスな制作体験を提供しています。",
+      "features": "テキストから動画を自動生成する動画作成機能、AIによる楽曲生成とミキシングが可能な音楽制作機能、高度な画像処理と生成機能、チーム制作を支援するコラボレーション機能を実装しました。"
+    },
+    {
+      "id": "10",
+      "title": "個人技術ブログ",
+      "date": "2023-11-20",
+      "category": "Webサイト制作",
+      "description": "フロントエンド開発・Shopifyストア構築・生成AI活用術・フリーランスエンジニアの働き方について発信するテクニカルブログを構築しました。WordPressをHeadless CMSとして活用し、高速でSEO最適化されたブログを実現。",
+      "thumbnail": "/images/works/work-tech-blog.png",
+      "url": "https://www.ryoma.online/",
+      "tags": ["Astro", "TypeScript", "Tailwind CSS", "WordPress (Headless)", "コノハウイング"],
+      "overview": "フロントエンド開発、Shopifyストア構築、生成AI活用術、フリーランスエンジニアの働き方について発信する技術ブログを構築しました。最新のJamstackアーキテクチャを採用し、高速かつSEOに強いブログを実現しています。",
+      "features": "Astroによる静的サイト生成で高速な表示速度を実現、構造化データとメタタグの自動生成によるSEO最適化、WordPressをAPIとして活用したHeadless CMS構成、モバイルファーストのUI設計によるレスポンシブデザインを採用しています。"
     }
   ]
 }
