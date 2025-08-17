@@ -4,9 +4,9 @@ interface TrustIndicatorsProps {
 
 export default function TrustIndicators({ isVisible }: TrustIndicatorsProps) {
   return (
-    <div 
+    <div
       className={`text-center transition-all duration-800 delay-600 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
       <div className="inline-flex items-center gap-8 flex-wrap justify-center">
