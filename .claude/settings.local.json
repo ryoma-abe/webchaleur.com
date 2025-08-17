@@ -18,7 +18,8 @@
       "Bash(cp:*)",
       "Bash(for file in /Users/aberyouma/Desktop/PJ/Web制作/webchaleur/src/content/works/*.mdx)",
       "Bash(do sed -i '' 's|thumbnail: /images/work-|thumbnail: /images/works/work-|g' \"$file\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }

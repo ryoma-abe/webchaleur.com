@@ -59,12 +59,12 @@ export default function Pagination({
       className="flex justify-center mt-12"
       aria-label="ページネーション"
     >
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3 bg-white rounded-full shadow-md px-6 py-3">
         {/* 前へボタン */}
         {currentPage > 1 && (
           <Link
             href={createPageUrl(currentPage - 1)}
-            className="px-4 py-2 text-sm text-gray hover:text-primary-blue transition-colors rounded-lg hover:bg-light"
+            className="px-4 py-2 text-sm font-medium text-primary hover:text-primary-blue transition-colors rounded-full hover:bg-primary-light/20"
             aria-label="前のページへ"
           >
             ← 前へ
@@ -76,13 +76,13 @@ export default function Pagination({
           <>
             <Link
               href={createPageUrl(1)}
-              className="w-10 h-10 flex items-center justify-center text-sm text-gray hover:text-primary-blue transition-colors rounded-lg hover:bg-light"
+              className="w-10 h-10 flex items-center justify-center text-sm font-medium text-primary hover:text-white hover:bg-primary-blue transition-all rounded-full"
               aria-label="1ページ目へ"
             >
               1
             </Link>
             {getPageNumbers()[0] > 2 && (
-              <span className="text-gray px-2">...</span>
+              <span className="text-gray-400 px-2">...</span>
             )}
           </>
         )}
@@ -92,10 +92,10 @@ export default function Pagination({
           <Link
             key={page}
             href={createPageUrl(page)}
-            className={`w-10 h-10 flex items-center justify-center text-sm transition-all rounded-lg ${
+            className={`w-10 h-10 flex items-center justify-center text-sm font-medium transition-all rounded-full ${
               currentPage === page
-                ? "bg-primary-blue text-white font-semibold"
-                : "text-gray hover:text-primary-blue hover:bg-light"
+                ? "bg-primary text-white shadow-sm"
+                : "text-primary hover:text-white hover:bg-primary-blue"
             }`}
             aria-label={`${page}ページ目へ`}
             aria-current={currentPage === page ? "page" : undefined}
@@ -108,11 +108,11 @@ export default function Pagination({
         {getPageNumbers()[getPageNumbers().length - 1] < totalPages && (
           <>
             {getPageNumbers()[getPageNumbers().length - 1] < totalPages - 1 && (
-              <span className="text-gray px-2">...</span>
+              <span className="text-gray-400 px-2">...</span>
             )}
             <Link
               href={createPageUrl(totalPages)}
-              className="w-10 h-10 flex items-center justify-center text-sm text-gray hover:text-primary-blue transition-colors rounded-lg hover:bg-light"
+              className="w-10 h-10 flex items-center justify-center text-sm font-medium text-primary hover:text-white hover:bg-primary-blue transition-all rounded-full"
               aria-label={`${totalPages}ページ目へ`}
             >
               {totalPages}
@@ -124,7 +124,7 @@ export default function Pagination({
         {currentPage < totalPages && (
           <Link
             href={createPageUrl(currentPage + 1)}
-            className="px-4 py-2 text-sm text-gray hover:text-primary-blue transition-colors rounded-lg hover:bg-light"
+            className="px-4 py-2 text-sm font-medium text-primary hover:text-primary-blue transition-colors rounded-full hover:bg-primary-light/20"
             aria-label="次のページへ"
           >
             次へ →
