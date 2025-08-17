@@ -80,7 +80,7 @@ export default function ServicesPage() {
     {
       title: "保守・運用サポート",
       description: "サイト公開後の更新作業や緊急対応をサポート",
-      price: "月額1万円〜",
+      price: "月額3万円〜",
       icon: FaTools,
     },
     {
