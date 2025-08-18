@@ -1,0 +1,26 @@
+/* フォントの事前読み込み設定 */
+
+/* 日本語フォントのサブセット範囲を指定 */
+@font-face {
+  font-family: 'Klee One Subset';
+  font-weight: 600;
+  font-display: swap;
+  src: local('Klee One');
+  /* 基本的な日本語文字のみ */
+  unicode-range: U+3040-309F, /* ひらがな */
+                 U+30A0-30FF, /* カタカナ */
+                 U+4E00-4E3F, /* 漢字（一部） */
+                 U+FF01-FF5E; /* 全角記号 */
+}
+
+@font-face {
+  font-family: 'Zen Maru Gothic Subset';
+  font-weight: 400;
+  font-display: swap;
+  src: local('Zen Maru Gothic');
+  /* 基本的な日本語文字のみ */
+  unicode-range: U+3040-309F, /* ひらがな */
+                 U+30A0-30FF, /* カタカナ */
+                 U+4E00-4E3F, /* 漢字（一部） */
+                 U+FF01-FF5E; /* 全角記号 */
+}
