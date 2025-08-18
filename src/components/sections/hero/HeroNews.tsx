@@ -30,9 +30,9 @@ export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
       }`}
     >
       <div className="text-center mb-8">
-        <h3 className="text-lg lg:text-xl">
+        <h2 className="text-lg lg:text-xl">
           最新のお知らせ
-        </h3>
+        </h2>
         <span className="text-caption mt-1 block">Latest News</span>
       </div>
 

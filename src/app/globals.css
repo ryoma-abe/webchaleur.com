@@ -2,14 +2,14 @@
 @import "tailwindcss";
 
 :root {
-  /* カラーパレット - 明るく柔らかい色合い */
-  --main-blue: #5b8fb9;
-  --light-blue: #8fb5d1;
+  /* カラーパレット - WCAG AA準拠のコントラスト比 */
+  --main-blue: #4a7ba7;  /* コントラスト比を改善 */
+  --light-blue: #6b9bc3;
   --lighter-blue: #e8f3fa;
   --bg-cream: #ffffff;
   --bg-light: #f8fbff;
-  --text-dark: #2c2825;
-  --text-gray: #5a524c;
+  --text-dark: #1a1816;  /* より濃い色でコントラスト改善 */
+  --text-gray: #4a423c;  /* より濃い色でコントラスト改善 */
   --accent-beige: #f5f5f3;
 
   /* フォント */

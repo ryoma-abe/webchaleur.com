@@ -70,11 +70,12 @@ export default function Header() {
             >
               <Image
                 src="/logo.png"
-                alt="WebChaleur"
+                alt=""
                 width={22}
                 height={25}
                 className="w-5 h-auto md:w-6 md:h-auto"
                 priority
+                aria-hidden="true"
               />
               <span className="text-2xl md:text-3xl">
                 <span className="text-primary-blue">Web</span>
@@ -142,10 +143,11 @@ export default function Header() {
           >
             <Image
               src="/logo.png"
-              alt="WebChaleur"
+              alt=""
               width={18}
               height={21}
               className="w-5 h-auto"
+              aria-hidden="true"
             />
             <span className="text-xl">
               <span className="text-primary-blue">Web</span>
