@@ -7,17 +7,21 @@ import Script from 'next/script';
 import { generatePageMetadata, generateOrganizationSchema } from '@/lib/seo';
 
 const kleeOne = Klee_One({
-  weight: ['400', '600'],
+  weight: ['600'],
   subsets: ['latin'],
   variable: '--font-handwritten',
   display: 'swap',
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const zenMaruGothic = Zen_Maru_Gothic({
-  weight: ['300', '400', '500', '700'],
+  weight: ['400'],
   subsets: ['latin'],
   variable: '--font-rounded',
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = generatePageMetadata({ path: '/' });
@@ -30,7 +34,11 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${kleeOne.variable} ${zenMaruGothic.variable}`}>
       <head>
-        <Script id="schema-org" type="application/ld+json">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify(generateOrganizationSchema())}
         </Script>
       </head>
