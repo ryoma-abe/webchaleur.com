@@ -1,11 +1,12 @@
-# Targets modern browsers only to reduce polyfills
+# Targets modern browsers only - no polyfills needed
 # Mobile-first approach for better performance
-defaults
-not IE 11
+last 2 versions
+> 1%
 not dead
-> 0.2% in JP
-iOS >= 13
-Safari >= 13
-Chrome >= 90
-Firefox >= 88
-Edge >= 90
+not ie 11
+not op_mini all
+Chrome >= 95
+Firefox >= 95
+Safari >= 14.1
+iOS >= 14.5
+Edge >= 95

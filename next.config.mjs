@@ -91,69 +91,77 @@ const nextConfig = {
   // バンドル分析と最適化
   webpack: (config, { isServer, dev }) => {
     if (!isServer && !dev) {
-      // アグレッシブなコード分割
+      // アグレッシブなコード分割とツリーシェイキング
       config.optimization = {
         ...config.optimization,
         minimize: true,
+        usedExports: true,
+        sideEffects: false,
         splitChunks: {
           chunks: 'all',
           maxAsyncRequests: 30,
-          maxInitialRequests: 30,
-          minSize: 10000,
+          maxInitialRequests: 25,
+          minSize: 20000,
           cacheGroups: {
             default: false,
             vendors: false,
-            // React関連を分離
-            react: {
-              name: 'react',
-              test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
-              priority: 40,
-              reuseExistingChunk: true,
+            // フレームワーク（React）
+            framework: {
+              name: 'framework',
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler|react-refresh)[\\/]/,
+              chunks: 'all',
+              priority: 50,
+              enforce: true,
             },
-            // Framer Motion
+            // 大きなライブラリを個別に分離
+            icons: {
+              name: 'icons',
+              test: /[\\/]node_modules[\\/](react-icons|lucide-react)[\\/]/,
+              chunks: 'async',
+              priority: 40,
+            },
             framer: {
               name: 'framer',
               test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+              chunks: 'async',
               priority: 35,
-              reuseExistingChunk: true,
             },
-            // MDX関連
             mdx: {
               name: 'mdx',
               test: /[\\/]node_modules[\\/]@mdx-js[\\/]/,
-              priority: 35,
-              reuseExistingChunk: true,
+              chunks: 'async',
+              priority: 30,
             },
-            // その他のvendor
+            // ポリフィルを分離（後で削除しやすいように）
+            polyfills: {
+              name: 'polyfills',
+              test: /[\\/]node_modules[\\/](core-js|regenerator-runtime)[\\/]/,
+              chunks: 'all',
+              priority: 45,
+            },
+            // 小さなベンダーライブラリ
             vendor: {
               name: 'vendor',
               test: /[\\/]node_modules[\\/]/,
+              chunks: 'async',
               priority: 10,
-              reuseExistingChunk: true,
+              minChunks: 2,
             },
-            // 共通モジュール
+            // 共通コード
             common: {
               name: 'common',
               minChunks: 2,
+              chunks: 'async',
               priority: 5,
               reuseExistingChunk: true,
             },
           },
         },
-        runtimeChunk: 'single',
+        runtimeChunk: {
+          name: 'runtime',
+        },
         moduleIds: 'deterministic',
       };
-      
-      // TerserPluginの設定
-      if (config.optimization.minimizer && config.optimization.minimizer[0] && config.optimization.minimizer[0].options) {
-        config.optimization.minimizer[0].options.terserOptions = {
-          compress: {
-            drop_console: true,
-            drop_debugger: true,
-            pure_funcs: ['console.log', 'console.info'],
-          },
-        };
-      }
     }
     return config;
   },

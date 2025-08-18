@@ -8,6 +8,10 @@ const config = {
           discardComments: {
             removeAll: true,
           },
+          mergeIdents: false,
+          reduceIdents: false,
+          minifyFontValues: true,
+          minifyGradients: true,
         }]
       }
     })
