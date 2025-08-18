@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Script from 'next/script';
 import { generatePageMetadata, generateOrganizationSchema } from '@/lib/seo';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const kleeOne = Klee_One({
   weight: ['600'],
@@ -41,6 +42,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="antialiased">
+        <GoogleAnalytics />
         <Header />
         <main className="pt-16">{children}</main>
         <Footer />

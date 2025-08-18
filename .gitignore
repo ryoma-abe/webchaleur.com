@@ -33,6 +33,11 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# 不要なファイル
+.browserslistrc
+.env.example
+.env.local.example
+
 # vercel
 .vercel
 
