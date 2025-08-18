@@ -37,9 +37,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="WebChaleur"
-                width={20}
-                height={20}
-                className="w-5 h-5"
+                width={18}
+                height={21}
+                className="w-5 h-auto"
               />
               <h3 className="heading-card text-primary-blue">
                 WebChaleur
