@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaEnvelope, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaEnvelope, FaMapMarkerAlt, FaInstagram, FaXTwitter } from '@/components/icons/FooterIcons';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

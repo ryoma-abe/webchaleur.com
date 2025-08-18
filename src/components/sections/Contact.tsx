@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import HandDrawnButton from '@/components/ui/HandDrawnButton';
+import Link from 'next/link';
 
 interface FormData {
   name: string;
@@ -233,9 +234,9 @@ export default function Contact() {
               className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
             />
             <label htmlFor="privacy" className="text-sm text-gray">
-              <a href="/privacy" target="_blank" className="text-primary-blue hover:underline">
+              <Link href="/privacy" target="_blank" className="text-primary-blue hover:underline">
                 プライバシーポリシー
-              </a>
+              </Link>
               に同意する
             </label>
           </div>

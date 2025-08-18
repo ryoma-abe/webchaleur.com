@@ -1,9 +1,4 @@
-import { IconType } from "react-icons";
-import {
-  FaGlobe,
-  FaRobot,
-  FaHandshake,
-} from "react-icons/fa";
+import { FaGlobe, FaRobot, FaHandshake } from "@/components/icons/StrengthIcons";
 import StrengthCard from "./StrengthCard";
 
 interface Strength {
@@ -11,7 +6,8 @@ interface Strength {
   number: string;
   title: string;
   description: string;
-  icon: IconType;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: any; // 動的インポートのため一時的にany型を使用
 }
 
 interface StrengthsGridProps {

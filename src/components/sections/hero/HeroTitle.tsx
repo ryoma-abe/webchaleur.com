@@ -37,12 +37,12 @@ export default function HeroTitle() {
     // 初期メッセージを全て表示した状態でセット
     setLines([messages[0].line1, messages[0].line2, messages[0].line3]);
     
-    // 1秒後に削除を開始（3行目から）
+    // 3秒間表示してから削除を開始
     setTimeout(() => {
       setIsDeleting(true);
       setCurrentLine(2); // 3行目から削除開始
       setIsFirstRender(false); // 初回レンダリング終了
-    }, 1000);
+    }, 3000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

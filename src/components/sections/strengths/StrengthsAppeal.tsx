@@ -1,4 +1,4 @@
-import { FaRocket } from "react-icons/fa";
+import { FaRocket } from "@/components/icons/AppealIcons";
 
 interface StrengthsAppealProps {
   isVisible: boolean;
