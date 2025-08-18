@@ -79,35 +79,56 @@ const nextConfig = {
     } : false,
   },
   
-  // SWC最適化
-  swcMinify: true,
   
   // ブラウザリストの設定（モダンブラウザのみをターゲット）
   transpilePackages: [],
   
-  // バンドル分析（開発時のみ）
+  // バンドル分析と最適化
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
+        maxInitialRequests: 25,
+        minSize: 20000,
         cacheGroups: {
           default: false,
           vendors: false,
-          vendor: {
-            name: 'vendor',
+          framework: {
+            name: 'framework',
             chunks: 'all',
-            test: /node_modules/,
-            priority: 20,
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            priority: 10,
-            reuseExistingChunk: true,
+            test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
+            priority: 40,
             enforce: true,
           },
+          lib: {
+            test(module) {
+              return module.size() > 160000 &&
+                /node_modules[\\/]/.test(module.identifier());
+            },
+            name: 'lib',
+            priority: 30,
+            minChunks: 1,
+            reuseExistingChunk: true,
+          },
+          commons: {
+            name: 'commons',
+            minChunks: 2,
+            priority: 20,
+          },
+          shared: {
+            name(module, chunks) {
+              return 'shared';
+            },
+            priority: 10,
+            minChunks: 2,
+            reuseExistingChunk: true,
+          },
         },
+      };
+      
+      // Minimize main bundle
+      config.optimization.runtimeChunk = {
+        name: 'runtime',
       };
     }
     return config;
