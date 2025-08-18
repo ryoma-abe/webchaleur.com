@@ -69,12 +69,16 @@ const nextConfig = {
   // 実験的機能
   experimental: {
     optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'react-icons'],
   },
   
   // コンパイラ設定
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  
+  // ブラウザリストの設定（モダンブラウザのみをターゲット）
+  transpilePackages: [],
 };
 
 const withMDX = createMDX({

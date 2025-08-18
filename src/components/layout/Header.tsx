@@ -71,9 +71,10 @@ export default function Header() {
               <Image
                 src="/logo.png"
                 alt="WebChaleur"
-                width={24}
-                height={24}
-                className="w-5 h-5 md:w-6 md:h-6"
+                width={22}
+                height={25}
+                className="w-5 h-auto md:w-6 md:h-auto"
+                priority
               />
               <span className="text-2xl md:text-3xl">
                 <span className="text-primary-blue">Web</span>
@@ -142,9 +143,9 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="WebChaleur"
-              width={20}
-              height={20}
-              className="w-5 h-5"
+              width={18}
+              height={21}
+              className="w-5 h-auto"
             />
             <span className="text-xl">
               <span className="text-primary-blue">Web</span>
