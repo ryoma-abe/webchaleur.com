@@ -73,7 +73,7 @@ const nextConfig = {
   },
   
   // Production optimizations
-  productionBrowserSourceMaps: false,
+  productionBrowserSourceMaps: true,
   compress: true,
   poweredByHeader: false,
   
