@@ -13,12 +13,10 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({
-  slug,
   date,
   title,
   description,
   category,
-  tags,
   link,
   isVisible,
   delay,

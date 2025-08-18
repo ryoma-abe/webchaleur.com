@@ -3,15 +3,12 @@
 import { useState, useEffect } from "react";
 import TypingAnimationWithDelete from "@/components/animations/TypingAnimationWithDelete";
 
-interface HeroTitleProps {
-  isVisible: boolean;
-}
-
-export default function HeroTitle({ isVisible }: HeroTitleProps) {
+export default function HeroTitle() {
   const [currentMessageSet, setCurrentMessageSet] = useState(0);
-  const [currentLine, setCurrentLine] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentLine, setCurrentLine] = useState(2); // 最後の行から開始
+  const [isDeleting, setIsDeleting] = useState(false); // 一旦falseで開始
   const [lines, setLines] = useState<string[]>(["", "", ""]);
+  const [isFirstRender, setIsFirstRender] = useState(true); // 初回レンダリングフラグ
 
   const messages = [
     {
@@ -37,8 +34,15 @@ export default function HeroTitle({ isVisible }: HeroTitleProps) {
   ];
 
   useEffect(() => {
-    // 初期メッセージをセット
-    setLines([messages[0].line1, "", ""]);
+    // 初期メッセージを全て表示した状態でセット
+    setLines([messages[0].line1, messages[0].line2, messages[0].line3]);
+    
+    // 1秒後に削除を開始（3行目から）
+    setTimeout(() => {
+      setIsDeleting(true);
+      setCurrentLine(2); // 3行目から削除開始
+      setIsFirstRender(false); // 初回レンダリング終了
+    }, 1000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -71,13 +75,14 @@ export default function HeroTitle({ isVisible }: HeroTitleProps) {
       setCurrentLine(0);
     } else if (lineIndex === 0) {
       // すべて削除完了後、次のメッセージセットへ
+      const nextIndex = (currentMessageSet + 1) % messages.length;
+      setCurrentMessageSet(nextIndex);
       setLines(["", "", ""]);
       setIsDeleting(false);
-      setCurrentMessageSet((prev) => prev + 1);
 
       // 次のメッセージの1行目をセット
       setTimeout(() => {
-        setLines([messages[currentMessageSet + 1].line1, "", ""]);
+        setLines([messages[nextIndex].line1, "", ""]);
         setCurrentLine(0);
       }, 200);
     }
@@ -85,9 +90,7 @@ export default function HeroTitle({ isVisible }: HeroTitleProps) {
 
   return (
     <h1
-      className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px] transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px]"
     >
       <span className="block mb-2 min-h-[1.2em]">
         {lines[0] && (
@@ -100,6 +103,7 @@ export default function HeroTitle({ isVisible }: HeroTitleProps) {
             onComplete={() => !isDeleting && handleLineComplete(0)}
             onDeleteComplete={() => handleDeleteComplete(0)}
             isDeleting={isDeleting && currentLine === 0}
+            initialDisplay={isFirstRender}
           />
         )}
       </span>
@@ -117,6 +121,7 @@ export default function HeroTitle({ isVisible }: HeroTitleProps) {
               onComplete={() => !isDeleting && handleLineComplete(1)}
               onDeleteComplete={() => handleDeleteComplete(1)}
               isDeleting={isDeleting && currentLine === 1}
+              initialDisplay={isFirstRender}
             />
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-[#5b8fb9] to-transparent opacity-40 rounded-sm" />
           </>
@@ -133,6 +138,7 @@ export default function HeroTitle({ isVisible }: HeroTitleProps) {
             onComplete={() => !isDeleting && handleLineComplete(2)}
             onDeleteComplete={() => handleDeleteComplete(2)}
             isDeleting={isDeleting && currentLine === 2}
+            initialDisplay={isFirstRender}
           />
         )}
       </span>

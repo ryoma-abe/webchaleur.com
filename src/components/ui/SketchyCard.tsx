@@ -11,7 +11,6 @@ export default function SketchyCard({
   children,
   className = '',
   variant = 'default',
-  rotate = false,
 }: SketchyCardProps) {
   const baseClass = `
     relative bg-white p-6 transition-all duration-300

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 interface PaginationProps {
   currentPage: number;
@@ -14,7 +14,6 @@ export default function Pagination({
   totalPages,
   basePath,
 }: PaginationProps) {
-  const pathname = usePathname();
   const searchParams = useSearchParams();
 
   // ページ番号の配列を生成

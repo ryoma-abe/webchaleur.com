@@ -40,7 +40,7 @@ export default async function WorksPage({
       <div className="container mx-auto px-4 py-12">
         <FadeIn>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-            {works.map((work, index) => (
+            {works.map((work) => (
               <article
                 key={work.id}
                 className="bg-white rounded-[20px] overflow-hidden transition-all duration-500 group shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:translate-y-[-4px]"
