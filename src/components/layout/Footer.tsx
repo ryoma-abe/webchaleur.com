@@ -36,10 +36,11 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Image
                 src="/logo.png"
-                alt="WebChaleur"
+                alt=""
                 width={18}
                 height={21}
                 className="w-5 h-auto"
+                aria-hidden="true"
               />
               <h3 className="heading-card text-primary-blue">
                 WebChaleur

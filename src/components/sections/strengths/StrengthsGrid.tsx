@@ -2,10 +2,7 @@ import { IconType } from "react-icons";
 import {
   FaGlobe,
   FaRobot,
-  FaMobileAlt,
-  FaLaptopCode,
   FaHandshake,
-  FaChartLine,
 } from "react-icons/fa";
 import StrengthCard from "./StrengthCard";
 
