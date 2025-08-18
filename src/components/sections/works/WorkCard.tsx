@@ -16,7 +16,6 @@ interface WorkCardProps {
 }
 
 export default function WorkCard({
-  slug,
   title,
   client,
   description,

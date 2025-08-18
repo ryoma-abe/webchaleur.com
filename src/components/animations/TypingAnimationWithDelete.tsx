@@ -11,6 +11,7 @@ interface TypingAnimationWithDeleteProps {
   onComplete?: () => void;
   onDeleteComplete?: () => void;
   isDeleting?: boolean;
+  initialDisplay?: boolean; // 初期表示で全文表示するかどうか
 }
 
 export default function TypingAnimationWithDelete({
@@ -22,17 +23,21 @@ export default function TypingAnimationWithDelete({
   onComplete,
   onDeleteComplete,
   isDeleting = false,
+  initialDisplay = false,
 }: TypingAnimationWithDeleteProps) {
-  const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTypeComplete, setIsTypeComplete] = useState(false);
+  // initialDisplayがtrueの場合は、最初から全文を表示
+  const [displayText, setDisplayText] = useState(initialDisplay ? text : "");
+  const [currentIndex, setCurrentIndex] = useState(
+    initialDisplay ? text.length : 0
+  );
+  const [isTypeComplete, setIsTypeComplete] = useState(initialDisplay);
 
   // タイピングアニメーション
   useEffect(() => {
     if (!isDeleting && currentIndex < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, speed);
 
       return () => clearTimeout(timeout);
@@ -48,7 +53,7 @@ export default function TypingAnimationWithDelete({
   useEffect(() => {
     if (isDeleting && displayText.length > 0) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev.slice(0, -1));
+        setDisplayText((prev) => prev.slice(0, -1));
       }, deleteSpeed);
 
       return () => clearTimeout(timeout);

@@ -9,10 +9,9 @@ interface NewsItem {
 
 interface HeroNewsProps {
   latestNews: NewsItem[];
-  isVisible: boolean;
 }
 
-export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
+export default function HeroNews({ latestNews }: HeroNewsProps) {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -25,9 +24,7 @@ export default function HeroNews({ latestNews, isVisible }: HeroNewsProps) {
 
   return (
     <div
-      className={`w-full bg-white rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] p-8 lg:p-10 transition-all duration-1000 delay-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className="w-full bg-white rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] p-8 lg:p-10 transition-shadow duration-300"
     >
       <div className="text-center mb-8">
         <h2 className="text-lg lg:text-xl">

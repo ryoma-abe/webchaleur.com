@@ -1,17 +1,9 @@
 import Link from "next/link";
 
-interface HeroCTAProps {
-  isVisible: boolean;
-}
-
-export default function HeroCTA({ isVisible }: HeroCTAProps) {
+export default function HeroCTA() {
   return (
     <div
-      className={`flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 lg:mb-16 transition-all duration-1000 delay-400 ${
-        isVisible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-8"
-      }`}
+      className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 lg:mb-16"
     >
       <Link
         href="/contact"
