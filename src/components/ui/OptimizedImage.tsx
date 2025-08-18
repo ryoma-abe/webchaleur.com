@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -12,6 +14,8 @@ interface OptimizedImageProps {
   quality?: number;
   placeholder?: 'blur' | 'empty';
   blurDataURL?: string;
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
 }
 
 export default function OptimizedImage({
@@ -25,6 +29,8 @@ export default function OptimizedImage({
   quality = 75,
   placeholder = 'empty',
   blurDataURL,
+  loading = 'lazy',
+  sizes,
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -44,8 +50,9 @@ export default function OptimizedImage({
             ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}
             ${className || ''}
           `}
-          onLoadingComplete={() => setIsLoading(false)}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          onLoad={() => setIsLoading(false)}
+          loading={loading}
+          sizes={sizes || "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
         />
       ) : (
         <Image
@@ -62,8 +69,9 @@ export default function OptimizedImage({
             ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}
             ${className || ''}
           `}
-          onLoadingComplete={() => setIsLoading(false)}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          onLoad={() => setIsLoading(false)}
+          loading={loading}
+          sizes={sizes || "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
         />
       )}
     </div>
