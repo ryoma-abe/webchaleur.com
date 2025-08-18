@@ -4,8 +4,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Script from 'next/script';
 import { generatePageMetadata, generateOrganizationSchema } from '@/lib/seo';
-import "./globals.css";
 import CriticalCSS from '@/components/CriticalCSS';
+import LazyStyles from '@/components/LazyStyles';
+import "./globals.css";
 
 const kleeOne = Klee_One({
   weight: ['600'],
@@ -52,9 +53,20 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         
-        {/* Non-critical CSS lazy load via Next.js */}
+        {/* Non-critical CSS lazy load */}
+        <link
+          rel="preload"
+          as="style"
+          href="/_next/static/css/app/layout.css"
+          // @ts-ignore
+          onLoad="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+          <link rel="stylesheet" href="/_next/static/css/app/layout.css" />
+        </noscript>
       </head>
       <body className="antialiased">
+        <LazyStyles />
         <Script 
           id="schema-org" 
           type="application/ld+json" 

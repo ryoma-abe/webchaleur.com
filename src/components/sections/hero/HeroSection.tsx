@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HeroTitle from "./HeroTitle";
+import HeroTitleDynamic from "./HeroTitleDynamic";
 import HeroSubtext from "./HeroSubtext";
 import HeroCTA from "./HeroCTA";
 import HeroNews from "./HeroNews";
@@ -28,8 +28,8 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
     <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-white py-12 lg:py-16">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center">
-          {/* メインタイトル - タイピングアニメーション */}
-          <HeroTitle isVisible={isVisible} />
+          {/* メインタイトル - 最適化されたタイピングアニメーション */}
+          <HeroTitleDynamic isVisible={isVisible} />
 
           {/* サブテキスト - 中央揃え */}
           <HeroSubtext isVisible={isVisible} />
