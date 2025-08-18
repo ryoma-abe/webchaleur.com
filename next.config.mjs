@@ -69,16 +69,49 @@ const nextConfig = {
   // 実験的機能
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['lucide-react', 'react-icons'],
+    optimizePackageImports: ['lucide-react', 'react-icons', 'framer-motion'],
   },
   
   // コンパイラ設定
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'],
+    } : false,
   },
+  
+  // SWC最適化
+  swcMinify: true,
   
   // ブラウザリストの設定（モダンブラウザのみをターゲット）
   transpilePackages: [],
+  
+  // バンドル分析（開発時のみ）
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          default: false,
+          vendors: false,
+          vendor: {
+            name: 'vendor',
+            chunks: 'all',
+            test: /node_modules/,
+            priority: 20,
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 10,
+            reuseExistingChunk: true,
+            enforce: true,
+          },
+        },
+      };
+    }
+    return config;
+  },
 };
 
 const withMDX = createMDX({

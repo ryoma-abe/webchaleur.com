@@ -10,9 +10,9 @@ const kleeOne = Klee_One({
   weight: ['600'],
   subsets: ['latin'],
   variable: '--font-handwritten',
-  display: 'optional',
+  display: 'swap',
   preload: false,
-  adjustFontFallback: false,
+  adjustFontFallback: true,
 });
 
 const zenMaruGothic = Zen_Maru_Gothic({
@@ -21,7 +21,7 @@ const zenMaruGothic = Zen_Maru_Gothic({
   variable: '--font-rounded',
   display: 'swap',
   preload: true,
-  adjustFontFallback: false,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = generatePageMetadata({ path: '/' });
