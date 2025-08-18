@@ -68,7 +68,12 @@ const nextConfig = {
 
   // 実験的機能
   experimental: {
-    optimizeCss: false,
+    optimizeCss: true,
+  },
+  
+  // コンパイラ設定
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 };
 
