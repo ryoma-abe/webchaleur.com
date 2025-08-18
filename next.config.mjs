@@ -73,7 +73,7 @@ const nextConfig = {
   },
   
   // Production optimizations
-  productionBrowserSourceMaps: false,
+  productionBrowserSourceMaps: true,
   compress: true,
   poweredByHeader: false,
   
@@ -114,11 +114,13 @@ const nextConfig = {
               enforce: true,
             },
             // 大きなライブラリを個別に分離
+            // アイコンは使用時のみロード
             icons: {
               name: 'icons',
               test: /[\\/]node_modules[\\/](react-icons|lucide-react)[\\/]/,
               chunks: 'async',
-              priority: 40,
+              priority: 10,
+              reuseExistingChunk: true,
             },
             framer: {
               name: 'framer',

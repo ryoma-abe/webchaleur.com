@@ -20,7 +20,10 @@
       "Bash(do sed -i '' 's|thumbnail: /images/work-|thumbnail: /images/works/work-|g' \"$file\")",
       "Bash(done)",
       "Bash(npm run build:*)",
-      "Bash(identify:*)"
+      "Bash(identify:*)",
+      "WebFetch(domain:react.dev)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }

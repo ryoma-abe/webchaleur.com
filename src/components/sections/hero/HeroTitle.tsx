@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import HeroTitleStatic from './HeroTitleStatic';
 
@@ -8,6 +11,12 @@ const HeroTitleDynamic = dynamic(() => import('./HeroTitleDynamic'), {
 });
 
 export default function HeroTitle() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <>
       {/* モバイル: 静的表示（SSR対応） */}
@@ -17,7 +26,7 @@ export default function HeroTitle() {
       
       {/* デスクトップ: アニメーション表示 */}
       <div className="hidden md:block">
-        <HeroTitleDynamic />
+        {mounted ? <HeroTitleDynamic /> : <HeroTitleStatic />}
       </div>
     </>
   );
