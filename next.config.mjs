@@ -72,6 +72,11 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', 'react-icons', 'framer-motion'],
   },
   
+  // Production optimizations
+  productionBrowserSourceMaps: false,
+  compress: true,
+  poweredByHeader: false,
+  
   // コンパイラ設定
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {
@@ -84,52 +89,71 @@ const nextConfig = {
   transpilePackages: [],
   
   // バンドル分析と最適化
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        maxInitialRequests: 25,
-        minSize: 20000,
-        cacheGroups: {
-          default: false,
-          vendors: false,
-          framework: {
-            name: 'framework',
-            chunks: 'all',
-            test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
-            priority: 40,
-            enforce: true,
-          },
-          lib: {
-            test(module) {
-              return module.size() > 160000 &&
-                /node_modules[\\/]/.test(module.identifier());
+  webpack: (config, { isServer, dev }) => {
+    if (!isServer && !dev) {
+      // アグレッシブなコード分割
+      config.optimization = {
+        ...config.optimization,
+        minimize: true,
+        splitChunks: {
+          chunks: 'all',
+          maxAsyncRequests: 30,
+          maxInitialRequests: 30,
+          minSize: 10000,
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            // React関連を分離
+            react: {
+              name: 'react',
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+              priority: 40,
+              reuseExistingChunk: true,
             },
-            name: 'lib',
-            priority: 30,
-            minChunks: 1,
-            reuseExistingChunk: true,
-          },
-          commons: {
-            name: 'commons',
-            minChunks: 2,
-            priority: 20,
-          },
-          shared: {
-            name(module, chunks) {
-              return 'shared';
+            // Framer Motion
+            framer: {
+              name: 'framer',
+              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+              priority: 35,
+              reuseExistingChunk: true,
             },
-            priority: 10,
-            minChunks: 2,
-            reuseExistingChunk: true,
+            // MDX関連
+            mdx: {
+              name: 'mdx',
+              test: /[\\/]node_modules[\\/]@mdx-js[\\/]/,
+              priority: 35,
+              reuseExistingChunk: true,
+            },
+            // その他のvendor
+            vendor: {
+              name: 'vendor',
+              test: /[\\/]node_modules[\\/]/,
+              priority: 10,
+              reuseExistingChunk: true,
+            },
+            // 共通モジュール
+            common: {
+              name: 'common',
+              minChunks: 2,
+              priority: 5,
+              reuseExistingChunk: true,
+            },
           },
         },
+        runtimeChunk: 'single',
+        moduleIds: 'deterministic',
       };
       
-      // Minimize main bundle
-      config.optimization.runtimeChunk = {
-        name: 'runtime',
-      };
+      // TerserPluginの設定
+      if (config.optimization.minimizer && config.optimization.minimizer[0] && config.optimization.minimizer[0].options) {
+        config.optimization.minimizer[0].options.terserOptions = {
+          compress: {
+            drop_console: true,
+            drop_debugger: true,
+            pure_funcs: ['console.log', 'console.info'],
+          },
+        };
+      }
     }
     return config;
   },

@@ -3,6 +3,7 @@ import HeroServer from '@/components/sections/HeroServer';
 import AboutSection from '@/components/sections/about/AboutSection';
 import StrengthsSection from '@/components/sections/strengths/StrengthsSection';
 
+// Below-the-fold content - lazy load
 const Works = dynamic(() => import('@/components/sections/LazyWorks'), {
   loading: () => <div className="min-h-[400px]" />,
 });

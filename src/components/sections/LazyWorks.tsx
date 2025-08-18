@@ -17,7 +17,6 @@ const WorksSection = dynamic(
         </div>
       </div>
     ),
-    ssr: true,
   }
 );
 
