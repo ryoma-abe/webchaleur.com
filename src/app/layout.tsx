@@ -11,7 +11,7 @@ const kleeOne = Klee_One({
   weight: ['600'],
   subsets: ['latin'],
   variable: '--font-handwritten',
-  display: 'swap',
+  display: 'swap', // フォントの表示を元に戻す
   preload: true,
   adjustFontFallback: true,
 });
@@ -20,7 +20,7 @@ const zenMaruGothic = Zen_Maru_Gothic({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-rounded',
-  display: 'swap',
+  display: 'swap', // フォントの表示を元に戻す
   preload: true,
   adjustFontFallback: true,
 });

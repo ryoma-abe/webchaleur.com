@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 interface ArticleLayoutProps {
   children: React.ReactNode;
@@ -35,9 +36,9 @@ export default function ArticleLayout({
 
         {/* 戻るボタン */}
         <div className="text-center mt-16">
-          <a href={backLink.href} className="btn-secondary">
+          <Link href={backLink.href} className="btn-secondary">
             ← {backLink.text}
-          </a>
+          </Link>
         </div>
       </article>
     </div>

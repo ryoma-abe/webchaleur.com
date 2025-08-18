@@ -1,10 +1,9 @@
-import { IconType } from "react-icons";
-
 interface StrengthCardProps {
   number: string;
   title: string;
   description: string;
-  icon: IconType;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: any; // 動的インポートのため一時的にany型を使用
   isVisible: boolean;
   delay: number;
 }

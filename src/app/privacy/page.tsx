@@ -1,6 +1,7 @@
 import LegalPageLayout from '@/components/layouts/LegalPageLayout';
 import SubHeading from '@/components/ui/SubHeading';
 import { generatePageMetadata } from '@/lib/seo';
+import Link from 'next/link';
 
 export const metadata = generatePageMetadata({ path: '/privacy' });
 
@@ -93,7 +94,7 @@ export default function PrivacyPage() {
               <p className="text-gray">
                 WebChaleur<br />
                 メール: webchaleur@gmail.com<br />
-                お問い合わせフォーム: <a href="/contact" className="text-primary-blue hover:underline">こちら</a>
+                お問い合わせフォーム: <Link href="/contact" className="text-primary-blue hover:underline">こちら</Link>
               </p>
             </div>
 
