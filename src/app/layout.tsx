@@ -34,14 +34,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${kleeOne.variable} ${zenMaruGothic.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify(generateOrganizationSchema())}
-        </Script>
-      </head>
+      <head />
       <body className="antialiased">
+        <Script 
+          id="schema-org" 
+          type="application/ld+json" 
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateOrganizationSchema())
+          }}
+        />
         <GoogleAnalytics />
         <Header />
         <main className="pt-16">{children}</main>
