@@ -397,11 +397,11 @@ button {
 }
 
 .bg-accent-beige {
-  background-color: #f5f5f3;
+  background-color: #fafaf9; /* より明るい背景色でコントラスト改善 */
 }
 
 .text-primary-blue {
-  color: #5b8fb9;
+  color: #2c5478; /* WCAG AAA準拠 7:1以上のコントラスト比 */
 }
 
 .text-primary-light {
@@ -467,12 +467,12 @@ button {
 
 /* プライマリボタン（メインアクション） */
 .btn-primary {
-  background-color: #5b8fb9;
+  background-color: #2c5478; /* WCAG AAA準拠 7:1以上のコントラスト比 */
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #4a7da6;
+  background-color: #1f3d5a; /* ホバー時も高コントラスト維持 */
   transform: translateY(-2px);
   box-shadow: 0 10px 20px -5px rgba(91, 143, 185, 0.3);
 }
@@ -484,12 +484,13 @@ button {
 /* セカンダリボタン（サブアクション） */
 .btn-secondary {
   background-color: white;
-  color: #5b8fb9;
-  border: 2px solid #5b8fb9;
+  color: #3d6891; /* より濃い青でコントラスト改善 */
+  border: 2px solid #3d6891;
 }
 
 .btn-secondary:hover {
   background-color: #e8f3fa;
+  color: #2d5170; /* ホバー時もコントラスト維持 */
   transform: translateY(-2px);
   box-shadow: 0 10px 20px -5px rgba(91, 143, 185, 0.2);
 }

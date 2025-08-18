@@ -26,7 +26,7 @@ export default function Footer() {
 
   return (
     <footer 
-      className="bg-accent-beige border-t-2 border-dashed border-primary-light"
+      className="bg-accent-beige border-t-2 border-dashed border-gray-300"
     >
       <div className="max-w-7xl mx-auto pt-12 pr-7 pb-[52px] pl-8">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
@@ -45,7 +45,7 @@ export default function Footer() {
                 WebChaleur
               </h3>
             </div>
-            <p className="text-body">
+            <p className="text-body text-primary">
               十勝・帯広・音更を拠点に<br />
               全国のお客様へ<br />
               あたたかいウェブサイトを<br />
@@ -55,7 +55,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="heading-card mb-4">
+            <h4 className="heading-card mb-4 text-primary">
               サイトマップ
             </h4>
             <ul className="space-y-2">
@@ -63,7 +63,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray hover:text-primary-blue transition-colors text-sm"
+                    className="text-primary hover:text-primary-blue transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="heading-card mb-4">
+            <h4 className="heading-card mb-4 text-primary">
               法的事項
             </h4>
             <ul className="space-y-2">
@@ -82,7 +82,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray hover:text-primary-blue transition-colors text-sm"
+                    className="text-primary hover:text-primary-blue transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -93,10 +93,10 @@ export default function Footer() {
 
           {/* Contact & Social */}
           <div>
-            <h4 className="heading-card mb-4">
+            <h4 className="heading-card mb-4 text-primary">
               お問い合わせ
             </h4>
-            <p className="text-body mb-4">
+            <p className="text-body text-primary mb-4">
               <span className="flex items-center gap-2 mb-1">
                 <FaEnvelope className="text-primary-blue" />
                 webchaleur@gmail.com
@@ -113,7 +113,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray hover:text-primary-blue transition-colors text-lg"
+                  className="text-primary hover:text-primary-blue transition-colors text-lg"
                   aria-label={social.label}
                 >
                   <social.icon />
@@ -130,7 +130,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center">
-          <p className="text-caption">
+          <p className="text-caption text-primary">
             © {currentYear} WebChaleur. つくる人も、つかう人も、みんなしあわせに。
           </p>
         </div>
