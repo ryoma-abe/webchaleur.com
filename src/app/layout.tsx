@@ -8,20 +8,20 @@ import "./globals.css";
 import CriticalCSS from '@/components/CriticalCSS';
 
 const kleeOne = Klee_One({
-  weight: ['600'],
+  weight: '600',
   subsets: ['latin'],
   variable: '--font-handwritten',
   display: 'swap',
-  preload: true,
+  preload: false,
   adjustFontFallback: true,
 });
 
 const zenMaruGothic = Zen_Maru_Gothic({
-  weight: ['400'],
+  weight: '400',
   subsets: ['latin'],
   variable: '--font-rounded',
   display: 'swap',
-  preload: true,
+  preload: false,
   adjustFontFallback: true,
 });
 
