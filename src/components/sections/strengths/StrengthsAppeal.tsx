@@ -14,7 +14,7 @@ export default function StrengthsAppeal({ isVisible }: StrengthsAppealProps) {
         }`}
       >
         <h3 className="heading-card mb-4 text-primary-blue flex items-center justify-center gap-2">
-          <FaRocket className="inline-block" />
+          <FaRocket />
           <span>新しい時代のWeb制作パートナー</span>
         </h3>
         <p className="text-body mb-6">

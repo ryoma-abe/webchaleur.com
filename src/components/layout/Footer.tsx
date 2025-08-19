@@ -102,11 +102,11 @@ export default function Footer() {
             </h4>
             <p className="text-body text-primary mb-4">
               <span className="flex items-center gap-2 mb-1">
-                <FaEnvelope className="text-primary-blue" />
+                <span className="text-primary-blue"><FaEnvelope /></span>
                 webchaleur@gmail.com
               </span>
               <span className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-primary-blue" />
+                <span className="text-primary-blue"><FaMapMarkerAlt /></span>
                 北海道十勝エリア（全国対応）
               </span>
             </p>

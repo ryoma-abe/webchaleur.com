@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -114,11 +113,9 @@ export default function Header() {
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
             >
-              {isMenuOpen ? (
-                <X className="w-6 h-6 text-[#5a524c]" />
-              ) : (
-                <Menu className="w-6 h-6 text-[#5a524c]" />
-              )}
+              <span className="text-2xl text-[#5a524c]">
+                {isMenuOpen ? "×" : "☰"}
+              </span>
             </button>
           </div>
         </nav>
@@ -167,7 +164,7 @@ export default function Header() {
             className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="閉じる"
           >
-            <X className="w-5 h-5 text-[#5a524c]" />
+            <span className="text-xl text-[#5a524c]">×</span>
           </button>
         </div>
 
