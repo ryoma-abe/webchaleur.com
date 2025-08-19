@@ -1,7 +1,4 @@
-'use client';
-
 import Image from 'next/image';
-import { useState } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -14,7 +11,6 @@ interface OptimizedImageProps {
   quality?: number;
   placeholder?: 'blur' | 'empty';
   blurDataURL?: string;
-  loading?: 'lazy' | 'eager';
   sizes?: string;
 }
 
@@ -29,11 +25,8 @@ export default function OptimizedImage({
   quality = 75,
   placeholder = 'empty',
   blurDataURL,
-  loading = 'lazy',
   sizes,
 }: OptimizedImageProps) {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <div className={`relative ${className || ''}`}>
       {fill ? (
@@ -45,13 +38,7 @@ export default function OptimizedImage({
           priority={priority}
           placeholder={placeholder}
           blurDataURL={blurDataURL}
-          className={`
-            duration-700 ease-in-out
-            ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}
-            ${className || ''}
-          `}
-          onLoad={() => setIsLoading(false)}
-          loading={loading}
+          className={className || ''}
           sizes={sizes || "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
         />
       ) : (
@@ -64,13 +51,7 @@ export default function OptimizedImage({
           priority={priority}
           placeholder={placeholder}
           blurDataURL={blurDataURL}
-          className={`
-            duration-700 ease-in-out
-            ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}
-            ${className || ''}
-          `}
-          onLoad={() => setIsLoading(false)}
-          loading={loading}
+          className={className || ''}
           sizes={sizes || "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
         />
       )}

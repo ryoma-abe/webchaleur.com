@@ -68,15 +68,19 @@ export default function Header() {
               href="/"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              <Image
-                src="/logo.png"
-                alt=""
-                width={22}
-                height={25}
-                className="w-5 h-auto md:w-6 md:h-auto"
-                priority
-                aria-hidden="true"
-              />
+              <picture>
+                <source srcSet="/logo.avif" type="image/avif" />
+                <source srcSet="/logo.webp" type="image/webp" />
+                <Image
+                  src="/logo.webp"
+                  alt=""
+                  width={22}
+                  height={25}
+                  className="w-5 h-auto md:w-6 md:h-auto"
+                  priority
+                  aria-hidden="true"
+                />
+              </picture>
               <span className="text-2xl md:text-3xl">
                 <span className="text-primary-blue">Web</span>
                 <span className="text-[#2c2825]">Chaleur</span>
@@ -141,14 +145,18 @@ export default function Header() {
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center gap-2"
           >
-            <Image
-              src="/logo.png"
-              alt=""
-              width={18}
-              height={21}
-              className="w-5 h-auto"
-              aria-hidden="true"
-            />
+            <picture>
+              <source srcSet="/logo.avif" type="image/avif" />
+              <source srcSet="/logo.webp" type="image/webp" />
+              <Image
+                src="/logo.webp"
+                alt=""
+                width={18}
+                height={21}
+                className="w-5 h-auto"
+                aria-hidden="true"
+              />
+            </picture>
             <span className="text-xl">
               <span className="text-primary-blue">Web</span>
               <span className="text-[#2c2825]">Chaleur</span>

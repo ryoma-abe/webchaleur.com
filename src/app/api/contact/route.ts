@@ -68,14 +68,12 @@ ${message}
         { status: 200 }
       );
     } else {
-      console.error('Web3Forms error:', result);
       return NextResponse.json(
         { error: '送信に失敗しました。しばらく経ってから再度お試しください。' },
         { status: 500 }
       );
     }
-  } catch (error) {
-    console.error('お問い合わせエラー:', error);
+  } catch {
     return NextResponse.json(
       { error: '送信に失敗しました。しばらく経ってから再度お試しください。' },
       { status: 500 }

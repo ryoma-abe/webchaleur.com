@@ -4,21 +4,13 @@ import AboutSection from '@/components/sections/about/AboutSection';
 import StrengthsSection from '@/components/sections/strengths/StrengthsSection';
 
 // Below-the-fold content - lazy load
-const Works = dynamic(() => import('@/components/sections/LazyWorks'), {
-  loading: () => <div className="min-h-[400px]" />,
-});
+const Works = dynamic(() => import('@/components/sections/LazyWorks'));
 
-const VoiceSection = dynamic(() => import('@/components/sections/voice/VoiceSection'), {
-  loading: () => <div className="min-h-[300px]" />,
-});
+const VoiceSection = dynamic(() => import('@/components/sections/voice/VoiceSection'));
 
-const Blog = dynamic(() => import('@/components/sections/LazyBlog'), {
-  loading: () => <div className="min-h-[400px]" />,
-});
+const Blog = dynamic(() => import('@/components/sections/LazyBlog'));
 
-const FAQSection = dynamic(() => import('@/components/sections/faq/FAQSection'), {
-  loading: () => <div className="min-h-[300px]" />,
-});
+const FAQSection = dynamic(() => import('@/components/sections/faq/FAQSection'));
 
 export default function Home() {
   return (
