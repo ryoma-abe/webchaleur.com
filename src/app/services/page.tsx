@@ -5,16 +5,6 @@ import CTASection from "@/components/ui/CTASection";
 import FadeIn from "@/components/animations/FadeIn";
 import Link from "next/link";
 import { generatePageMetadata } from "@/lib/seo";
-import {
-  FaDesktop,
-  FaShoppingCart,
-  FaTools,
-  FaRobot,
-  FaCheck,
-  FaInstagram,
-  FaSearch,
-  FaRocket,
-} from "react-icons/fa";
 
 export const metadata = generatePageMetadata({ path: "/services" });
 
@@ -36,7 +26,7 @@ export default function ServicesPage() {
       ],
       price: "30万円〜",
       duration: "1〜2ヶ月",
-      icon: FaDesktop,
+      emoji: "🖥️",
     },
     {
       id: "ec",
@@ -54,7 +44,7 @@ export default function ServicesPage() {
       ],
       price: "50万円〜",
       duration: "2〜3ヶ月",
-      icon: FaShoppingCart,
+      emoji: "🛒",
     },
     {
       id: "ai",
@@ -72,7 +62,7 @@ export default function ServicesPage() {
       ],
       price: "10万円〜",
       duration: "1〜2週間",
-      icon: FaRobot,
+      emoji: "🤖",
     },
   ];
 
@@ -81,25 +71,25 @@ export default function ServicesPage() {
       title: "保守・運用サポート",
       description: "サイト公開後の更新作業や緊急対応をサポート",
       price: "月額3万円〜",
-      icon: FaTools,
+      emoji: "🔧",
     },
     {
       title: "SNS運用代行",
       description: "Instagram・X(Twitter)・Facebookの投稿作成と運用",
       price: "月額3万円〜",
-      icon: FaInstagram,
+      emoji: "📱",
     },
     {
       title: "LP制作",
       description: "商品やキャンペーン専用のランディングページ制作",
       price: "15万円〜",
-      icon: FaRocket,
+      emoji: "🚀",
     },
     {
       title: "SEO対策",
       description: "検索順位向上のための内部対策とコンテンツ改善",
       price: "月額2万円〜",
-      icon: FaSearch,
+      emoji: "🔍",
     },
   ];
 
@@ -137,7 +127,7 @@ export default function ServicesPage() {
                   variant="elevated"
                 >
                   <div className="text-center mb-6 text-6xl text-primary-blue">
-                    <service.icon className="mx-auto" />
+                    {service.emoji}
                   </div>
 
                   <h3 className="heading-card text-primary-blue mb-2">
@@ -157,7 +147,7 @@ export default function ServicesPage() {
                           key={idx}
                           className="flex items-start gap-2 text-sm text-gray"
                         >
-                          <FaCheck className="text-primary-blue mt-1 text-xs flex-shrink-0" />
+                          <span className="text-primary-blue mt-1 text-xs flex-shrink-0">✓</span>
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -222,8 +212,8 @@ export default function ServicesPage() {
                   animationDelay: `${index * 50}ms`,
                 }}
               >
-                <div className="text-4xl mb-4 text-primary-blue">
-                  <service.icon className="mx-auto" />
+                <div className="text-4xl mb-4 text-primary-blue text-center">
+                  {service.emoji}
                 </div>
                 <h3 className="text-lg text-primary mb-2">{service.title}</h3>
                 <p className="text-caption mb-4">{service.description}</p>

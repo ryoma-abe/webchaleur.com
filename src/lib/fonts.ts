@@ -1,5 +1,3 @@
-import localFont from 'next/font/local';
-
 // 日本語フォントのサブセット化
 // よく使う文字のみを抽出して軽量化
 export const japaneseSubset = [

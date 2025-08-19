@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FaArrowUp } from 'react-icons/fa';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,7 +33,7 @@ export default function ScrollToTop() {
       className="fixed bottom-8 right-8 z-40 bg-primary text-white rounded-full p-4 shadow-lg hover:bg-primary-dark transition-all duration-300 hover:scale-110"
       aria-label="トップへ戻る"
     >
-      <FaArrowUp className="w-5 h-5" />
+      <span className="text-xl">↑</span>
     </button>
   );
 }

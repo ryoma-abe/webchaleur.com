@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
 
 interface TOCItem {
   id: string;
@@ -60,11 +59,13 @@ export default function TableOfContents() {
         className="flex items-center justify-between w-full text-left p-4 hover:bg-gray-50 transition-colors rounded-lg"
       >
         <span className="font-semibold text-primary">目次</span>
-        <FaChevronDown
-          className={`text-gray transition-transform ${
+        <span
+          className={`text-gray transition-transform inline-block ${
             isOpen ? 'rotate-180' : ''
           }`}
-        />
+        >
+          ▼
+        </span>
       </button>
       
       {isOpen && (
