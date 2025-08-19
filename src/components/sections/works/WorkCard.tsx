@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 interface WorkCardProps {
   slug: string;
@@ -39,16 +38,48 @@ export default function WorkCard({
         {/* サムネイル */}
         <div className="relative h-64 md:h-72 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
           {thumbnail && thumbnail !== "/images/works/default.jpg" ? (
-            <Image 
-              src={thumbnail} 
-              alt={title} 
-              fill 
-              className="object-cover object-top group-hover:scale-105 transition-transform duration-500" 
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-            />
+            <>
+              {/* モバイル用の軽量画像 */}
+              <picture className="md:hidden">
+                <source
+                  type="image/avif"
+                  srcSet={`${thumbnail.replace('.webp', '-640.avif')} 640w, ${thumbnail.replace('.webp', '-750.avif')} 750w`}
+                  sizes="100vw"
+                />
+                <source
+                  type="image/webp"
+                  srcSet={`${thumbnail.replace('.webp', '-640.webp')} 640w, ${thumbnail.replace('.webp', '-750.webp')} 750w`}
+                  sizes="100vw"
+                />
+                <img
+                  src={thumbnail}
+                  alt={title}
+                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              {/* デスクトップ用の高品質画像 */}
+              <picture className="hidden md:block">
+                <source
+                  type="image/avif"
+                  srcSet={`${thumbnail.replace('.webp', '-828.avif')} 828w, ${thumbnail.replace('.webp', '-1080.avif')} 1080w, ${thumbnail.replace('.webp', '-1200.avif')} 1200w`}
+                  sizes="(max-width: 1024px) 50vw, 400px"
+                />
+                <source
+                  type="image/webp"
+                  srcSet={`${thumbnail.replace('.webp', '-828.webp')} 828w, ${thumbnail.replace('.webp', '-1080.webp')} 1080w, ${thumbnail.replace('.webp', '-1200.webp')} 1200w`}
+                  sizes="(max-width: 1024px) 50vw, 400px"
+                />
+                <img
+                  src={thumbnail}
+                  alt={title}
+                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </>
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-6xl opacity-30">🖼️</span>

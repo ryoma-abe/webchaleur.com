@@ -6,8 +6,7 @@ import HeroTitleStatic from './HeroTitleStatic';
 
 // 動的インポートでクライアントコンポーネントを遅延読み込み
 const HeroTitleDynamic = dynamic(() => import('./HeroTitleDynamic'), {
-  ssr: false,
-  loading: () => <HeroTitleStatic />
+  ssr: false
 });
 
 export default function HeroTitle() {

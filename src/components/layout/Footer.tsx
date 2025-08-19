@@ -33,14 +33,18 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Image
-                src="/logo.png"
-                alt=""
-                width={18}
-                height={21}
-                className="w-5 h-auto"
-                aria-hidden="true"
-              />
+              <picture>
+                <source srcSet="/logo.avif" type="image/avif" />
+                <source srcSet="/logo.webp" type="image/webp" />
+                <Image
+                  src="/logo.webp"
+                  alt=""
+                  width={18}
+                  height={21}
+                  className="w-5 h-auto"
+                  aria-hidden="true"
+                />
+              </picture>
               <h3 className="heading-card text-primary-blue">
                 WebChaleur
               </h3>
