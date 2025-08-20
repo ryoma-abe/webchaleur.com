@@ -16,7 +16,7 @@
   --bg-cream: #ffffff;
   --bg-light: #f8fbff;
   --text-dark: #1a1816;
-  --text-gray: #4a423c;
+  --text-gray: #4a3c3c;
   --accent-beige: #f5f5f3;
 
   --radius-small: 12px;
@@ -46,7 +46,7 @@
 
 body {
   background: var(--bg-cream);
-  color: var(--text-dark);
+  color: var(--text-gray);
   line-height: 1.8;
   letter-spacing: 0.02em;
   font-family: "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", Meiryo,
@@ -59,13 +59,13 @@ h3,
 h4,
 h5,
 h6 {
+  color: var(--text-dark);
   font-family: "Klee One", sans-serif;
 }
 
 h1 {
   @apply text-3xl md:text-4xl lg:text-5xl;
   font-weight: 700;
-  color: var(--text-dark);
   line-height: 1.4;
   letter-spacing: 0.02em;
 }
@@ -73,7 +73,6 @@ h1 {
 h2 {
   @apply text-3xl md:text-4xl;
   font-weight: 700;
-  color: var(--text-dark);
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
@@ -81,7 +80,6 @@ h2 {
 h3 {
   @apply text-xl md:text-2xl;
   font-weight: 600;
-  color: var(--text-dark);
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
@@ -89,33 +87,29 @@ h3 {
 h4 {
   @apply text-lg md:text-xl;
   font-weight: 600;
-  color: var(--text-dark);
   line-height: 1.6;
 }
 
 h5 {
   @apply text-base md:text-lg;
   font-weight: 600;
-  color: var(--text-dark);
   line-height: 1.6;
 }
 
 h6 {
   @apply text-sm md:text-base;
   font-weight: 600;
-  color: var(--text-dark);
   line-height: 1.6;
 }
 
 p {
   @apply text-base md:text-lg;
-  color: var(--text-gray);
   line-height: 1.8;
   letter-spacing: 0.02em;
 }
 
 a {
-  color: var(--main-blue);
+  color: inherit;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -123,7 +117,12 @@ a {
 a:hover {
   color: var(--light-blue);
 }
-
+/* ===============================================
+# レイアウト
+=============================================== */
+.section-padding {
+  @apply py-10;
+}
 .btn-primary {
   @apply inline-flex items-center justify-center px-6 py-3 text-white transition-all duration-200 rounded-full hover:shadow-lg;
   background: var(--main-blue);
