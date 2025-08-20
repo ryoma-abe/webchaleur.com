@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-display: swap;
+  font-family: "Klee One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../public/fonts/klee-one-v12-japanese_latin-regular.woff2")
+    format("woff2");
+}
+
 :root {
   --main-blue: #4a7ba7;
   --light-blue: #6b9bc3;
@@ -25,10 +34,12 @@
 }
 
 @keyframes blink {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
   }
-  51%, 100% {
+  51%,
+  100% {
     opacity: 0;
   }
 }
@@ -38,6 +49,17 @@ body {
   color: var(--text-dark);
   line-height: 1.8;
   letter-spacing: 0.02em;
+  font-family: "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", Meiryo,
+    sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Klee One", sans-serif;
 }
 
 h1 {
