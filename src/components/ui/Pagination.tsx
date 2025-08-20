@@ -16,7 +16,7 @@ export default function Pagination({
 }: PaginationProps) {
   const searchParams = useSearchParams();
 
-  // ページ番号の配列を生成
+
   const getPageNumbers = () => {
     const pages = [];
     const maxDisplay = 5; // 表示する最大ページ数
@@ -25,7 +25,7 @@ export default function Pagination({
     let start = Math.max(1, currentPage - halfDisplay);
     let end = Math.min(totalPages, currentPage + halfDisplay);
 
-    // 開始位置と終了位置を調整
+
     if (currentPage <= halfDisplay) {
       end = Math.min(totalPages, maxDisplay);
     }
@@ -39,7 +39,7 @@ export default function Pagination({
     return pages;
   };
 
-  // URLを生成
+
   const createPageUrl = (page: number) => {
     const params = new URLSearchParams(searchParams.toString());
     if (page === 1) {
@@ -59,7 +59,7 @@ export default function Pagination({
       aria-label="ページネーション"
     >
       <div className="flex items-center gap-3 bg-white rounded-full shadow-md px-6 py-3">
-        {/* 前へボタン */}
+        
         {currentPage > 1 && (
           <Link
             href={createPageUrl(currentPage - 1)}
@@ -70,7 +70,7 @@ export default function Pagination({
           </Link>
         )}
 
-        {/* 最初のページ */}
+        
         {getPageNumbers()[0] > 1 && (
           <>
             <Link
@@ -86,7 +86,7 @@ export default function Pagination({
           </>
         )}
 
-        {/* ページ番号 */}
+        
         {getPageNumbers().map((page) => (
           <Link
             key={page}
@@ -103,7 +103,7 @@ export default function Pagination({
           </Link>
         ))}
 
-        {/* 最後のページ */}
+        
         {getPageNumbers()[getPageNumbers().length - 1] < totalPages && (
           <>
             {getPageNumbers()[getPageNumbers().length - 1] < totalPages - 1 && (
@@ -119,7 +119,7 @@ export default function Pagination({
           </>
         )}
 
-        {/* 次へボタン */}
+        
         {currentPage < totalPages && (
           <Link
             href={createPageUrl(currentPage + 1)}

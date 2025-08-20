@@ -1,7 +1,7 @@
 export default function HeroSubtext() {
   return (
     <p
-      className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto mb-10 lg:mb-12"
+      className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto mb-10 lg:mb-12 min-h-[120px] lg:min-h-[140px]"
     >
       帯広・音更・十勝を中心に
       <br className="sm:hidden" />

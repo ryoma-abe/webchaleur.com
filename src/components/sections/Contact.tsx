@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import HandDrawnButton from '@/components/ui/HandDrawnButton';
 import Link from 'next/link';
 
 interface FormData {
@@ -76,7 +75,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding bg-white">
       <div className="max-w-4xl mx-auto px-6 md:px-8">
-        {/* セクションヘッダー */}
+        
         <div className="text-center mb-12">
           <h2 className="heading-section">お問い合わせ</h2>
           <span className="text-caption inline-block">Contact</span>
@@ -89,10 +88,10 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Form */}
+        
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Name */}
+            
             <div>
               <label htmlFor="name" className="form-label">
                 お名前
@@ -110,7 +109,7 @@ export default function Contact() {
               />
             </div>
 
-            {/* Email */}
+            
             <div>
               <label htmlFor="email" className="form-label">
                 メールアドレス
@@ -128,7 +127,7 @@ export default function Contact() {
               />
             </div>
 
-            {/* Company */}
+            
             <div>
               <label htmlFor="company" className="form-label">
                 会社名・団体名
@@ -144,7 +143,7 @@ export default function Contact() {
               />
             </div>
 
-            {/* Phone */}
+            
             <div>
               <label htmlFor="phone" className="form-label">
                 電話番号
@@ -160,7 +159,7 @@ export default function Contact() {
               />
             </div>
 
-            {/* Service */}
+            
             <div>
               <label htmlFor="service" className="form-label">
                 ご希望のサービス
@@ -183,7 +182,7 @@ export default function Contact() {
               </select>
             </div>
 
-            {/* Budget */}
+            
             <div>
               <label htmlFor="budget" className="form-label">
                 ご予算
@@ -206,7 +205,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Message */}
+          
           <div>
             <label htmlFor="message" className="form-label">
               ご相談内容
@@ -224,7 +223,7 @@ export default function Contact() {
             />
           </div>
 
-          {/* Privacy Policy Agreement */}
+          
           <div className="flex items-start gap-3">
             <input
               type="checkbox"
@@ -240,20 +239,18 @@ export default function Contact() {
             </label>
           </div>
 
-          {/* Submit Button */}
+          
           <div className="text-center">
-            <HandDrawnButton
+            <button
               type="submit"
-              variant="primary"
-              size="large"
               disabled={isSubmitting}
-              className="min-w-[200px]"
+              className="min-w-[200px] px-8 py-4 bg-main-blue text-white rounded-full hover:bg-main-blue/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? '送信中...' : '送信する'}
-            </HandDrawnButton>
+            </button>
           </div>
 
-          {/* Status Messages */}
+          
           {submitStatus === 'success' && (
             <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-2xl text-center">
               <p className="text-green-700">

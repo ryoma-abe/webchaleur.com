@@ -30,21 +30,16 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto pt-12 pr-7 pb-[52px] pl-8">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <picture>
-                <source srcSet="/logo.avif" type="image/avif" />
-                <source srcSet="/logo.webp" type="image/webp" />
-                <Image
-                  src="/logo.webp"
-                  alt=""
-                  width={18}
-                  height={21}
-                  className="w-5 h-auto"
-                  aria-hidden="true"
-                />
-              </picture>
+              <Image
+                src="/logo.png"
+                alt=""
+                width={18}
+                height={21}
+                className="w-5 h-auto"
+                aria-hidden="true"
+              />
               <h3 className="heading-card text-primary-blue">
                 WebChaleur
               </h3>
@@ -57,7 +52,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="heading-card mb-4 text-primary">
               サイトマップ
@@ -76,7 +70,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal Links */}
           <div>
             <h4 className="heading-card mb-4 text-primary">
               法的事項
@@ -95,7 +88,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Social */}
           <div>
             <h4 className="heading-card mb-4 text-primary">
               お問い合わせ
@@ -127,12 +119,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
         <div 
           className="border-t border-dashed border-gray opacity-30 my-8"
         />
 
-        {/* Copyright */}
         <div className="text-center">
           <p className="text-caption text-primary">
             © {currentYear} WebChaleur. つくる人も、つかう人も、みんなしあわせに。

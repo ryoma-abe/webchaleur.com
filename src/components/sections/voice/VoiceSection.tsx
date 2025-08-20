@@ -47,17 +47,17 @@ export default function VoiceSection() {
   return (
     <section id="voice" className="section-padding bg-white" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-8">
-        {/* セクションヘッダー */}
+        
         <SectionHeader
           isVisible={isVisible}
           title="お客様の声"
           subTitle="Voice"
         />
 
-        {/* ココナラバナー */}
+        
         <CoconalaBanner isVisible={isVisible} />
 
-        {/* レビュープレビュー */}
+        
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {reviews.map((review, index) => (
             <ReviewCard
@@ -69,7 +69,7 @@ export default function VoiceSection() {
           ))}
         </div>
 
-        {/* 信頼性アピール */}
+        
         <TrustIndicators isVisible={isVisible} />
       </div>
     </section>

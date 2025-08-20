@@ -1,5 +1,4 @@
 import { getAllContent } from "@/lib/mdx";
-import WobblyHeading from "@/components/ui/WobblyHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import ListItemCard from "@/components/ui/ListItemCard";
 import Pagination from "@/components/ui/Pagination";
@@ -17,12 +16,12 @@ export default async function BlogPage({
   const currentPage = Number(params.page) || 1;
   const allBlogs = await getAllContent("blog");
   
-  // 日付でソート（新しい順）
+
   const sortedBlogs = allBlogs.sort(
     (a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
   );
   
-  // ページネーション処理
+
   const { paginatedItems: blogs, totalPages } = paginate(
     sortedBlogs,
     currentPage,
@@ -37,12 +36,14 @@ export default async function BlogPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      {/* ヒーローセクション */}
+      
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
-          <WobblyHeading level={1} underline english="Blog">
-            技術ブログ
-          </WobblyHeading>
+          <div className="text-center">
+            <div className="text-sm text-gray mb-2 tracking-wider uppercase">Blog</div>
+            <h1 className="mb-4">技術ブログ</h1>
+            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
+          </div>
           <p className="text-center text-gray mt-6 max-w-2xl mx-auto">
             Web制作の技術情報や、十勝でのビジネスに役立つ情報を発信しています。
             地元企業様のデジタル化を応援します！
@@ -80,7 +81,7 @@ export default async function BlogPage({
             )}
           </div>
           
-          {/* ページネーション */}
+          
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

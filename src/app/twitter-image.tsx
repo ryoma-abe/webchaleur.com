@@ -25,7 +25,7 @@ export default async function Image() {
           position: 'relative',
         }}
       >
-        {/* 背景の波形パターン */}
+        
         <svg
           width="1200"
           height="600"
@@ -42,7 +42,7 @@ export default async function Image() {
           />
         </svg>
         
-        {/* メインコンテンツ */}
+        
         <div
           style={{
             display: 'flex',
@@ -53,7 +53,7 @@ export default async function Image() {
             color: 'white',
           }}
         >
-          {/* ブランド名 */}
+          
           <div
             style={{
               fontSize: 90,
@@ -65,7 +65,7 @@ export default async function Image() {
             WebChaleur
           </div>
 
-          {/* 区切り線 */}
+          
           <div
             style={{
               width: 100,
@@ -76,7 +76,7 @@ export default async function Image() {
             }}
           />
 
-          {/* タグライン */}
+          
           <div
             style={{
               fontSize: 28,
@@ -88,7 +88,7 @@ export default async function Image() {
             十勝・帯広のWeb制作パートナー
           </div>
 
-          {/* サブテキスト */}
+          
           <div
             style={{
               fontSize: 22,
@@ -101,7 +101,7 @@ export default async function Image() {
           </div>
         </div>
 
-        {/* URL */}
+        
         <div
           style={{
             position: 'absolute',

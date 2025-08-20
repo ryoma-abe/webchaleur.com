@@ -25,7 +25,7 @@ export default async function Image() {
           position: 'relative',
         }}
       >
-        {/* 背景装飾 */}
+        
         <div
           style={{
             position: 'absolute',
@@ -51,7 +51,7 @@ export default async function Image() {
           }}
         />
         
-        {/* メインコンテンツ */}
+        
         <div
           style={{
             display: 'flex',
@@ -61,7 +61,7 @@ export default async function Image() {
             gap: 20,
           }}
         >
-          {/* ロゴとブランド名 */}
+          
           <div
             style={{
               display: 'flex',
@@ -82,7 +82,7 @@ export default async function Image() {
             </div>
           </div>
 
-          {/* タグライン */}
+          
           <div
             style={{
               fontSize: 32,
@@ -94,7 +94,7 @@ export default async function Image() {
             十勝・帯広のWeb制作パートナー
           </div>
 
-          {/* サブテキスト */}
+          
           <div
             style={{
               fontSize: 24,
@@ -108,7 +108,7 @@ export default async function Image() {
             地元企業に寄り添い、温かみのあるWebサイトを
           </div>
 
-          {/* フッター */}
+          
           <div
             style={{
               position: 'absolute',

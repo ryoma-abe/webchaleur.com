@@ -14,13 +14,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Web3Formsへ送信するデータ
+
     const web3FormsData = {
       access_key: WEB3FORMS_API_KEY,
       subject: `【WebChaleur】新しいお問い合わせ: ${name}様より`,
       from_name: name,
       email: email,
-      // メッセージ本文
+
       message: `
 新しいお問い合わせがありました。
 
@@ -50,7 +50,7 @@ ${message}
       `,
     };
 
-    // Web3Forms APIにPOSTリクエスト
+
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {

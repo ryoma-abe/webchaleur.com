@@ -6,8 +6,8 @@ interface Strength {
   number: string;
   title: string;
   description: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon: any; // 動的インポートのため一時的にany型を使用
+
+  icon: React.ComponentType;
 }
 
 interface StrengthsGridProps {

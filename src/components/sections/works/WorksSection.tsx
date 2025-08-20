@@ -36,17 +36,17 @@ export default function WorksSection({ items }: WorksSectionProps) {
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        {/* セクションヘッダー */}
+        
         <SectionHeader
           isVisible={isVisible}
           title="制作実績"
           subTitle="Works"
         />
 
-        {/* 実績グリッド */}
+        
         <WorksGrid items={items} isVisible={isVisible} />
 
-        {/* もっと見るボタン */}
+        
         {items.length > 0 && (
           <div
             className={`text-center mt-12 transition-all duration-800 delay-600 ${

@@ -32,14 +32,14 @@ export default function FAQSection() {
   return (
     <section id="faq" className="section-padding bg-white" ref={ref}>
       <div className="max-w-4xl mx-auto px-6 md:px-8">
-        {/* セクションヘッダー */}
+        
         <SectionHeader
           isVisible={isVisible}
           title="よくある質問"
           subTitle="Q&A"
         />
 
-        {/* FAQ リスト */}
+        
         <div className="space-y-4">
           {faqItems.map((item, index) => (
             <FAQItem

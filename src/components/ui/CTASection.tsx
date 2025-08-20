@@ -1,4 +1,4 @@
-import HandDrawnButton from "@/components/ui/HandDrawnButton";
+import Link from "next/link";
 
 export default function CTASection() {
   return (
@@ -9,9 +9,12 @@ export default function CTASection() {
           <br />
           お気軽にご相談ください。
         </p>
-        <HandDrawnButton href="/contact" variant="primary" size="large">
+        <Link 
+          href="/contact" 
+          className="inline-flex items-center px-8 py-4 bg-main-blue text-white rounded-full hover:bg-main-blue/90 transition-colors"
+        >
           お問い合わせはこちら →
-        </HandDrawnButton>
+        </Link>
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ interface StrengthsAppealProps {
 export default function StrengthsAppeal({ isVisible }: StrengthsAppealProps) {
   return (
     <>
-      {/* 特別なアピールセクション */}
+      
       <div
         className={`bg-gradient-to-r from-lighter-blue to-light rounded-3xl border-2 border-dashed border-primary-light p-8 mt-12 text-center transition-all duration-800 delay-800 ${
           isVisible ? "opacity-100" : "opacity-0"
@@ -48,7 +48,7 @@ export default function StrengthsAppeal({ isVisible }: StrengthsAppealProps) {
         </div>
       </div>
 
-      {/* 補足メッセージ */}
+      
       <div
         className={`text-center mt-12 transition-all duration-800 delay-1000 ${
           isVisible ? "opacity-100" : "opacity-0"

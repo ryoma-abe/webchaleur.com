@@ -1,4 +1,3 @@
-import SketchyCard from "@/components/ui/SketchyCard";
 
 interface AboutRepMessageProps {
   isVisible: boolean;
@@ -12,7 +11,7 @@ export default function AboutRepMessage({ isVisible }: AboutRepMessageProps) {
       }`}
     >
       <h3 className="text-xl mb-6 text-center">代表メッセージ</h3>
-      <SketchyCard>
+      <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
         <div className="space-y-4">
           <p className="text-gray leading-relaxed text-center">
             これまで制作会社での勤務や150件以上の実績を積み重ね、確かな技術力を培ってきました。
@@ -26,7 +25,7 @@ export default function AboutRepMessage({ isVisible }: AboutRepMessageProps) {
             地域に根ざしたパートナーとして、末永くお付き合いいただければ幸いです。
           </p>
         </div>
-      </SketchyCard>
+      </div>
     </div>
   );
 }

@@ -21,7 +21,7 @@ export default function BlogCard({
   isVisible,
   delay,
 }: BlogCardProps) {
-  // 日付フォーマット
+
   const formatDate = (dateString: string) => {
     const dateObj = new Date(dateString);
     const year = dateObj.getFullYear();
@@ -35,7 +35,7 @@ export default function BlogCard({
     };
   };
 
-  // 読み時間を計算（簡易的に文字数から推定）
+
   const getReadTime = (desc: string) => {
     const wordsPerMinute = 300; // 日本語の平均読書速度
     const minutes = Math.ceil(desc.length / wordsPerMinute);
@@ -54,7 +54,7 @@ export default function BlogCard({
       }}
     >
       <Link href={link} className="block p-6">
-        {/* 日付とカテゴリー */}
+        
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="text-center">
@@ -73,17 +73,17 @@ export default function BlogCard({
           </span>
         </div>
 
-        {/* タイトル */}
+        
         <h3 className="heading-card mb-3 line-clamp-2">
           {title}
         </h3>
 
-        {/* 説明文 */}
+        
         <p className="text-body mb-4 line-clamp-3">
           {description}
         </p>
 
-        {/* メタ情報 */}
+        
         <div className="flex items-center justify-between">
           <span className="text-xs text-gray">
             {getReadTime(description)}

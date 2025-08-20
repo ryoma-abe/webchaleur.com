@@ -11,7 +11,7 @@ export default function CoconalaBanner({ isVisible }: CoconalaBannerProps) {
     >
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
         <div>
-          {/* 星評価 */}
+          
           <div className="text-3xl text-yellow-400 mb-2">★★★★★</div>
           <div className="text-body font-medium">100件以上の制作実績</div>
         </div>

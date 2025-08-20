@@ -1,6 +1,3 @@
-import WobblyHeading from "@/components/ui/WobblyHeading";
-import SketchyCard from "@/components/ui/SketchyCard";
-import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import CTASection from "@/components/ui/CTASection";
 import FadeIn from "@/components/animations/FadeIn";
 import Link from "next/link";
@@ -95,12 +92,13 @@ export default function ServicesPage() {
 
   return (
     <>
-      {/* Hero Section */}
       <section className="relative py-20 px-6 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <WobblyHeading level={1} underline english="Our Services">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 relative">
+            <span className="block text-sm text-gray uppercase tracking-wide mb-2">Our Services</span>
             サービス
-          </WobblyHeading>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary-blue rounded-full mt-2"></div>
+          </h1>
           <p className="text-xl text-gray mt-6 max-w-3xl mx-auto">
             十勝からWebの力で、あなたのビジネスをもっと楽しく。
             <br />
@@ -109,7 +107,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Main Services */}
       <section className="py-16 px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-8">
@@ -122,10 +119,7 @@ export default function ServicesPage() {
                   animationFillMode: "forwards",
                 }}
               >
-                <SketchyCard
-                  className="h-full flex flex-col"
-                  variant="elevated"
-                >
+                <div className="h-full flex flex-col bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-accent-beige">
                   <div className="text-center mb-6 text-6xl text-primary-blue">
                     {service.emoji}
                   </div>
@@ -174,30 +168,27 @@ export default function ServicesPage() {
                   </div>
 
                   <div className="mt-6">
-                    <Link href={`/contact?service=${service.id}`}>
-                      <HandDrawnButton
-                        variant="outline"
-                        size="medium"
-                        className="w-full"
-                      >
-                        詳しく相談する
-                      </HandDrawnButton>
+                    <Link 
+                      href={`/contact?service=${service.id}`}
+                      className="w-full inline-block text-center px-6 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-medium"
+                    >
+                      詳しく相談する
                     </Link>
                   </div>
-                </SketchyCard>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Additional Services */}
       <section className="py-16 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <WobblyHeading level={2} underline>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 relative">
               その他のサービス
-            </WobblyHeading>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-blue rounded-full mt-2"></div>
+            </h2>
             <p className="text-body mt-4">
               Web制作以外にも、様々なサービスでお客様をサポートします
             </p>
@@ -226,13 +217,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service Flow */}
       <section className="py-16 px-6 md:px-10 bg-light">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <WobblyHeading level={2} underline>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 relative">
               制作の流れ
-            </WobblyHeading>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-blue rounded-full mt-2"></div>
+            </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -299,7 +290,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <div className="px-6 md:px-8 py-16">
         <div className="max-w-7xl mx-auto">
           <FadeIn>

@@ -13,7 +13,7 @@ interface NewsItem {
 async function getLatestNews(): Promise<NewsItem[]> {
   const newsDirectory = path.join(process.cwd(), 'src/content/news');
   
-  // ディレクトリが存在しない場合は空配列を返す
+
   if (!fs.existsSync(newsDirectory)) {
     return [];
   }
@@ -36,7 +36,7 @@ async function getLatestNews(): Promise<NewsItem[]> {
       };
     });
   
-  // 日付でソートして最新3件を取得
+
   return allNews
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);

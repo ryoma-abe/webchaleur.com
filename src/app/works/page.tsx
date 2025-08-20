@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import WobblyHeading from "@/components/ui/WobblyHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import Pagination from "@/components/ui/Pagination";
 import { generatePageMetadata } from "@/lib/seo";
@@ -18,8 +17,8 @@ export default async function WorksPage({
   const currentPage = Number(params.page) || 1;
   const allWorks = worksData.works;
   
-  // JSONの順番を維持（ソートしない）
-  // ページネーション処理
+
+
   const { paginatedItems: works, totalPages } = paginate(
     allWorks,
     currentPage,
@@ -28,12 +27,14 @@ export default async function WorksPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      {/* ヒーローセクション */}
+      
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
-          <WobblyHeading level={1} underline english="Works">
-            制作実績
-          </WobblyHeading>
+          <div className="text-center">
+            <div className="text-sm text-gray mb-2 tracking-wider uppercase">Works</div>
+            <h1 className="mb-4">制作実績</h1>
+            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
+          </div>
         </div>
       </section>
 
@@ -46,7 +47,7 @@ export default async function WorksPage({
                 className="bg-white rounded-[20px] overflow-hidden transition-all duration-500 group shadow-[0_2px_10px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:translate-y-[-4px]"
               >
                 <Link href={`/works/${work.id}`} className="block">
-                  {/* サムネイル */}
+                  
                   <div className="relative h-64 md:h-72 bg-gradient-to-br from-lighter-blue to-primary-light overflow-hidden">
                     {work.thumbnail &&
                     work.thumbnail !==
@@ -63,13 +64,13 @@ export default async function WorksPage({
                       </div>
                     )}
 
-                    {/* カテゴリーバッジ */}
+                    
                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs text-primary-blue rounded-[8px_10px_9px_11px]">
                       {work.category || "Web制作"}
                     </div>
                   </div>
 
-                  {/* コンテンツ */}
+                  
                   <div className="p-6">
                     <h3 className="heading-card mb-2">
                       {work.title}
@@ -79,7 +80,7 @@ export default async function WorksPage({
                       {work.description || ""}
                     </p>
 
-                    {/* タグ */}
+                    
                     {work.tags &&
                       work.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-4">
@@ -96,7 +97,7 @@ export default async function WorksPage({
                         </div>
                       )}
 
-                    {/* 詳細を見るリンク */}
+                    
                     <span className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity">
                       詳しく見る
                       <span>→</span>
@@ -113,7 +114,7 @@ export default async function WorksPage({
             </div>
           )}
           
-          {/* ページネーション */}
+          
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
