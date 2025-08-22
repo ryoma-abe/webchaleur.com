@@ -108,10 +108,10 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
 
           {/* CTA ボタン */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 lg:mb-16">
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn btn-primary">
               まずは気軽に相談
             </Link>
-            <Link href="/works" className="btn-secondary">
+            <Link href="/works" className="btn btn-primary">
               制作事例を見る
             </Link>
           </div>
