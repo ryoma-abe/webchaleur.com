@@ -2,6 +2,7 @@ import { getAllContent } from '@/lib/mdx';
 import FadeIn from '@/components/animations/FadeIn';
 import ListItemCard from '@/components/ui/ListItemCard';
 import Pagination from '@/components/ui/Pagination';
+import PageHeader from '@/components/ui/PageHeader';
 import { generatePageMetadata } from '@/lib/seo';
 import { paginate, ITEMS_PER_PAGE } from '@/lib/pagination';
 
@@ -30,19 +31,11 @@ export default async function NewsPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="text-sm text-gray mb-2 tracking-wider uppercase">Information</div>
-            <h1 className="mb-4">お知らせ</h1>
-            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
-          </div>
-          <p className="text-center text-gray mt-6 max-w-2xl mx-auto">
-            WebChaleurからのお知らせ、キャンペーン情報などをご案内しています。
-          </p>
-        </div>
-      </section>
+      <PageHeader 
+        englishTitle="Information" 
+        japaneseTitle="お知らせ" 
+        description="WebChaleurからのお知らせ、キャンペーン情報などをご案内しています。"
+      />
 
       <div className="container mx-auto px-4 py-12">
 
