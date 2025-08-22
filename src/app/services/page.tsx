@@ -19,16 +19,9 @@ export default function ServicesPage() {
         <section className="py-16 px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <div
-                  key={service.id}
-                  className="animate-fadeInUp"
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                    animationFillMode: "forwards",
-                  }}
-                >
-                  <div className="h-full flex flex-col bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-accent-beige">
+              {services.map((service) => (
+                <div key={service.id}>
+                  <div className="h-full flex flex-col bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div className="text-center mb-6 text-6xl text-primary-blue">
                       {service.emoji}
                     </div>
