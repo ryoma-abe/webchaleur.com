@@ -1,4 +1,5 @@
 import SubHeading from '@/components/ui/SubHeading';
+import PageHeader from '@/components/ui/PageHeader';
 import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({ path: '/terms' });
@@ -6,16 +7,7 @@ export const metadata = generatePageMetadata({ path: '/terms' });
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      {/* Hero Section */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="text-sm text-gray mb-2 tracking-wider uppercase">Terms of Service</div>
-            <h1 className="mb-4">利用規約</h1>
-            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
-          </div>
-        </div>
-      </section>
+      <PageHeader englishTitle="Terms of Service" japaneseTitle="利用規約" />
 
       {/* Content */}
       <article className="container mx-auto px-4 py-12">

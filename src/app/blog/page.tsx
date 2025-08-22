@@ -2,6 +2,7 @@ import { getAllContent } from "@/lib/mdx";
 import FadeIn from "@/components/animations/FadeIn";
 import ListItemCard from "@/components/ui/ListItemCard";
 import Pagination from "@/components/ui/Pagination";
+import PageHeader from "@/components/ui/PageHeader";
 import { generatePageMetadata } from "@/lib/seo";
 import { paginate, ITEMS_PER_PAGE } from "@/lib/pagination";
 
@@ -36,20 +37,11 @@ export default async function BlogPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="text-sm text-gray mb-2 tracking-wider uppercase">Blog</div>
-            <h1 className="mb-4">技術ブログ</h1>
-            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
-          </div>
-          <p className="text-center text-gray mt-6 max-w-2xl mx-auto">
-            Web制作の技術情報や、十勝でのビジネスに役立つ情報を発信しています。
-            地元企業様のデジタル化を応援します！
-          </p>
-        </div>
-      </section>
+      <PageHeader 
+        englishTitle="Blog" 
+        japaneseTitle="技術ブログ" 
+        description="Web制作の技術情報や、十勝でのビジネスに役立つ情報を発信しています。地元企業様のデジタル化を応援します！"
+      />
 
       <div className="container mx-auto px-4 py-12">
         <FadeIn>

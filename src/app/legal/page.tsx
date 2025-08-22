@@ -1,4 +1,5 @@
 import SubHeading from '@/components/ui/SubHeading';
+import PageHeader from '@/components/ui/PageHeader';
 import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata = generatePageMetadata({ path: "/legal" });
@@ -6,16 +7,7 @@ export const metadata = generatePageMetadata({ path: "/legal" });
 export default function LegalPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      {/* Hero Section */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="text-sm text-gray mb-2 tracking-wider uppercase">Legal Notice</div>
-            <h1 className="mb-4">特定商取引法に基づく表記</h1>
-            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
-          </div>
-        </div>
-      </section>
+      <PageHeader englishTitle="Legal Notice" japaneseTitle="特定商取引法に基づく表記" />
 
       {/* Content */}
       <article className="container mx-auto px-4 py-12">

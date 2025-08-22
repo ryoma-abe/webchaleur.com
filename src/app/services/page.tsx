@@ -1,5 +1,6 @@
 import CTASection from "@/components/ui/CTASection";
 import FadeIn from "@/components/animations/FadeIn";
+import PageHeader from "@/components/ui/PageHeader";
 import Link from "next/link";
 import { generatePageMetadata } from "@/lib/seo";
 import { additionalServices, services, serviceStep } from "@/data/service";
@@ -9,22 +10,11 @@ export const metadata = generatePageMetadata({ path: "/services" });
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative py-20 px-6 md:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 relative">
-            <span className="block text-sm text-gray uppercase tracking-wide mb-2">
-              Our Services
-            </span>
-            サービス
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary-blue rounded-full mt-2"></div>
-          </h1>
-          <p className="text-xl text-gray mt-6 max-w-3xl mx-auto">
-            十勝からWebの力で、あなたのビジネスをもっと楽しく。
-            <br />
-            地元の方も遠方の方も、まずは気軽にご相談ください。
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        englishTitle="Our Services"
+        japaneseTitle="サービス"
+        description="十勝からWebの力で、あなたのビジネスをもっと楽しく。地元の方も遠方の方も、まずは気軽にご相談ください。"
+      />
       <FadeIn>
         <section className="py-16 px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
@@ -93,7 +83,7 @@ export default function ServicesPage() {
                     <div className="mt-6">
                       <Link
                         href={`/contact?service=${service.id}`}
-                        className="w-full inline-block text-center px-6 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-medium"
+                        className="btn btn-primary w-full text-center"
                       >
                         詳しく相談する
                       </Link>

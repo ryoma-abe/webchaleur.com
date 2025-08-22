@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
 import Pagination from "@/components/ui/Pagination";
+import PageHeader from "@/components/ui/PageHeader";
 import { generatePageMetadata } from "@/lib/seo";
 import { paginate, ITEMS_PER_PAGE } from "@/lib/pagination";
 import worksData from "@/data/works.json";
@@ -27,16 +28,7 @@ export default async function WorksPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="text-sm text-gray mb-2 tracking-wider uppercase">Works</div>
-            <h1 className="mb-4">制作実績</h1>
-            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
-          </div>
-        </div>
-      </section>
+      <PageHeader englishTitle="Works" japaneseTitle="制作実績" />
 
       <div className="container mx-auto px-4 py-12">
         <FadeIn>
