@@ -30,6 +30,7 @@ export function XLink({ href = "https://x.com/ryoo_black" }) {
       target="_blank"
       rel="noopener noreferrer"
       className="hover:opacity-70 transition-opacity"
+      aria-label="X（旧Twitter）でフォロー"
     >
       <XIcon />
     </Link>
@@ -45,6 +46,7 @@ export function InstagramLink({
       target="_blank"
       rel="noopener noreferrer"
       className="hover:opacity-70 transition-opacity"
+      aria-label="Instagramでフォロー"
     >
       <InstagramIcon />
     </Link>
