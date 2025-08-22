@@ -1,7 +1,7 @@
-import HeroSection from './hero/HeroSection';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import HeroSection from "./HeroSection";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 interface NewsItem {
   title: string;
@@ -11,31 +11,29 @@ interface NewsItem {
 }
 
 async function getLatestNews(): Promise<NewsItem[]> {
-  const newsDirectory = path.join(process.cwd(), 'src/content/news');
-  
+  const newsDirectory = path.join(process.cwd(), "src/content/news");
 
   if (!fs.existsSync(newsDirectory)) {
     return [];
   }
-  
+
   const fileNames = fs.readdirSync(newsDirectory);
-  
+
   const allNews = fileNames
-    .filter(fileName => fileName.endsWith('.mdx'))
-    .map(fileName => {
-      const slug = fileName.replace(/\.mdx$/, '');
+    .filter((fileName) => fileName.endsWith(".mdx"))
+    .map((fileName) => {
+      const slug = fileName.replace(/\.mdx$/, "");
       const fullPath = path.join(newsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data } = matter(fileContents);
-      
+
       return {
         slug,
-        title: data.title || '',
-        date: data.date || '',
-        category: data.category || 'お知らせ',
+        title: data.title || "",
+        date: data.date || "",
+        category: data.category || "お知らせ",
       };
     });
-  
 
   return allNews
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -44,6 +42,6 @@ async function getLatestNews(): Promise<NewsItem[]> {
 
 export default async function HeroServer() {
   const latestNews = await getLatestNews();
-  
+
   return <HeroSection latestNews={latestNews} />;
 }
