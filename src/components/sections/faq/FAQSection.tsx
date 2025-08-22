@@ -30,16 +30,14 @@ export default function FAQSection() {
   const faqItems: FAQItemData[] = faqData.items;
 
   return (
-    <section id="faq" className="section-padding bg-white" ref={ref}>
+    <section id="faq" className="section-padding bg-white mb-10" ref={ref}>
       <div className="max-w-4xl mx-auto px-6 md:px-8">
-        
         <SectionHeader
           isVisible={isVisible}
           title="よくある質問"
           subTitle="Q&A"
         />
 
-        
         <div className="space-y-4">
           {faqItems.map((item, index) => (
             <FAQItem

@@ -30,20 +30,17 @@ export default function BlogSection({ items }: BlogSectionProps) {
   return (
     <section id="blog" className="section-padding bg-light" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-8">
-        
         <SectionHeader isVisible={isVisible} title="ブログ" subTitle="Blog" />
 
-        
         <BlogGrid items={items} isVisible={isVisible} />
 
-        
         {items.length > 0 && (
           <div
             className={`text-center mt-12 transition-all duration-800 delay-600 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Link href="/blog" className="btn-primary">
+            <Link href="/blog" className="btn btn-primary">
               すべての記事を見る
             </Link>
           </div>
