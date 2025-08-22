@@ -30,30 +30,23 @@ export default function WorksSection({ items }: WorksSectionProps) {
   }, [inView]);
 
   return (
-    <section
-      id="works"
-      className="section-padding bg-light"
-      ref={ref}
-    >
+    <section id="works" className="section-padding bg-light" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        
         <SectionHeader
           isVisible={isVisible}
           title="制作実績"
           subTitle="Works"
         />
 
-        
         <WorksGrid items={items} isVisible={isVisible} />
 
-        
         {items.length > 0 && (
           <div
             className={`text-center mt-12 transition-all duration-800 delay-600 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Link href="/works" className="btn-primary">
+            <Link href="/works" className="btn btn-primary">
               すべての制作実績を見る
             </Link>
           </div>

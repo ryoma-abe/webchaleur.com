@@ -159,6 +159,9 @@
     color: var(--main-blue);
   }
   .section-padding {
-    padding-block: 2.5rem;
+    padding-block: 5rem;
+  }
+  .bg-light {
+    background-color: var(--bg-light);
   }
 }
