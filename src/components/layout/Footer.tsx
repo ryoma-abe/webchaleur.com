@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaEnvelope, FaMapMarkerAlt } from "@/components/icons/FooterIcons";
-import { InstagramIcon, XIcon } from "../icons/SocialLinks";
+import { InstagramLink, XLink } from "../icons/SocialLinks";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -36,7 +36,7 @@ export default function Footer() {
               />
               <h3 className="heading-card text-primary-blue">WebChaleur</h3>
             </div>
-            <p className="text-body text-primary">
+            <p className="text-sm">
               十勝・帯広・音更を拠点に
               <br />
               全国のお客様へ
@@ -95,9 +95,9 @@ export default function Footer() {
                 北海道十勝エリア（全国対応）
               </span>
             </p>
-            <div className="flex gap-4">
-              <XIcon />
-              <InstagramIcon />
+            <div className="flex items-center gap-4 ">
+              <XLink />
+              <InstagramLink />
             </div>
           </div>
         </div>
@@ -105,10 +105,10 @@ export default function Footer() {
         <div className="border-t border-dashed border-gray opacity-30 my-8" />
 
         <div className="text-center">
-          <p className="text-caption text-primary">
+          <small className="text-caption text-sm">
             © {currentYear} WebChaleur.
             つくる人も、つかう人も、みんなしあわせに。
-          </p>
+          </small>
         </div>
       </div>
     </footer>
