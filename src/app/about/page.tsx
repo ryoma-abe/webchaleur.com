@@ -9,11 +9,12 @@ export const metadata = generatePageMetadata({ path: "/about" });
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <div className="text-sm text-gray mb-2 tracking-wider uppercase">About Us</div>
+            <div className="text-sm text-gray mb-2 tracking-wider uppercase">
+              About Us
+            </div>
             <h1 className="mb-4">WebChaleurについて</h1>
             <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
           </div>
@@ -21,7 +22,6 @@ export default function AboutPage() {
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        
         <FadeIn>
           <section className="mb-20">
             <div className="max-w-4xl mx-auto">
@@ -54,7 +54,6 @@ export default function AboutPage() {
           </section>
         </FadeIn>
 
-        
         <FadeIn delay={0.2}>
           <section className="mb-20">
             <div className="max-w-4xl mx-auto">
@@ -93,7 +92,6 @@ export default function AboutPage() {
           </section>
         </FadeIn>
 
-        
         <FadeIn delay={0.6}>
           <div className="max-w-4xl mx-auto mb-20">
             <SectionTitle>会社概要</SectionTitle>
@@ -111,7 +109,6 @@ export default function AboutPage() {
           </div>
         </FadeIn>
 
-        
         <FadeIn delay={0.8}>
           <CTASection />
         </FadeIn>
