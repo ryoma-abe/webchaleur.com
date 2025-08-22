@@ -10,14 +10,12 @@ export default function AboutMessage({ isVisible }: AboutMessageProps) {
       }`}
     >
       <div className="text-center space-y-8">
-        
-        <h3 className="text-3xl md:text-4xl lg:text-5xl text-primary leading-tight">
+        <h3>
           Webサイト制作・ECサイト構築
           <br />
           システム開発・保守運用
         </h3>
-        
-        
+
         <div className="max-w-3xl mx-auto">
           <p className="text-base text-gray leading-relaxed">
             WebChaleurは、十勝・帯広を拠点に全国のお客様をサポートしています。

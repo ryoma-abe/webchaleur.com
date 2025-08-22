@@ -75,10 +75,10 @@ export default function Header() {
                 aria-hidden="true"
                 sizes="22px"
                 style={{
-                  width: '22px',
-                  height: '25px',
-                  maxWidth: '100%',
-                  objectFit: 'contain'
+                  width: "22px",
+                  height: "25px",
+                  maxWidth: "100%",
+                  objectFit: "contain",
                 }}
               />
               <span className="text-2xl md:text-3xl">
@@ -101,7 +101,7 @@ export default function Header() {
                   </li>
                 ))}
               <li>
-                <Link href="/contact" className="btn-primary btn-small">
+                <Link href="/contact" className="btn btn-primary">
                   お問い合わせ
                 </Link>
               </li>
@@ -147,10 +147,10 @@ export default function Header() {
               aria-hidden="true"
               sizes="18px"
               style={{
-                width: '18px',
-                height: '21px',
-                maxWidth: '100%',
-                objectFit: 'contain'
+                width: "18px",
+                height: "21px",
+                maxWidth: "100%",
+                objectFit: "contain",
               }}
             />
             <span className="text-xl">
@@ -172,24 +172,24 @@ export default function Header() {
             {menuItems
               .filter((item) => item.label !== "Contact")
               .map((item) => (
-              <li key={item.href} className="border-b border-gray-100">
-                <Link
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors"
-                >
-                  <span className="text-base font-medium text-[#2c2825]">
-                    {item.displayName}
-                  </span>
-                </Link>
-              </li>
-            ))}
+                <li key={item.href} className="border-b border-gray-100">
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="text-base font-medium text-[#2c2825]">
+                      {item.displayName}
+                    </span>
+                  </Link>
+                </li>
+              ))}
 
             <li className="p-4">
               <Link
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="btn-primary w-full"
+                className="btn-primary"
               >
                 お問い合わせ
               </Link>
