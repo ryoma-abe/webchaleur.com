@@ -16,10 +16,10 @@ interface HeroSectionProps {
 
 export default function HeroSection({ latestNews }: HeroSectionProps) {
   const messages = [
-    "十勝の企業様のWebサイトのことお手伝いします。",
-    "100件以上の制作実績で培った技術力でサポートします。",
-    "Next.js・Astroなど最新技術もしっかり対応。",
-    "制作後の運用もずっと一緒にフォローします。",
+    "十勝の企業様の\nWebサイトのこと\nお手伝いします。",
+    "100件以上の\n制作実績で培った\n技術力でサポートします。",
+    "Next.js・Astroなど\n最新技術も\nしっかり対応。",
+    "制作後の運用も\nずっと一緒に\nフォローします。",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,7 +83,7 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center">
           {/* タイトル - シンプルなタイピングアニメーション */}
-          <h1 className="text-3xl lg:text-6xl  leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px]">
+          <h1 className="text-3xl lg:text-6xl  leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px] whitespace-pre-line">
             {displayText}
           </h1>
 
