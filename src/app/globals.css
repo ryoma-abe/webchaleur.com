@@ -155,4 +155,10 @@
     background-color: #fff;
     color: var(--main-blue);
   }
+  .color-primary {
+    color: var(--main-blue);
+  }
+  .section-padding {
+    padding-block: 2.5rem;
+  }
 }
