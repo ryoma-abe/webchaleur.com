@@ -25,13 +25,11 @@ export default function TypingAnimationWithDelete({
   isDeleting = false,
   initialDisplay = false,
 }: TypingAnimationWithDeleteProps) {
-
   const [displayText, setDisplayText] = useState(initialDisplay ? text : "");
   const [currentIndex, setCurrentIndex] = useState(
     initialDisplay ? text.length : 0
   );
   const [isTypeComplete, setIsTypeComplete] = useState(initialDisplay);
-
 
   useEffect(() => {
     if (!isDeleting && currentIndex < text.length) {
@@ -48,7 +46,6 @@ export default function TypingAnimationWithDelete({
       }
     }
   }, [currentIndex, text, speed, isDeleting, isTypeComplete, onComplete]);
-
 
   useEffect(() => {
     if (isDeleting && displayText.length > 0) {
