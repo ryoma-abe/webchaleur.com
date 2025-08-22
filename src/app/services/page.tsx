@@ -225,7 +225,7 @@ export default function ServicesPage() {
         </section>
       </FadeIn>
       <FadeIn>
-        <section className="py-16 px-6 md:px-10 bg-light">
+        <section className="py-16 px-6 md:px-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 relative">
@@ -279,7 +279,7 @@ export default function ServicesPage() {
                   className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="text-center mb-4">
-                    <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto">
+                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold text-lg mx-auto">
                       {item.step}
                     </div>
                   </div>
