@@ -41,7 +41,7 @@ export default function HeroNews({ latestNews }: HeroNewsProps) {
             className="block group py-5 border-gray-200 border-t last:border-b hover:bg-gradient-to-r hover:from-blue-50/30 hover:to-transparent px-2 -mx-2 transition-all duration-200"
           >
             <div className="flex items-center gap-4 md:gap-6">
-              {/* 日付部分 */}
+              
               <div className="flex-shrink-0">
                 <span className="block text-xs text-gray uppercase tracking-wider">
                   {formatDate(news.date).split(".")[1]}.
@@ -52,24 +52,24 @@ export default function HeroNews({ latestNews }: HeroNewsProps) {
                 </span>
               </div>
 
-              {/* 縦線 */}
+              
               <div className="w-px h-10 bg-gradient-to-b from-transparent via-gray-200 to-transparent" />
 
-              {/* タイトル部分 */}
+              
               <div className="flex-1 min-w-0">
                 <span className="text-base text-primary group-hover:text-primary-blue transition-colors duration-200 line-clamp-1">
                   {news.title}
                 </span>
               </div>
 
-              {/* バッジ */}
+              
               {index === 0 && (
                 <span className="flex-shrink-0 px-3 py-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs rounded-full font-bold shadow-sm">
                   NEW
                 </span>
               )}
 
-              {/* 矢印 */}
+              
               <span className="flex-shrink-0 text-gray group-hover:text-primary-blue group-hover:translate-x-1 transition-all duration-200">
                 →
               </span>
@@ -78,7 +78,7 @@ export default function HeroNews({ latestNews }: HeroNewsProps) {
         ))}
       </div>
 
-      {/* フッター部分 */}
+      
       <div className="mt-8 pt-6">
         <Link
           href="/news"

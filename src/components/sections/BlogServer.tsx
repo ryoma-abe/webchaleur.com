@@ -2,10 +2,10 @@ import { getAllContent } from '@/lib/mdx';
 import BlogSection from './blog/BlogSection';
 
 export default async function Blog() {
-  // MDXからブログ記事を取得
+
   const blogItems = await getAllContent('blog');
 
-  // ブログ記事をフォーマット
+
   const formattedItems = blogItems.map(item => ({
     slug: item.slug,
     date: item.frontMatter.date,

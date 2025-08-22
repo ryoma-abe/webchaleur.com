@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { getContentBySlug, getAllContent, markdownToHtml } from '@/lib/mdx';
-import ArticleLayout from '@/components/layouts/ArticleLayout';
 import ArticleMeta from '@/components/ui/ArticleMeta';
 import { generatePageMetadata } from '@/lib/seo';
 import TableOfContents from '@/components/blog/TableOfContents';
@@ -42,10 +42,10 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     notFound();
   }
 
-  // HTMLコンテンツを生成
+
   let htmlContent = await markdownToHtml(blog.content);
   
-  // 見出しにIDを追加
+
   htmlContent = htmlContent.replace(
     /<(h[23])>(.*?)<\/h[23]>/gi,
     (match, tag, text) => {
@@ -63,11 +63,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   const readingTime = Math.ceil(wordCount / wordsPerMinute);
 
   return (
-    <>
-      <ArticleLayout
-        header={
-          <>
-            <h1 className="article-title">{blog.frontMatter.title}</h1>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
+      {/* Hero Section */}
+      <section className="py-20 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{blog.frontMatter.title}</h1>
             <ArticleMeta
               date={blog.frontMatter.date}
               category={blog.frontMatter.category}
@@ -75,28 +76,40 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               tags={blog.frontMatter.tags}
               showTags={true}
             />
-          </>
-        }
-        backLink={{
-          href: "/blog",
-          text: "ブログ一覧に戻る",
-        }}
-      >
-        {/* 目次 */}
-        <TableOfContents />
-        
-        {/* 本文 */}
-        <div 
-          className="prose prose-lg max-w-none"
-          dangerouslySetInnerHTML={{ __html: htmlContent }} 
-        />
-      </ArticleLayout>
+          </div>
+        </div>
+      </section>
 
-      {/* 進捗表示 */}
+      {/* Content */}
+      <article className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          {/* Back Link */}
+          <Link 
+            href="/blog"
+            className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity mb-8"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            ブログ一覧に戻る
+          </Link>
+
+          <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
+            <TableOfContents />
+            
+            <div 
+              className="prose prose-lg max-w-none"
+              dangerouslySetInnerHTML={{ __html: htmlContent }} 
+            />
+          </div>
+        </div>
+      </article>
+
+      {/* Progress Indicator */}
       <ProgressIndicator />
       
-      {/* トップへ戻るボタン */}
+      {/* Scroll to Top */}
       <ScrollToTop />
-    </>
+    </div>
   );
 }

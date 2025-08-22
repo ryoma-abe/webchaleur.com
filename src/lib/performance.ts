@@ -1,4 +1,4 @@
-// パフォーマンス監視ユーティリティ
+
 
 interface WebVitalsMetric {
   label: string;
@@ -8,11 +8,11 @@ interface WebVitalsMetric {
 }
 
 export function reportWebVitals(metric: WebVitalsMetric) {
-  // Core Web Vitalsの測定
+
   if (metric.label === 'web-vital') {
-    // 本番環境では分析サービスに送信
+
     if (process.env.NODE_ENV === 'production') {
-      // Google Analytics やその他の分析サービスに送信
+
       if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag('event', metric.name, {
           value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
@@ -24,7 +24,7 @@ export function reportWebVitals(metric: WebVitalsMetric) {
   }
 }
 
-// 画像の遅延読み込み設定
+
 interface ImageLoaderProps {
   src: string;
   width: number;
@@ -35,29 +35,14 @@ export const imageLoader = ({ src, width, quality }: ImageLoaderProps) => {
   return `${src}?w=${width}&q=${quality || 75}`;
 };
 
-// プリロード設定
+
 export function preloadAssets() {
   if (typeof window !== 'undefined') {
-    // 重要なフォントのプリロード
-    const link1 = document.createElement('link');
-    link1.rel = 'preload';
-    link1.as = 'font';
-    link1.type = 'font/woff2';
-    link1.href = '/fonts/KleeOne-Regular.woff2';
-    link1.crossOrigin = 'anonymous';
-    document.head.appendChild(link1);
-
-    const link2 = document.createElement('link');
-    link2.rel = 'preload';
-    link2.as = 'font';
-    link2.type = 'font/woff2';
-    link2.href = '/fonts/ZenMaruGothic-Regular.woff2';
-    link2.crossOrigin = 'anonymous';
-    document.head.appendChild(link2);
+    // Font preloading removed
   }
 }
 
-// デバウンス関数（スクロールイベントなどの最適化用）
+
 export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
@@ -75,7 +60,7 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
   };
 }
 
-// スロットル関数（頻繁なイベントの制限用）
+
 export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number

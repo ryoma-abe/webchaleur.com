@@ -1,5 +1,4 @@
 import { getAllContent } from '@/lib/mdx';
-import WobblyHeading from '@/components/ui/WobblyHeading';
 import FadeIn from '@/components/animations/FadeIn';
 import ListItemCard from '@/components/ui/ListItemCard';
 import Pagination from '@/components/ui/Pagination';
@@ -17,12 +16,12 @@ export default async function NewsPage({
   const currentPage = Number(params.page) || 1;
   const allNews = await getAllContent('news');
   
-  // 日付でソート（新しい順）
+
   const sortedNews = allNews.sort(
     (a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
   );
   
-  // ページネーション処理
+
   const { paginatedItems: news, totalPages } = paginate(
     sortedNews,
     currentPage,
@@ -31,12 +30,14 @@ export default async function NewsPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      {/* ヒーローセクション */}
+      
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
-          <WobblyHeading level={1} underline english="Information">
-            お知らせ
-          </WobblyHeading>
+          <div className="text-center">
+            <div className="text-sm text-gray mb-2 tracking-wider uppercase">Information</div>
+            <h1 className="mb-4">お知らせ</h1>
+            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
+          </div>
           <p className="text-center text-gray mt-6 max-w-2xl mx-auto">
             WebChaleurからのお知らせ、キャンペーン情報などをご案内しています。
           </p>
@@ -69,7 +70,7 @@ export default async function NewsPage({
             )}
           </div>
           
-          {/* ページネーション */}
+          
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

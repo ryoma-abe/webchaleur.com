@@ -30,13 +30,13 @@ export default function BlogSection({ items }: BlogSectionProps) {
   return (
     <section id="blog" className="section-padding bg-light" ref={ref}>
       <div className="max-w-6xl mx-auto px-6 md:px-8">
-        {/* セクションヘッダー */}
+        
         <SectionHeader isVisible={isVisible} title="ブログ" subTitle="Blog" />
 
-        {/* ブログカードグリッド */}
+        
         <BlogGrid items={items} isVisible={isVisible} />
 
-        {/* もっと見るボタン */}
+        
         {items.length > 0 && (
           <div
             className={`text-center mt-12 transition-all duration-800 delay-600 ${

@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // メニューを開いた時にスクロールを無効化
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -62,31 +61,32 @@ export default function Header() {
       <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <Link
               href="/"
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              <picture>
-                <source srcSet="/logo.avif" type="image/avif" />
-                <source srcSet="/logo.webp" type="image/webp" />
-                <Image
-                  src="/logo.webp"
-                  alt=""
-                  width={22}
-                  height={25}
-                  className="w-5 h-auto md:w-6 md:h-auto"
-                  priority
-                  aria-hidden="true"
-                />
-              </picture>
+              <Image
+                src="/logo.png"
+                alt=""
+                width={22}
+                height={25}
+                className="w-5 h-auto md:w-6 md:h-auto"
+                priority
+                aria-hidden="true"
+                sizes="22px"
+                style={{
+                  width: '22px',
+                  height: '25px',
+                  maxWidth: '100%',
+                  objectFit: 'contain'
+                }}
+              />
               <span className="text-2xl md:text-3xl">
                 <span className="text-primary-blue">Web</span>
                 <span className="text-[#2c2825]">Chaleur</span>
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
             <ul className="hidden md:flex items-center gap-6 lg:gap-8">
               {menuItems
                 .filter((item) => item.label !== "Contact")
@@ -107,7 +107,6 @@ export default function Header() {
               </li>
             </ul>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -121,7 +120,6 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* Mobile Navigation Overlay */}
       <div
         className={`md:hidden fixed inset-0 bg-black/50 z-[100] transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -129,31 +127,32 @@ export default function Header() {
         onClick={() => setIsMenuOpen(false)}
       />
 
-      {/* Mobile Navigation Menu */}
       <div
         className={`md:hidden fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-[101] transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Menu Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-100">
           <Link
             href="/"
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center gap-2"
           >
-            <picture>
-              <source srcSet="/logo.avif" type="image/avif" />
-              <source srcSet="/logo.webp" type="image/webp" />
-              <Image
-                src="/logo.webp"
-                alt=""
-                width={18}
-                height={21}
-                className="w-5 h-auto"
-                aria-hidden="true"
-              />
-            </picture>
+            <Image
+              src="/logo.png"
+              alt=""
+              width={18}
+              height={21}
+              className="w-5 h-auto"
+              aria-hidden="true"
+              sizes="18px"
+              style={{
+                width: '18px',
+                height: '21px',
+                maxWidth: '100%',
+                objectFit: 'contain'
+              }}
+            />
             <span className="text-xl">
               <span className="text-primary-blue">Web</span>
               <span className="text-[#2c2825]">Chaleur</span>
@@ -168,7 +167,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Menu Items */}
         <nav className="overflow-y-auto h-[calc(100vh-73px)]">
           <ul className="py-2">
             {menuItems
@@ -187,7 +185,6 @@ export default function Header() {
               </li>
             ))}
 
-            {/* Mobile CTA Button */}
             <li className="p-4">
               <Link
                 href="/contact"
@@ -199,7 +196,6 @@ export default function Header() {
             </li>
           </ul>
 
-          {/* Footer Info */}
           <div className="border-t border-gray-100 p-4 mt-auto">
             <p className="text-xs text-gray-500 text-center">
               © 2024 WebChaleur

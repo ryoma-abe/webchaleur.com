@@ -14,7 +14,7 @@ export default function TableOfContents() {
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
-    // 記事本文内のh2, h3のみを取得（ヘッダーやフッターを除外）
+
     const articleContent = document.querySelector('.prose');
     if (!articleContent) return;
     
@@ -22,7 +22,7 @@ export default function TableOfContents() {
     const items: TOCItem[] = Array.from(elements)
       .filter((element) => element.textContent && element.textContent.trim() !== '')
       .map((element, index) => {
-        // IDがない場合は生成
+
         if (!element.id) {
           const id = `heading-${index}`;
           element.id = id;

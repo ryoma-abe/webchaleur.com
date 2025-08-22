@@ -2,10 +2,10 @@ import WorksSection from './works/WorksSection';
 import worksData from '@/data/works.json';
 
 export default async function Works() {
-  // JSONから制作実績を取得
+
   const workItems = worksData.works;
 
-  // 制作実績をフォーマット
+
   const formattedItems = workItems.map(item => ({
     slug: item.id,
     date: item.date,

@@ -15,7 +15,6 @@ export default function NotFound() {
       <div className={`text-center max-w-2xl transition-all duration-800 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}>
-        {/* 404イラスト */}
         <div className="mb-8">
           <h1 
             className="text-8xl md:text-9xl text-primary-blue mb-4 -rotate-2"
@@ -27,7 +26,6 @@ export default function NotFound() {
           </div>
         </div>
 
-        {/* メッセージ */}
         <h2 className="heading-section mb-4">
           ページが見つかりません
         </h2>
@@ -37,7 +35,6 @@ export default function NotFound() {
           URLをご確認いただくか、トップページからお探しください。
         </p>
 
-        {/* 人間味のあるメッセージ */}
         <div 
           className="bg-light p-6 mb-8 rounded-[20px] border-2 border-dashed border-primary-light"
         >
@@ -49,7 +46,6 @@ export default function NotFound() {
           </p>
         </div>
 
-        {/* アクションボタン */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
@@ -65,7 +61,6 @@ export default function NotFound() {
           </Link>
         </div>
 
-        {/* 追加情報 */}
         <div className="mt-12 pt-8 border-t border-dashed border-primary-light">
           <p className="text-caption">
             よくアクセスされるページ

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import TypingAnimationWithDelete from "@/components/animations/TypingAnimationWithDelete";
 
-// デスクトップ用の動的タイトル
+
 export default function HeroTitleDynamic() {
   const [currentMessageSet, setCurrentMessageSet] = useState(0);
   const [currentLine, setCurrentLine] = useState(2);
@@ -11,7 +11,7 @@ export default function HeroTitleDynamic() {
   const [lines, setLines] = useState<string[]>(["", "", ""]);
   const [isFirstRender, setIsFirstRender] = useState(true);
 
-  const messages = [
+  const messages = useMemo(() => [
     {
       line1: "十勝の企業様の",
       line2: "Webサイトのこと",
@@ -32,13 +32,13 @@ export default function HeroTitleDynamic() {
       line2: "ずっと一緒に",
       line3: "フォローします。",
     },
-  ];
+  ], []);
 
   useEffect(() => {
-    // 初期メッセージを全て表示した状態でセット
+
     setLines([messages[0].line1, messages[0].line2, messages[0].line3]);
     
-    // 3秒間表示してから削除を開始
+
     const timer = setTimeout(() => {
       setIsDeleting(true);
       setCurrentLine(2);
@@ -46,10 +46,10 @@ export default function HeroTitleDynamic() {
     }, 3000);
     
     return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
-  // タイピング完了時の処理
+  }, [messages]);
+
+
   const handleLineComplete = (lineIndex: number) => {
     if (lineIndex === 0) {
       setLines((prev) => [prev[0], messages[currentMessageSet].line2, ""]);
@@ -67,7 +67,7 @@ export default function HeroTitleDynamic() {
     }
   };
 
-  // 削除完了時の処理
+
   const handleDeleteComplete = (lineIndex: number) => {
     if (lineIndex === 2) {
       setLines((prev) => [prev[0], prev[1], ""]);

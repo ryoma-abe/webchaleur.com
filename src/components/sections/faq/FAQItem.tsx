@@ -51,7 +51,7 @@ export default function FAQItem({
         </div>
       </button>
 
-      {/* アンサー部分 */}
+      
       <div
         className={`transition-all duration-300 ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'

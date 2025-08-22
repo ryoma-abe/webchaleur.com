@@ -16,17 +16,17 @@ export default function StrengthsSection() {
   return (
     <section id="strengths" className="section-padding bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        {/* セクションヘッダー */}
+        
         <SectionHeader
           isVisible={isVisible}
           title="WebChaleurの強み"
           subTitle="Our Strengths"
         />
 
-        {/* 強みカードグリッド */}
+        
         <StrengthsGrid isVisible={isVisible} />
 
-        {/* 特別なアピールセクション */}
+        
         <StrengthsAppeal isVisible={isVisible} />
       </div>
     </section>

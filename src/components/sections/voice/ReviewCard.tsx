@@ -22,15 +22,15 @@ export default function ReviewCard({
         transitionDelay: `${delay}ms`,
       }}
     >
-      {/* 星評価 */}
+      
       <div className="text-yellow-400 mb-3">{"★".repeat(rating)}</div>
 
-      {/* レビュー内容 */}
+      
       <p className="text-body text-sm mb-4 leading-relaxed min-h-[80px]">
         {content}
       </p>
 
-      {/* 投稿者 */}
+      
       <p className="text-xs text-gray">— {author}</p>
     </div>
   );

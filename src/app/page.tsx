@@ -1,16 +1,10 @@
-import dynamic from 'next/dynamic';
-import HeroServer from '@/components/sections/HeroServer';
-import AboutSection from '@/components/sections/about/AboutSection';
-import StrengthsSection from '@/components/sections/strengths/StrengthsSection';
-
-// Below-the-fold content - lazy load
-const Works = dynamic(() => import('@/components/sections/LazyWorks'));
-
-const VoiceSection = dynamic(() => import('@/components/sections/voice/VoiceSection'));
-
-const Blog = dynamic(() => import('@/components/sections/LazyBlog'));
-
-const FAQSection = dynamic(() => import('@/components/sections/faq/FAQSection'));
+import HeroServer from "@/components/sections/HeroServer";
+import AboutSection from "@/components/sections/about/AboutSection";
+import StrengthsSection from "@/components/sections/strengths/StrengthsSection";
+import WorksServer from "@/components/sections/WorksServer";
+import VoiceSection from "@/components/sections/voice/VoiceSection";
+import BlogServer from "@/components/sections/BlogServer";
+import FAQSection from "@/components/sections/faq/FAQSection";
 
 export default function Home() {
   return (
@@ -18,9 +12,9 @@ export default function Home() {
       <HeroServer />
       <AboutSection />
       <StrengthsSection />
-      <Works />
+      <WorksServer />
       <VoiceSection />
-      <Blog />
+      <BlogServer />
       <FAQSection />
     </>
   );

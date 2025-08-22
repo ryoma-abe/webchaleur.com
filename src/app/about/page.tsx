@@ -1,4 +1,3 @@
-import WobblyHeading from "@/components/ui/WobblyHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import CompanyInfoList from "@/components/ui/CompanyInfoList";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -10,17 +9,19 @@ export const metadata = generatePageMetadata({ path: "/about" });
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      {/* ヒーローセクション */}
+      
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
-          <WobblyHeading level={1} underline english="About Us">
-            WebChaleurについて
-          </WobblyHeading>
+          <div className="text-center">
+            <div className="text-sm text-gray mb-2 tracking-wider uppercase">About Us</div>
+            <h1 className="mb-4">WebChaleurについて</h1>
+            <div className="w-20 h-1 bg-primary-blue mx-auto rounded"></div>
+          </div>
         </div>
       </section>
 
       <div className="container mx-auto px-4 py-12">
-        {/* WebChaleurとは */}
+        
         <FadeIn>
           <section className="mb-20">
             <div className="max-w-4xl mx-auto">
@@ -53,7 +54,7 @@ export default function AboutPage() {
           </section>
         </FadeIn>
 
-        {/* 代表メッセージ */}
+        
         <FadeIn delay={0.2}>
           <section className="mb-20">
             <div className="max-w-4xl mx-auto">
@@ -81,7 +82,7 @@ export default function AboutPage() {
                     <p className="text-right text-gray">
                       WebChaleur 代表
                       <br />
-                      <span className="text-lg text-primary-blue font-klee mt-2 inline-block">
+                      <span className="text-lg text-primary-blue mt-2 inline-block">
                         安部 僚真
                       </span>
                     </p>
@@ -92,7 +93,7 @@ export default function AboutPage() {
           </section>
         </FadeIn>
 
-        {/* 会社概要 */}
+        
         <FadeIn delay={0.6}>
           <div className="max-w-4xl mx-auto mb-20">
             <SectionTitle>会社概要</SectionTitle>
@@ -110,7 +111,7 @@ export default function AboutPage() {
           </div>
         </FadeIn>
 
-        {/* CTA */}
+        
         <FadeIn delay={0.8}>
           <CTASection />
         </FadeIn>

@@ -1,5 +1,4 @@
 "use client";
-import HandDrawnButton from "@/components/ui/HandDrawnButton";
 import AboutMessage from "./AboutMessage";
 import { useEffect, useState } from "react";
 import SectionHeader from "../common/SectionHeader";
@@ -19,25 +18,28 @@ export default function AboutSection() {
       ref={ref as React.RefObject<HTMLElement>}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8">
-        {/* セクションヘッダー */}
+        
         <SectionHeader
           isVisible={isVisible}
           title="WebChaleurについて"
           subTitle="AboutUs"
         />
 
-        {/* メインメッセージ（サービス内容） */}
+        
         <AboutMessage isVisible={isVisible} />
 
-        {/* CTAボタン */}
+        
         <div
           className={`text-center transition-all duration-800 delay-900 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <HandDrawnButton href="/about" variant="primary" size="medium">
+          <a 
+            href="/about" 
+            className="inline-flex items-center px-6 py-3 bg-main-blue text-white rounded-full hover:bg-main-blue/90 transition-colors"
+          >
             詳しく見る →
-          </HandDrawnButton>
+          </a>
         </div>
       </div>
     </section>

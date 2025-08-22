@@ -25,14 +25,14 @@ export default function TypingAnimationWithDelete({
   isDeleting = false,
   initialDisplay = false,
 }: TypingAnimationWithDeleteProps) {
-  // initialDisplayがtrueの場合は、最初から全文を表示
+
   const [displayText, setDisplayText] = useState(initialDisplay ? text : "");
   const [currentIndex, setCurrentIndex] = useState(
     initialDisplay ? text.length : 0
   );
   const [isTypeComplete, setIsTypeComplete] = useState(initialDisplay);
 
-  // タイピングアニメーション
+
   useEffect(() => {
     if (!isDeleting && currentIndex < text.length) {
       const timeout = setTimeout(() => {
@@ -49,7 +49,7 @@ export default function TypingAnimationWithDelete({
     }
   }, [currentIndex, text, speed, isDeleting, isTypeComplete, onComplete]);
 
-  // 削除アニメーション
+
   useEffect(() => {
     if (isDeleting && displayText.length > 0) {
       const timeout = setTimeout(() => {

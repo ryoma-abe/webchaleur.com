@@ -23,7 +23,10 @@
       "Bash(identify:*)",
       "WebFetch(domain:react.dev)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npx woff2_compress:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run lint)"
     ],
     "deny": []
   }
