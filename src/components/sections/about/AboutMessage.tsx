@@ -17,7 +17,7 @@ export default function AboutMessage({ isVisible }: AboutMessageProps) {
         </h3>
 
         <div className="max-w-3xl mx-auto">
-          <p className="text-base text-gray leading-relaxed">
+          <p>
             WebChaleurは、十勝・帯広を拠点に全国のお客様をサポートしています。
             <br />
             企業サイトやECサイトの新規制作はもちろん、既存サイトのリニューアル、
