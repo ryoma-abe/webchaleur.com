@@ -14,28 +14,25 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="section-padding bg-white"
+      className="section-padding"
       ref={ref as React.RefObject<HTMLElement>}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-8">
-        
         <SectionHeader
           isVisible={isVisible}
           title="WebChaleurについて"
           subTitle="AboutUs"
         />
 
-        
         <AboutMessage isVisible={isVisible} />
 
-        
         <div
           className={`text-center transition-all duration-800 delay-900 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <a 
-            href="/about" 
+          <a
+            href="/about"
             className="inline-flex items-center px-6 py-3 bg-main-blue text-white rounded-full hover:bg-main-blue/90 transition-colors"
           >
             詳しく見る →

@@ -18,7 +18,9 @@ export default function SectionHeader({
       }`}
     >
       <h2 className="heading-section">{title}</h2>
-      <span className="text-caption inline-block">{subTitle}</span>
+      <span className="text-caption inline-block color-primary">
+        {subTitle}
+      </span>
     </div>
   );
 }
