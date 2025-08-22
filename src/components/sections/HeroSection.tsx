@@ -83,11 +83,8 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center">
           {/* タイトル - シンプルなタイピングアニメーション */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px]">
-            <span className="block">
-              {displayText}
-              <span className="inline-block w-0.5 h-[1.2em] bg-current ml-1 animate-pulse" />
-            </span>
+          <h1 className="text-3xl lg:text-6xl  leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px]">
+            {displayText}
           </h1>
 
           {/* サブテキスト */}
