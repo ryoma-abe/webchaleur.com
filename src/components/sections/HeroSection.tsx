@@ -79,11 +79,11 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-white py-12 lg:py-16">
+    <section className="relative flex flex-col justify-center items-center overflow-hidden bg-white py-20">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center">
           {/* タイトル - シンプルなタイピングアニメーション */}
-          <h1 className="text-3xl lg:text-6xl  leading-tight mb-8 lg:mb-10 min-h-[200px] lg:min-h-[250px] whitespace-pre-line">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl  leading-tight mb-8 lg:mb-10 min-h-[150px] md:min-h-[200px] lg:min-h-[250px] whitespace-pre-line">
             {displayText}
           </h1>
 
