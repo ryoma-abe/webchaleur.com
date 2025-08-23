@@ -143,6 +143,9 @@
     box-shadow: 0 2px 8px rgba(0, 60, 120, 0.08);
     transition: color 0.3s, background-color 0.3s;
   }
+  .btn.btn-wide {
+    padding: 0.5em 4em;
+  }
   .btn-primary {
     background-color: var(--main-blue);
     color: #fff;
@@ -171,7 +174,7 @@
   /* ===============================================
   # 記事詳細
   =============================================== */
-  
+
   .article-container h2 {
     font-size: clamp(1.5rem, 2vw, 2.25rem);
     margin-block: 2rem 1.5rem;
