@@ -89,37 +89,35 @@ export default async function BlogDetailPage({
       </section>
 
       {/* Content */}
-      <article className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          {/* Back Link */}
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity mb-8"
+      <article className="max-w-5xl article-container mx-auto px-4 py-12">
+        {/* Back Link */}
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 text-primary-blue hover:opacity-80 transition-opacity mb-8"
+        >
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            ブログ一覧に戻る
-          </Link>
-
-          <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
-            <TableOfContents />
-
-            <div
-              className="prose prose-lg max-w-none"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
             />
-          </div>
+          </svg>
+          ブログ一覧に戻る
+        </Link>
+
+        <div className="bg-white rounded-2xl shadow-sm p-8 md:p-10">
+          <TableOfContents />
+
+          <div
+            className="prose prose-lg max-w-none"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
         </div>
       </article>
 
