@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-/* フォント設定 */
-/* @font-face {
-  font-display: swap;
-  font-family: "Klee One";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/klee-one-v12-japanese_latin-regular.woff2") format("woff2");
-} */
-
 /* カスタム変数 */
 :root {
   --main-blue: #4a7ba7;
@@ -29,18 +20,6 @@
   --padding-large: 32px 40px;
 }
 
-/* アニメーション例 */
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
-
 /* グローバルスタイル */
 @layer base {
   html {
@@ -52,8 +31,6 @@
     color: var(--text-gray);
     line-height: 1.8;
     letter-spacing: 0.02em;
-    /* font-family: "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", Meiryo,
-      sans-serif; */
   }
 
   h1,
@@ -63,7 +40,7 @@
   h5,
   h6 {
     color: var(--text-dark);
-    /* font-family: "Klee One", sans-serif; */
+    font-family: "Klee One", sans-serif;
   }
 
   h1 {
@@ -116,6 +93,8 @@
     font-size: clamp(1rem, 1.25vw, 1.125rem); /* md:text-lg */
     line-height: 1.8;
     letter-spacing: 0.02em;
+    font-family: "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", Meiryo,
+      sans-serif;
   }
 
   a {
