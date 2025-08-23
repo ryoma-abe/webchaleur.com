@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import Script from 'next/script';
-import { generatePageMetadata, generateOrganizationSchema } from '@/lib/seo';
+import Script from "next/script";
+import { generatePageMetadata, generateOrganizationSchema } from "@/lib/seo";
 import "./globals.css";
 
-export const metadata: Metadata = generatePageMetadata({ path: '/' });
+export const metadata: Metadata = generatePageMetadata({ path: "/" });
 
 export default function RootLayout({
   children,
@@ -16,12 +16,12 @@ export default function RootLayout({
     <html lang="ja">
       <head />
       <body>
-        <Script 
-          id="schema-org" 
-          type="application/ld+json" 
+        <Script
+          id="schema-org"
+          type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationSchema())
+            __html: JSON.stringify(generateOrganizationSchema()),
           }}
         />
         <Script

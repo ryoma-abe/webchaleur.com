@@ -25,7 +25,6 @@ export default function ListItemCard({
     <Link href={href} className="block group">
       <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all group-hover:transform group-hover:-translate-y-0.5 p-6">
         <article className="flex flex-col md:flex-row md:items-center gap-4">
-          
           {date && (
             <div className="flex-shrink-0">
               <time
@@ -45,7 +44,6 @@ export default function ListItemCard({
             </div>
           )}
 
-          
           <div className="flex-grow">
             <div className="flex flex-wrap items-center gap-3 mb-2">
               {category && (
@@ -56,7 +54,7 @@ export default function ListItemCard({
               {extra}
             </div>
 
-            <h2 className="heading-list mb-2 group-hover:text-primary-blue transition-colors">
+            <h2 className="mb-2 group-hover:text-primary-blue transition-colors text-xl">
               {title}
             </h2>
 
@@ -78,7 +76,6 @@ export default function ListItemCard({
             )}
           </div>
 
-          
           <div className="flex-shrink-0">
             <span className="text-primary-blue text-sm group-hover:underline">
               {linkText} →

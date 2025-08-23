@@ -1,12 +1,12 @@
-import { getAllContent } from '@/lib/mdx';
-import FadeIn from '@/components/animations/FadeIn';
-import ListItemCard from '@/components/ui/ListItemCard';
-import Pagination from '@/components/ui/Pagination';
-import PageHeader from '@/components/ui/PageHeader';
-import { generatePageMetadata } from '@/lib/seo';
-import { paginate, ITEMS_PER_PAGE } from '@/lib/pagination';
+import { getAllContent } from "@/lib/mdx";
+import FadeIn from "@/components/animations/FadeIn";
+import ListItemCard from "@/components/ui/ListItemCard";
+import Pagination from "@/components/ui/Pagination";
+import PageHeader from "@/components/ui/PageHeader";
+import { generatePageMetadata } from "@/lib/seo";
+import { paginate, ITEMS_PER_PAGE } from "@/lib/pagination";
 
-export const metadata = generatePageMetadata({ path: '/news' });
+export const metadata = generatePageMetadata({ path: "/news" });
 
 export default async function NewsPage({
   searchParams,
@@ -15,13 +15,13 @@ export default async function NewsPage({
 }) {
   const params = await searchParams;
   const currentPage = Number(params.page) || 1;
-  const allNews = await getAllContent('news');
-  
+  const allNews = await getAllContent("news");
 
   const sortedNews = allNews.sort(
-    (a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
+    (a, b) =>
+      new Date(b.frontMatter.date).getTime() -
+      new Date(a.frontMatter.date).getTime()
   );
-  
 
   const { paginatedItems: news, totalPages } = paginate(
     sortedNews,
@@ -31,39 +31,33 @@ export default async function NewsPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      <PageHeader 
-        englishTitle="Information" 
-        japaneseTitle="お知らせ" 
+      <PageHeader
+        englishTitle="Information"
+        japaneseTitle="お知らせ"
         description="WebChaleurからのお知らせ、キャンペーン情報などをご案内しています。"
       />
 
-      <div className="container mx-auto px-4 py-12">
-
+      <div className="max-w-5xl mx-auto px-4 py-12">
         <FadeIn>
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-4">
-              {news.map((item) => (
-                <ListItemCard
-                  key={item.slug}
-                  href={`/news/${item.slug}`}
-                  date={item.frontMatter.date}
-                  category={item.frontMatter.category}
-                  title={item.frontMatter.title}
-                  description={item.frontMatter.description}
-                />
-              ))}
-            </div>
-
-            {news.length === 0 && (
-              <div className="text-center py-20 bg-white rounded-2xl">
-                <p className="text-gray">
-                  お知らせはまだありません
-                </p>
-              </div>
-            )}
+          <div className="space-y-4">
+            {news.map((item) => (
+              <ListItemCard
+                key={item.slug}
+                href={`/news/${item.slug}`}
+                date={item.frontMatter.date}
+                category={item.frontMatter.category}
+                title={item.frontMatter.title}
+                description={item.frontMatter.description}
+              />
+            ))}
           </div>
-          
-          
+
+          {news.length === 0 && (
+            <div className="text-center py-20 bg-white rounded-2xl">
+              <p className="text-gray">お知らせはまだありません</p>
+            </div>
+          )}
+
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

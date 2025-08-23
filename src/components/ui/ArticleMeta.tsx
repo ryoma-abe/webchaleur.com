@@ -15,7 +15,6 @@ export default function ArticleMeta({
 }: ArticleMetaProps) {
   return (
     <>
-      
       <div className="flex flex-wrap items-center justify-center gap-3 text-base text-gray">
         {date && (
           <time dateTime={date} className="flex items-center gap-1">
@@ -39,7 +38,7 @@ export default function ArticleMeta({
             })}
           </time>
         )}
-        
+
         {category && (
           <>
             {date && <span className="text-gray-300">•</span>}
@@ -48,7 +47,7 @@ export default function ArticleMeta({
             </span>
           </>
         )}
-        
+
         {readingTime && (
           <>
             <span className="text-gray-300">•</span>
@@ -72,7 +71,6 @@ export default function ArticleMeta({
         )}
       </div>
 
-      
       {showTags && tags && tags.length > 0 && (
         <div className="mt-8 text-center">
           {tags.map((tag) => (
