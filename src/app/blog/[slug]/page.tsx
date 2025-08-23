@@ -73,18 +73,16 @@ export default async function BlogDetailPage({
       {/* Hero Section */}
       <section className="py-20 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              {blog.frontMatter.title}
-            </h1>
-            <ArticleMeta
-              date={blog.frontMatter.date}
-              category={blog.frontMatter.category}
-              readingTime={readingTime}
-              tags={blog.frontMatter.tags}
-              showTags={true}
-            />
-          </div>
+          <h1 className="text-xl text-center md:text-2xl lg:text-3xl font-bold mb-6">
+            {blog.frontMatter.title}
+          </h1>
+          <ArticleMeta
+            date={blog.frontMatter.date}
+            category={blog.frontMatter.category}
+            readingTime={readingTime}
+            tags={blog.frontMatter.tags}
+            showTags={true}
+          />
         </div>
       </section>
 

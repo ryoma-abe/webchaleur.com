@@ -1,10 +1,10 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
-const contentDirectory = path.join(process.cwd(), 'src/content');
+const contentDirectory = path.join(process.cwd(), "src/content");
 
 export interface FrontMatter {
   title: string;
@@ -25,12 +25,12 @@ export interface ContentData {
 }
 
 export async function getContentBySlug(
-  type: 'works' | 'blog' | 'news',
+  type: "works" | "blog" | "news",
   slug: string
 ): Promise<ContentData | null> {
   try {
     const fullPath = path.join(contentDirectory, type, `${slug}.mdx`);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
     return {
@@ -44,21 +44,21 @@ export async function getContentBySlug(
 }
 
 export async function getAllContent(
-  type: 'works' | 'blog' | 'news'
+  type: "works" | "blog" | "news"
 ): Promise<ContentData[]> {
   const directory = path.join(contentDirectory, type);
-  
+
   if (!fs.existsSync(directory)) {
     return [];
   }
 
   const files = fs.readdirSync(directory);
   const contents = files
-    .filter((file) => file.endsWith('.mdx'))
+    .filter((file) => file.endsWith(".mdx"))
     .map((file) => {
-      const slug = file.replace(/\.mdx$/, '');
+      const slug = file.replace(/\.mdx$/, "");
       const fullPath = path.join(directory, file);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data, content } = matter(fileContents);
 
       return {
@@ -69,7 +69,10 @@ export async function getAllContent(
     })
     .sort((a, b) => {
       if (a.frontMatter.date && b.frontMatter.date) {
-        return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime();
+        return (
+          new Date(b.frontMatter.date).getTime() -
+          new Date(a.frontMatter.date).getTime()
+        );
       }
       return 0;
     });
