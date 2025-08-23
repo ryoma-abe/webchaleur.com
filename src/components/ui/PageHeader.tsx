@@ -4,10 +4,14 @@ interface PageHeaderProps {
   description?: string;
 }
 
-export default function PageHeader({ englishTitle, japaneseTitle, description }: PageHeaderProps) {
+export default function PageHeader({
+  englishTitle,
+  japaneseTitle,
+  description,
+}: PageHeaderProps) {
   // 。で改行を追加する関数
   const addLineBreaks = (text: string) => {
-    return text.replace(/。/g, '。\n');
+    return text.replace(/。/g, "。\n");
   };
 
   return (
@@ -15,10 +19,12 @@ export default function PageHeader({ englishTitle, japaneseTitle, description }:
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h1>
-            <span className="block text-sm text-gray uppercase tracking-wide mb-2">
+            <span className="block text-sm text-primary-blue uppercase tracking-wide mb-2">
               {englishTitle}
             </span>
-            <span className="whitespace-pre-line">{addLineBreaks(japaneseTitle)}</span>
+            <span className="whitespace-pre-line">
+              {addLineBreaks(japaneseTitle)}
+            </span>
           </h1>
           <div className="w-20 h-1 bg-primary-blue mx-auto rounded mt-4"></div>
         </div>
