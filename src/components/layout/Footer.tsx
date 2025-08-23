@@ -105,7 +105,7 @@ export default function Footer() {
         <div className="border-t border-dashed border-gray opacity-30 my-8" />
 
         <div className="text-center">
-          <small className="text-caption text-sm">
+          <small className="text-caption text-sm" suppressHydrationWarning>
             © {currentYear} WebChaleur.
             つくる人も、つかう人も、みんなしあわせに。
           </small>
