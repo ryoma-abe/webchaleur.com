@@ -171,42 +171,4 @@
   .text-primary-blue {
     color: var(--main-blue);
   }
-  /* ===============================================
-  # 記事詳細
-  =============================================== */
-
-  .article-container h2 {
-    font-size: clamp(1.5rem, 2vw, 2.25rem);
-    margin-block: 2rem 1.5rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    border-bottom: 2px solid var(--main-blue);
-    padding-bottom: 0.5rem;
-  }
-  .article-container h3 {
-    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
-    margin-block: 1.5rem 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    padding-left: 0.75rem;
-    border-left: 4px solid var(--main-blue);
-  }
-  .article-container h4 {
-    font-size: clamp(1.125rem, 1vw, 1.25rem);
-    margin-block: 1rem 0.75rem;
-    font-weight: 600;
-    color: var(--text-gray);
-    position: relative;
-    padding-left: 1.25rem;
-  }
-  .article-container h4::before {
-    content: "▶";
-    position: absolute;
-    left: 0;
-    color: var(--main-blue);
-    font-size: 0.75em;
-  }
-  .article-container p {
-    margin-block: 1rem;
-  }
 }
