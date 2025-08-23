@@ -16,12 +16,12 @@ export default async function BlogPage({
   const params = await searchParams;
   const currentPage = Number(params.page) || 1;
   const allBlogs = await getAllContent("blog");
-  
 
   const sortedBlogs = allBlogs.sort(
-    (a, b) => new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime()
+    (a, b) =>
+      new Date(b.frontMatter.date).getTime() -
+      new Date(a.frontMatter.date).getTime()
   );
-  
 
   const { paginatedItems: blogs, totalPages } = paginate(
     sortedBlogs,
@@ -37,43 +37,40 @@ export default async function BlogPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/30">
-      <PageHeader 
-        englishTitle="Blog" 
-        japaneseTitle="技術ブログ" 
+      <PageHeader
+        englishTitle="Blog"
+        japaneseTitle="ブログ"
         description="Web制作の技術情報や、十勝でのビジネスに役立つ情報を発信しています。地元企業様のデジタル化を応援します！"
       />
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-5xl mx-auto px-4 py-12">
         <FadeIn>
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-4">
-              {blogs.map((blog) => (
-                <ListItemCard
-                  key={blog.slug}
-                  href={`/blog/${blog.slug}`}
-                  date={blog.frontMatter.date}
-                  category={blog.frontMatter.category}
-                  title={blog.frontMatter.title}
-                  description={blog.frontMatter.description}
-                  tags={blog.frontMatter.tags}
-                  linkText="記事を読む"
-                  extra={
-                    <span className="text-xs text-gray">
-                      {calculateReadingTime(blog.content)}分で読める
-                    </span>
-                  }
-                />
-              ))}
-            </div>
-
-            {blogs.length === 0 && (
-              <div className="text-center py-20 bg-white rounded-2xl">
-                <p className="text-gray">ブログ記事を準備中です</p>
-              </div>
-            )}
+          <div className="space-y-4">
+            {blogs.map((blog) => (
+              <ListItemCard
+                key={blog.slug}
+                href={`/blog/${blog.slug}`}
+                date={blog.frontMatter.date}
+                category={blog.frontMatter.category}
+                title={blog.frontMatter.title}
+                description={blog.frontMatter.description}
+                tags={blog.frontMatter.tags}
+                linkText="記事を読む"
+                extra={
+                  <span className="text-xs text-gray">
+                    {calculateReadingTime(blog.content)}分で読める
+                  </span>
+                }
+              />
+            ))}
           </div>
-          
-          
+
+          {blogs.length === 0 && (
+            <div className="text-center py-20 bg-white rounded-2xl">
+              <p className="text-gray">ブログ記事を準備中です</p>
+            </div>
+          )}
+
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
