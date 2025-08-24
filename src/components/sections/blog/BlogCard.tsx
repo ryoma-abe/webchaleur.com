@@ -23,15 +23,13 @@ export default function BlogCard({
 }: BlogCardProps) {
 
   const formatDate = (dateString: string) => {
-    const dateObj = new Date(dateString);
-    const year = dateObj.getFullYear();
-    const month = dateObj.getMonth() + 1;
-    const day = dateObj.getDate();
+    // dateString は "YYYY-MM-DD" 形式で固定されている
+    const [year, month, day] = dateString.split('-');
     
     return {
-      full: `${year}.${String(month).padStart(2, '0')}.${String(day).padStart(2, '0')}`,
-      day: String(day),
-      month: `${month}月`
+      full: `${year}.${month}.${day}`,
+      day: String(parseInt(day, 10)),
+      month: `${parseInt(month, 10)}月`
     };
   };
 
