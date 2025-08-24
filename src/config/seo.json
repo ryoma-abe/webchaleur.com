@@ -1,17 +1,20 @@
 {
   "global": {
     "siteName": "WebChaleur",
-    "siteUrl": "https://webchaleur.jp",
-    "defaultTitle": "WebChaleur ｜ 十勝のウェブ制作パートナー",
-    "titleTemplate": "%s | WebChaleur",
-    "defaultDescription": "帯広・音更・十勝エリアのホームページ制作。地元企業様に寄り添い、最新技術で温かみのあるサイトを作ります。",
+    "siteUrl": "https://webchaleur.com",
+    "defaultTitle": "帯広・音更・十勝のホームページ制作 | WebChaleur",
+    "titleTemplate": "%s | 帯広・音更・十勝のHP制作 WebChaleur",
+    "defaultDescription": "帯広・音更・十勝エリアに特化したホームページ制作・Web制作・ECサイト構築。Shopify/WordPress対応、SEOと運用サポートで成果に直結するサイトを制作します。",
     "defaultKeywords": [
       "帯広 ホームページ制作",
-      "音更 Web制作",
-      "十勝 ECサイト",
-      "Shopify 北海道",
-      "ウェブ制作 十勝",
-      "ホームページ作成 帯広"
+      "音更 ホームページ制作",
+      "十勝 ホームページ制作",
+      "帯広 Web制作",
+      "十勝 Web制作",
+      "ECサイト制作 帯広",
+      "Shopify 制作 北海道",
+      "ホームページ作成 帯広",
+      "ウェブサイト制作 十勝"
     ],
     "defaultImage": "/og-image.jpg",
     "locale": "ja_JP",
@@ -21,119 +24,103 @@
     },
     "organization": {
       "name": "WebChaleur",
-      "description": "帯広・音更・十勝エリアのホームページ制作会社",
-      "telephone": "+81-155-00-0000",
-      "email": "info@webchaleur.jp",
-      "address": {
-        "streetAddress": "",
-        "addressLocality": "音更町",
-        "addressRegion": "北海道",
-        "postalCode": "080-0000",
-        "addressCountry": "JP"
-      },
-      "geo": {
-        "latitude": 42.9929,
-        "longitude": 143.2001
-      },
-      "openingHours": {
-        "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "priceRange": "¥¥"
+      "description": "帯広・音更・十勝に根ざしたホームページ制作・ECサイト制作のパートナー",
+      "email": "webchaleur@gmail.com",
+      "sameAs": [
+        "https://x.com/ryoo_black",
+        "https://www.instagram.com/ryo___book/"
+      ],
+      "areaServed": ["帯広市", "音更町", "十勝総合振興局", "北海道"]
     }
   },
   "pages": {
     "/": {
-      "title": "WebChaleur ｜ 十勝のウェブ制作パートナー",
-      "description": "帯広・音更・十勝エリアのホームページ制作。地元企業様に寄り添い、最新技術で温かみのあるサイトを作ります。",
+      "title": "帯広・音更・十勝のホームページ制作ならWebChaleur",
+      "description": "地元に強いホームページ制作・Web制作・ECサイト構築。帯広・音更・十勝の企業様の集客と信頼向上を、最新技術と運用サポートで支援します。Shopify/WordPress対応。",
       "keywords": [
         "帯広 ホームページ制作",
-        "音更 Web制作",
-        "十勝 ECサイト",
-        "Shopify 北海道",
-        "ウェブ制作 十勝",
-        "ホームページ作成 帯広",
-        "Web制作会社 北海道",
-        "ランディングページ制作 帯広",
-        "ECサイト構築 十勝"
-      ]
+        "音更 ホームページ制作",
+        "十勝 ホームページ制作",
+        "帯広 Web制作",
+        "ECサイト 十勝",
+        "Shopify 構築 帯広"
+      ],
+      "canonical": "https://webchaleur.com/"
     },
     "/about": {
-      "title": "WebChaleurについて",
-      "description": "WebChaleurは十勝・帯広・音更エリアで活動するWeb制作会社です。地域に根ざし、最新技術と温かみのあるデザインでお客様のビジネスをサポートします。",
+      "title": "WebChaleurについて｜帯広・音更・十勝のWeb制作",
+      "description": "十勝・帯広・音更エリアに特化した制作体制。丁寧なヒアリングと最新のフロントエンドで、見やすく成果の出るサイトを実現します。",
       "keywords": [
-        "Web制作会社 十勝",
-        "ホームページ制作会社 帯広",
-        "Webデザイン 音更",
-        "地域密着 Web制作"
-      ]
+        "Web制作会社 帯広",
+        "ホームページ制作会社 十勝",
+        "Webデザイン 音更"
+      ],
+      "canonical": "https://webchaleur.com/about"
     },
     "/services": {
-      "title": "サービス一覧",
-      "description": "ホームページ制作、ECサイト構築、Shopify導入支援、WordPress構築など、幅広いWeb制作サービスを提供しています。",
+      "title": "サービス｜ホームページ制作・ECサイト構築・Shopify導入",
+      "description": "ホームページ制作、ECサイト構築（Shopify）、WordPress、保守運用、SEO改善。帯広・音更・十勝の事業課題に合わせて最適なプランをご提案。",
       "keywords": [
-        "ホームページ制作サービス",
-        "ECサイト構築",
-        "Shopify導入支援",
-        "WordPress制作",
-        "Webシステム開発"
-      ]
+        "ホームページ制作 帯広 サービス",
+        "ECサイト構築 十勝",
+        "Shopify 導入 帯広",
+        "WordPress 制作 北海道"
+      ],
+      "canonical": "https://webchaleur.com/services"
     },
     "/works": {
-      "title": "制作実績一覧",
-      "description": "WebChaleurの制作実績をご紹介。十勝・帯広エリアの企業様のWebサイト、ECサイト、ランディングページなど多数の実績があります。",
+      "title": "制作実績｜帯広・十勝のホームページ/ECサイト",
+      "description": "帯広・十勝エリアの企業・店舗のホームページやECサイト、LPなどの制作実績を掲載。制作の狙いと成果もご紹介。",
       "keywords": [
-        "Web制作実績",
-        "ホームページ制作事例",
-        "ECサイト実績",
-        "制作ポートフォリオ"
-      ]
+        "ホームページ制作 実績 帯広",
+        "Web制作 事例 十勝",
+        "ECサイト 制作実績"
+      ],
+      "canonical": "https://webchaleur.com/works"
     },
     "/blog": {
-      "title": "技術ブログ",
-      "description": "Web制作に関する技術情報、最新のトレンド、制作のコツなどを発信しています。",
+      "title": "技術ブログ｜Web制作・SEO・Shopifyのヒント",
+      "description": "フロントエンド実装、SEO改善、パフォーマンス最適化、Shopifyカスタマイズなど、帯広・十勝の事業者様に役立つ内容を発信。",
       "keywords": [
-        "Web制作ブログ",
-        "技術ブログ",
-        "Webデザイン情報",
-        "フロントエンド開発"
-      ]
+        "Web制作 ブログ",
+        "SEO 改善 十勝",
+        "Shopify カスタマイズ 帯広"
+      ],
+      "canonical": "https://webchaleur.com/blog"
     },
     "/news": {
-      "title": "お知らせ",
-      "description": "WebChaleurからの最新情報、サービスのアップデート、キャンペーン情報などをお伝えします。",
-      "keywords": [
-        "お知らせ",
-        "最新情報",
-        "キャンペーン情報",
-        "サービス更新"
-      ]
+      "title": "お知らせ｜最新情報・更新情報",
+      "description": "サービスのアップデート、キャンペーン、メディア掲載などの最新情報をお届けします。",
+      "keywords": ["お知らせ", "最新情報", "更新情報"],
+      "canonical": "https://webchaleur.com/news"
     },
     "/contact": {
-      "title": "お問い合わせ",
-      "description": "Web制作のご相談、お見積もりのご依頼はこちらから。十勝・帯広・音更エリアは対面でのご相談も承ります。",
+      "title": "お問い合わせ｜帯広・音更・十勝のHP制作相談",
+      "description": "無料相談・お見積りはこちら。帯広・音更・十勝エリアは対面相談も対応。制作やリニューアル、ECサイト構築のご相談を承ります。",
       "keywords": [
-        "お問い合わせ",
-        "無料相談",
-        "見積もり依頼",
-        "Web制作相談"
-      ]
+        "ホームページ制作 相談 帯広",
+        "Web制作 見積 十勝",
+        "ECサイト 相談 音更"
+      ],
+      "canonical": "https://webchaleur.com/contact"
     },
     "/privacy": {
       "title": "プライバシーポリシー",
-      "description": "WebChaleurのプライバシーポリシーについてご説明します。",
-      "noindex": true
+      "description": "WebChaleurのプライバシーポリシー。",
+      "noindex": true,
+      "canonical": "https://webchaleur.com/privacy"
     },
     "/terms": {
       "title": "利用規約",
-      "description": "WebChaleurのサービス利用規約についてご説明します。",
-      "noindex": true
+      "description": "WebChaleurのサービス利用規約。",
+      "noindex": true,
+      "canonical": "https://webchaleur.com/terms"
     },
     "/legal": {
       "title": "特定商取引法に基づく表記",
-      "description": "特定商取引法に基づく表記についてご説明します。",
-      "noindex": true
+      "description": "特定商取引法に基づく表記。",
+      "noindex": true,
+      "canonical": "https://webchaleur.com/legal"
     }
   }
 }

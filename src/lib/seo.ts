@@ -103,35 +103,13 @@ export function generateOrganizationSchema() {
   
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'Organization',
     name: organization.name,
     description: organization.description,
     url: global.siteUrl,
-    telephone: organization.telephone,
     email: organization.email,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: organization.address.streetAddress,
-      addressLocality: organization.address.addressLocality,
-      addressRegion: organization.address.addressRegion,
-      postalCode: organization.address.postalCode,
-      addressCountry: organization.address.addressCountry,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: organization.geo.latitude,
-      longitude: organization.geo.longitude,
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: organization.openingHours.days,
-        opens: organization.openingHours.opens,
-        closes: organization.openingHours.closes,
-      },
-    ],
-    priceRange: organization.priceRange,
     image: `${global.siteUrl}${global.defaultImage}`,
+    sameAs: organization.sameAs,
   };
 }
 
