@@ -2,7 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import type { NewsItemForHero } from "./HeroServer";
+
+export type NewsItemForHero = {
+  slug: string;
+  title: string;
+  category: string;
+  year: string;
+  month: string;
+  day: string;
+};
 
 interface HeroSectionProps {
   latestNews: NewsItemForHero[];

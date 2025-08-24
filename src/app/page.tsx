@@ -1,4 +1,4 @@
-import HeroServer from "@/components/sections/HeroServer";
+import HeroServer from "@/components/sections/hero/HeroServer";
 import AboutSection from "@/components/sections/about/AboutSection";
 import StrengthsSection from "@/components/sections/strengths/StrengthsSection";
 import WorksServer from "@/components/sections/WorksServer";
