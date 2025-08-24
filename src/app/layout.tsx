@@ -9,7 +9,7 @@ import "./globals.css";
 export const metadata: Metadata = generatePageMetadata({ path: "/" });
 
 const kleeOne = Klee_One({
-  weight: ["400", "600"],
+  weight: ["400"],
   subsets: ["latin"],
   display: "swap",
 });
