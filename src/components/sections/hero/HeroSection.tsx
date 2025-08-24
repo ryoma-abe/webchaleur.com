@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-
+import { ReactTyped } from "react-typed";
 export type NewsItemForHero = {
   slug: string;
   title: string;
@@ -14,15 +15,23 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ latestNews }: HeroSectionProps) {
-  // 静的なメッセージ表示（ハイドレーションエラー回避）
-  const message = "十勝の企業様の\nWebサイトのこと\nお手伝いします。";
-
   return (
     <section className="relative flex flex-col justify-center items-center overflow-hidden bg-white py-20">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl leading-tight mb-8 lg:mb-10 min-h-[150px] md:min-h-[200px] lg:min-h-[250px] whitespace-pre-line">
-            {message}
+            <ReactTyped
+              strings={[
+                "十勝の企業様の\nWebサイトのこと\nお手伝いします。",
+                "100件以上の\n制作実績で培った\n技術力でサポートします。",
+                "Next.js・Astroなど\n最新技術も\nしっかり対応。",
+                "制作後の運用も\nずっと一緒に\nフォローします。",
+              ]}
+              typeSpeed={60}
+              backSpeed={50}
+              backDelay={3000}
+              loop
+            />
           </h1>
 
           <p className="max-w-3xl mx-auto mb-10 lg:mb-12">
