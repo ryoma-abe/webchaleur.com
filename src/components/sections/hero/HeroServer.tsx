@@ -2,25 +2,16 @@ import HeroSection from "./HeroSection";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import type { NewsItemForHero } from "./HeroSection";
 
-export const runtime = "nodejs"; // fsを使うので明示
-export const revalidate = 60; // 任意：ビルド後も1分ごとに再生成
+export const runtime = "nodejs";
+export const revalidate = 60;
 
 type NewsItemRaw = {
   title: string;
   date: string;
   category?: string;
   slug: string;
-};
-
-export type NewsItemForHero = {
-  slug: string;
-  title: string;
-  category: string;
-  // ここは“表示用に確定した文字列”。クライアントで再整形しない
-  year: string; // 例: "2025"
-  month: string; // 例: "08"
-  day: string; // 例: "24"
 };
 
 function getJSTYMD(iso: string) {
@@ -69,7 +60,6 @@ async function getLatestNews(): Promise<NewsItemRaw[]> {
 export default async function HeroServer() {
   const latest = await getLatestNews();
 
-  // 表示用の文字列に“サーバ側で”確定
   const latestNews = latest.map<NewsItemForHero>((n) => {
     const { year, month, day } = getJSTYMD(n.date);
     return {
