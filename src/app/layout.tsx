@@ -3,9 +3,16 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
 import { generatePageMetadata, generateOrganizationSchema } from "@/lib/seo";
+import { Klee_One } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = generatePageMetadata({ path: "/" });
+
+const kleeOne = Klee_One({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
