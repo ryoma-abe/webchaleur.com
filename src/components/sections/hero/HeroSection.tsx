@@ -38,7 +38,7 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [messages.length]);
 
   return (
     <section className="relative flex flex-col justify-center items-center overflow-hidden bg-white py-20">
