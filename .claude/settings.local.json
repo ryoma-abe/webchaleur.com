@@ -27,7 +27,9 @@
       "Bash(npx woff2_compress:*)",
       "Bash(npm run typecheck:*)",
       "Bash(npm run lint)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(NODE_ENV=production npm run build)",
+      "Bash(NODE_ENV=production npm run start)"
     ],
     "deny": []
   }
