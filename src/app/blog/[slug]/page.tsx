@@ -6,7 +6,7 @@ import { generatePageMetadata } from "@/lib/seo";
 import TableOfContents from "@/components/blog/TableOfContents";
 import ProgressIndicator from "@/components/blog/ProgressIndicator";
 import ScrollToTop from "@/components/blog/ScrollToTop";
-
+import "../../article.css";
 export async function generateStaticParams() {
   const blogs = await getAllContent("blog");
   return blogs.map((blog) => ({
