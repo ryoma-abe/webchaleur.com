@@ -1,5 +1,12 @@
 @import "tailwindcss";
-
+@font-face {
+  font-display: swap;
+  font-family: "Klee One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../public/fonts/klee-one-v12-japanese_latin-regular.woff2")
+    format("woff2");
+}
 /* カスタム変数 */
 :root {
   --main-blue: #2f506c;
