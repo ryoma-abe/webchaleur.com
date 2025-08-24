@@ -5,17 +5,27 @@ import { Suspense } from 'react';
 async function BlogServerInner() {
   const blogItems = await getAllContent('blog');
 
-  const formattedItems = blogItems.map(item => ({
-    slug: item.slug,
-    date: item.frontMatter.date,
-    title: item.frontMatter.title,
-    description: item.frontMatter.description || '',
-    category: item.frontMatter.category || '技術',
-    tags: item.frontMatter.tags || [],
-    link: `/blog/${item.slug}`,
-  }))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3); // 最新3件を表示
+  const formattedItems = blogItems
+    .map((item) => {
+      const raw = String(item.frontMatter?.date ?? "");
+      const date = /^\d{4}-\d{2}-\d{2}$/.test(raw)
+        ? raw
+        : new Date(raw).toISOString().slice(0, 10); // "YYYY-MM-DD" に固定
+
+      return {
+        slug: item.slug,
+        date, // 以後クライアントではそのまま表示するだけ
+        title: item.frontMatter.title ?? "",
+        description: item.frontMatter.description ?? "",
+        category: item.frontMatter.category ?? "技術",
+        tags: item.frontMatter.tags ?? [],
+        link: `/blog/${item.slug}`,
+        _dateNum: Number(date.replace(/-/g, "")),
+      };
+    })
+    .sort((a, b) => b._dateNum - a._dateNum)
+    .slice(0, 3) // 最新3件を表示
+    .map(({ _dateNum, ...rest }) => rest);
 
   return <BlogSection items={formattedItems} />;
 }
