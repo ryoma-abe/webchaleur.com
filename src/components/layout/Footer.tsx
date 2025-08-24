@@ -4,7 +4,8 @@ import { FaEnvelope, FaMapMarkerAlt } from "@/components/icons/FooterIcons";
 import { InstagramLink, XLink } from "../icons/SocialLinks";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  // 固定年度またはビルド時の年度を使用
+  const currentYear = 2025;
 
   const footerLinks = [
     { href: "/about", label: "WebChaleurについて" },

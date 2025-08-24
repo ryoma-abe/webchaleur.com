@@ -32,13 +32,17 @@ export default function ListItemCard({
                 className="block text-center bg-primary-blue/5 rounded-xl px-4 py-3"
               >
                 <span className="block text-2xl text-primary-blue font-bold">
-                  {new Date(date).getDate()}
+                  {new Intl.DateTimeFormat("ja-JP", {
+                    timeZone: "Asia/Tokyo",
+                    day: "numeric",
+                  }).format(new Date(date))}
                 </span>
                 <span className="block text-xs text-primary-blue">
-                  {new Date(date).toLocaleDateString("ja-JP", {
+                  {new Intl.DateTimeFormat("ja-JP", {
+                    timeZone: "Asia/Tokyo",
                     year: "numeric",
                     month: "short",
-                  })}
+                  }).format(new Date(date))}
                 </span>
               </time>
             </div>
