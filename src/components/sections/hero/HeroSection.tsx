@@ -61,10 +61,10 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 lg:mb-16">
-            <Link href="/contact" className="btn btn-primary">
+            <Link href="/contact" className="btn btn-primary" prefetch={false}>
               まずは気軽に相談
             </Link>
-            <Link href="/works" className="btn btn-primary">
+            <Link href="/works" className="btn btn-primary" prefetch={false}>
               制作事例を見る
             </Link>
           </div>
@@ -82,6 +82,7 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
                     key={news.slug}
                     href={`/news/${news.slug}`}
                     className="block group py-5 border-gray-200 border-t last:border-b hover:bg-gradient-to-r hover:from-blue-50/30 hover:to-transparent px-2 -mx-2 transition-all duration-200"
+                    prefetch={false}
                   >
                     <div className="flex items-center gap-4 md:gap-6">
                       <div className="flex-shrink-0">
@@ -115,6 +116,7 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
                 <Link
                   href="/news"
                   className="group flex items-center justify-center gap-2 text-sm text-gray hover:text-primary-blue transition-all duration-200"
+                  prefetch={false}
                 >
                   <span>すべてのお知らせを見る</span>
                   <span className="group-hover:translate-x-1 transition-transform duration-200">
