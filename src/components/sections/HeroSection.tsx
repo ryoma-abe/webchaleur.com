@@ -107,7 +107,7 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
           </div>
 
           {/* ニュース */}
-          {latestNews.length > 0 && (
+          {/* {latestNews.length > 0 && (
             <div className="w-full bg-white rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] p-8 lg:p-10 transition-shadow duration-300">
               <div className="text-center mb-8">
                 <h2 className="text-lg lg:text-xl">最新のお知らせ</h2>
@@ -162,7 +162,7 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
                 </Link>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>
