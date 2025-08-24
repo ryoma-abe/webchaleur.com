@@ -4,9 +4,6 @@ import { FaEnvelope, FaMapMarkerAlt } from "@/components/icons/FooterIcons";
 import { InstagramLink, XLink } from "../icons/SocialLinks";
 
 export default function Footer() {
-  // 固定年度またはビルド時の年度を使用
-  const currentYear = 2025;
-
   const footerLinks = [
     { href: "/about", label: "WebChaleurについて" },
     { href: "/works", label: "制作実績" },
@@ -107,7 +104,7 @@ export default function Footer() {
 
         <div className="text-center">
           <small className="text-caption text-sm">
-            © {currentYear} WebChaleur.
+            ©2025 WebChaleur.
             つくる人も、つかう人も、みんなしあわせに。
           </small>
         </div>
