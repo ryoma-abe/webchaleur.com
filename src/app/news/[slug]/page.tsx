@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getContentBySlug, getAllContent, markdownToHtml } from "@/lib/mdx";
 import ArticleMeta from "@/components/ui/ArticleMeta";
 import { generatePageMetadata } from "@/lib/seo";
-
+import "../../article.css";
 export async function generateStaticParams() {
   const news = await getAllContent("news");
   return news.map((item) => ({
