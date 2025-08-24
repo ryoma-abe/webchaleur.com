@@ -46,7 +46,7 @@ export default function WorksSection({ items }: WorksSectionProps) {
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Link href="/works" className="btn btn-primary">
+            <Link href="/works" className="btn btn-primary" prefetch={false}>
               すべての制作実績を見る
             </Link>
           </div>

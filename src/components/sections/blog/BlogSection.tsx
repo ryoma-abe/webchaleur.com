@@ -40,7 +40,7 @@ export default function BlogSection({ items }: BlogSectionProps) {
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Link href="/blog" className="btn btn-primary">
+            <Link href="/blog" className="btn btn-primary" prefetch={false}>
               すべての記事を見る
             </Link>
           </div>
