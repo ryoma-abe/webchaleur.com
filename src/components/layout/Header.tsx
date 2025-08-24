@@ -87,7 +87,7 @@ export default function Header() {
               </span>
             </Link>
 
-            <ul className="hidden md:flex items-center gap-6 lg:gap-8">
+            <ul className="hidden lg:flex items-center gap-6 lg:gap-8">
               {menuItems
                 .filter((item) => item.label !== "Contact")
                 .map((item) => (
@@ -109,7 +109,7 @@ export default function Header() {
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
             >
               <span className="text-2xl text-[#5a524c]">
@@ -119,16 +119,16 @@ export default function Header() {
           </div>
         </nav>
       </header>
-
+      {/* オーバーレイ */}
       <div
         className={`md:hidden fixed inset-0 bg-black/50 z-[100] transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsMenuOpen(false)}
       />
-
+      {/* ハンバーガーメニュー */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-[101] transform transition-transform duration-300 ease-in-out ${
+        className={`xl:hidden fixed top-0 right-0 h-full w-full bg-white z-[101] transform transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -189,18 +189,12 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="btn-primary"
+                className="btn btn-primary"
               >
                 お問い合わせ
               </Link>
             </li>
           </ul>
-
-          <div className="border-t border-gray-100 p-4 mt-auto">
-            <p className="text-xs text-gray-500 text-center">
-              © 2024 WebChaleur
-            </p>
-          </div>
         </nav>
       </div>
     </>
