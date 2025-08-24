@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import type { NewsItemForHero } from "./HeroServer";
 
@@ -9,58 +9,39 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ latestNews }: HeroSectionProps) {
-  const messages = useMemo(() => [
+  const messages = [
     "十勝の企業様の\nWebサイトのこと\nお手伝いします。",
     "100件以上の\n制作実績で培った\n技術力でサポートします。",
     "Next.js・Astroなど\n最新技術も\nしっかり対応。",
     "制作後の運用も\nずっと一緒に\nフォローします。",
-  ], []);
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    setIsClient(true);
-    setDisplayText(messages[0]);
-  }, [messages]);
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % messages.length);
+        setIsVisible(true);
+      }, 300);
+    }, 5000);
 
-  useEffect(() => {
-    if (!isClient) return;
-    
-    const initialTimeout = setTimeout(() => setIsDeleting(true), 3000);
-    return () => clearTimeout(initialTimeout);
-  }, [isClient]);
-
-  useEffect(() => {
-    if (!isClient) return;
-    
-    if (isDeleting) {
-      if (displayText.length > 0) {
-        const id = setTimeout(() => setDisplayText((p) => p.slice(0, -1)), 50);
-        return () => clearTimeout(id);
-      } else if (currentIndex < messages.length - 1) {
-        setIsDeleting(false);
-        setCurrentIndex((i) => i + 1);
-      }
-    } else if (displayText.length < messages[currentIndex].length) {
-      const id = setTimeout(() => {
-        setDisplayText(messages[currentIndex].slice(0, displayText.length + 1));
-      }, 100);
-      return () => clearTimeout(id);
-    } else if (currentIndex < messages.length - 1) {
-      const id = setTimeout(() => setIsDeleting(true), 3000);
-      return () => clearTimeout(id);
-    }
-  }, [displayText, isDeleting, currentIndex, messages, isClient]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative flex flex-col justify-center items-center overflow-hidden bg-white py-20">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl leading-tight mb-8 lg:mb-10 min-h-[150px] md:min-h-[200px] lg:min-h-[250px] whitespace-pre-line">
-            {isClient && displayText ? displayText : messages[0]}
+          <h1 
+            className={`text-3xl sm:text-5xl lg:text-6xl leading-tight mb-8 lg:mb-10 min-h-[150px] md:min-h-[200px] lg:min-h-[250px] whitespace-pre-line transition-opacity duration-300 ${
+              isVisible ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            {messages[currentIndex]}
           </h1>
 
           <p className="max-w-3xl mx-auto mb-10 lg:mb-12">
