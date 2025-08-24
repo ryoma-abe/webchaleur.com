@@ -30,7 +30,6 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
               typeSpeed={60}
               backSpeed={50}
               backDelay={3000}
-              loop
             />
           </h1>
 
