@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import type { NewsItemForHero } from "./HeroServer";
 
@@ -9,23 +9,32 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ latestNews }: HeroSectionProps) {
-  const messages = [
+  const messages = useMemo(() => [
     "十勝の企業様の\nWebサイトのこと\nお手伝いします。",
     "100件以上の\n制作実績で培った\n技術力でサポートします。",
     "Next.js・Astroなど\n最新技術も\nしっかり対応。",
     "制作後の運用も\nずっと一緒に\nフォローします。",
-  ];
+  ], []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayText, setDisplayText] = useState(messages[0]);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const initialTimeout = setTimeout(() => setIsDeleting(true), 3000);
-    return () => clearTimeout(initialTimeout);
+    setIsClient(true);
   }, []);
 
   useEffect(() => {
+    if (!isClient) return;
+    
+    const initialTimeout = setTimeout(() => setIsDeleting(true), 3000);
+    return () => clearTimeout(initialTimeout);
+  }, [isClient]);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
     if (isDeleting) {
       if (displayText.length > 0) {
         const id = setTimeout(() => setDisplayText((p) => p.slice(0, -1)), 50);
@@ -43,14 +52,14 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
       const id = setTimeout(() => setIsDeleting(true), 3000);
       return () => clearTimeout(id);
     }
-  }, [displayText, isDeleting, currentIndex, messages]);
+  }, [displayText, isDeleting, currentIndex, messages, isClient]);
 
   return (
     <section className="relative flex flex-col justify-center items-center overflow-hidden bg-white py-20">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl leading-tight mb-8 lg:mb-10 min-h-[150px] md:min-h-[200px] lg:min-h-[250px] whitespace-pre-line">
-            {displayText}
+            {isClient ? displayText : messages[0]}
           </h1>
 
           <p className="max-w-3xl mx-auto mb-10 lg:mb-12">
