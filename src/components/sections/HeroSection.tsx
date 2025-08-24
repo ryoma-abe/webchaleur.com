@@ -2,16 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
-interface NewsItem {
-  title: string;
-  date: string;
-  category: string;
-  slug: string;
-}
+import type { NewsItemForHero } from "./HeroServer";
 
 interface HeroSectionProps {
-  latestNews: NewsItem[];
+  latestNews: NewsItemForHero[];
 }
 
 export default function HeroSection({ latestNews }: HeroSectionProps) {
@@ -27,67 +21,38 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    // 3秒後に削除開始
-    const initialTimeout = setTimeout(() => {
-      setIsDeleting(true);
-    }, 3000);
-
+    const initialTimeout = setTimeout(() => setIsDeleting(true), 3000);
     return () => clearTimeout(initialTimeout);
   }, []);
 
   useEffect(() => {
     if (isDeleting) {
-      // 削除アニメーション
       if (displayText.length > 0) {
-        const deleteTimeout = setTimeout(() => {
-          setDisplayText((prev) => prev.slice(0, -1));
-        }, 50);
-        return () => clearTimeout(deleteTimeout);
-      } else {
-        // 削除完了後、次のメッセージがあればタイピング
-        if (currentIndex < messages.length - 1) {
-          setIsDeleting(false);
-          setCurrentIndex((prev) => prev + 1);
-        }
-        // 最後のメッセージの削除後は何もしない
+        const id = setTimeout(() => setDisplayText((p) => p.slice(0, -1)), 50);
+        return () => clearTimeout(id);
+      } else if (currentIndex < messages.length - 1) {
+        setIsDeleting(false);
+        setCurrentIndex((i) => i + 1);
       }
     } else if (displayText.length < messages[currentIndex].length) {
-      // タイピングアニメーション
-      const typeTimeout = setTimeout(() => {
+      const id = setTimeout(() => {
         setDisplayText(messages[currentIndex].slice(0, displayText.length + 1));
       }, 100);
-      return () => clearTimeout(typeTimeout);
-    } else if (
-      displayText === messages[currentIndex] &&
-      currentIndex < messages.length - 1
-    ) {
-      // 最後のメッセージ以外は、表示完了後3秒待ってから削除
-      const waitTimeout = setTimeout(() => {
-        setIsDeleting(true);
-      }, 3000);
-      return () => clearTimeout(waitTimeout);
+      return () => clearTimeout(id);
+    } else if (currentIndex < messages.length - 1) {
+      const id = setTimeout(() => setIsDeleting(true), 3000);
+      return () => clearTimeout(id);
     }
-    // 最後のメッセージは削除しない
   }, [displayText, isDeleting, currentIndex, messages]);
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-    return `${year}.${month}.${day}`;
-  };
 
   return (
     <section className="relative flex flex-col justify-center items-center overflow-hidden bg-white py-20">
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center">
-          {/* タイトル - シンプルなタイピングアニメーション */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl  leading-tight mb-8 lg:mb-10 min-h-[150px] md:min-h-[200px] lg:min-h-[250px] whitespace-pre-line">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl leading-tight mb-8 lg:mb-10 min-h-[150px] md:min-h-[200px] lg:min-h-[250px] whitespace-pre-line">
             {displayText}
           </h1>
 
-          {/* サブテキスト */}
           <p className="max-w-3xl mx-auto mb-10 lg:mb-12">
             帯広・音更・十勝を中心にホームページやネットショップを作っています。
             <br />
@@ -96,7 +61,6 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
             ※オンラインでの打ち合わせも対応しています
           </p>
 
-          {/* CTA ボタン */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 lg:mb-16">
             <Link href="/contact" className="btn btn-primary">
               まずは気軽に相談
@@ -106,8 +70,7 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
             </Link>
           </div>
 
-          {/* ニュース */}
-          {/* {latestNews.length > 0 && (
+          {latestNews.length > 0 && (
             <div className="w-full bg-white rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] p-8 lg:p-10 transition-shadow duration-300">
               <div className="text-center mb-8">
                 <h2 className="text-lg lg:text-xl">最新のお知らせ</h2>
@@ -124,11 +87,10 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
                     <div className="flex items-center gap-4 md:gap-6">
                       <div className="flex-shrink-0">
                         <span className="block text-xs text-gray uppercase tracking-wider">
-                          {formatDate(news.date).split(".")[1]}.
-                          {formatDate(news.date).split(".")[2]}
+                          {news.month}.{news.day}
                         </span>
                         <span className="block text-xs text-gray">
-                          {formatDate(news.date).split(".")[0]}
+                          {news.year}
                         </span>
                       </div>
                       <div className="w-px h-10 bg-gradient-to-b from-transparent via-gray-200 to-transparent" />
@@ -162,7 +124,7 @@ export default function HeroSection({ latestNews }: HeroSectionProps) {
                 </Link>
               </div>
             </div>
-          )} */}
+          )}
         </div>
       </div>
     </section>
